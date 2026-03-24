@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cronograma de Estudos — Eiji | Desafio Objetivo</title>
+  <meta name="description" content="Cronograma completo de estudos do Eiji para o Desafio Objetivo." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topo">
+    <div class="container">
+      <p class="topo-kicker">Projeto de Estudos</p>
+      <h1 id="tituloProjeto">Cronograma de Estudos — Eiji | Desafio Objetivo</h1>
+      <p id="subtituloProjeto" class="subtitulo">5º ano com ponte estruturada para o 6º ano</p>
+
+      <div class="cartao cartao-estrutura">
+        <h2>Estrutura pedagógica</h2>
+        <ul id="listaEstruturaPedagogica" class="lista-estrutura"></ul>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="painel-resumo">
+      <div class="cartao cartao-resumo">
+        <h2>Progresso geral</h2>
+
+        <div class="barra-progresso-wrap" aria-label="Progresso do cronograma">
+          <div class="barra-progresso">
+            <div id="barraProgressoFill" class="barra-progresso-fill"></div>
+          </div>
+        </div>
+
+        <div class="resumo-grid">
+          <div class="resumo-item">
+            <span class="resumo-label">Percentual concluído</span>
+            <strong id="percentualConcluido">0%</strong>
+          </div>
+
+          <div class="resumo-item">
+            <span class="resumo-label">Dias concluídos</span>
+            <strong><span id="diasConcluidos">0</span>/<span id="totalDias">255</span></strong>
+          </div>
+
+          <div class="resumo-item">
+            <span class="resumo-label">Dia de hoje no plano</span>
+            <strong id="diaAtualPlano">—</strong>
+          </div>
+
+          <div class="resumo-item">
+            <span class="resumo-label">Início do cronograma</span>
+            <strong id="dataInicioCronograma">—</strong>
+          </div>
+        </div>
+
+        <div class="acoes-progresso">
+          <button id="btnExportar" class="btn btn-secundario" type="button">Exportar progresso</button>
+
+          <label for="importarProgressoInput" class="btn btn-principal btn-importar">
+            Importar progresso
+          </label>
+          <input id="importarProgressoInput" type="file" accept=".json" hidden />
+        </div>
+      </div>
+    </section>
+
+    <section class="painel-calendario">
+      <div class="cartao">
+        <div class="calendario-topo">
+          <button id="btnMesAnterior" class="btn btn-navegacao" type="button" aria-label="Mês anterior">←</button>
+          <h2 id="tituloCalendario">Calendário</h2>
+          <button id="btnMesSeguinte" class="btn btn-navegacao" type="button" aria-label="Mês seguinte">→</button>
+        </div>
+
+        <div class="dias-semana">
+          <span>Dom</span>
+          <span>Seg</span>
+          <span>Ter</span>
+          <span>Qua</span>
+          <span>Qui</span>
+          <span>Sex</span>
+          <span>Sáb</span>
+        </div>
+
+        <div id="gradeCalendario" class="grade-calendario"></div>
+
+        <div class="legenda-calendario">
+          <span><i class="legenda cor-hoje"></i> Hoje</span>
+          <span><i class="legenda cor-dia-plano"></i> Dia com apostila</span>
+          <span><i class="legenda cor-concluido"></i> Concluído</span>
+          <span><i class="legenda cor-fora"></i> Fora do cronograma</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="painel-fases">
+      <div class="cartao">
+        <h2>Fases do cronograma</h2>
+        <div id="listaFases" class="lista-fases"></div>
+      </div>
+    </section>
+
+    <section class="painel-semanas">
+      <div class="cartao">
+        <div class="secao-topo">
+          <h2>Semanas do cronograma</h2>
+          <p>Clique em uma semana para ver os 5 dias e acessar as apostilas.</p>
+        </div>
+
+        <div id="listaSemanas" class="lista-semanas"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="config.js"></script>
+  <script>
+    const STORAGE_KEY = "eiji_desafio_objetivo_progresso_v1";
+
+    let progresso = {
+      concluidos: []
+    };
+
+    let calendarioAtual = null;
+
+    function carregarProgresso() {
+      try {
+        const salvo = localStorage.getItem(STORAGE_KEY);
+        if (!salvo) return;
+
+        const dados = JSON.parse(salvo);
+
+        if (dados && Array.isArray(dados.concluidos)) {
+          progresso = {
+            concluidos: dados.concluidos
+              .map(Number)
+              .filter((n) => Number.isInteger(n) && n >= 1 && n <= CONFIG.projeto.totalDias)
+          };
+        }
+      } catch (erro) {
+        console.error("Erro ao carregar progresso:", erro);
+      }
+    }
+
+    function salvarProgresso() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(progresso));
+    }
+
+    function formatarDataBR(dataISO) {
+      const [ano, mes, dia] = dataISO.split("-");
+      return `${dia}/${mes}/${ano}`;
+    }
+
+    function formatarMesAno(date) {
+      return date.toLocaleDateString("pt-BR", {
+        month: "long",
+        year: "numeric"
+      });
+    }
+
+    function mesmaData(a, b) {
+      return (
+        a.getFullYear() === b.getFullYear() &&
+        a.getMonth() === b.getMonth() &&
+        a.getDate() === b.getDate()
+      );
+    }
+
+    function isConcluido(numeroDia) {
+      return progresso.concluidos.includes(numeroDia);
+    }
+
+    function toggleConclusao(numeroDia) {
+      if (isConcluido(numeroDia)) {
+        progresso.concluidos = progresso.concluidos.filter((n) => n !== numeroDia);
+      } else {
+        progresso.concluidos.push(numeroDia);
+      }
+
+      progresso.concluidos.sort((a, b) => a - b);
+      salvarProgresso();
+      renderizarResumo();
+      renderizarCalendario(calendarioAtual);
+      renderizarSemanas();
+    }
+
+    function renderizarCabecalho() {
+      document.getElementById("tituloProjeto").textContent = CONFIG.projeto.titulo;
+      document.getElementById("subtituloProjeto").textContent = CONFIG.projeto.subtitulo;
+      document.getElementById("totalDias").textContent = CONFIG.projeto.totalDias;
+      document.getElementById("dataInicioCronograma").textContent = formatarDataBR(CONFIG.projeto.dataInicio);
+
+      const lista = document.getElementById("listaEstruturaPedagogica");
+      lista.innerHTML = "";
+
+      CONFIG.projeto.estruturaPedagogica.forEach((item) => {
+        const li = document.createElement("li");
+        li.textContent = item;
+        lista.appendChild(li);
+      });
+    }
+
+    function renderizarResumo() {
+      const totalDias = CONFIG.projeto.totalDias;
+      const concluidos = progresso.concluidos.length;
+      const percentual = totalDias ? Math.round((concluidos / totalDias) * 100) : 0;
+
+      document.getElementById("diasConcluidos").textContent = concluidos;
+      document.getElementById("percentualConcluido").textContent = `${percentual}%`;
+      document.getElementById("barraProgressoFill").style.width = `${percentual}%`;
+
+      const hoje = new Date();
+      const hojeISO = [
+        hoje.getFullYear(),
+        String(hoje.getMonth() + 1).padStart(2, "0"),
+        String(hoje.getDate()).padStart(2, "0")
+      ].join("-");
+
+      const diaHojePlano = getDiaPorData(hojeISO);
+      const elDiaAtualPlano = document.getElementById("diaAtualPlano");
+
+      if (diaHojePlano) {
+        elDiaAtualPlano.innerHTML = `<a href="${diaHojePlano.arquivo}">Dia ${String(diaHojePlano.numero).padStart(3, "0")} — ${diaHojePlano.titulo}</a>`;
+      } else {
+        elDiaAtualPlano.textContent = "Fora do intervalo do cronograma";
+      }
+    }
+
+    function renderizarFases() {
+      const container = document.getElementById("listaFases");
+      container.innerHTML = "";
+
+      CONFIG.fases.forEach((fase) => {
+        const card = document.createElement("article");
+        card.className = "fase-card";
+        card.style.borderTop = `6px solid ${fase.cor}`;
+
+        card.innerHTML = `
+          <h3>${fase.titulo}</h3>
+          <p class="fase-semanas">Semanas ${fase.inicioSemana} a ${fase.fimSemana}</p>
+          <p>${fase.descricao}</p>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    function renderizarCalendario(dataBase) {
+      calendarioAtual = new Date(dataBase.getFullYear(), dataBase.getMonth(), 1);
+
+      const titulo = document.getElementById("tituloCalendario");
+      const grade = document.getElementById("gradeCalendario");
+
+      titulo.textContent = formatarMesAno(calendarioAtual);
+      grade.innerHTML = "";
+
+      const primeiroDia = new Date(calendarioAtual.getFullYear(), calendarioAtual.getMonth(), 1);
+      const ultimoDia = new Date(calendarioAtual.getFullYear(), calendarioAtual.getMonth() + 1, 0);
+
+      const inicioSemana = primeiroDia.getDay();
+      const totalDiasMes = ultimoDia.getDate();
+
+      for (let i = 0; i < inicioSemana; i++) {
+        const vazio = document.createElement("div");
+        vazio.className = "celula-calendario vazia";
+        grade.appendChild(vazio);
+      }
+
+      const hoje = new Date();
+
+      for (let dia = 1; dia <= totalDiasMes; dia++) {
+        const dataAtual = new Date(calendarioAtual.getFullYear(), calendarioAtual.getMonth(), dia);
+        const dataISO = [
+          dataAtual.getFullYear(),
+          String(dataAtual.getMonth() + 1).padStart(2, "0"),
+          String(dataAtual.getDate()).padStart(2, "0")
+        ].join("-");
+
+        const diaPlano = getDiaPorData(dataISO);
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "celula-calendario";
+        btn.innerHTML = `<span class="numero-dia">${dia}</span>`;
+
+        if (mesmaData(dataAtual, hoje)) {
+          btn.classList.add("hoje");
+        }
+
+        if (diaPlano) {
+          btn.classList.add("dia-plano");
+          if (isConcluido(diaPlano.numero)) {
+            btn.classList.add("concluido");
+          }
+
+          btn.innerHTML += `
+            <span class="rotulo-dia">D${String(diaPlano.numero).padStart(3, "0")}</span>
+          `;
+
+          btn.title = `Dia ${String(diaPlano.numero).padStart(3, "0")} — ${diaPlano.titulo}`;
+
+          btn.addEventListener("click", () => {
+            window.location.href = diaPlano.arquivo;
+          });
+        } else {
+          btn.classList.add("fora-cronograma");
+          btn.disabled = true;
+        }
+
+        grade.appendChild(btn);
+      }
+    }
+
+    function criarCardDia(dia) {
+      const concluido = isConcluido(dia.numero);
+
+      const card = document.createElement("div");
+      card.className = `dia-card ${concluido ? "concluido" : ""}`;
+
+      card.innerHTML = `
+        <div class="dia-card-topo">
+          <span class="dia-badge">Dia ${String(dia.numero).padStart(3, "0")}</span>
+          <span class="dia-disciplina disciplina-${dia.disciplina}">${dia.disciplina}</span>
+        </div>
+
+        <h4><a href="${dia.arquivo}">${dia.titulo}</a></h4>
+        <p class="dia-expansao"><strong>Expansão:</strong> ${dia.expansao}</p>
+
+        <div class="dia-tags">
+          ${dia.tags.map((tag) => `<span>${tag}</span>`).join("")}
+        </div>
+
+        <div class="dia-acoes">
+          <a class="btn btn-principal" href="${dia.arquivo}">Abrir apostila</a>
+          <button class="btn btn-secundario" type="button" data-dia="${dia.numero}">
+            ${concluido ? "Desmarcar" : "Marcar como concluído"}
+          </button>
+        </div>
+      `;
+
+      const botaoToggle = card.querySelector("button[data-dia]");
+      botaoToggle.addEventListener("click", () => toggleConclusao(dia.numero));
+
+      return card;
+    }
+
+    function renderizarSemanas() {
+      const container = document.getElementById("listaSemanas");
+      container.innerHTML = "";
+
+      CONFIG.semanas.forEach((semana) => {
+        const fase = getFaseById(semana.fase);
+        const diasSemana = getDiasDaSemana(semana.semana);
+        const concluidosSemana = diasSemana.filter((dia) => isConcluido(dia.numero)).length;
+
+        const article = document.createElement("article");
+        article.className = "semana-card";
+
+        const detalhesId = `semana-detalhes-${semana.semana}`;
+
+        article.innerHTML = `
+          <div class="semana-topo">
+            <div>
+              <p class="semana-kicker">Semana ${semana.semana}</p>
+              <h3>${semana.titulo}</h3>
+              <p class="semana-descricao">${semana.descricao}</p>
+              <p class="semana-fase" style="--fase-cor:${fase ? fase.cor : "#2563eb"};">
+                ${fase ? fase.titulo : ""}
+              </p>
+            </div>
+
+            <div class="semana-meta">
+              <span>${concluidosSemana}/5 concluídos</span>
+              <button class="btn btn-secundario btn-toggle-semana" type="button" aria-expanded="false" aria-controls="${detalhesId}">
+                Ver dias
+              </button>
+            </div>
+          </div>
+
+          <div id="${detalhesId}" class="semana-detalhes" hidden></div>
+        `;
+
+        const detalhes = article.querySelector(".semana-detalhes");
+        diasSemana.forEach((dia) => {
+          detalhes.appendChild(criarCardDia(dia));
+        });
+
+        const btnToggle = article.querySelector(".btn-toggle-semana");
+        btnToggle.addEventListener("click", () => {
+          const aberto = !detalhes.hasAttribute("hidden");
+
+          if (aberto) {
+            detalhes.setAttribute("hidden", "");
+            btnToggle.setAttribute("aria-expanded", "false");
+            btnToggle.textContent = "Ver dias";
+          } else {
+            detalhes.removeAttribute("hidden");
+            btnToggle.setAttribute("aria-expanded", "true");
+            btnToggle.textContent = "Ocultar dias";
+          }
+        });
+
+        container.appendChild(article);
+      });
+    }
+
+    function exportarProgresso() {
+      const conteudo = {
+        projeto: CONFIG.projeto.nome,
+        aluno: CONFIG.projeto.aluno,
+        dataExportacao: new Date().toISOString(),
+        concluidos: progresso.concluidos
+      };
+
+      const blob = new Blob([JSON.stringify(conteudo, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "progresso-eiji-desafio-objetivo.json";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+
+      URL.revokeObjectURL(url);
+    }
+
+    function importarProgresso(arquivo) {
+      if (!arquivo) return;
+
+      const reader = new FileReader();
+
+      reader.onload = function (evento) {
+        try {
+          const dados = JSON.parse(evento.target.result);
+
+          if (!dados || !Array.isArray(dados.concluidos)) {
+            alert("Arquivo inválido.");
+            return;
+          }
+
+          progresso.concluidos = dados.concluidos
+            .map(Number)
+            .filter((n) => Number.isInteger(n) && n >= 1 && n <= CONFIG.projeto.totalDias)
+            .sort((a, b) => a - b);
+
+          salvarProgresso();
+          renderizarResumo();
+          renderizarCalendario(calendarioAtual);
+          renderizarSemanas();
+
+          alert("Progresso importado com sucesso.");
+        } catch (erro) {
+          alert("Não foi possível importar o arquivo.");
+          console.error(erro);
+        }
+      };
+
+      reader.readAsText(arquivo);
+    }
+
+    function bindEventos() {
+      document.getElementById("btnMesAnterior").addEventListener("click", () => {
+        renderizarCalendario(new Date(calendarioAtual.getFullYear(), calendarioAtual.getMonth() - 1, 1));
+      });
+
+      document.getElementById("btnMesSeguinte").addEventListener("click", () => {
+        renderizarCalendario(new Date(calendarioAtual.getFullYear(), calendarioAtual.getMonth() + 1, 1));
+      });
+
+      document.getElementById("btnExportar").addEventListener("click", exportarProgresso);
+
+      document.getElementById("importarProgressoInput").addEventListener("change", (event) => {
+        const arquivo = event.target.files[0];
+        importarProgresso(arquivo);
+        event.target.value = "";
+      });
+    }
+
+    function iniciar() {
+      if (!window.CONFIG) {
+        console.error("CONFIG não encontrado. Verifique o arquivo config.js.");
+        return;
+      }
+
+      carregarProgresso();
+      renderizarCabecalho();
+      renderizarResumo();
+      renderizarFases();
+      renderizarCalendario(new Date());
+      renderizarSemanas();
+      bindEventos();
+    }
+
+    iniciar();
+  </script>
+</body>
+</html>
