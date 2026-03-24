@@ -948,7 +948,7 @@
             <div class="kicker">⚔️ Jornada do Herói • Desafio Objetivo</div>
             <h1 id="heroTitle">Jornada do Eiji</h1>
             <p id="heroSubtitle">
-              Um mapa de aventura para dominar o 5º ano, avançar para o 6º ano e chegar forte no Desafio Objetivo.
+              Um mapa de aventura em 14 semanas para estudar 60 a 90 minutos por dia e chegar forte no Desafio Objetivo.
             </p>
 
             <div class="hero-toolbar">
@@ -959,7 +959,7 @@
 
             <div class="progress-wrap">
               <div class="progress-labels">
-                <span id="progressText">0 de 255 dias concluídos</span>
+                <span id="progressText">0 de 70 dias concluídos</span>
                 <span id="levelText">Nível 1</span>
               </div>
               <div class="progress-bar">
@@ -1001,7 +1001,7 @@
       <section>
         <div class="panel">
           <h2>🌍 Reinos da aventura</h2>
-          <p class="section-sub">Cada fase do cronograma virou um reino. Quanto mais missões concluídas, mais o mapa se ilumina.</p>
+          <p class="section-sub">Cada fase do cronograma virou um reino. São 14 semanas de treino focado até a reta final.</p>
           <div class="realm-grid" id="realmGrid"></div>
         </div>
 
@@ -1035,7 +1035,7 @@
       <aside class="side-stack">
         <div class="today-card">
           <h2>🎯 Missão de hoje</h2>
-          <p class="subtle">Seu ponto de entrada mais rápido para voltar ao ritmo.</p>
+          <p class="subtle">Seu atalho para retomar o estudo do dia sem perder tempo.</p>
           <div class="today-main" id="todayCardContent"></div>
         </div>
 
@@ -1134,7 +1134,7 @@
       start.setHours(0,0,0,0);
       now.setHours(0,0,0,0);
       const diff = Math.floor((now - start) / 86400000);
-      if (diff < 0 || diff >= (CONFIG.projeto.totalDias || 255)) return null;
+      if (diff < 0 || diff >= (CONFIG.projeto.totalDias || 70)) return null;
       return getDayByNumber(diff + 1);
     }
 
@@ -1173,7 +1173,7 @@
     }
 
     function selectedWeekSafe() {
-      const total = getAllWeeks().length || 51;
+      const total = getAllWeeks().length || 14;
       if (!state.selectedWeek || state.selectedWeek < 1 || state.selectedWeek > total) {
         state.selectedWeek = recommendedWeek();
       }
@@ -1187,7 +1187,7 @@
       const coins = (totalDone * (CONFIG?.projeto?.recompensas?.moedasPorDia || 3)) + (chests * (CONFIG?.projeto?.recompensas?.moedasPorBau || 15));
       const level = Math.floor(xp / 100) + 1;
       const streak = longestTailStreak(state.concluidos);
-      const percent = Math.round((totalDone / (CONFIG?.projeto?.totalDias || 255)) * 100);
+      const percent = Math.round((totalDone / (CONFIG?.projeto?.totalDias || 70)) * 100);
 
       return { totalDone, chests, xp, coins, level, streak, percent };
     }
@@ -1398,7 +1398,7 @@
       document.getElementById("progressText").textContent = `${stats.totalDone} de ${CONFIG.projeto.totalDias} dias concluídos`;
       document.getElementById("levelText").textContent = `Nível ${stats.level}`;
       document.getElementById("heroTitle").textContent = CONFIG.projeto.titulo || `Jornada do ${CONFIG.projeto.aluno || "Eiji"}`;
-      document.getElementById("heroSubtitle").textContent = CONFIG.projeto.subtitulo || "Mapa de aventura para dominar o 5º ano e avançar para o 6º.";
+      document.getElementById("heroSubtitle").textContent = CONFIG.projeto.subtitulo || "Mapa de aventura em 14 semanas, com estudo diário focado em Português e Matemática.";
     }
 
     function renderRealms() {
