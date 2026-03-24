@@ -273,7 +273,7 @@
       position:relative;
       overflow:hidden;
       border:1px solid rgba(255,255,255,.08);
-      min-height:120px;
+      min-height:148px;
     }
 
     .realm::before{
@@ -292,12 +292,19 @@
     }
 
     .realm small,
-    .realm .realm-meta{
+    .realm .realm-meta,
+    .realm .realm-lore{
       position:relative;
       color:rgba(255,255,255,.85);
       font-size:12px;
       font-weight:700;
       display:block;
+    }
+
+    .realm .realm-lore{
+      margin-top:8px;
+      line-height:1.45;
+      color:rgba(255,255,255,.78);
     }
 
     .realm .realm-icon{
@@ -342,7 +349,7 @@
       border:1px solid rgba(255,255,255,.08);
       cursor:pointer;
       transition:.2s ease;
-      min-height:140px;
+      min-height:176px;
     }
 
     .week-tile:hover{
@@ -384,7 +391,18 @@
       font-size:12px;
       color:var(--muted);
       line-height:1.4;
+      margin-bottom:10px;
+    }
+
+    .week-story{
+      font-size:11px;
+      color:#dbeafe;
+      line-height:1.45;
       margin-bottom:12px;
+      padding:10px;
+      border-radius:12px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.06);
     }
 
     .week-progress{
@@ -416,6 +434,20 @@
       font-weight:800;
     }
 
+    .week-loot-mini{
+      margin-top:10px;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      background:rgba(251,191,36,.08);
+      border:1px solid rgba(251,191,36,.22);
+      border-radius:12px;
+      padding:8px 10px;
+      font-size:11px;
+      color:#fde68a;
+      font-weight:800;
+    }
+
     .mission-panel{
       margin-top:18px;
       background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
@@ -443,8 +475,20 @@
       max-width:680px;
     }
 
+    .mission-story{
+      margin-top:12px;
+      padding:14px;
+      border-radius:16px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.06);
+      color:#dbeafe;
+      font-size:13px;
+      line-height:1.5;
+      font-weight:700;
+    }
+
     .chest-card{
-      min-width:210px;
+      min-width:260px;
       background:rgba(255,255,255,.05);
       border:1px solid rgba(255,255,255,.08);
       border-radius:18px;
@@ -469,6 +513,19 @@
       margin-bottom:10px;
       font-size:12px;
       font-weight:700;
+      line-height:1.45;
+    }
+
+    .chest-reward-line{
+      margin-bottom:10px;
+      padding:10px 12px;
+      border-radius:12px;
+      background:rgba(251,191,36,.08);
+      border:1px solid rgba(251,191,36,.2);
+      color:#fde68a;
+      font-size:12px;
+      font-weight:800;
+      line-height:1.45;
     }
 
     .path{
@@ -501,8 +558,8 @@
     }
 
     .mission-node{
-      width:84px;
-      height:84px;
+      width:92px;
+      height:92px;
       border-radius:50%;
       border:3px solid rgba(255,255,255,.14);
       background:linear-gradient(180deg, #1e293b, #0f172a);
@@ -514,6 +571,7 @@
       box-shadow:0 10px 24px rgba(0,0,0,.18);
       transition:.2s ease;
       position:relative;
+      overflow:hidden;
     }
 
     .mission-node:hover{
@@ -531,8 +589,12 @@
       border-color:#fbbf24;
     }
 
+    .mission-node.raro{
+      box-shadow:0 0 0 3px rgba(251,191,36,.12), 0 10px 24px rgba(0,0,0,.18);
+    }
+
     .mission-node .icon{
-      font-size:24px;
+      font-size:23px;
       margin-bottom:4px;
     }
 
@@ -542,12 +604,44 @@
       line-height:1;
     }
 
+    .mission-rarity{
+      margin-top:-4px;
+      font-size:10px;
+      font-weight:800;
+      padding:4px 8px;
+      border-radius:999px;
+      text-transform:uppercase;
+      letter-spacing:.05em;
+      border:1px solid rgba(255,255,255,.1);
+    }
+
+    .raridade-comum{
+      background:rgba(148,163,184,.14);
+      color:#cbd5e1;
+    }
+
+    .raridade-incomum{
+      background:rgba(34,197,94,.14);
+      color:#bbf7d0;
+    }
+
+    .raridade-raro{
+      background:rgba(251,191,36,.14);
+      color:#fde68a;
+    }
+
     .mission-title{
       font-size:12px;
       font-weight:800;
       color:#e5efff;
       line-height:1.35;
       min-height:50px;
+    }
+
+    .mission-meta{
+      font-size:11px;
+      color:#bfdbfe;
+      font-weight:800;
     }
 
     .reward{
@@ -655,7 +749,18 @@
     .today-main p{
       color:#cbd5e1;
       font-size:14px;
+      margin-bottom:12px;
+    }
+
+    .today-bonus{
       margin-bottom:14px;
+      padding:10px 12px;
+      border-radius:12px;
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.08);
+      color:#dbeafe;
+      font-size:12px;
+      font-weight:800;
     }
 
     .today-actions{
@@ -910,11 +1015,13 @@
               <div>
                 <h3 id="missionWeekTitle">Semana</h3>
                 <p id="missionWeekDesc">Selecione uma semana no tabuleiro para ver a trilha de missões.</p>
+                <div class="mission-story" id="missionWeekStory">A narrativa da semana aparecerá aqui.</div>
               </div>
 
               <div class="chest-card">
                 <div class="chest-icon" id="selectedChestIcon">🧰</div>
                 <strong id="selectedChestTitle">Baú da semana</strong>
+                <div class="chest-reward-line" id="selectedChestRewardLine">Recompensa semanal</div>
                 <small id="selectedChestDesc">Complete as 5 missões para liberar a recompensa.</small>
                 <button class="btn btn-warning" id="btnOpenSelectedChest">Abrir baú</button>
               </div>
@@ -968,43 +1075,12 @@
     const STORAGE_KEY_OLD = "eiji_desafio_objetivo_progresso_v1";
 
     const REALM_META = {
-      "fase-1-base-5ano": {
-        nome: "Reino da Leitura",
-        icon: "📚",
-        className: "realm-1"
-      },
-      "fase-2-consolidacao-aceleracao": {
-        nome: "Vale dos Desafios",
-        icon: "⛰️",
-        className: "realm-2"
-      },
-      "fase-3-ponte-6ano": {
-        nome: "Ponte dos Mestres",
-        icon: "🌉",
-        className: "realm-3"
-      },
-      "fase-4-dominio-hibrido": {
-        nome: "Terras da Mistura",
-        icon: "🧩",
-        className: "realm-4"
-      },
-      "fase-5-sprint-final": {
-        nome: "Castelo do Desafio Final",
-        icon: "🏰",
-        className: "realm-5"
-      }
+      "fase-1-base-5ano": { className: "realm-1" },
+      "fase-2-consolidacao-aceleracao": { className: "realm-2" },
+      "fase-3-ponte-6ano": { className: "realm-3" },
+      "fase-4-dominio-hibrido": { className: "realm-4" },
+      "fase-5-sprint-final": { className: "realm-5" }
     };
-
-    const LOOT_TABLE = [
-      { icon: "🪶", nome: "Pena da Compreensão", desc: "Ajuda a enxergar a ideia principal." },
-      { icon: "🛡️", nome: "Escudo da Atenção", desc: "Protege contra distrações durante a leitura." },
-      { icon: "🗝️", nome: "Chave dos Números", desc: "Abre portas para desafios matemáticos." },
-      { icon: "💎", nome: "Cristal da Persistência", desc: "Fortalece a constância do herói." },
-      { icon: "📜", nome: "Pergaminho da Estratégia", desc: "Lembra o caminho certo na hora da prova." },
-      { icon: "🧭", nome: "Bússola da Clareza", desc: "Ajuda a seguir a direção correta." },
-      { icon: "🔥", nome: "Tocha do Foco", desc: "Ilumina o próximo passo da jornada." },
-      { icon: "👑", nome: "Coroa da Constância", desc: "Símbolo de quem não abandona o caminho." }
-    ];
 
     const state = {
       concluidos: [],
@@ -1075,8 +1151,12 @@
       return weekProgress(weekNumber) === 5;
     }
 
-    function chestRewardForWeek(weekNumber) {
-      return LOOT_TABLE[(weekNumber - 1) % LOOT_TABLE.length];
+    function getRewardForWeek(weekNumber) {
+      if (typeof window.getRecompensaDaSemana === "function") {
+        return window.getRecompensaDaSemana(weekNumber);
+      }
+      const week = getAllWeeks().find(w => w.semana === weekNumber);
+      return week ? week.recompensaSemana : null;
     }
 
     function isChestOpened(weekNumber) {
@@ -1103,8 +1183,8 @@
     function deriveStats() {
       const totalDone = state.concluidos.length;
       const chests = state.openedChests.length;
-      const xp = (totalDone * 10) + (chests * 25);
-      const coins = (totalDone * 3) + (chests * 15);
+      const xp = (totalDone * (CONFIG?.projeto?.recompensas?.xpPorDia || 10)) + (chests * (CONFIG?.projeto?.recompensas?.xpPorBau || 25));
+      const coins = (totalDone * (CONFIG?.projeto?.recompensas?.moedasPorDia || 3)) + (chests * (CONFIG?.projeto?.recompensas?.moedasPorBau || 15));
       const level = Math.floor(xp / 100) + 1;
       const streak = longestTailStreak(state.concluidos);
       const percent = Math.round((totalDone / (CONFIG?.projeto?.totalDias || 255)) * 100);
@@ -1147,7 +1227,7 @@
         .sort((a,b) => a-b)
         .map(week => ({
           week,
-          ...chestRewardForWeek(week)
+          ...getRewardForWeek(week)
         }));
     }
 
@@ -1212,7 +1292,7 @@
       const day = getDayByNumber(dayNumber);
       showToast(
         "Missão concluída",
-        `+10 XP • +3 moedas • ${day ? day.titulo : "Dia concluído"}`,
+        `+${day?.xp || 10} XP • +${day?.moedas || 3} moedas • ${day ? day.titulo : "Dia concluído"}`,
         "green"
       );
     }
@@ -1233,10 +1313,10 @@
       saveState();
       renderAll();
 
-      const reward = chestRewardForWeek(weekNumber);
+      const reward = getRewardForWeek(weekNumber);
       showToast(
         "Baú aberto!",
-        `Você ganhou ${reward.icon} ${reward.nome} • +25 XP • +15 moedas`,
+        `Você ganhou ${reward?.icon || "🎁"} ${reward?.nome || "recompensa semanal"} • +${CONFIG?.projeto?.recompensas?.xpPorBau || 25} XP • +${CONFIG?.projeto?.recompensas?.moedasPorBau || 15} moedas`,
         "gold"
       );
     }
@@ -1302,10 +1382,10 @@
       };
     }
 
-    function disciplineIcon(disc) {
-      if (disc === "portugues") return "📘";
-      if (disc === "matematica") return "🧮";
-      return "🧭";
+    function rarityClass(raridade) {
+      if (raridade === "raro") return "raridade-raro";
+      if (raridade === "incomum") return "raridade-incomum";
+      return "raridade-comum";
     }
 
     function renderHero() {
@@ -1317,7 +1397,7 @@
       document.getElementById("globalProgressFill").style.width = `${stats.percent}%`;
       document.getElementById("progressText").textContent = `${stats.totalDone} de ${CONFIG.projeto.totalDias} dias concluídos`;
       document.getElementById("levelText").textContent = `Nível ${stats.level}`;
-      document.getElementById("heroTitle").textContent = `Jornada do ${CONFIG.projeto.aluno || "Eiji"}`;
+      document.getElementById("heroTitle").textContent = CONFIG.projeto.titulo || `Jornada do ${CONFIG.projeto.aluno || "Eiji"}`;
       document.getElementById("heroSubtitle").textContent = CONFIG.projeto.subtitulo || "Mapa de aventura para dominar o 5º ano e avançar para o 6º.";
     }
 
@@ -1325,18 +1405,19 @@
       const container = document.getElementById("realmGrid");
       container.innerHTML = "";
 
-      getAllPhases().forEach((phase, idx) => {
-        const meta = REALM_META[phase.id] || { nome: phase.titulo, icon:"🗺️", className:"realm-1" };
+      getAllPhases().forEach((phase) => {
+        const meta = REALM_META[phase.id] || { className: "realm-1" };
         const progress = phaseProgress(phase.id);
 
         const card = document.createElement("div");
         card.className = `realm ${meta.className}`;
         card.innerHTML = `
-          <div class="realm-icon">${meta.icon}</div>
-          <h3>${meta.nome}</h3>
+          <div class="realm-icon">${phase.icone || "🗺️"}</div>
+          <h3>${phase.reino || phase.titulo}</h3>
           <small>Semanas ${phase.inicioSemana} a ${phase.fimSemana}</small>
           <span class="realm-meta">${progress.done}/${progress.total} missões concluídas</span>
           <div class="realm-progress"><span style="width:${progress.percent}%"></span></div>
+          <span class="realm-lore">${phase.lore || ""}</span>
         `;
         container.appendChild(card);
       });
@@ -1347,17 +1428,20 @@
       board.innerHTML = "";
 
       getAllWeeks().forEach((week) => {
-        const meta = REALM_META[week.fase] || { nome: week.titulo, icon:"🗺️" };
+        const phase = getPhaseById(week.fase);
         const progress = weekProgress(week.semana);
+        const reward = week.recompensaSemana || getRewardForWeek(week.semana);
+
         const tile = document.createElement("div");
         tile.className = `week-tile ${state.selectedWeek === week.semana ? "active" : ""} ${progress === 5 ? "complete" : ""}`;
         tile.innerHTML = `
           <div class="week-kicker">
             <span>Semana ${week.semana}</span>
-            <span>${meta.icon}</span>
+            <span>${phase?.icone || "🗺️"}</span>
           </div>
           <div class="week-title">${week.titulo}</div>
           <div class="week-desc">${week.descricao}</div>
+          <div class="week-story">${week.narrativa || ""}</div>
           <div class="week-progress">
             ${Array.from({ length:5 }).map((_,i) => `<span class="week-dot ${i < progress ? "on" : ""}"></span>`).join("")}
           </div>
@@ -1365,6 +1449,7 @@
             <span>${progress}/5 missões</span>
             <span>${isChestOpened(week.semana) ? "🧰 baú aberto" : isWeekComplete(week.semana) ? "✨ baú liberado" : "🔒 em progresso"}</span>
           </div>
+          <div class="week-loot-mini">${reward?.icon || "🎁"} ${reward?.nome || "Recompensa semanal"}</div>
         `;
         tile.addEventListener("click", () => {
           state.selectedWeek = week.semana;
@@ -1384,23 +1469,25 @@
 
       if (!week) return;
 
-      const meta = REALM_META[week.fase] || { nome: week.titulo, icon:"🗺️" };
+      const phase = getPhaseById(week.fase);
       const days = getDaysByWeek(weekNumber);
       const firstIncomplete = days.find(d => !isDayDone(d.numero));
+      const reward = week.recompensaSemana || getRewardForWeek(weekNumber);
 
-      document.getElementById("missionWeekTitle").textContent = `${meta.icon} Semana ${week.semana} — ${week.titulo}`;
-      document.getElementById("missionWeekDesc").textContent = week.descricao;
+      document.getElementById("missionWeekTitle").textContent = `${phase?.icone || "🗺️"} Semana ${week.semana} — ${week.titulo}`;
+      document.getElementById("missionWeekDesc").textContent = `${week.descricao} • Reino: ${week.reino || phase?.reino || ""}`;
+      document.getElementById("missionWeekStory").textContent = week.narrativa || phase?.lore || "";
 
-      const reward = chestRewardForWeek(weekNumber);
       const chestOpen = isChestOpened(weekNumber);
       const chestButton = document.getElementById("btnOpenSelectedChest");
-      document.getElementById("selectedChestIcon").textContent = chestOpen ? reward.icon : "🧰";
-      document.getElementById("selectedChestTitle").textContent = chestOpen ? `${reward.nome}` : "Baú da semana";
+      document.getElementById("selectedChestIcon").textContent = chestOpen ? reward?.icon || "🎁" : "🧰";
+      document.getElementById("selectedChestTitle").textContent = chestOpen ? `${reward?.nome || "Recompensa coletada"}` : "Baú da semana";
+      document.getElementById("selectedChestRewardLine").textContent = `${reward?.icon || "🎁"} ${reward?.nome || "Recompensa semanal"} — ${reward?.desc || ""}`;
       document.getElementById("selectedChestDesc").textContent = chestOpen
         ? `Recompensa conquistada na semana ${weekNumber}.`
         : isWeekComplete(weekNumber)
-          ? `Baú liberado: ${reward.icon} ${reward.nome}`
-          : `Complete as 5 missões para ganhar ${reward.icon} ${reward.nome}.`;
+          ? `Baú liberado no ${week.reino || "reino atual"}.`
+          : `Complete as 5 missões para liberar a recompensa desta semana.`;
 
       chestButton.textContent = chestOpen ? "Baú já aberto" : "Abrir baú";
       chestButton.disabled = chestOpen;
@@ -1415,12 +1502,14 @@
         const mission = document.createElement("div");
         mission.className = "mission";
         mission.innerHTML = `
-          <div class="mission-node ${done ? "done" : ""} ${current ? "current" : ""}" title="${day.titulo}">
-            <div class="icon">${disciplineIcon(day.disciplina)}</div>
+          <div class="mission-node ${done ? "done" : ""} ${current ? "current" : ""} ${day.raridade || ""}" title="${day.titulo}">
+            <div class="icon">${day.iconeMissao || day.disciplinaIcone || "📘"}</div>
             <div class="num">D${String(day.numero).padStart(3, "0")}</div>
           </div>
+          <div class="mission-rarity ${rarityClass(day.raridade)}">${day.raridade || "comum"}</div>
           <div class="mission-title">${day.titulo}</div>
-          <div class="reward">✨ 10 XP • 🪙 3 moedas</div>
+          <div class="mission-meta">${day.disciplinaIcone || ""} ${day.disciplinaNome || day.disciplina} • ${day.expansao || ""}</div>
+          <div class="reward">✨ ${day.xp || 10} XP • 🪙 ${day.moedas || 3}</div>
           <div class="mission-actions">
             <a class="mini-btn open" href="${day.arquivo}">Abrir</a>
             <button class="mini-btn ${done ? "undo" : "done"}">${done ? "Desmarcar" : "Concluir"}</button>
@@ -1449,6 +1538,7 @@
           <div class="today-tag">🗓️ Fora da data do cronograma</div>
           <h3>${fallback ? `Próxima missão: ${fallback.titulo}` : "Todas as missões concluídas"}</h3>
           <p>${fallback ? `Dia ${String(fallback.numero).padStart(3, "0")} • Semana ${fallback.semana}` : "Parabéns. O mapa inteiro já foi vencido."}</p>
+          <div class="today-bonus">${fallback ? `${fallback.iconeMissao || "📜"} ${fallback.raridade || "comum"} • ✨ ${fallback.xp || 10} XP • 🪙 ${fallback.moedas || 3}` : "Mapa completo."}</div>
           <div class="today-actions">
             ${fallback ? `<a class="btn btn-primary" href="${fallback.arquivo}">Abrir próxima missão</a>` : `<a class="btn btn-primary" href="#weekBoard">Ver tabuleiro</a>`}
           </div>
@@ -1459,7 +1549,8 @@
       container.innerHTML = `
         <div class="today-tag">📅 Hoje no mapa • Dia ${String(today.numero).padStart(3, "0")}</div>
         <h3>${today.titulo}</h3>
-        <p>Semana ${today.semana} • ${today.disciplina} • ${today.expansao || "Missão principal do dia"}</p>
+        <p>${today.reinoIcone || ""} ${today.reino || ""} • ${today.disciplinaIcone || ""} ${today.disciplinaNome || today.disciplina} • ${today.expansao || "Missão principal do dia"}</p>
+        <div class="today-bonus">${today.iconeMissao || "📜"} ${today.raridade || "comum"} • ✨ ${today.xp || 10} XP • 🪙 ${today.moedas || 3}</div>
         <div class="today-actions">
           <a class="btn btn-primary" href="${today.arquivo}">Abrir apostila de hoje</a>
           <button class="btn ${isDayDone(today.numero) ? "btn-danger" : "btn-secondary"}" id="todayToggleBtn">
