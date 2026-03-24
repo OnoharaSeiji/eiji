@@ -1,60 +1,124 @@
 const DATA_INICIO_CRONOGRAMA = "2026-03-24";
 
+const DISCIPLINAS = {
+  portugues: {
+    id: "portugues",
+    nome: "Português",
+    icone: "📘",
+    cor: "#2563eb"
+  },
+  matematica: {
+    id: "matematica",
+    nome: "Matemática",
+    icone: "🧮",
+    cor: "#16a34a"
+  },
+  revisao: {
+    id: "revisao",
+    nome: "Revisão",
+    icone: "🧭",
+    cor: "#f59e0b"
+  }
+};
+
 const FASES = [
   {
     id: "fase-1-base-5ano",
     titulo: "Fase 1 — Base forte do 5º ano",
+    reino: "Reino da Leitura",
+    icone: "📚",
     inicioSemana: 1,
     fimSemana: 12,
     cor: "#2563eb",
-    descricao: "Consolidação das bases de Português e Matemática do 5º ano."
+    descricao: "Consolidação das bases de Português e Matemática do 5º ano.",
+    lore: "Aqui o herói aprende a ler melhor, pensar com clareza e construir a base da jornada."
   },
   {
     id: "fase-2-consolidacao-aceleracao",
     titulo: "Fase 2 — Consolidação e aceleração",
+    reino: "Vale dos Desafios",
+    icone: "⛰️",
     inicioSemana: 13,
     fimSemana: 24,
     cor: "#16a34a",
-    descricao: "Aprofundamento das habilidades centrais e aumento gradual de dificuldade."
+    descricao: "Aprofundamento das habilidades centrais e aumento gradual de dificuldade.",
+    lore: "Os desafios ficam mais densos, mas o herói ganha força, atenção e velocidade."
   },
   {
     id: "fase-3-ponte-6ano",
     titulo: "Fase 3 — Ponte para o 6º ano",
+    reino: "Ponte dos Mestres",
+    icone: "🌉",
     inicioSemana: 25,
     fimSemana: 36,
     cor: "#ca8a04",
-    descricao: "Introdução progressiva aos conteúdos estruturantes do 6º ano."
+    descricao: "Introdução progressiva aos conteúdos estruturantes do 6º ano.",
+    lore: "É a travessia entre o que já foi aprendido e o que o herói está pronto para dominar."
   },
   {
     id: "fase-4-dominio-hibrido",
     titulo: "Fase 4 — Domínio híbrido 5º + 6º",
+    reino: "Terras da Mistura",
+    icone: "🧩",
     inicioSemana: 37,
     fimSemana: 45,
     cor: "#9333ea",
-    descricao: "Mistura estratégica de conteúdos para flexibilidade cognitiva."
+    descricao: "Mistura estratégica de conteúdos para flexibilidade cognitiva.",
+    lore: "Nas Terras da Mistura, o herói aprende a trocar de estratégia sem se perder."
   },
   {
     id: "fase-5-sprint-final",
     titulo: "Fase 5 — Sprint final Objetivo",
+    reino: "Castelo do Desafio Final",
+    icone: "🏰",
     inicioSemana: 46,
     fimSemana: 51,
     cor: "#dc2626",
-    descricao: "Revisão final, simulados, correção de erros e estratégia de prova."
+    descricao: "Revisão final, simulados, correção de erros e estratégia de prova.",
+    lore: "A reta final exige foco, confiança e inteligência para vencer o castelo."
   }
 ];
 
-const SEMANAS = [
+const BAU_POOL = [
+  { icon: "🪶", nome: "Pena da Compreensão", desc: "Ajuda a enxergar a ideia principal." },
+  { icon: "🛡️", nome: "Escudo da Atenção", desc: "Protege contra distrações nos estudos." },
+  { icon: "🗝️", nome: "Chave dos Números", desc: "Abre portas para desafios matemáticos." },
+  { icon: "💎", nome: "Cristal da Persistência", desc: "Fortalece a constância do herói." },
+  { icon: "📜", nome: "Pergaminho da Estratégia", desc: "Lembra o caminho certo na hora da prova." },
+  { icon: "🧭", nome: "Bússola da Clareza", desc: "Ajuda a seguir a direção correta." },
+  { icon: "🔥", nome: "Tocha do Foco", desc: "Ilumina o próximo passo da jornada." },
+  { icon: "👑", nome: "Coroa da Constância", desc: "Símbolo de quem não abandona o caminho." }
+];
+
+const ICONES_MISSAO_POR_POSICAO = ["📜", "🧩", "🔎", "⚔️", "🧰"];
+const RARIDADE_POR_POSICAO = ["comum", "comum", "comum", "incomum", "raro"];
+
+function d(disciplina, titulo, expansao, tags) {
+  return { disciplina, titulo, expansao, tags };
+}
+
+function recompensaSemana(semana) {
+  return BAU_POOL[(semana - 1) % BAU_POOL.length];
+}
+
+function narrativaSemana(semana, faseId, titulo) {
+  const fase = FASES.find((f) => f.id === faseId);
+  const reino = fase ? fase.reino : "Mapa";
+  return `Missão da semana ${semana} no ${reino}: ${titulo}.`;
+}
+
+const SEMANAS_BASE = [
   {
     semana: 1,
     fase: "fase-1-base-5ano",
     titulo: "Leitura, interpretação e numeração",
     descricao: "Construção da base inicial em leitura e sistema de numeração decimal.",
     dias: [
-      { disciplina: "portugues", titulo: "Ideia principal do texto", expansao: "Leitura guiada", tags: ["leitura", "interpretacao", "ideia-principal"] },
-      { disciplina: "matematica", titulo: "Leitura, escrita e comparação de números naturais", expansao: "Reta numérica", tags: ["numeros", "comparacao", "valor-posicional"] },
-      { disciplina: "portugues", titulo: "Informação explícita e implícita", expansao: "Inferência simples", tags: ["texto", "explicita", "implicita"] },
-      { disciplina: "matematica", titulo: "Valor posicional e decomposição", expansao: "Material dourado", tags: ["decomposicao", "ordens", "classes"] },
-      { disciplina: "revisao", titulo: "Revisão da semana + Quiz 20 + Ciências: observar, registrar e comparar", expansao: "Ciências", tags: ["revisao", "quiz20", "ciencias"] }
+      d("portugues", "Ideia principal do texto", "Leitura guiada", ["leitura", "interpretacao", "ideia-principal"]),
+      d("matematica", "Leitura, escrita e comparação de números naturais", "Reta numérica", ["numeros", "comparacao", "valor-posicional"]),
+      d("portugues", "Informação explícita e implícita", "Inferência simples", ["texto", "explicita", "implicita"]),
+      d("matematica", "Valor posicional e decomposição", "Material dourado", ["decomposicao", "ordens", "classes"]),
+      d("revisao", "Revisão da semana + Quiz 20 + Ciências: observar, registrar e comparar", "Ciências", ["revisao", "quiz20", "ciencias"])
     ]
   },
   {
@@ -63,11 +127,11 @@ const SEMANAS = [
     titulo: "Inferência e operações iniciais",
     descricao: "Leitura com pistas do texto e fortalecimento de operações básicas.",
     dias: [
-      { disciplina: "portugues", titulo: "Pistas do texto e inferência simples", expansao: "Leitura guiada", tags: ["inferencia", "leitura", "pistas"] },
-      { disciplina: "matematica", titulo: "Ordem crescente, decrescente e comparação", expansao: "Sequências numéricas", tags: ["ordem", "comparacao", "sequencia"] },
-      { disciplina: "portugues", titulo: "Sentido de palavras no contexto", expansao: "Vocabulário contextual", tags: ["vocabulario", "contexto", "interpretacao"] },
-      { disciplina: "matematica", titulo: "Adição e subtração sem e com reagrupamento", expansao: "Contas armadas", tags: ["adicao", "subtracao", "reagrupamento"] },
-      { disciplina: "revisao", titulo: "Revisão da semana + Quiz 20 + História: passado, presente e fontes", expansao: "História", tags: ["revisao", "quiz20", "historia"] }
+      d("portugues", "Pistas do texto e inferência simples", "Leitura guiada", ["inferencia", "leitura", "pistas"]),
+      d("matematica", "Ordem crescente, decrescente e comparação", "Sequências numéricas", ["ordem", "comparacao", "sequencia"]),
+      d("portugues", "Sentido de palavras no contexto", "Vocabulário contextual", ["vocabulario", "contexto", "interpretacao"]),
+      d("matematica", "Adição e subtração sem e com reagrupamento", "Contas armadas", ["adicao", "subtracao", "reagrupamento"]),
+      d("revisao", "Revisão da semana + Quiz 20 + História: passado, presente e fontes", "História", ["revisao", "quiz20", "historia"])
     ]
   },
   {
@@ -76,11 +140,11 @@ const SEMANAS = [
     titulo: "Narrativa e grupos iguais",
     descricao: "Elementos da narrativa e introdução à multiplicação e divisão.",
     dias: [
-      { disciplina: "portugues", titulo: "Elementos da narrativa", expansao: "Contação de história", tags: ["narrativa", "personagem", "tempo"] },
-      { disciplina: "matematica", titulo: "Multiplicação como adição de grupos iguais", expansao: "Objetos concretos", tags: ["multiplicacao", "grupos-iguais", "tabuada"] },
-      { disciplina: "portugues", titulo: "Personagem, tempo, espaço e conflito", expansao: "Mapa da narrativa", tags: ["personagem", "espaco", "conflito"] },
-      { disciplina: "matematica", titulo: "Divisão como repartição e medida", expansao: "Distribuição concreta", tags: ["divisao", "reparticao", "medida"] },
-      { disciplina: "revisao", titulo: "Revisão da semana + Quiz 20 + Geografia: lugar, bairro e mapa simples", expansao: "Geografia", tags: ["revisao", "quiz20", "geografia"] }
+      d("portugues", "Elementos da narrativa", "Contação de história", ["narrativa", "personagem", "tempo"]),
+      d("matematica", "Multiplicação como adição de grupos iguais", "Objetos concretos", ["multiplicacao", "grupos-iguais", "tabuada"]),
+      d("portugues", "Personagem, tempo, espaço e conflito", "Mapa da narrativa", ["personagem", "espaco", "conflito"]),
+      d("matematica", "Divisão como repartição e medida", "Distribuição concreta", ["divisao", "reparticao", "medida"]),
+      d("revisao", "Revisão da semana + Quiz 20 + Geografia: lugar, bairro e mapa simples", "Geografia", ["revisao", "quiz20", "geografia"])
     ]
   },
   {
@@ -89,11 +153,11 @@ const SEMANAS = [
     titulo: "Leitura fluente e problemas",
     descricao: "Fluência leitora e problemas com as quatro operações.",
     dias: [
-      { disciplina: "portugues", titulo: "Leitura fluente e compreensão global", expansao: "Leitura em voz alta", tags: ["fluencia", "compreensao", "leitura"] },
-      { disciplina: "matematica", titulo: "Problemas com as 4 operações", expansao: "Situações do cotidiano", tags: ["problemas", "operacoes", "raciocinio"] },
-      { disciplina: "portugues", titulo: "Pontuação básica na leitura e no sentido", expansao: "Leitura expressiva", tags: ["pontuacao", "entonação", "sentido"] },
-      { disciplina: "matematica", titulo: "Escolha da operação correta em problemas", expansao: "Palavras-chave com sentido", tags: ["problemas", "estrategia", "operacoes"] },
-      { disciplina: "revisao", titulo: "Revisão da semana + Quiz 20 + Ciências: estados físicos e transformações", expansao: "Ciências", tags: ["revisao", "quiz20", "ciencias"] }
+      d("portugues", "Leitura fluente e compreensão global", "Leitura em voz alta", ["fluencia", "compreensao", "leitura"]),
+      d("matematica", "Problemas com as 4 operações", "Situações do cotidiano", ["problemas", "operacoes", "raciocinio"]),
+      d("portugues", "Pontuação básica na leitura e no sentido", "Leitura expressiva", ["pontuacao", "entonacao", "sentido"]),
+      d("matematica", "Escolha da operação correta em problemas", "Palavras-chave com sentido", ["problemas", "estrategia", "operacoes"]),
+      d("revisao", "Revisão da semana + Quiz 20 + Ciências: estados físicos e transformações", "Ciências", ["revisao", "quiz20", "ciencias"])
     ]
   },
   {
@@ -102,11 +166,11 @@ const SEMANAS = [
     titulo: "Classes de palavras e frações",
     descricao: "Primeiro contato com substantivo, artigo, adjetivo e fração.",
     dias: [
-      { disciplina: "portugues", titulo: "Substantivo, artigo e adjetivo", expansao: "Classificação no texto", tags: ["gramatica", "substantivo", "adjetivo"] },
-      { disciplina: "matematica", titulo: "Fração como parte do todo", expansao: "Recortes e figuras", tags: ["fracao", "parte-todo", "concreto"] },
-      { disciplina: "portugues", titulo: "Relações entre palavras no texto", expansao: "Campo semântico", tags: ["texto", "coerencia", "vocabulario"] },
-      { disciplina: "matematica", titulo: "Representação pictórica de frações", expansao: "Modelos visuais", tags: ["fracao", "pictorico", "representacao"] },
-      { disciplina: "revisao", titulo: "Revisão da semana + Quiz 20 + História: comunidade, regras e convivência", expansao: "História", tags: ["revisao", "quiz20", "historia"] }
+      d("portugues", "Substantivo, artigo e adjetivo", "Classificação no texto", ["gramatica", "substantivo", "adjetivo"]),
+      d("matematica", "Fração como parte do todo", "Recortes e figuras", ["fracao", "parte-todo", "concreto"]),
+      d("portugues", "Relações entre palavras no texto", "Campo semântico", ["texto", "coerencia", "vocabulario"]),
+      d("matematica", "Representação pictórica de frações", "Modelos visuais", ["fracao", "pictorico", "representacao"]),
+      d("revisao", "Revisão da semana + Quiz 20 + História: comunidade, regras e convivência", "História", ["revisao", "quiz20", "historia"])
     ]
   },
   {
@@ -115,11 +179,11 @@ const SEMANAS = [
     titulo: "Verbos e frações equivalentes",
     descricao: "Uso dos verbos e comparação de frações por equivalência.",
     dias: [
-      { disciplina: "portugues", titulo: "Verbos e noção de tempo verbal", expansao: "Linha do tempo", tags: ["verbos", "tempo-verbal", "gramatica"] },
-      { disciplina: "matematica", titulo: "Frações equivalentes", expansao: "Dobrar e repartir", tags: ["fracao", "equivalencia", "comparacao"] },
-      { disciplina: "portugues", titulo: "Verbos em narrativas", expansao: "Texto narrativo", tags: ["verbos", "narrativa", "coesao"] },
-      { disciplina: "matematica", titulo: "Comparação de frações", expansao: "Barras de fração", tags: ["fracao", "comparacao", "ordem"] },
-      { disciplina: "revisao", titulo: "Revisão da semana + Quiz 20 + Geografia: paisagem natural e humanizada", expansao: "Geografia", tags: ["revisao", "quiz20", "geografia"] }
+      d("portugues", "Verbos e noção de tempo verbal", "Linha do tempo", ["verbos", "tempo-verbal", "gramatica"]),
+      d("matematica", "Frações equivalentes", "Dobrar e repartir", ["fracao", "equivalencia", "comparacao"]),
+      d("portugues", "Verbos em narrativas", "Texto narrativo", ["verbos", "narrativa", "coesao"]),
+      d("matematica", "Comparação de frações", "Barras de fração", ["fracao", "comparacao", "ordem"]),
+      d("revisao", "Revisão da semana + Quiz 20 + Geografia: paisagem natural e humanizada", "Geografia", ["revisao", "quiz20", "geografia"])
     ]
   },
   {
@@ -128,11 +192,11 @@ const SEMANAS = [
     titulo: "Pronomes e números decimais",
     descricao: "Coesão textual com pronomes e introdução aos decimais.",
     dias: [
-      { disciplina: "portugues", titulo: "Pronomes e retomada no texto", expansao: "Substituições no texto", tags: ["pronomes", "coesao", "retomada"] },
-      { disciplina: "matematica", titulo: "Números decimais e dinheiro", expansao: "Moedas e cédulas", tags: ["decimais", "dinheiro", "sistema-decimal"] },
-      { disciplina: "portugues", titulo: "Coesão simples", expansao: "Ligações entre frases", tags: ["coesao", "texto", "organizacao"] },
-      { disciplina: "matematica", titulo: "Comparação entre decimais", expansao: "Reta numérica", tags: ["decimais", "comparacao", "ordem"] },
-      { disciplina: "revisao", titulo: "Revisão da semana + Quiz 20 + Ciências: corpo humano e hábitos saudáveis", expansao: "Ciências", tags: ["revisao", "quiz20", "ciencias"] }
+      d("portugues", "Pronomes e retomada no texto", "Substituições no texto", ["pronomes", "coesao", "retomada"]),
+      d("matematica", "Números decimais e dinheiro", "Moedas e cédulas", ["decimais", "dinheiro", "sistema-decimal"]),
+      d("portugues", "Coesão simples", "Ligações entre frases", ["coesao", "texto", "organizacao"]),
+      d("matematica", "Comparação entre decimais", "Reta numérica", ["decimais", "comparacao", "ordem"]),
+      d("revisao", "Revisão da semana + Quiz 20 + Ciências: corpo humano e hábitos saudáveis", "Ciências", ["revisao", "quiz20", "ciencias"])
     ]
   },
   {
@@ -141,11 +205,11 @@ const SEMANAS = [
     titulo: "Gêneros curtos e operações com decimais",
     descricao: "Leitura de gêneros curtos com humor e uso de decimais em contexto real.",
     dias: [
-      { disciplina: "portugues", titulo: "Gêneros literários curtos — anedota, tirinha, miniconto", expansao: "Leitura comparativa", tags: ["generos", "tirinha", "miniconto"] },
-      { disciplina: "matematica", titulo: "Adição e subtração com decimais", expansao: "Dinheiro", tags: ["decimais", "adicao", "subtracao"] },
-      { disciplina: "portugues", titulo: "Humor e intenção do texto", expansao: "Tirinhas", tags: ["humor", "intencao", "interpretacao"] },
-      { disciplina: "matematica", titulo: "Problemas com dinheiro", expansao: "Compras e troco", tags: ["dinheiro", "problemas", "decimais"] },
-      { disciplina: "revisao", titulo: "Revisão da semana + Quiz 20 + História: formação do povo brasileiro", expansao: "História", tags: ["revisao", "quiz20", "historia"] }
+      d("portugues", "Gêneros literários curtos — anedota, tirinha, miniconto", "Leitura comparativa", ["generos", "tirinha", "miniconto"]),
+      d("matematica", "Adição e subtração com decimais", "Dinheiro", ["decimais", "adicao", "subtracao"]),
+      d("portugues", "Humor e intenção do texto", "Tirinhas", ["humor", "intencao", "interpretacao"]),
+      d("matematica", "Problemas com dinheiro", "Compras e troco", ["dinheiro", "problemas", "decimais"]),
+      d("revisao", "Revisão da semana + Quiz 20 + História: formação do povo brasileiro", "História", ["revisao", "quiz20", "historia"])
     ]
   },
   {
@@ -154,11 +218,11 @@ const SEMANAS = [
     titulo: "Poema e porcentagem simples",
     descricao: "Leitura poética e introdução concreta às porcentagens mais usuais.",
     dias: [
-      { disciplina: "portugues", titulo: "Poemas, rimas e efeito de sentido", expansao: "Leitura expressiva", tags: ["poema", "rima", "efeito-de-sentido"] },
-      { disciplina: "matematica", titulo: "Porcentagens simples — 10%, 25%, 50%, 100%", expansao: "Barras e quadros 100", tags: ["porcentagem", "fracao", "decimal"] },
-      { disciplina: "portugues", titulo: "Leitura expressiva e interpretação poética", expansao: "Entonação", tags: ["poesia", "interpretacao", "leitura"] },
-      { disciplina: "matematica", titulo: "Porcentagem ligada a frações e dinheiro", expansao: "Descontos simples", tags: ["porcentagem", "dinheiro", "fracao"] },
-      { disciplina: "revisao", titulo: "Revisão da semana + Quiz 20 + Geografia: orientação, legenda e escala simples", expansao: "Geografia", tags: ["revisao", "quiz20", "geografia"] }
+      d("portugues", "Poemas, rimas e efeito de sentido", "Leitura expressiva", ["poema", "rima", "efeito-de-sentido"]),
+      d("matematica", "Porcentagens simples — 10%, 25%, 50%, 100%", "Barras e quadros 100", ["porcentagem", "fracao", "decimal"]),
+      d("portugues", "Leitura expressiva e interpretação poética", "Entonação", ["poesia", "interpretacao", "leitura"]),
+      d("matematica", "Porcentagem ligada a frações e dinheiro", "Descontos simples", ["porcentagem", "dinheiro", "fracao"]),
+      d("revisao", "Revisão da semana + Quiz 20 + Geografia: orientação, legenda e escala simples", "Geografia", ["revisao", "quiz20", "geografia"])
     ]
   },
   {
@@ -167,11 +231,11 @@ const SEMANAS = [
     titulo: "Textos do cotidiano e medidas de comprimento",
     descricao: "Leitura funcional e medidas em situações práticas.",
     dias: [
-      { disciplina: "portugues", titulo: "Bilhete, aviso e instrução", expansao: "Textos do dia a dia", tags: ["bilhete", "aviso", "instrucao"] },
-      { disciplina: "matematica", titulo: "Medidas de comprimento", expansao: "Régua e fita métrica", tags: ["medidas", "comprimento", "unidades"] },
-      { disciplina: "portugues", titulo: "Finalidade e estrutura dos gêneros do cotidiano", expansao: "Comparação de gêneros", tags: ["generos", "funcao-social", "estrutura"] },
-      { disciplina: "matematica", titulo: "Conversões simples de medida", expansao: "Quadro de unidades", tags: ["comprimento", "conversao", "unidades"] },
-      { disciplina: "revisao", titulo: "Revisão da semana + Quiz 20 + Ciências: seres vivos e classificação inicial", expansao: "Ciências", tags: ["revisao", "quiz20", "ciencias"] }
+      d("portugues", "Bilhete, aviso e instrução", "Textos do dia a dia", ["bilhete", "aviso", "instrucao"]),
+      d("matematica", "Medidas de comprimento", "Régua e fita métrica", ["medidas", "comprimento", "unidades"]),
+      d("portugues", "Finalidade e estrutura dos gêneros do cotidiano", "Comparação de gêneros", ["generos", "funcao-social", "estrutura"]),
+      d("matematica", "Conversões simples de medida", "Quadro de unidades", ["comprimento", "conversao", "unidades"]),
+      d("revisao", "Revisão da semana + Quiz 20 + Ciências: seres vivos e classificação inicial", "Ciências", ["revisao", "quiz20", "ciencias"])
     ]
   },
   {
@@ -180,11 +244,11 @@ const SEMANAS = [
     titulo: "Resumo e outras medidas",
     descricao: "Selecionar informações importantes e resolver problemas com medidas.",
     dias: [
-      { disciplina: "portugues", titulo: "Resumo e reconto", expansao: "Síntese oral", tags: ["resumo", "reconto", "selecao-de-informacoes"] },
-      { disciplina: "matematica", titulo: "Medidas de massa e capacidade", expansao: "Balança e recipientes", tags: ["massa", "capacidade", "medidas"] },
-      { disciplina: "portugues", titulo: "Selecionar informações importantes", expansao: "Marcar palavras-chave", tags: ["leitura", "resumo", "informacoes"] },
-      { disciplina: "matematica", titulo: "Resolução de problemas com medidas", expansao: "Situações reais", tags: ["problemas", "medidas", "aplicacao"] },
-      { disciplina: "revisao", titulo: "Revisão da semana + Quiz 20 + História: território, município e estado", expansao: "História", tags: ["revisao", "quiz20", "historia"] }
+      d("portugues", "Resumo e reconto", "Síntese oral", ["resumo", "reconto", "selecao-de-informacoes"]),
+      d("matematica", "Medidas de massa e capacidade", "Balança e recipientes", ["massa", "capacidade", "medidas"]),
+      d("portugues", "Selecionar informações importantes", "Marcar palavras-chave", ["leitura", "resumo", "informacoes"]),
+      d("matematica", "Resolução de problemas com medidas", "Situações reais", ["problemas", "medidas", "aplicacao"]),
+      d("revisao", "Revisão da semana + Quiz 20 + História: território, município e estado", "História", ["revisao", "quiz20", "historia"])
     ]
   },
   {
@@ -193,11 +257,11 @@ const SEMANAS = [
     titulo: "Fechamento da fase 1",
     descricao: "Revisão ampla das bases do 5º ano com simulados guiados.",
     dias: [
-      { disciplina: "portugues", titulo: "Revisão fase 1 — Português", expansao: "Mapa de erros", tags: ["revisao", "fase1", "portugues"] },
-      { disciplina: "matematica", titulo: "Revisão fase 1 — Matemática", expansao: "Mapa de erros", tags: ["revisao", "fase1", "matematica"] },
-      { disciplina: "portugues", titulo: "Simulado guiado fase 1 — Português", expansao: "Correção comentada", tags: ["simulado", "fase1", "portugues"] },
-      { disciplina: "matematica", titulo: "Simulado guiado fase 1 — Matemática", expansao: "Correção comentada", tags: ["simulado", "fase1", "matematica"] },
-      { disciplina: "revisao", titulo: "Revisão + Quiz 20 + fechamento diagnóstico da fase 1", expansao: "Diagnóstico", tags: ["revisao", "quiz20", "diagnostico"] }
+      d("portugues", "Revisão fase 1 — Português", "Mapa de erros", ["revisao", "fase1", "portugues"]),
+      d("matematica", "Revisão fase 1 — Matemática", "Mapa de erros", ["revisao", "fase1", "matematica"]),
+      d("portugues", "Simulado guiado fase 1 — Português", "Correção comentada", ["simulado", "fase1", "portugues"]),
+      d("matematica", "Simulado guiado fase 1 — Matemática", "Correção comentada", ["simulado", "fase1", "matematica"]),
+      d("revisao", "Revisão + Quiz 20 + fechamento diagnóstico da fase 1", "Diagnóstico", ["revisao", "quiz20", "diagnostico"])
     ]
   },
   {
@@ -206,11 +270,11 @@ const SEMANAS = [
     titulo: "Comunicação e perímetro",
     descricao: "Textos de comunicação e introdução ao perímetro.",
     dias: [
-      { disciplina: "portugues", titulo: "Cartas, e-mails e mensagens", expansao: "Comparação de suportes", tags: ["carta", "email", "mensagem"] },
-      { disciplina: "matematica", titulo: "Perímetro", expansao: "Contorno de figuras", tags: ["perimetro", "geometria", "medidas"] },
-      { disciplina: "portugues", titulo: "Interlocutor, objetivo e linguagem", expansao: "Quem fala com quem", tags: ["linguagem", "interlocutor", "generos"] },
-      { disciplina: "matematica", titulo: "Problemas com perímetro", expansao: "Malha quadriculada", tags: ["perimetro", "problemas", "figuras"] },
-      { disciplina: "revisao", titulo: "Revisão da semana + Quiz 20 + Geografia: clima e tempo", expansao: "Geografia", tags: ["revisao", "quiz20", "geografia"] }
+      d("portugues", "Cartas, e-mails e mensagens", "Comparação de suportes", ["carta", "email", "mensagem"]),
+      d("matematica", "Perímetro", "Contorno de figuras", ["perimetro", "geometria", "medidas"]),
+      d("portugues", "Interlocutor, objetivo e linguagem", "Quem fala com quem", ["linguagem", "interlocutor", "generos"]),
+      d("matematica", "Problemas com perímetro", "Malha quadriculada", ["perimetro", "problemas", "figuras"]),
+      d("revisao", "Revisão da semana + Quiz 20 + Geografia: clima e tempo", "Geografia", ["revisao", "quiz20", "geografia"])
     ]
   },
   {
@@ -219,11 +283,11 @@ const SEMANAS = [
     titulo: "Ortografia e área",
     descricao: "Regularidades ortográficas e noção de área em malha.",
     dias: [
-      { disciplina: "portugues", titulo: "Ortografia de uso frequente", expansao: "Famílias de palavras", tags: ["ortografia", "escrita", "uso-frequente"] },
-      { disciplina: "matematica", titulo: "Área por contagem de quadradinhos", expansao: "Malha quadriculada", tags: ["area", "quadradinhos", "geometria"] },
-      { disciplina: "portugues", titulo: "Regularidades ortográficas", expansao: "Padrões", tags: ["ortografia", "padroes", "escrita"] },
-      { disciplina: "matematica", titulo: "Área em malha quadriculada", expansao: "Figuras compostas", tags: ["area", "malha", "figuras"] },
-      { disciplina: "revisao", titulo: "Revisão da semana + Quiz 20 + Ciências: água, ar e ambiente", expansao: "Ciências", tags: ["revisao", "quiz20", "ciencias"] }
+      d("portugues", "Ortografia de uso frequente", "Famílias de palavras", ["ortografia", "escrita", "uso-frequente"]),
+      d("matematica", "Área por contagem de quadradinhos", "Malha quadriculada", ["area", "quadradinhos", "geometria"]),
+      d("portugues", "Regularidades ortográficas", "Padrões", ["ortografia", "padroes", "escrita"]),
+      d("matematica", "Área em malha quadriculada", "Figuras compostas", ["area", "malha", "figuras"]),
+      d("revisao", "Revisão da semana + Quiz 20 + Ciências: água, ar e ambiente", "Ciências", ["revisao", "quiz20", "ciencias"])
     ]
   },
   {
@@ -232,11 +296,11 @@ const SEMANAS = [
     titulo: "Notícia e tabelas",
     descricao: "Texto jornalístico e leitura de tabelas.",
     dias: [
-      { disciplina: "portugues", titulo: "Notícia e manchete", expansao: "Jornal", tags: ["noticia", "manchete", "jornal"] },
-      { disciplina: "matematica", titulo: "Tabelas", expansao: "Organização de dados", tags: ["tabelas", "dados", "leitura"] },
-      { disciplina: "portugues", titulo: "Fato principal e detalhes", expansao: "Pirâmide de informações", tags: ["noticia", "fato", "detalhes"] },
-      { disciplina: "matematica", titulo: "Leitura e interpretação de tabelas", expansao: "Pesquisa simples", tags: ["tabelas", "interpretacao", "dados"] },
-      { disciplina: "revisao", titulo: "Revisão da semana + Quiz 20 + História: colonização e trabalho", expansao: "História", tags: ["revisao", "quiz20", "historia"] }
+      d("portugues", "Notícia e manchete", "Jornal", ["noticia", "manchete", "jornal"]),
+      d("matematica", "Tabelas", "Organização de dados", ["tabelas", "dados", "leitura"]),
+      d("portugues", "Fato principal e detalhes", "Pirâmide de informações", ["noticia", "fato", "detalhes"]),
+      d("matematica", "Leitura e interpretação de tabelas", "Pesquisa simples", ["tabelas", "interpretacao", "dados"]),
+      d("revisao", "Revisão da semana + Quiz 20 + História: colonização e trabalho", "História", ["revisao", "quiz20", "historia"])
     ]
   },
   {
@@ -245,11 +309,11 @@ const SEMANAS = [
     titulo: "Tirinha e gráficos",
     descricao: "Humor visual e interpretação de gráficos de colunas.",
     dias: [
-      { disciplina: "portugues", titulo: "Cartum e tirinha", expansao: "Leitura visual", tags: ["cartum", "tirinha", "humor"] },
-      { disciplina: "matematica", titulo: "Gráficos de colunas", expansao: "Construção de gráfico", tags: ["graficos", "colunas", "dados"] },
-      { disciplina: "portugues", titulo: "Ironia, humor e pistas visuais", expansao: "Análise da imagem", tags: ["humor", "ironia", "pistas-visuais"] },
-      { disciplina: "matematica", titulo: "Interpretação de gráficos", expansao: "Comparação de dados", tags: ["graficos", "interpretacao", "comparacao"] },
-      { disciplina: "revisao", titulo: "Revisão da semana + Quiz 20 + Geografia: campo e cidade", expansao: "Geografia", tags: ["revisao", "quiz20", "geografia"] }
+      d("portugues", "Cartum e tirinha", "Leitura visual", ["cartum", "tirinha", "humor"]),
+      d("matematica", "Gráficos de colunas", "Construção de gráfico", ["graficos", "colunas", "dados"]),
+      d("portugues", "Ironia, humor e pistas visuais", "Análise da imagem", ["humor", "ironia", "pistas-visuais"]),
+      d("matematica", "Interpretação de gráficos", "Comparação de dados", ["graficos", "interpretacao", "comparacao"]),
+      d("revisao", "Revisão da semana + Quiz 20 + Geografia: campo e cidade", "Geografia", ["revisao", "quiz20", "geografia"])
     ]
   },
   {
@@ -258,11 +322,11 @@ const SEMANAS = [
     titulo: "Fato e opinião + polígonos",
     descricao: "Distinguir fato e opinião e reconhecer polígonos.",
     dias: [
-      { disciplina: "portugues", titulo: "Opinião e fato", expansao: "Marcas de opinião", tags: ["opiniao", "fato", "leitura-critica"] },
-      { disciplina: "matematica", titulo: "Geometria plana — polígonos", expansao: "Recortes e classificação", tags: ["poligonos", "geometria", "figuras-planas"] },
-      { disciplina: "portugues", titulo: "Marcas de opinião em textos curtos", expansao: "Análise de frases", tags: ["opiniao", "argumentacao", "texto"] },
-      { disciplina: "matematica", titulo: "Lados, vértices e ângulos", expansao: "Desenho de figuras", tags: ["lados", "vertices", "angulos"] },
-      { disciplina: "revisao", titulo: "Revisão da semana + Quiz 20 + Ciências: cadeia alimentar", expansao: "Ciências", tags: ["revisao", "quiz20", "ciencias"] }
+      d("portugues", "Opinião e fato", "Marcas de opinião", ["opiniao", "fato", "leitura-critica"]),
+      d("matematica", "Geometria plana — polígonos", "Recortes e classificação", ["poligonos", "geometria", "figuras-planas"]),
+      d("portugues", "Marcas de opinião em textos curtos", "Análise de frases", ["opiniao", "argumentacao", "texto"]),
+      d("matematica", "Lados, vértices e ângulos", "Desenho de figuras", ["lados", "vertices", "angulos"]),
+      d("revisao", "Revisão da semana + Quiz 20 + Ciências: cadeia alimentar", "Ciências", ["revisao", "quiz20", "ciencias"])
     ]
   },
   {
@@ -271,11 +335,11 @@ const SEMANAS = [
     titulo: "Parágrafo e sólidos geométricos",
     descricao: "Organização de ideias e reconhecimento de sólidos.",
     dias: [
-      { disciplina: "portugues", titulo: "Parágrafo e organização de ideias", expansao: "Sequência lógica", tags: ["paragrafo", "organizacao", "texto"] },
-      { disciplina: "matematica", titulo: "Sólidos geométricos", expansao: "Objetos do cotidiano", tags: ["solidos", "geometria", "espacial"] },
-      { disciplina: "portugues", titulo: "Tópico frasal e sequência lógica", expansao: "Ordenação de frases", tags: ["topico-frasal", "sequencia", "coesao"] },
-      { disciplina: "matematica", titulo: "Faces, arestas e vértices", expansao: "Modelos concretos", tags: ["faces", "arestas", "vertices"] },
-      { disciplina: "revisao", titulo: "Revisão da semana + Quiz 20 + História: escravidão e resistência", expansao: "História", tags: ["revisao", "quiz20", "historia"] }
+      d("portugues", "Parágrafo e organização de ideias", "Sequência lógica", ["paragrafo", "organizacao", "texto"]),
+      d("matematica", "Sólidos geométricos", "Objetos do cotidiano", ["solidos", "geometria", "espacial"]),
+      d("portugues", "Tópico frasal e sequência lógica", "Ordenação de frases", ["topico-frasal", "sequencia", "coesao"]),
+      d("matematica", "Faces, arestas e vértices", "Modelos concretos", ["faces", "arestas", "vertices"]),
+      d("revisao", "Revisão da semana + Quiz 20 + História: escravidão e resistência", "História", ["revisao", "quiz20", "historia"])
     ]
   },
   {
@@ -284,11 +348,11 @@ const SEMANAS = [
     titulo: "Narrativa autoral e planificações",
     descricao: "Produção de narrativa curta e relação entre sólidos e planificações.",
     dias: [
-      { disciplina: "portugues", titulo: "Produção de narrativa curta", expansao: "Planejamento da escrita", tags: ["escrita", "narrativa", "producao-textual"] },
-      { disciplina: "matematica", titulo: "Planificações", expansao: "Montagem de sólidos", tags: ["planificacao", "solidos", "geometria"] },
-      { disciplina: "portugues", titulo: "Começo, meio e fim", expansao: "Estrutura narrativa", tags: ["narrativa", "sequencia", "escrita"] },
-      { disciplina: "matematica", titulo: "Ligação entre sólido e planificação", expansao: "Recorte e dobra", tags: ["planificacao", "espacial", "representacao"] },
-      { disciplina: "revisao", titulo: "Revisão da semana + Quiz 20 + Geografia: relevo e hidrografia", expansao: "Geografia", tags: ["revisao", "quiz20", "geografia"] }
+      d("portugues", "Produção de narrativa curta", "Planejamento da escrita", ["escrita", "narrativa", "producao-textual"]),
+      d("matematica", "Planificações", "Montagem de sólidos", ["planificacao", "solidos", "geometria"]),
+      d("portugues", "Começo, meio e fim", "Estrutura narrativa", ["narrativa", "sequencia", "escrita"]),
+      d("matematica", "Ligação entre sólido e planificação", "Recorte e dobra", ["planificacao", "espacial", "representacao"]),
+      d("revisao", "Revisão da semana + Quiz 20 + Geografia: relevo e hidrografia", "Geografia", ["revisao", "quiz20", "geografia"])
     ]
   },
   {
@@ -297,11 +361,11 @@ const SEMANAS = [
     titulo: "Leitura multissemiótica e dados",
     descricao: "Leitura de textos com imagem e organização de dados simples.",
     dias: [
-      { disciplina: "portugues", titulo: "Leitura multissemiótica", expansao: "Imagem + texto", tags: ["multissemiose", "imagem", "texto"] },
-      { disciplina: "matematica", titulo: "Leitura de dados e pesquisa simples", expansao: "Coleta de dados", tags: ["dados", "pesquisa", "organizacao"] },
-      { disciplina: "portugues", titulo: "Imagem, cor, símbolo e sentido", expansao: "Cartazes", tags: ["imagem", "sentido", "simbolos"] },
-      { disciplina: "matematica", titulo: "Organização de dados", expansao: "Tabelas e registros", tags: ["dados", "tabelas", "organizacao"] },
-      { disciplina: "revisao", titulo: "Revisão da semana + Quiz 20 + Ciências: energia e fontes", expansao: "Ciências", tags: ["revisao", "quiz20", "ciencias"] }
+      d("portugues", "Leitura multissemiótica", "Imagem + texto", ["multissemiose", "imagem", "texto"]),
+      d("matematica", "Leitura de dados e pesquisa simples", "Coleta de dados", ["dados", "pesquisa", "organizacao"]),
+      d("portugues", "Imagem, cor, símbolo e sentido", "Cartazes", ["imagem", "sentido", "simbolos"]),
+      d("matematica", "Organização de dados", "Tabelas e registros", ["dados", "tabelas", "organizacao"]),
+      d("revisao", "Revisão da semana + Quiz 20 + Ciências: energia e fontes", "Ciências", ["revisao", "quiz20", "ciencias"])
     ]
   },
   {
@@ -310,11 +374,11 @@ const SEMANAS = [
     titulo: "Classes gramaticais e expressões numéricas",
     descricao: "Revisão gramatical e introdução às expressões numéricas simples.",
     dias: [
-      { disciplina: "portugues", titulo: "Classes gramaticais em uso", expansao: "Análise no texto", tags: ["gramatica", "classes", "uso"] },
-      { disciplina: "matematica", titulo: "Expressões numéricas simples", expansao: "Operações em sequência", tags: ["expressoes", "operacoes", "ordem"] },
-      { disciplina: "portugues", titulo: "Revisão de substantivo, verbo, adjetivo, pronome", expansao: "Quadro-resumo", tags: ["revisao", "gramatica", "classes"] },
-      { disciplina: "matematica", titulo: "Prioridade de cálculo introdutória", expansao: "Parênteses e sequência", tags: ["prioridade", "expressoes", "calculo"] },
-      { disciplina: "revisao", titulo: "Revisão da semana + Quiz 20 + História: independência e cidadania", expansao: "História", tags: ["revisao", "quiz20", "historia"] }
+      d("portugues", "Classes gramaticais em uso", "Análise no texto", ["gramatica", "classes", "uso"]),
+      d("matematica", "Expressões numéricas simples", "Operações em sequência", ["expressoes", "operacoes", "ordem"]),
+      d("portugues", "Revisão de substantivo, verbo, adjetivo, pronome", "Quadro-resumo", ["revisao", "gramatica", "classes"]),
+      d("matematica", "Prioridade de cálculo introdutória", "Parênteses e sequência", ["prioridade", "expressoes", "calculo"]),
+      d("revisao", "Revisão da semana + Quiz 20 + História: independência e cidadania", "História", ["revisao", "quiz20", "historia"])
     ]
   },
   {
@@ -323,11 +387,11 @@ const SEMANAS = [
     titulo: "Conectivos e padrões",
     descricao: "Conexão de ideias e raciocínio lógico com regularidades.",
     dias: [
-      { disciplina: "portugues", titulo: "Coesão e conectivos", expansao: "Ligando ideias", tags: ["coesao", "conectivos", "texto"] },
-      { disciplina: "matematica", titulo: "Raciocínio lógico e padrões", expansao: "Sequências", tags: ["padroes", "logica", "sequencias"] },
-      { disciplina: "portugues", titulo: "Porque, mas, então, depois, porém", expansao: "Reescrita", tags: ["conectivos", "sentido", "coesao"] },
-      { disciplina: "matematica", titulo: "Sequências e regularidades", expansao: "Descobrir a regra", tags: ["sequencias", "regularidades", "logica"] },
-      { disciplina: "revisao", titulo: "Revisão da semana + Quiz 20 + Geografia: população e migrações", expansao: "Geografia", tags: ["revisao", "quiz20", "geografia"] }
+      d("portugues", "Coesão e conectivos", "Ligando ideias", ["coesao", "conectivos", "texto"]),
+      d("matematica", "Raciocínio lógico e padrões", "Sequências", ["padroes", "logica", "sequencias"]),
+      d("portugues", "Porque, mas, então, depois, porém", "Reescrita", ["conectivos", "sentido", "coesao"]),
+      d("matematica", "Sequências e regularidades", "Descobrir a regra", ["sequencias", "regularidades", "logica"]),
+      d("revisao", "Revisão da semana + Quiz 20 + Geografia: população e migrações", "Geografia", ["revisao", "quiz20", "geografia"])
     ]
   },
   {
@@ -336,11 +400,11 @@ const SEMANAS = [
     titulo: "Simulados da fase 2",
     descricao: "Revisão e simulado com correção comentada.",
     dias: [
-      { disciplina: "portugues", titulo: "Revisão fase 2 — Português", expansao: "Mapa de erros", tags: ["revisao", "fase2", "portugues"] },
-      { disciplina: "matematica", titulo: "Revisão fase 2 — Matemática", expansao: "Mapa de erros", tags: ["revisao", "fase2", "matematica"] },
-      { disciplina: "portugues", titulo: "Simulado fase 2 — Português", expansao: "Correção comentada", tags: ["simulado", "fase2", "portugues"] },
-      { disciplina: "matematica", titulo: "Simulado fase 2 — Matemática", expansao: "Correção comentada", tags: ["simulado", "fase2", "matematica"] },
-      { disciplina: "revisao", titulo: "Revisão + Quiz 20 + correção comentada da fase 2", expansao: "Diagnóstico", tags: ["revisao", "quiz20", "correcao"] }
+      d("portugues", "Revisão fase 2 — Português", "Mapa de erros", ["revisao", "fase2", "portugues"]),
+      d("matematica", "Revisão fase 2 — Matemática", "Mapa de erros", ["revisao", "fase2", "matematica"]),
+      d("portugues", "Simulado fase 2 — Português", "Correção comentada", ["simulado", "fase2", "portugues"]),
+      d("matematica", "Simulado fase 2 — Matemática", "Correção comentada", ["simulado", "fase2", "matematica"]),
+      d("revisao", "Revisão + Quiz 20 + correção comentada da fase 2", "Diagnóstico", ["revisao", "quiz20", "correcao"])
     ]
   },
   {
@@ -349,11 +413,11 @@ const SEMANAS = [
     titulo: "Fechamento da fase 2",
     descricao: "Diagnóstico de lacunas e reforço dirigido.",
     dias: [
-      { disciplina: "portugues", titulo: "Diagnóstico de lacunas — Português", expansao: "Mapeamento", tags: ["diagnostico", "lacunas", "portugues"] },
-      { disciplina: "matematica", titulo: "Diagnóstico de lacunas — Matemática", expansao: "Mapeamento", tags: ["diagnostico", "lacunas", "matematica"] },
-      { disciplina: "portugues", titulo: "Reforço dirigido — Português", expansao: "Exercícios focados", tags: ["reforco", "portugues", "correcao"] },
-      { disciplina: "matematica", titulo: "Reforço dirigido — Matemática", expansao: "Exercícios focados", tags: ["reforco", "matematica", "correcao"] },
-      { disciplina: "revisao", titulo: "Revisão + Quiz 20 + fechamento da fase 2", expansao: "Síntese da fase", tags: ["revisao", "quiz20", "fechamento"] }
+      d("portugues", "Diagnóstico de lacunas — Português", "Mapeamento", ["diagnostico", "lacunas", "portugues"]),
+      d("matematica", "Diagnóstico de lacunas — Matemática", "Mapeamento", ["diagnostico", "lacunas", "matematica"]),
+      d("portugues", "Reforço dirigido — Português", "Exercícios focados", ["reforco", "portugues", "correcao"]),
+      d("matematica", "Reforço dirigido — Matemática", "Exercícios focados", ["reforco", "matematica", "correcao"]),
+      d("revisao", "Revisão + Quiz 20 + fechamento da fase 2", "Síntese da fase", ["revisao", "quiz20", "fechamento"])
     ]
   },
   {
@@ -362,11 +426,11 @@ const SEMANAS = [
     titulo: "Jornalismo e divisibilidade",
     descricao: "Início da ponte para o 6º ano com divisores e múltiplos.",
     dias: [
-      { disciplina: "portugues", titulo: "Gêneros jornalísticos de entrada", expansao: "Notícia e reportagem", tags: ["generos-jornalisticos", "noticia", "reportagem"] },
-      { disciplina: "matematica", titulo: "Divisores e múltiplos", expansao: "Agrupamentos", tags: ["divisores", "multiplos", "numeros"] },
-      { disciplina: "portugues", titulo: "Notícia x reportagem", expansao: "Comparação de textos", tags: ["noticia", "reportagem", "comparacao"] },
-      { disciplina: "matematica", titulo: "Critérios de divisibilidade", expansao: "Padrões numéricos", tags: ["divisibilidade", "criterios", "numeros"] },
-      { disciplina: "revisao", titulo: "Revisão da semana + Quiz 20 + Ciências: matéria e misturas", expansao: "Ciências", tags: ["revisao", "quiz20", "ciencias"] }
+      d("portugues", "Gêneros jornalísticos de entrada", "Notícia e reportagem", ["generos-jornalisticos", "noticia", "reportagem"]),
+      d("matematica", "Divisores e múltiplos", "Agrupamentos", ["divisores", "multiplos", "numeros"]),
+      d("portugues", "Notícia x reportagem", "Comparação de textos", ["noticia", "reportagem", "comparacao"]),
+      d("matematica", "Critérios de divisibilidade", "Padrões numéricos", ["divisibilidade", "criterios", "numeros"]),
+      d("revisao", "Revisão da semana + Quiz 20 + Ciências: matéria e misturas", "Ciências", ["revisao", "quiz20", "ciencias"])
     ]
   },
   {
@@ -375,11 +439,11 @@ const SEMANAS = [
     titulo: "Comparação textual e números primos",
     descricao: "Leitura comparativa e decomposição numérica.",
     dias: [
-      { disciplina: "portugues", titulo: "Leitura comparativa entre dois textos", expansao: "Semelhanças e diferenças", tags: ["comparacao-textual", "leitura", "interpretacao"] },
-      { disciplina: "matematica", titulo: "Números primos e compostos", expansao: "Agrupamentos possíveis", tags: ["primos", "compostos", "divisores"] },
-      { disciplina: "portugues", titulo: "Semelhança e diferença entre versões", expansao: "Quadro comparativo", tags: ["comparacao", "versoes", "texto"] },
-      { disciplina: "matematica", titulo: "Decomposição e classificação", expansao: "Fatores", tags: ["decomposicao", "primos", "classificacao"] },
-      { disciplina: "revisao", titulo: "Revisão da semana + Quiz 20 + História: Brasil Império", expansao: "História", tags: ["revisao", "quiz20", "historia"] }
+      d("portugues", "Leitura comparativa entre dois textos", "Semelhanças e diferenças", ["comparacao-textual", "leitura", "interpretacao"]),
+      d("matematica", "Números primos e compostos", "Agrupamentos possíveis", ["primos", "compostos", "divisores"]),
+      d("portugues", "Semelhança e diferença entre versões", "Quadro comparativo", ["comparacao", "versoes", "texto"]),
+      d("matematica", "Decomposição e classificação", "Fatores", ["decomposicao", "primos", "classificacao"]),
+      d("revisao", "Revisão da semana + Quiz 20 + História: Brasil Império", "História", ["revisao", "quiz20", "historia"])
     ]
   },
   {
@@ -388,11 +452,11 @@ const SEMANAS = [
     titulo: "Inferência profunda e MMC",
     descricao: "Aprofundamento da inferência textual e introdução intuitiva ao MMC.",
     dias: [
-      { disciplina: "portugues", titulo: "Inferência mais profunda", expansao: "Intenção e subentendidos", tags: ["inferencia", "profunda", "interpretacao"] },
-      { disciplina: "matematica", titulo: "MMC intuitivo", expansao: "Múltiplos comuns", tags: ["mmc", "multiplos", "intuitivo"] },
-      { disciplina: "portugues", titulo: "Intenções do autor", expansao: "Leitura crítica", tags: ["autor", "intencao", "texto"] },
-      { disciplina: "matematica", titulo: "Problemas com múltiplos comuns", expansao: "Situações cíclicas", tags: ["mmc", "problemas", "multiplos"] },
-      { disciplina: "revisao", titulo: "Revisão da semana + Quiz 20 + Geografia: regiões do Brasil", expansao: "Geografia", tags: ["revisao", "quiz20", "geografia"] }
+      d("portugues", "Inferência mais profunda", "Intenção e subentendidos", ["inferencia", "profunda", "interpretacao"]),
+      d("matematica", "MMC intuitivo", "Múltiplos comuns", ["mmc", "multiplos", "intuitivo"]),
+      d("portugues", "Intenções do autor", "Leitura crítica", ["autor", "intencao", "texto"]),
+      d("matematica", "Problemas com múltiplos comuns", "Situações cíclicas", ["mmc", "problemas", "multiplos"]),
+      d("revisao", "Revisão da semana + Quiz 20 + Geografia: regiões do Brasil", "Geografia", ["revisao", "quiz20", "geografia"])
     ]
   },
   {
@@ -401,11 +465,11 @@ const SEMANAS = [
     titulo: "Texto informativo e MDC",
     descricao: "Organização de informação e divisores comuns.",
     dias: [
-      { disciplina: "portugues", titulo: "Organização de textos informativos", expansao: "Títulos e tópicos", tags: ["texto-informativo", "organizacao", "leitura"] },
-      { disciplina: "matematica", titulo: "MDC intuitivo", expansao: "Divisores comuns", tags: ["mdc", "divisores", "intuitivo"] },
-      { disciplina: "portugues", titulo: "Títulos, subtítulos e tópicos", expansao: "Estrutura expositiva", tags: ["titulo", "subtitulo", "organizacao"] },
-      { disciplina: "matematica", titulo: "Problemas com divisores comuns", expansao: "Agrupamentos máximos", tags: ["mdc", "problemas", "divisores"] },
-      { disciplina: "revisao", titulo: "Revisão da semana + Quiz 20 + Ciências: ecossistemas", expansao: "Ciências", tags: ["revisao", "quiz20", "ciencias"] }
+      d("portugues", "Organização de textos informativos", "Títulos e tópicos", ["texto-informativo", "organizacao", "leitura"]),
+      d("matematica", "MDC intuitivo", "Divisores comuns", ["mdc", "divisores", "intuitivo"]),
+      d("portugues", "Títulos, subtítulos e tópicos", "Estrutura expositiva", ["titulo", "subtitulo", "organizacao"]),
+      d("matematica", "Problemas com divisores comuns", "Agrupamentos máximos", ["mdc", "problemas", "divisores"]),
+      d("revisao", "Revisão da semana + Quiz 20 + Ciências: ecossistemas", "Ciências", ["revisao", "quiz20", "ciencias"])
     ]
   },
   {
@@ -414,11 +478,11 @@ const SEMANAS = [
     titulo: "Resumo informativo e fração na reta",
     descricao: "Síntese sem cópia e localização de frações.",
     dias: [
-      { disciplina: "portugues", titulo: "Resumo de texto informativo", expansao: "Síntese", tags: ["resumo", "texto-informativo", "sintese"] },
-      { disciplina: "matematica", titulo: "Frações na reta numérica", expansao: "Reta e marcações", tags: ["fracao", "reta-numerica", "comparacao"] },
-      { disciplina: "portugues", titulo: "Síntese sem copiar", expansao: "Reescrita", tags: ["resumo", "reescrita", "autonomia"] },
-      { disciplina: "matematica", titulo: "Localização e comparação", expansao: "Frações em ordem", tags: ["fracao", "localizacao", "ordem"] },
-      { disciplina: "revisao", titulo: "Revisão da semana + Quiz 20 + História: república e mudanças sociais", expansao: "História", tags: ["revisao", "quiz20", "historia"] }
+      d("portugues", "Resumo de texto informativo", "Síntese", ["resumo", "texto-informativo", "sintese"]),
+      d("matematica", "Frações na reta numérica", "Reta e marcações", ["fracao", "reta-numerica", "comparacao"]),
+      d("portugues", "Síntese sem copiar", "Reescrita", ["resumo", "reescrita", "autonomia"]),
+      d("matematica", "Localização e comparação", "Frações em ordem", ["fracao", "localizacao", "ordem"]),
+      d("revisao", "Revisão da semana + Quiz 20 + História: república e mudanças sociais", "História", ["revisao", "quiz20", "historia"])
     ]
   },
   {
@@ -427,11 +491,11 @@ const SEMANAS = [
     titulo: "Verbetes e operações com frações",
     descricao: "Textos expositivos e adição/subtração de frações com apoio visual.",
     dias: [
-      { disciplina: "portugues", titulo: "Verbetes e textos expositivos", expansao: "Dicionário e enciclopédia", tags: ["verbete", "expositivo", "definicao"] },
-      { disciplina: "matematica", titulo: "Adição e subtração de frações com apoio visual", expansao: "Barras equivalentes", tags: ["fracao", "adicao", "subtracao"] },
-      { disciplina: "portugues", titulo: "Definição e objetividade", expansao: "Escrita objetiva", tags: ["objetividade", "definicao", "expositivo"] },
-      { disciplina: "matematica", titulo: "Equivalência antes do cálculo", expansao: "Denominadores compatíveis", tags: ["fracao", "equivalencia", "calculo"] },
-      { disciplina: "revisao", titulo: "Revisão da semana + Quiz 20 + Geografia: vegetação e clima do Brasil", expansao: "Geografia", tags: ["revisao", "quiz20", "geografia"] }
+      d("portugues", "Verbetes e textos expositivos", "Dicionário e enciclopédia", ["verbete", "expositivo", "definicao"]),
+      d("matematica", "Adição e subtração de frações com apoio visual", "Barras equivalentes", ["fracao", "adicao", "subtracao"]),
+      d("portugues", "Definição e objetividade", "Escrita objetiva", ["objetividade", "definicao", "expositivo"]),
+      d("matematica", "Equivalência antes do cálculo", "Denominadores compatíveis", ["fracao", "equivalencia", "calculo"]),
+      d("revisao", "Revisão da semana + Quiz 20 + Geografia: vegetação e clima do Brasil", "Geografia", ["revisao", "quiz20", "geografia"])
     ]
   },
   {
@@ -440,11 +504,11 @@ const SEMANAS = [
     titulo: "Coesão referencial e decimais por 10, 100, 1000",
     descricao: "Pronomes em função textual e operações com decimais em escala.",
     dias: [
-      { disciplina: "portugues", titulo: "Coesão referencial", expansao: "Retomada de referentes", tags: ["coesao", "referencial", "pronomes"] },
-      { disciplina: "matematica", titulo: "Multiplicação e divisão de decimais por 10, 100, 1000", expansao: "Quadro posicional", tags: ["decimais", "multiplicacao", "divisao"] },
-      { disciplina: "portugues", titulo: "Pronomes e substituições", expansao: "Trocas no texto", tags: ["pronomes", "substituicao", "coesao"] },
-      { disciplina: "matematica", titulo: "Deslocamento da vírgula com sentido", expansao: "Valor posicional", tags: ["decimais", "virgula", "valor-posicional"] },
-      { disciplina: "revisao", titulo: "Revisão da semana + Quiz 20 + Ciências: sistema digestório e nutrição", expansao: "Ciências", tags: ["revisao", "quiz20", "ciencias"] }
+      d("portugues", "Coesão referencial", "Retomada de referentes", ["coesao", "referencial", "pronomes"]),
+      d("matematica", "Multiplicação e divisão de decimais por 10, 100, 1000", "Quadro posicional", ["decimais", "multiplicacao", "divisao"]),
+      d("portugues", "Pronomes e substituições", "Trocas no texto", ["pronomes", "substituicao", "coesao"]),
+      d("matematica", "Deslocamento da vírgula com sentido", "Valor posicional", ["decimais", "virgula", "valor-posicional"]),
+      d("revisao", "Revisão da semana + Quiz 20 + Ciências: sistema digestório e nutrição", "Ciências", ["revisao", "quiz20", "ciencias"])
     ]
   },
   {
@@ -453,11 +517,11 @@ const SEMANAS = [
     titulo: "Pontuação com sentido e razão intuitiva",
     descricao: "Efeito de sentido da pontuação e comparações proporcionais.",
     dias: [
-      { disciplina: "portugues", titulo: "Efeitos de sentido da pontuação", expansao: "Comparação de frases", tags: ["pontuacao", "efeito-de-sentido", "texto"] },
-      { disciplina: "matematica", titulo: "Razão intuitiva e comparação proporcional", expansao: "Escalas simples", tags: ["razao", "proporcao", "comparacao"] },
-      { disciplina: "portugues", titulo: "Pontuação e intenção", expansao: "Entonação", tags: ["pontuacao", "intencao", "sentido"] },
-      { disciplina: "matematica", titulo: "Leitura de comparações proporcionais", expansao: "Tabelas simples", tags: ["proporcao", "comparacao", "raciocinio"] },
-      { disciplina: "revisao", titulo: "Revisão da semana + Quiz 20 + História: trabalho, indústria e urbanização", expansao: "História", tags: ["revisao", "quiz20", "historia"] }
+      d("portugues", "Efeitos de sentido da pontuação", "Comparação de frases", ["pontuacao", "efeito-de-sentido", "texto"]),
+      d("matematica", "Razão intuitiva e comparação proporcional", "Escalas simples", ["razao", "proporcao", "comparacao"]),
+      d("portugues", "Pontuação e intenção", "Entonação", ["pontuacao", "intencao", "sentido"]),
+      d("matematica", "Leitura de comparações proporcionais", "Tabelas simples", ["proporcao", "comparacao", "raciocinio"]),
+      d("revisao", "Revisão da semana + Quiz 20 + História: trabalho, indústria e urbanização", "História", ["revisao", "quiz20", "historia"])
     ]
   },
   {
@@ -466,11 +530,11 @@ const SEMANAS = [
     titulo: "Infográfico e porcentagem aplicada",
     descricao: "Leitura de infográficos e problemas de desconto e acréscimo.",
     dias: [
-      { disciplina: "portugues", titulo: "Leitura de infográficos", expansao: "Dados + imagem + texto", tags: ["infografico", "multissemiose", "dados"] },
-      { disciplina: "matematica", titulo: "Porcentagem aplicada", expansao: "Desconto simples", tags: ["porcentagem", "aplicacao", "dinheiro"] },
-      { disciplina: "portugues", titulo: "Texto verbal + imagem + dados", expansao: "Leitura integrada", tags: ["imagem", "dados", "texto"] },
-      { disciplina: "matematica", titulo: "Problemas de desconto e acréscimo simples", expansao: "Situações de compra", tags: ["porcentagem", "desconto", "acrescimo"] },
-      { disciplina: "revisao", titulo: "Revisão da semana + Quiz 20 + Geografia: cartografia e coordenadas simples", expansao: "Geografia", tags: ["revisao", "quiz20", "geografia"] }
+      d("portugues", "Leitura de infográficos", "Dados + imagem + texto", ["infografico", "multissemiose", "dados"]),
+      d("matematica", "Porcentagem aplicada", "Desconto simples", ["porcentagem", "aplicacao", "dinheiro"]),
+      d("portugues", "Texto verbal + imagem + dados", "Leitura integrada", ["imagem", "dados", "texto"]),
+      d("matematica", "Problemas de desconto e acréscimo simples", "Situações de compra", ["porcentagem", "desconto", "acrescimo"]),
+      d("revisao", "Revisão da semana + Quiz 20 + Geografia: cartografia e coordenadas simples", "Geografia", ["revisao", "quiz20", "geografia"])
     ]
   },
   {
@@ -479,11 +543,11 @@ const SEMANAS = [
     titulo: "Simulados da ponte 5º-6º",
     descricao: "Revisão da transição e simulado guiado.",
     dias: [
-      { disciplina: "portugues", titulo: "Revisão da ponte 5º-6º — Português", expansao: "Mapa de erros", tags: ["revisao", "ponte", "portugues"] },
-      { disciplina: "matematica", titulo: "Revisão da ponte 5º-6º — Matemática", expansao: "Mapa de erros", tags: ["revisao", "ponte", "matematica"] },
-      { disciplina: "portugues", titulo: "Simulado da ponte — Português", expansao: "Correção comentada", tags: ["simulado", "ponte", "portugues"] },
-      { disciplina: "matematica", titulo: "Simulado da ponte — Matemática", expansao: "Correção comentada", tags: ["simulado", "ponte", "matematica"] },
-      { disciplina: "revisao", titulo: "Revisão + Quiz 20 + correção comentada da ponte", expansao: "Diagnóstico", tags: ["revisao", "quiz20", "correcao"] }
+      d("portugues", "Revisão da ponte 5º-6º — Português", "Mapa de erros", ["revisao", "ponte", "portugues"]),
+      d("matematica", "Revisão da ponte 5º-6º — Matemática", "Mapa de erros", ["revisao", "ponte", "matematica"]),
+      d("portugues", "Simulado da ponte — Português", "Correção comentada", ["simulado", "ponte", "portugues"]),
+      d("matematica", "Simulado da ponte — Matemática", "Correção comentada", ["simulado", "ponte", "matematica"]),
+      d("revisao", "Revisão + Quiz 20 + correção comentada da ponte", "Diagnóstico", ["revisao", "quiz20", "correcao"])
     ]
   },
   {
@@ -492,11 +556,11 @@ const SEMANAS = [
     titulo: "Reforço da ponte",
     descricao: "Prática guiada para fechar os pontos fracos da transição.",
     dias: [
-      { disciplina: "portugues", titulo: "Reforço dos pontos fracos — Português", expansao: "Exercícios focados", tags: ["reforco", "ponte", "portugues"] },
-      { disciplina: "matematica", titulo: "Reforço dos pontos fracos — Matemática", expansao: "Exercícios focados", tags: ["reforco", "ponte", "matematica"] },
-      { disciplina: "portugues", titulo: "Prática guiada de inferência e gênero", expansao: "Mediação", tags: ["pratica-guiada", "inferencia", "generos"] },
-      { disciplina: "matematica", titulo: "Prática guiada de frações e múltiplos", expansao: "Mediação", tags: ["pratica-guiada", "fracao", "multiplos"] },
-      { disciplina: "revisao", titulo: "Revisão da semana + Quiz 20 + Ciências: sistema respiratório", expansao: "Ciências", tags: ["revisao", "quiz20", "ciencias"] }
+      d("portugues", "Reforço dos pontos fracos — Português", "Exercícios focados", ["reforco", "ponte", "portugues"]),
+      d("matematica", "Reforço dos pontos fracos — Matemática", "Exercícios focados", ["reforco", "ponte", "matematica"]),
+      d("portugues", "Prática guiada de inferência e gênero", "Mediação", ["pratica-guiada", "inferencia", "generos"]),
+      d("matematica", "Prática guiada de frações e múltiplos", "Mediação", ["pratica-guiada", "fracao", "multiplos"]),
+      d("revisao", "Revisão da semana + Quiz 20 + Ciências: sistema respiratório", "Ciências", ["revisao", "quiz20", "ciencias"])
     ]
   },
   {
@@ -505,11 +569,11 @@ const SEMANAS = [
     titulo: "Fechamento da fase 3",
     descricao: "Mini simulados avançados e preparação para a fase híbrida.",
     dias: [
-      { disciplina: "portugues", titulo: "Fechamento da fase 3 — Português", expansao: "Síntese", tags: ["fechamento", "fase3", "portugues"] },
-      { disciplina: "matematica", titulo: "Fechamento da fase 3 — Matemática", expansao: "Síntese", tags: ["fechamento", "fase3", "matematica"] },
-      { disciplina: "portugues", titulo: "Mini simulado avançado — Português", expansao: "Correção comentada", tags: ["mini-simulado", "fase3", "portugues"] },
-      { disciplina: "matematica", titulo: "Mini simulado avançado — Matemática", expansao: "Correção comentada", tags: ["mini-simulado", "fase3", "matematica"] },
-      { disciplina: "revisao", titulo: "Revisão + Quiz 20 + preparação para a fase híbrida", expansao: "Transição", tags: ["revisao", "quiz20", "transicao"] }
+      d("portugues", "Fechamento da fase 3 — Português", "Síntese", ["fechamento", "fase3", "portugues"]),
+      d("matematica", "Fechamento da fase 3 — Matemática", "Síntese", ["fechamento", "fase3", "matematica"]),
+      d("portugues", "Mini simulado avançado — Português", "Correção comentada", ["mini-simulado", "fase3", "portugues"]),
+      d("matematica", "Mini simulado avançado — Matemática", "Correção comentada", ["mini-simulado", "fase3", "matematica"]),
+      d("revisao", "Revisão + Quiz 20 + preparação para a fase híbrida", "Transição", ["revisao", "quiz20", "transicao"])
     ]
   },
   {
@@ -518,11 +582,11 @@ const SEMANAS = [
     titulo: "Crônica e expressões numéricas",
     descricao: "Mistura de leitura crítica e cálculo estruturado.",
     dias: [
-      { disciplina: "portugues", titulo: "Crônica e cotidiano", expansao: "Observação do dia a dia", tags: ["cronica", "cotidiano", "leitura"] },
-      { disciplina: "matematica", titulo: "Expressões numéricas", expansao: "Sequência de operações", tags: ["expressoes", "operacoes", "ordem"] },
-      { disciplina: "portugues", titulo: "Humor, crítica e observação", expansao: "Leitura interpretativa", tags: ["cronica", "humor", "critica"] },
-      { disciplina: "matematica", titulo: "Interpretação de expressões", expansao: "Explicar o raciocínio", tags: ["expressoes", "interpretacao", "calculo"] },
-      { disciplina: "revisao", titulo: "Revisão da semana + Quiz 20 + História: direitos e cidadania", expansao: "História", tags: ["revisao", "quiz20", "historia"] }
+      d("portugues", "Crônica e cotidiano", "Observação do dia a dia", ["cronica", "cotidiano", "leitura"]),
+      d("matematica", "Expressões numéricas", "Sequência de operações", ["expressoes", "operacoes", "ordem"]),
+      d("portugues", "Humor, crítica e observação", "Leitura interpretativa", ["cronica", "humor", "critica"]),
+      d("matematica", "Interpretação de expressões", "Explicar o raciocínio", ["expressoes", "interpretacao", "calculo"]),
+      d("revisao", "Revisão da semana + Quiz 20 + História: direitos e cidadania", "História", ["revisao", "quiz20", "historia"])
     ]
   },
   {
@@ -531,11 +595,11 @@ const SEMANAS = [
     titulo: "Texto instrucional e ângulos",
     descricao: "Leitura de regras e classificação de ângulos.",
     dias: [
-      { disciplina: "portugues", titulo: "Texto instrucional e regulamento", expansao: "Regras do cotidiano", tags: ["instrucional", "regulamento", "leitura-funcional"] },
-      { disciplina: "matematica", titulo: "Ângulos", expansao: "Dobras e giros", tags: ["angulos", "geometria", "classificacao"] },
-      { disciplina: "portugues", titulo: "Verbos no imperativo e clareza", expansao: "Comandos", tags: ["imperativo", "clareza", "instrucao"] },
-      { disciplina: "matematica", titulo: "Classificação e medição intuitiva", expansao: "Transferidor ilustrativo", tags: ["angulos", "medicao", "geometria"] },
-      { disciplina: "revisao", titulo: "Revisão da semana + Quiz 20 + Geografia: recursos naturais", expansao: "Geografia", tags: ["revisao", "quiz20", "geografia"] }
+      d("portugues", "Texto instrucional e regulamento", "Regras do cotidiano", ["instrucional", "regulamento", "leitura-funcional"]),
+      d("matematica", "Ângulos", "Dobras e giros", ["angulos", "geometria", "classificacao"]),
+      d("portugues", "Verbos no imperativo e clareza", "Comandos", ["imperativo", "clareza", "instrucao"]),
+      d("matematica", "Classificação e medição intuitiva", "Transferidor ilustrativo", ["angulos", "medicao", "geometria"]),
+      d("revisao", "Revisão da semana + Quiz 20 + Geografia: recursos naturais", "Geografia", ["revisao", "quiz20", "geografia"])
     ]
   },
   {
@@ -544,11 +608,11 @@ const SEMANAS = [
     titulo: "Notícia e opinião + polígonos",
     descricao: "Comparar posições textuais e aprofundar geometria plana.",
     dias: [
-      { disciplina: "portugues", titulo: "Comparação entre notícia e opinião", expansao: "Leitura crítica", tags: ["noticia", "opiniao", "comparacao"] },
-      { disciplina: "matematica", titulo: "Polígonos e classificação", expansao: "Desenho e análise", tags: ["poligonos", "classificacao", "geometria"] },
-      { disciplina: "portugues", titulo: "Marcas de posicionamento", expansao: "Palavras de opinião", tags: ["opiniao", "marcas", "argumentacao"] },
-      { disciplina: "matematica", titulo: "Construção e análise de figuras", expansao: "Malha geométrica", tags: ["figuras", "analise", "construcao"] },
-      { disciplina: "revisao", titulo: "Revisão da semana + Quiz 20 + Ciências: sistema circulatório", expansao: "Ciências", tags: ["revisao", "quiz20", "ciencias"] }
+      d("portugues", "Comparação entre notícia e opinião", "Leitura crítica", ["noticia", "opiniao", "comparacao"]),
+      d("matematica", "Polígonos e classificação", "Desenho e análise", ["poligonos", "classificacao", "geometria"]),
+      d("portugues", "Marcas de posicionamento", "Palavras de opinião", ["opiniao", "marcas", "argumentacao"]),
+      d("matematica", "Construção e análise de figuras", "Malha geométrica", ["figuras", "analise", "construcao"]),
+      d("revisao", "Revisão da semana + Quiz 20 + Ciências: sistema circulatório", "Ciências", ["revisao", "quiz20", "ciencias"])
     ]
   },
   {
@@ -557,11 +621,11 @@ const SEMANAS = [
     titulo: "Reescrita e perímetro/área",
     descricao: "Melhoria de texto e problemas integrados de geometria.",
     dias: [
-      { disciplina: "portugues", titulo: "Reescrita e melhoria de texto", expansao: "Versão 1 e versão 2", tags: ["reescrita", "melhoria", "texto"] },
-      { disciplina: "matematica", titulo: "Perímetro e área em figuras variadas", expansao: "Figuras compostas", tags: ["perimetro", "area", "figuras"] },
-      { disciplina: "portugues", titulo: "Revisar para melhorar sentido", expansao: "Autocorreção", tags: ["revisao", "sentido", "escrita"] },
-      { disciplina: "matematica", titulo: "Problemas integrados", expansao: "Situações mistas", tags: ["problemas", "perimetro", "area"] },
-      { disciplina: "revisao", titulo: "Revisão da semana + Quiz 20 + História: movimentos sociais", expansao: "História", tags: ["revisao", "quiz20", "historia"] }
+      d("portugues", "Reescrita e melhoria de texto", "Versão 1 e versão 2", ["reescrita", "melhoria", "texto"]),
+      d("matematica", "Perímetro e área em figuras variadas", "Figuras compostas", ["perimetro", "area", "figuras"]),
+      d("portugues", "Revisar para melhorar sentido", "Autocorreção", ["revisao", "sentido", "escrita"]),
+      d("matematica", "Problemas integrados", "Situações mistas", ["problemas", "perimetro", "area"]),
+      d("revisao", "Revisão da semana + Quiz 20 + História: movimentos sociais", "História", ["revisao", "quiz20", "historia"])
     ]
   },
   {
@@ -570,11 +634,11 @@ const SEMANAS = [
     titulo: "Anúncios e gráficos",
     descricao: "Leitura persuasiva e análise crítica de gráficos.",
     dias: [
-      { disciplina: "portugues", titulo: "Leitura crítica de anúncios", expansao: "Publicidade", tags: ["anuncios", "persuasao", "leitura-critica"] },
-      { disciplina: "matematica", titulo: "Leitura crítica de gráficos", expansao: "Comparação de dados", tags: ["graficos", "analise", "dados"] },
-      { disciplina: "portugues", titulo: "Linguagem persuasiva", expansao: "Recursos de convencimento", tags: ["persuasao", "publicidade", "linguagem"] },
-      { disciplina: "matematica", titulo: "Escolher gráfico, ler tendência e comparar dados", expansao: "Análise de situações", tags: ["graficos", "tendencia", "comparacao"] },
-      { disciplina: "revisao", titulo: "Revisão da semana + Quiz 20 + Geografia: economia e espaço geográfico", expansao: "Geografia", tags: ["revisao", "quiz20", "geografia"] }
+      d("portugues", "Leitura crítica de anúncios", "Publicidade", ["anuncios", "persuasao", "leitura-critica"]),
+      d("matematica", "Leitura crítica de gráficos", "Comparação de dados", ["graficos", "analise", "dados"]),
+      d("portugues", "Linguagem persuasiva", "Recursos de convencimento", ["persuasao", "publicidade", "linguagem"]),
+      d("matematica", "Escolher gráfico, ler tendência e comparar dados", "Análise de situações", ["graficos", "tendencia", "comparacao"]),
+      d("revisao", "Revisão da semana + Quiz 20 + Geografia: economia e espaço geográfico", "Geografia", ["revisao", "quiz20", "geografia"])
     ]
   },
   {
@@ -583,11 +647,11 @@ const SEMANAS = [
     titulo: "Sentido figurado e probabilidade",
     descricao: "Introdução a linguagem figurada e noções intuitivas de chance.",
     dias: [
-      { disciplina: "portugues", titulo: "Figuras de linguagem em nível introdutório", expansao: "Sentido figurado", tags: ["figuras-de-linguagem", "sentido-figurado", "interpretacao"] },
-      { disciplina: "matematica", titulo: "Probabilidade intuitiva", expansao: "Jogos e sorteios", tags: ["probabilidade", "chance", "raciocinio"] },
-      { disciplina: "portugues", titulo: "Sentido literal e figurado", expansao: "Comparação de frases", tags: ["literal", "figurado", "sentido"] },
-      { disciplina: "matematica", titulo: "Chance, certeza, impossível, provável", expansao: "Eventos", tags: ["probabilidade", "eventos", "classificacao"] },
-      { disciplina: "revisao", titulo: "Revisão da semana + Quiz 20 + Ciências: sistema nervoso e sentidos", expansao: "Ciências", tags: ["revisao", "quiz20", "ciencias"] }
+      d("portugues", "Figuras de linguagem em nível introdutório", "Sentido figurado", ["figuras-de-linguagem", "sentido-figurado", "interpretacao"]),
+      d("matematica", "Probabilidade intuitiva", "Jogos e sorteios", ["probabilidade", "chance", "raciocinio"]),
+      d("portugues", "Sentido literal e figurado", "Comparação de frases", ["literal", "figurado", "sentido"]),
+      d("matematica", "Chance, certeza, impossível, provável", "Eventos", ["probabilidade", "eventos", "classificacao"]),
+      d("revisao", "Revisão da semana + Quiz 20 + Ciências: sistema nervoso e sentidos", "Ciências", ["revisao", "quiz20", "ciencias"])
     ]
   },
   {
@@ -596,11 +660,11 @@ const SEMANAS = [
     titulo: "Opinião escrita e problemas mistos",
     descricao: "Justificar respostas por escrito e resolver problemas variados.",
     dias: [
-      { disciplina: "portugues", titulo: "Produção de opinião curta", expansao: "Tomar posição", tags: ["opiniao", "escrita", "argumentacao"] },
-      { disciplina: "matematica", titulo: "Problemas mistos 1", expansao: "Interleaving", tags: ["problemas", "mistos", "interleaving"] },
-      { disciplina: "portugues", titulo: "Justificar uma resposta com texto", expansao: "Citar evidência", tags: ["justificativa", "texto", "argumentacao"] },
-      { disciplina: "matematica", titulo: "Interleaving pesado", expansao: "Mistura de estratégias", tags: ["interleaving", "estrategia", "problemas"] },
-      { disciplina: "revisao", titulo: "Revisão da semana + Quiz 20 + História: Brasil contemporâneo", expansao: "História", tags: ["revisao", "quiz20", "historia"] }
+      d("portugues", "Produção de opinião curta", "Tomar posição", ["opiniao", "escrita", "argumentacao"]),
+      d("matematica", "Problemas mistos 1", "Interleaving", ["problemas", "mistos", "interleaving"]),
+      d("portugues", "Justificar uma resposta com texto", "Citar evidência", ["justificativa", "texto", "argumentacao"]),
+      d("matematica", "Interleaving pesado", "Mistura de estratégias", ["interleaving", "estrategia", "problemas"]),
+      d("revisao", "Revisão da semana + Quiz 20 + História: Brasil contemporâneo", "História", ["revisao", "quiz20", "historia"])
     ]
   },
   {
@@ -609,11 +673,11 @@ const SEMANAS = [
     titulo: "Interpretação avançada e autocorreção",
     descricao: "Treino de alto nível em leitura e resolução de problemas.",
     dias: [
-      { disciplina: "portugues", titulo: "Interpretação em alto nível", expansao: "Comparação e inferência", tags: ["interpretacao", "alto-nivel", "leitura"] },
-      { disciplina: "matematica", titulo: "Problemas mistos 2", expansao: "Estratégias múltiplas", tags: ["problemas", "mistos", "raciocinio"] },
-      { disciplina: "portugues", titulo: "Inferência, ironia e comparação textual", expansao: "Leitura crítica", tags: ["inferencia", "ironia", "comparacao"] },
-      { disciplina: "matematica", titulo: "Erro típico e autocorreção", expansao: "Análise do erro", tags: ["erro", "autocorrecao", "estrategia"] },
-      { disciplina: "revisao", titulo: "Revisão da semana + Quiz 20 + Geografia: meio ambiente e sociedade", expansao: "Geografia", tags: ["revisao", "quiz20", "geografia"] }
+      d("portugues", "Interpretação em alto nível", "Comparação e inferência", ["interpretacao", "alto-nivel", "leitura"]),
+      d("matematica", "Problemas mistos 2", "Estratégias múltiplas", ["problemas", "mistos", "raciocinio"]),
+      d("portugues", "Inferência, ironia e comparação textual", "Leitura crítica", ["inferencia", "ironia", "comparacao"]),
+      d("matematica", "Erro típico e autocorreção", "Análise do erro", ["erro", "autocorrecao", "estrategia"]),
+      d("revisao", "Revisão da semana + Quiz 20 + Geografia: meio ambiente e sociedade", "Geografia", ["revisao", "quiz20", "geografia"])
     ]
   },
   {
@@ -622,11 +686,11 @@ const SEMANAS = [
     titulo: "Fechamento da fase híbrida",
     descricao: "Simulados híbridos e síntese da fase 4.",
     dias: [
-      { disciplina: "portugues", titulo: "Revisão híbrida — Português", expansao: "Mapa de erros", tags: ["revisao", "hibrida", "portugues"] },
-      { disciplina: "matematica", titulo: "Revisão híbrida — Matemática", expansao: "Mapa de erros", tags: ["revisao", "hibrida", "matematica"] },
-      { disciplina: "portugues", titulo: "Simulado híbrido — Português", expansao: "Correção comentada", tags: ["simulado", "hibrido", "portugues"] },
-      { disciplina: "matematica", titulo: "Simulado híbrido — Matemática", expansao: "Correção comentada", tags: ["simulado", "hibrido", "matematica"] },
-      { disciplina: "revisao", titulo: "Revisão + Quiz 20 + fechamento da fase 4", expansao: "Síntese", tags: ["revisao", "quiz20", "fechamento"] }
+      d("portugues", "Revisão híbrida — Português", "Mapa de erros", ["revisao", "hibrida", "portugues"]),
+      d("matematica", "Revisão híbrida — Matemática", "Mapa de erros", ["revisao", "hibrida", "matematica"]),
+      d("portugues", "Simulado híbrido — Português", "Correção comentada", ["simulado", "hibrido", "portugues"]),
+      d("matematica", "Simulado híbrido — Matemática", "Correção comentada", ["simulado", "hibrido", "matematica"]),
+      d("revisao", "Revisão + Quiz 20 + fechamento da fase 4", "Síntese", ["revisao", "quiz20", "fechamento"])
     ]
   },
   {
@@ -635,11 +699,11 @@ const SEMANAS = [
     titulo: "Diagnóstico final",
     descricao: "Mapeamento fino dos pontos fortes e fracos antes do sprint.",
     dias: [
-      { disciplina: "portugues", titulo: "Diagnóstico final — Português", expansao: "Mapeamento", tags: ["diagnostico", "final", "portugues"] },
-      { disciplina: "matematica", titulo: "Diagnóstico final — Matemática", expansao: "Mapeamento", tags: ["diagnostico", "final", "matematica"] },
-      { disciplina: "portugues", titulo: "Reforço 1 — Português", expansao: "Exercícios focados", tags: ["reforco", "final", "portugues"] },
-      { disciplina: "matematica", titulo: "Reforço 1 — Matemática", expansao: "Exercícios focados", tags: ["reforco", "final", "matematica"] },
-      { disciplina: "revisao", titulo: "Revisão + Quiz 20 + mapa de erros", expansao: "Diagnóstico", tags: ["revisao", "quiz20", "erros"] }
+      d("portugues", "Diagnóstico final — Português", "Mapeamento", ["diagnostico", "final", "portugues"]),
+      d("matematica", "Diagnóstico final — Matemática", "Mapeamento", ["diagnostico", "final", "matematica"]),
+      d("portugues", "Reforço 1 — Português", "Exercícios focados", ["reforco", "final", "portugues"]),
+      d("matematica", "Reforço 1 — Matemática", "Exercícios focados", ["reforco", "final", "matematica"]),
+      d("revisao", "Revisão + Quiz 20 + mapa de erros", "Diagnóstico", ["revisao", "quiz20", "erros"])
     ]
   },
   {
@@ -648,11 +712,11 @@ const SEMANAS = [
     titulo: "Reforço orientado",
     descricao: "Treino objetivo para múltipla escolha e correção de lacunas críticas.",
     dias: [
-      { disciplina: "portugues", titulo: "Reforço 2 — interpretação, inferência e gêneros", expansao: "Questões objetivas", tags: ["reforco", "interpretacao", "generos"] },
-      { disciplina: "matematica", titulo: "Reforço 2 — frações, decimais e problemas", expansao: "Questões objetivas", tags: ["reforco", "fracao", "decimais"] },
-      { disciplina: "portugues", titulo: "Treino objetivo de múltipla escolha — Português", expansao: "Estratégia de prova", tags: ["multipla-escolha", "estrategia", "portugues"] },
-      { disciplina: "matematica", titulo: "Treino objetivo de múltipla escolha — Matemática", expansao: "Estratégia de prova", tags: ["multipla-escolha", "estrategia", "matematica"] },
-      { disciplina: "revisao", titulo: "Revisão + Quiz 20 + correção guiada", expansao: "Estratégia", tags: ["revisao", "quiz20", "correcao"] }
+      d("portugues", "Reforço 2 — interpretação, inferência e gêneros", "Questões objetivas", ["reforco", "interpretacao", "generos"]),
+      d("matematica", "Reforço 2 — frações, decimais e problemas", "Questões objetivas", ["reforco", "fracao", "decimais"]),
+      d("portugues", "Treino objetivo de múltipla escolha — Português", "Estratégia de prova", ["multipla-escolha", "estrategia", "portugues"]),
+      d("matematica", "Treino objetivo de múltipla escolha — Matemática", "Estratégia de prova", ["multipla-escolha", "estrategia", "matematica"]),
+      d("revisao", "Revisão + Quiz 20 + correção guiada", "Estratégia", ["revisao", "quiz20", "correcao"])
     ]
   },
   {
@@ -661,11 +725,11 @@ const SEMANAS = [
     titulo: "Treino sob tempo",
     descricao: "Velocidade com precisão e técnicas de eliminação de alternativas.",
     dias: [
-      { disciplina: "portugues", titulo: "Leitura sob tempo", expansao: "Cronometrado", tags: ["tempo", "leitura", "estrategia"] },
-      { disciplina: "matematica", titulo: "Cálculo sob tempo", expansao: "Cronometrado", tags: ["tempo", "calculo", "estrategia"] },
-      { disciplina: "portugues", titulo: "Estratégias de eliminação de alternativas", expansao: "Questões objetivas", tags: ["alternativas", "estrategia", "prova"] },
-      { disciplina: "matematica", titulo: "Estratégias de conferência rápida", expansao: "Revisão de resposta", tags: ["conferencia", "estrategia", "prova"] },
-      { disciplina: "revisao", titulo: "Revisão + Quiz 20 + simulado parcial", expansao: "Treino de prova", tags: ["revisao", "quiz20", "simulado"] }
+      d("portugues", "Leitura sob tempo", "Cronometrado", ["tempo", "leitura", "estrategia"]),
+      d("matematica", "Cálculo sob tempo", "Cronometrado", ["tempo", "calculo", "estrategia"]),
+      d("portugues", "Estratégias de eliminação de alternativas", "Questões objetivas", ["alternativas", "estrategia", "prova"]),
+      d("matematica", "Estratégias de conferência rápida", "Revisão de resposta", ["conferencia", "estrategia", "prova"]),
+      d("revisao", "Revisão + Quiz 20 + simulado parcial", "Treino de prova", ["revisao", "quiz20", "simulado"])
     ]
   },
   {
@@ -674,11 +738,11 @@ const SEMANAS = [
     titulo: "Simulado 1",
     descricao: "Primeiro grande simulado com correção comentada.",
     dias: [
-      { disciplina: "portugues", titulo: "Simulado 1 — Português", expansao: "Prova objetiva", tags: ["simulado", "portugues", "final"] },
-      { disciplina: "matematica", titulo: "Simulado 1 — Matemática", expansao: "Prova objetiva", tags: ["simulado", "matematica", "final"] },
-      { disciplina: "portugues", titulo: "Correção comentada do Simulado 1 — Português", expansao: "Análise de erros", tags: ["correcao", "simulado", "portugues"] },
-      { disciplina: "matematica", titulo: "Correção comentada do Simulado 1 — Matemática", expansao: "Análise de erros", tags: ["correcao", "simulado", "matematica"] },
-      { disciplina: "revisao", titulo: "Revisão + Quiz 20 + reforço dos erros", expansao: "Correção focada", tags: ["revisao", "quiz20", "erros"] }
+      d("portugues", "Simulado 1 — Português", "Prova objetiva", ["simulado", "portugues", "final"]),
+      d("matematica", "Simulado 1 — Matemática", "Prova objetiva", ["simulado", "matematica", "final"]),
+      d("portugues", "Correção comentada do Simulado 1 — Português", "Análise de erros", ["correcao", "simulado", "portugues"]),
+      d("matematica", "Correção comentada do Simulado 1 — Matemática", "Análise de erros", ["correcao", "simulado", "matematica"]),
+      d("revisao", "Revisão + Quiz 20 + reforço dos erros", "Correção focada", ["revisao", "quiz20", "erros"])
     ]
   },
   {
@@ -687,11 +751,11 @@ const SEMANAS = [
     titulo: "Simulado 2",
     descricao: "Segundo simulado e consolidação emocional para a prova.",
     dias: [
-      { disciplina: "portugues", titulo: "Simulado 2 — Português", expansao: "Prova objetiva", tags: ["simulado", "portugues", "final"] },
-      { disciplina: "matematica", titulo: "Simulado 2 — Matemática", expansao: "Prova objetiva", tags: ["simulado", "matematica", "final"] },
-      { disciplina: "portugues", titulo: "Correção comentada do Simulado 2 — Português", expansao: "Análise de erros", tags: ["correcao", "simulado", "portugues"] },
-      { disciplina: "matematica", titulo: "Correção comentada do Simulado 2 — Matemática", expansao: "Análise de erros", tags: ["correcao", "simulado", "matematica"] },
-      { disciplina: "revisao", titulo: "Revisão + Quiz 20 + estratégia emocional de prova", expansao: "Confiança", tags: ["revisao", "quiz20", "emocional"] }
+      d("portugues", "Simulado 2 — Português", "Prova objetiva", ["simulado", "portugues", "final"]),
+      d("matematica", "Simulado 2 — Matemática", "Prova objetiva", ["simulado", "matematica", "final"]),
+      d("portugues", "Correção comentada do Simulado 2 — Português", "Análise de erros", ["correcao", "simulado", "portugues"]),
+      d("matematica", "Correção comentada do Simulado 2 — Matemática", "Análise de erros", ["correcao", "simulado", "matematica"]),
+      d("revisao", "Revisão + Quiz 20 + estratégia emocional de prova", "Confiança", ["revisao", "quiz20", "emocional"])
     ]
   },
   {
@@ -700,14 +764,31 @@ const SEMANAS = [
     titulo: "Fechamento final",
     descricao: "Revisão leve, confiança e encerramento do ciclo.",
     dias: [
-      { disciplina: "portugues", titulo: "Revisão final leve — Português", expansao: "Leitura e confiança", tags: ["revisao", "final", "portugues"] },
-      { disciplina: "matematica", titulo: "Revisão final leve — Matemática", expansao: "Cálculo e confiança", tags: ["revisao", "final", "matematica"] },
-      { disciplina: "portugues", titulo: "Confiança, leitura e precisão", expansao: "Estratégia final", tags: ["confianca", "leitura", "precisao"] },
-      { disciplina: "matematica", titulo: "Confiança, organização e precisão", expansao: "Estratégia final", tags: ["confianca", "organizacao", "precisao"] },
-      { disciplina: "revisao", titulo: "Quiz final 20 + fechamento do ciclo + mensagem final ao Eiji", expansao: "Encerramento", tags: ["quiz20", "fechamento", "mensagem-final"] }
+      d("portugues", "Revisão final leve — Português", "Leitura e confiança", ["revisao", "final", "portugues"]),
+      d("matematica", "Revisão final leve — Matemática", "Cálculo e confiança", ["revisao", "final", "matematica"]),
+      d("portugues", "Confiança, leitura e precisão", "Estratégia final", ["confianca", "leitura", "precisao"]),
+      d("matematica", "Confiança, organização e precisão", "Estratégia final", ["confianca", "organizacao", "precisao"]),
+      d("revisao", "Quiz final 20 + fechamento do ciclo + mensagem final ao Eiji", "Encerramento", ["quiz20", "fechamento", "mensagem-final"])
     ]
   }
 ];
+
+function montarSemanas() {
+  return SEMANAS_BASE.map((semanaObj) => {
+    const fase = FASES.find((f) => f.id === semanaObj.fase);
+
+    return {
+      ...semanaObj,
+      reino: fase ? fase.reino : "",
+      reinoIcone: fase ? fase.icone : "🗺️",
+      lore: fase ? fase.lore : "",
+      narrativa: narrativaSemana(semanaObj.semana, semanaObj.fase, semanaObj.titulo),
+      recompensaSemana: recompensaSemana(semanaObj.semana)
+    };
+  });
+}
+
+const SEMANAS = montarSemanas();
 
 function padDia(numero) {
   return String(numero).padStart(3, "0");
@@ -720,20 +801,37 @@ function gerarDias(semanas) {
     semanaObj.dias.forEach((diaObj, index) => {
       const numeroDia = ((semanaObj.semana - 1) * 5) + index + 1;
       const id = `dia-${padDia(numeroDia)}`;
+      const disciplinaMeta = DISCIPLINAS[diaObj.disciplina] || DISCIPLINAS.revisao;
+      const posicaoSemana = index + 1;
 
       dias.push({
         numero: numeroDia,
         id,
         semana: semanaObj.semana,
         fase: semanaObj.fase,
+        reino: semanaObj.reino,
+        reinoIcone: semanaObj.reinoIcone,
         semanaTitulo: semanaObj.titulo,
         semanaDescricao: semanaObj.descricao,
+        narrativaSemana: semanaObj.narrativa,
         titulo: diaObj.titulo,
         disciplina: diaObj.disciplina,
+        disciplinaNome: disciplinaMeta.nome,
+        disciplinaIcone: disciplinaMeta.icone,
+        disciplinaCor: disciplinaMeta.cor,
         expansao: diaObj.expansao,
         tags: diaObj.tags,
         arquivo: `apostilas/${id}.html`,
-        concluido: false
+        concluido: false,
+        posicaoSemana,
+        iconeMissao: ICONES_MISSAO_POR_POSICAO[index],
+        raridade: RARIDADE_POR_POSICAO[index],
+        xp: 10,
+        moedas: 3,
+        reward: {
+          xp: 10,
+          moedas: 3
+        }
       });
     });
   });
@@ -746,7 +844,7 @@ const DIAS = gerarDias(SEMANAS);
 const CONFIG = {
   projeto: {
     nome: "desafio-objetivo-eiji",
-    titulo: "Cronograma de Estudos — Eiji | Desafio Objetivo",
+    titulo: "Jornada do Eiji | Desafio Objetivo",
     subtitulo: "5º ano com ponte estruturada para o 6º ano",
     aluno: "Eiji",
     totalSemanas: 51,
@@ -760,11 +858,19 @@ const CONFIG = {
       "Growth Mindset",
       "Worked Examples → Prática guiada → Independente",
       "Quiz final com 20 questões"
-    ]
+    ],
+    recompensas: {
+      xpPorDia: 10,
+      moedasPorDia: 3,
+      xpPorBau: 25,
+      moedasPorBau: 15
+    }
   },
+  disciplinas: DISCIPLINAS,
   fases: FASES,
   semanas: SEMANAS,
-  dias: DIAS
+  dias: DIAS,
+  bauPool: BAU_POOL
 };
 
 function getFaseById(faseId) {
@@ -785,6 +891,11 @@ function getDiasDaSemana(numeroSemana) {
 
 function getDiasDaFase(faseId) {
   return CONFIG.dias.filter((dia) => dia.fase === faseId);
+}
+
+function getRecompensaDaSemana(numeroSemana) {
+  const semana = getSemana(numeroSemana);
+  return semana ? semana.recompensaSemana : null;
 }
 
 function getDiaPorData(dataStr) {
@@ -811,4 +922,5 @@ window.getSemana = getSemana;
 window.getDia = getDia;
 window.getDiasDaSemana = getDiasDaSemana;
 window.getDiasDaFase = getDiasDaFase;
+window.getRecompensaDaSemana = getRecompensaDaSemana;
 window.getDiaPorData = getDiaPorData;
