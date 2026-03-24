@@ -3,35 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- =========================================================
-       BLOCO 1 — METADADOS DA APOSTILA
-       Nas próximas apostilas, você trocará principalmente isso.
-  ========================================================== -->
-  <script>
-    const APOSTILA = {
-      numero: 1,
-      titulo: "Ideia Principal do Texto",
-      disciplina: "Português",
-      disciplinaIcone: "📘",
-      semana: 1,
-      fase: "Fase 1 — Base forte do 5º ano",
-      reino: "Reino da Leitura",
-      reinoIcone: "📚",
-      raridade: "comum",
-      xp: 10,
-      moedas: 3,
-      corPrincipal: "#2563eb",
-      corSecundaria: "#60a5fa"
-    };
-  </script>
-
   <title>Dia 001 — Ideia Principal do Texto | Eiji</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800;900&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
   <style>
     :root{
       --ink:#0f172a;
@@ -45,6 +20,7 @@
       --amber:#f59e0b;
       --yellow:#fef3c7;
       --red:#dc2626;
+      --pink:#e11d48;
       --purple:#7c3aed;
       --violet:#ede9fe;
       --gray0:#f8fafc;
@@ -53,6 +29,12 @@
       --gray3:#cbd5e1;
       --gray4:#64748b;
       --white:#ffffff;
+
+      --cpa-c:#ea580c;
+      --cpa-p:#2563eb;
+      --cpa-a:#7c3aed;
+
+      --radius:20px;
       --shadow:0 12px 30px rgba(15,23,42,.10);
     }
 
@@ -77,7 +59,6 @@
       position:relative;
       overflow:hidden;
     }
-
     .cover-grid{
       position:absolute;
       inset:0;
@@ -86,7 +67,6 @@
         linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
       background-size:56px 56px;
     }
-
     .cover-glow{
       position:absolute;
       width:520px;
@@ -97,17 +77,14 @@
       right:-100px;
       animation:pulse 7s ease-in-out infinite;
     }
-
     @keyframes pulse{
       0%,100%{transform:scale(1)}
       50%{transform:scale(1.12)}
     }
-
     @keyframes floaty{
       0%,100%{transform:translateY(0)}
       50%{transform:translateY(-10px)}
     }
-
     @keyframes fadeUp{
       from{opacity:0;transform:translateY(24px)}
       to{opacity:1;transform:translateY(0)}
@@ -120,7 +97,6 @@
       animation:floaty 2.8s ease-in-out infinite;
       margin-bottom:14px;
     }
-
     .cover h1{
       font-family:'Fredoka',cursive;
       font-size:clamp(38px,7vw,74px);
@@ -131,7 +107,6 @@
       z-index:2;
       animation:fadeUp .8s ease .1s both;
     }
-
     .cover-sub{
       margin-top:14px;
       color:rgba(255,255,255,.9);
@@ -141,7 +116,6 @@
       z-index:2;
       animation:fadeUp .8s ease .3s both;
     }
-
     .cover-pills{
       display:flex;
       gap:10px;
@@ -152,7 +126,6 @@
       z-index:2;
       animation:fadeUp .8s ease .5s both;
     }
-
     .pill{
       padding:9px 16px;
       border-radius:999px;
@@ -163,7 +136,6 @@
       background:rgba(255,255,255,.12);
       backdrop-filter:blur(4px);
     }
-
     .cover-note{
       margin-top:24px;
       max-width:720px;
@@ -179,7 +151,6 @@
       z-index:2;
       animation:fadeUp .8s ease .7s both;
     }
-
     .cover-note strong{color:#fde68a}
 
     .science-bar{
@@ -190,7 +161,6 @@
       justify-content:center;
       gap:8px;
     }
-
     .science-chip{
       background:rgba(255,255,255,.08);
       color:rgba(255,255,255,.9);
@@ -213,7 +183,6 @@
       padding:12px 14px;
       box-shadow:0 2px 20px rgba(0,0,0,.4);
     }
-
     .nav button{
       border:1.5px solid rgba(255,255,255,.18);
       background:transparent;
@@ -226,7 +195,6 @@
       cursor:pointer;
       transition:.22s ease;
     }
-
     .nav button:hover{
       background:var(--blue);
       border-color:var(--blue);
@@ -247,7 +215,6 @@
       position:relative;
       overflow:hidden;
     }
-
     .stage::after{
       content:'';
       position:absolute;
@@ -258,7 +225,6 @@
       right:-50px;
       bottom:-90px;
     }
-
     .stage.orange{background:linear-gradient(135deg,#9a3412,#ea580c,#fb923c)}
     .stage.blue{background:linear-gradient(135deg,#1e3a8a,#2563eb,#60a5fa)}
     .stage.purple{background:linear-gradient(135deg,#4c1d95,#7c3aed,#a78bfa)}
@@ -280,7 +246,6 @@
       text-transform:uppercase;
       margin-bottom:10px;
     }
-
     .stage-icon{
       font-size:50px;
       margin-bottom:10px;
@@ -289,7 +254,6 @@
       position:relative;
       z-index:1;
     }
-
     .stage h2{
       font-family:'Fredoka',cursive;
       font-size:clamp(28px,4vw,48px);
@@ -299,7 +263,6 @@
       position:relative;
       z-index:1;
     }
-
     .stage p{
       margin-top:10px;
       color:rgba(255,255,255,.92);
@@ -308,7 +271,6 @@
       position:relative;
       z-index:1;
     }
-
     .stage-tags{
       display:flex;
       flex-wrap:wrap;
@@ -317,7 +279,6 @@
       position:relative;
       z-index:1;
     }
-
     .stage-tag{
       background:rgba(255,255,255,.16);
       color:#fff;
@@ -335,7 +296,6 @@
       margin-bottom:18px;
       box-shadow:var(--shadow);
     }
-
     .card h3{
       font-family:'Fredoka',cursive;
       font-size:24px;
@@ -344,13 +304,12 @@
       align-items:center;
       gap:8px;
     }
-
-    .card.bc{border-left:6px solid var(--orange)}
-    .card.bc h3{color:var(--orange)}
-    .card.bp{border-left:6px solid var(--blue)}
-    .card.bp h3{color:var(--blue)}
-    .card.ba{border-left:6px solid var(--purple)}
-    .card.ba h3{color:var(--purple)}
+    .card.bc{border-left:6px solid var(--cpa-c)}
+    .card.bc h3{color:var(--cpa-c)}
+    .card.bp{border-left:6px solid var(--cpa-p)}
+    .card.bp h3{color:var(--cpa-p)}
+    .card.ba{border-left:6px solid var(--cpa-a)}
+    .card.ba h3{color:var(--cpa-a)}
     .card.bg{border-left:6px solid var(--green)}
     .card.bg h3{color:var(--green)}
     .card.bo{border-left:6px solid var(--amber)}
@@ -370,19 +329,16 @@
       text-transform:uppercase;
       margin-bottom:10px;
     }
-
     .cpa-c{
       background:#fff7ed;
       color:#9a3412;
       border:2px solid #fb923c;
     }
-
     .cpa-p{
       background:#eff6ff;
       color:#1e3a8a;
       border:2px solid #93c5fd;
     }
-
     .cpa-a{
       background:#f5f3ff;
       color:#4c1d95;
@@ -397,7 +353,6 @@
       font-weight:700;
       line-height:1.65;
     }
-
     .info strong{font-weight:900}
     .info.yellow{background:#fefce8;border:2px solid #fde047}
     .info.blue{background:#eff6ff;border:2px solid #93c5fd}
@@ -412,7 +367,6 @@
       gap:14px;
       margin:12px 0;
     }
-
     .grid-3{
       display:grid;
       grid-template-columns:repeat(3,1fr);
@@ -435,18 +389,15 @@
       align-items:center;
       gap:6px;
     }
-
     .bubble-card:hover{
       transform:translateY(-2px) scale(1.01);
       border-color:var(--blue);
       background:#eff6ff;
     }
-
     .bubble-card strong{
       font-size:15px;
       color:var(--ink);
     }
-
     .bubble-card small{
       color:var(--gray4);
       font-size:12px;
@@ -461,7 +412,6 @@
       margin:16px 0;
       text-align:center;
     }
-
     .sun-core{
       width:160px;
       height:160px;
@@ -479,13 +429,11 @@
       line-height:1.2;
       box-shadow:0 0 0 10px rgba(37,99,235,.12);
     }
-
     .orbit-grid{
       display:grid;
       grid-template-columns:repeat(2,1fr);
       gap:12px;
     }
-
     .orbit{
       background:#fff;
       border:2px dashed #93c5fd;
@@ -500,7 +448,6 @@
       list-style:none;
       counter-reset:step;
     }
-
     .steps li{
       counter-increment:step;
       display:flex;
@@ -510,7 +457,6 @@
       font-size:14px;
       font-weight:700;
     }
-
     .steps li::before{
       content:counter(step);
       width:32px;
@@ -524,8 +470,9 @@
       color:#fff;
       background:var(--blue);
     }
-
+    .steps.orange li::before{background:var(--orange)}
     .steps.purple li::before{background:var(--purple)}
+    .steps.green li::before{background:var(--green)}
 
     .worked,
     .guided,
@@ -535,12 +482,10 @@
       margin:16px 0;
       position:relative;
     }
-
     .worked{
       background:linear-gradient(135deg,#f8fafc,#eef2ff);
       border:2px solid var(--gray2);
     }
-
     .worked::before{
       content:'Exemplo resolvido';
       position:absolute;
@@ -555,12 +500,10 @@
       letter-spacing:.5px;
       text-transform:uppercase;
     }
-
     .guided{
       background:linear-gradient(135deg,#fff7ed,#ffedd5);
       border:2px solid #fdba74;
     }
-
     .guided::before{
       content:'Prática guiada';
       position:absolute;
@@ -575,12 +518,10 @@
       letter-spacing:.5px;
       text-transform:uppercase;
     }
-
     .independent{
       background:#fff;
       border:2px solid var(--gray2);
     }
-
     .independent::before{
       content:'Prática independente';
       position:absolute;
@@ -608,12 +549,10 @@
       cursor:pointer;
       transition:.2s ease;
     }
-
     .question:hover{
       transform:translateX(4px);
       background:#f8fbff;
     }
-
     .question.blue{border-left-color:var(--blue)}
     .question.orange{border-left-color:var(--orange)}
     .question.green{border-left-color:var(--green)}
@@ -631,7 +570,6 @@
       color:#fff;
       background:var(--blue);
     }
-
     .show-btn.orange{background:var(--orange)}
     .show-btn.green{background:var(--green)}
     .show-btn.purple{background:var(--purple)}
@@ -648,8 +586,52 @@
       font-weight:800;
       line-height:1.6;
     }
-
     .answer.show{display:block}
+
+    .mc-opt{
+      background:var(--gray0);
+      border:2px solid var(--gray2);
+      border-radius:12px;
+      padding:12px 14px;
+      margin:7px 0;
+      cursor:pointer;
+      font-size:14px;
+      font-weight:800;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      transition:.2s ease;
+    }
+    .mc-opt:hover{
+      background:#eff6ff;
+      border-color:var(--blue);
+      transform:scale(1.01);
+    }
+    .mc-letter{
+      width:28px;
+      height:28px;
+      border-radius:50%;
+      background:var(--blue);
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:12px;
+      font-weight:900;
+      flex-shrink:0;
+    }
+    .mc-opt.correct{
+      background:#f0fdf4;
+      border-color:var(--green);
+      color:#14532d;
+    }
+    .mc-opt.correct .mc-letter{background:var(--green)}
+    .mc-opt.wrong{
+      background:#fef2f2;
+      border-color:var(--red);
+      color:#7f1d1d;
+    }
+    .mc-opt.wrong .mc-letter{background:var(--red)}
 
     .stars{
       display:flex;
@@ -663,14 +645,12 @@
       background:var(--yellow);
       font-weight:900;
     }
-
     .star{
       font-size:20px;
       cursor:pointer;
       user-select:none;
       transition:.2s ease;
     }
-
     .star:hover{transform:scale(1.2)}
     .star.off{filter:grayscale(1) opacity(.35)}
 
@@ -680,7 +660,6 @@
       gap:12px;
       margin:16px 0;
     }
-
     .memory-card{
       background:#fff;
       border:2px solid var(--gray2);
@@ -692,7 +671,6 @@
       transition:.2s ease;
       text-align:center;
     }
-
     .memory-card:hover{
       transform:translateY(-2px);
       border-color:var(--purple);
@@ -705,7 +683,6 @@
       padding:28px;
       margin-top:24px;
     }
-
     .quiz-wrap h3{
       color:#fff;
       text-align:center;
@@ -713,7 +690,6 @@
       font-size:26px;
       margin-bottom:18px;
     }
-
     .quiz-bar-wrap{
       height:10px;
       background:rgba(255,255,255,.12);
@@ -721,14 +697,12 @@
       overflow:hidden;
       margin-bottom:14px;
     }
-
     .quiz-bar{
       height:100%;
       width:0;
       background:linear-gradient(90deg,#06b6d4,#22c55e);
       transition:.35s ease;
     }
-
     .quiz-score{
       text-align:center;
       color:#fde68a;
@@ -736,7 +710,6 @@
       font-size:18px;
       margin-bottom:14px;
     }
-
     .quiz-question{
       color:#fff;
       font-size:17px;
@@ -745,14 +718,12 @@
       line-height:1.5;
       margin-bottom:16px;
     }
-
     .quiz-options{
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:10px;
       margin-bottom:16px;
     }
-
     .quiz-option{
       border:2px solid rgba(255,255,255,.18);
       background:rgba(255,255,255,.08);
@@ -766,22 +737,18 @@
       text-align:left;
       transition:.2s ease;
     }
-
     .quiz-option:hover:not(:disabled){
       background:rgba(255,255,255,.15);
       transform:scale(1.01);
     }
-
     .quiz-option.correct{
       background:rgba(34,197,94,.28);
       border-color:#22c55e;
     }
-
     .quiz-option.wrong{
       background:rgba(220,38,38,.28);
       border-color:#dc2626;
     }
-
     .quiz-feedback{
       min-height:26px;
       text-align:center;
@@ -789,7 +756,6 @@
       font-weight:900;
       margin-bottom:12px;
     }
-
     .quiz-next{
       display:block;
       margin:0 auto;
@@ -804,7 +770,6 @@
       transition:.2s ease;
       box-shadow:0 6px 20px rgba(37,99,235,.24);
     }
-
     .quiz-next:hover{transform:scale(1.04)}
     .quiz-next:disabled{
       opacity:.45;
@@ -819,7 +784,6 @@
       flex-wrap:wrap;
       margin:36px 0 10px;
     }
-
     .nav-bottom a{
       display:inline-block;
       text-decoration:none;
@@ -828,21 +792,16 @@
       font-weight:900;
       transition:.2s ease;
     }
-
     .btn-back{
       background:#e5e7eb;
       color:#111827;
     }
-
     .btn-back:hover{background:#d1d5db}
-
     .btn-next{
       background:var(--blue);
       color:#fff;
     }
-
     .btn-next:hover{background:#1d4ed8}
-
     .btn-next.disabled{
       background:#9ca3af;
       pointer-events:none;
@@ -865,7 +824,6 @@
       z-index:300;
       transition:.2s ease;
     }
-
     .top-btn:hover{
       background:var(--blue);
       transform:scale(1.08);
@@ -896,9 +854,9 @@
   <div class="cover" id="top">
     <div class="cover-grid"></div>
     <div class="cover-glow"></div>
-    <div class="cover-icon" id="coverIcon">📘</div>
-    <h1 id="coverTitle">Ideia Principal do Texto</h1>
-    <p class="cover-sub" id="coverSubtitle">Dia 001 • Português • Eiji • 5º ano → ponte para o 6º</p>
+    <div class="cover-icon">📘</div>
+    <h1>Ideia Principal<br>do Texto</h1>
+    <p class="cover-sub">Dia 001 • Português • Eiji • 5º ano → ponte para o 6º</p>
 
     <div class="cover-pills">
       <div class="pill">🧱 Concreto</div>
@@ -936,11 +894,6 @@
     <button onclick="go('spaced')">⏱️ Revisão</button>
     <button onclick="go('quiz')">🎮 Quiz final</button>
   </nav>
-
-  <!-- =========================================================
-       BLOCO 2 — CONTEÚDO EDITÁVEL
-       Nas próximas apostilas você trocará o conteúdo abaixo.
-  ========================================================== -->
 
   <div class="page" id="porque">
     <div class="stage dark">
@@ -1369,11 +1322,6 @@
     </div>
   </div>
 
-  <!-- =========================================================
-       BLOCO 3 — QUIZ EDITÁVEL
-       Nas próximas apostilas você troca só estas perguntas.
-  ========================================================== -->
-
   <div class="page" id="quiz">
     <div class="stage dark">
       <div class="stage-badge">🎮 Quiz final</div>
@@ -1404,39 +1352,9 @@
 
   <button class="top-btn" onclick="go('top')">⬆️</button>
 
-  <footer class="footer" id="footerInfo">
-    Dia 001 — Ideia Principal do Texto • Projeto Eiji
+  <footer class="footer">
+    Dia 001 — Ideia Principal do Texto • Projeto Eiji • Português • Estrutura: CPA + Scaffolding + Quiz Final
   </footer>
-
-  <!-- =========================================================
-       BLOCO 4 — SCRIPTS FIXOS
-       Você quase não mexe nisso nas próximas apostilas.
-  ========================================================== -->
-
-  <script>
-    const QUIZ_DATA = [
-      { q:"A ideia principal é:", opts:["qualquer detalhe pequeno","a mensagem mais importante do texto","o nome do personagem","a última frase"], a:1 },
-      { q:"Os detalhes servem para:", opts:["esconder a resposta","ajudar a explicar a ideia principal","atrapalhar a leitura","substituir o texto"], a:1 },
-      { q:"Para encontrar a ideia principal, o primeiro passo é:", opts:["escolher qualquer frase","ler o texto inteiro","olhar só o título","responder rápido"], a:1 },
-      { q:"Se um texto fala de treino, melhora e persistência, a ideia principal pode ser:", opts:["a roupa era azul","o esforço ajudou no resultado","o chão estava molhado","a escola era grande"], a:1 },
-      { q:"Assunto e ideia principal são exatamente a mesma coisa?", opts:["sim","não"], a:1 },
-      { q:"Um detalhe é:", opts:["uma informação menor","a mensagem central","o resumo inteiro","a única coisa importante"], a:0 },
-      { q:"A ideia principal responde à pergunta:", opts:["qual cor apareceu?","sobre o que o texto fala de verdade?","quantas letras tem a palavra?","quem escreveu o livro?"], a:1 },
-      { q:"No texto sobre Lara correndo, a ideia principal é:", opts:["ela treinou e melhorou","ela estudava à tarde","ela gostava de tênis","a escola tinha quadra"], a:0 },
-      { q:"Se um texto fala de sementes, água, luz e brotos, a ideia principal é:", opts:["o copo era pequeno","as sementes cresceram porque foram cuidadas","o aluno usou terra","a janela era branca"], a:1 },
-      { q:"Ler bem é apenas falar rápido?", opts:["sim","não"], a:1 },
-      { q:"A melhor atitude é:", opts:["marcar a primeira alternativa","relê quando necessário","ignorar detalhes","não pensar muito"], a:1 },
-      { q:"A ideia principal quase sempre é:", opts:["a palavra mais bonita","o centro da mensagem","um detalhe sem importância","a menor frase do texto"], a:1 },
-      { q:"Qual frase parece ideia principal?", opts:["As bexigas eram azuis","Foi uma festa muito divertida","Tinha música na festa","O bolo tinha cobertura"], a:1 },
-      { q:"Qual frase parece detalhe?", opts:["A turma trabalhou para conseguir livros","Os alunos fizeram cartazes","O esforço trouxe resultado","Aprender exige prática"], a:1 },
-      { q:"A ideia principal ajuda o leitor a:", opts:["entender o texto todo","decorar só palavras difíceis","pular partes do texto","evitar leitura"], a:0 },
-      { q:"No texto de Beatriz, a ideia principal é:", opts:["ela ficou nervosa","ela melhorou porque treinou e enfrentou o medo","ela olhou no espelho","a professora falou com ela"], a:1 },
-      { q:"No texto de Caio, a ideia principal é:", opts:["a família cuidou do ambiente","as latas estavam na caixa","o quintal era grande","havia vários sacos"], a:0 },
-      { q:"Quando o leitor separa o que é central do que é detalhe, ele está:", opts:["encontrando a ideia principal","esquecendo o texto","copiando o autor","pulando etapas"], a:0 },
-      { q:"A expressão correta é:", opts:["detalhe = centro do texto","ideia principal = mensagem mais importante","assunto = última frase","resumo = qualquer palavra"], a:1 },
-      { q:"Para terminar, qual atitude mostra um bom leitor?", opts:["entender, pensar e justificar","chutar rápido","ler só metade","escolher pela sorte"], a:0 }
-    ];
-  </script>
 
   <script>
     function go(id){
@@ -1471,34 +1389,48 @@
       el.style.background = '#f0fdf4';
     }
 
-    function aplicarMetadados(){
-      const numeroFormatado = String(APOSTILA.numero).padStart(3,'0');
-      document.title = `Dia ${numeroFormatado} — ${APOSTILA.titulo} | Eiji`;
+    function markOption(el, isCorrect){
+      const parent = el.parentElement;
+      const options = parent.querySelectorAll('.mc-opt');
+      if(Array.from(options).some(opt => opt.classList.contains('correct') || opt.classList.contains('wrong'))){
+        return;
+      }
+      options.forEach(opt => opt.style.pointerEvents = 'none');
 
-      document.getElementById('coverIcon').textContent = APOSTILA.disciplinaIcone;
-      document.getElementById('coverTitle').textContent = APOSTILA.titulo;
-      document.getElementById('coverSubtitle').textContent =
-        `Dia ${numeroFormatado} • ${APOSTILA.disciplina} • ${APOSTILA.reino} • ${APOSTILA.raridade} • ✨ ${APOSTILA.xp} XP • 🪙 ${APOSTILA.moedas}`;
-
-      document.getElementById('footerInfo').textContent =
-        `Dia ${numeroFormatado} — ${APOSTILA.titulo} • ${APOSTILA.disciplina} • ${APOSTILA.reino}`;
-    }
-
-    function configurarProximaApostila(){
-      const btn = document.getElementById('btnProximaApostila');
-      if(!btn) return;
-
-      const atual = APOSTILA.numero;
-      const prox = atual + 1;
-
-      if(prox <= 255){
-        btn.href = `dia-${String(prox).padStart(3,'0')}.html`;
+      if(isCorrect){
+        el.classList.add('correct');
       }else{
-        btn.href = '#';
-        btn.textContent = 'Fim das apostilas';
-        btn.classList.add('disabled');
+        el.classList.add('wrong');
+        options.forEach(opt => {
+          if(opt.dataset.correct === 'true'){
+            opt.classList.add('correct');
+          }
+        });
       }
     }
+
+    const quizData = [
+      { q:"A ideia principal é:", opts:["qualquer detalhe pequeno","a mensagem mais importante do texto","o nome do personagem","a última frase"], a:1 },
+      { q:"Os detalhes servem para:", opts:["esconder a resposta","ajudar a explicar a ideia principal","atrapalhar a leitura","substituir o texto"], a:1 },
+      { q:"Para encontrar a ideia principal, o primeiro passo é:", opts:["escolher qualquer frase","ler o texto inteiro","olhar só o título","responder rápido"], a:1 },
+      { q:"Se um texto fala de treino, melhora e persistência, a ideia principal pode ser:", opts:["a roupa era azul","o esforço ajudou no resultado","o chão estava molhado","a escola era grande"], a:1 },
+      { q:"Assunto e ideia principal são exatamente a mesma coisa?", opts:["sim","não"], a:1 },
+      { q:"Um detalhe é:", opts:["uma informação menor","a mensagem central","o resumo inteiro","a única coisa importante"], a:0 },
+      { q:"A ideia principal responde à pergunta:", opts:["qual cor apareceu?","sobre o que o texto fala de verdade?","quantas letras tem a palavra?","quem escreveu o livro?"], a:1 },
+      { q:"No texto sobre Lara correndo, a ideia principal é:", opts:["ela treinou e melhorou","ela estudava à tarde","ela gostava de tênis","a escola tinha quadra"], a:0 },
+      { q:"Se um texto fala de sementes, água, luz e brotos, a ideia principal é:", opts:["o copo era pequeno","as sementes cresceram porque foram cuidadas","o aluno usou terra","a janela era branca"], a:1 },
+      { q:"Ler bem é apenas falar rápido?", opts:["sim","não"], a:1 },
+      { q:"A melhor atitude é:", opts:["marcar a primeira alternativa","relê quando necessário","ignorar detalhes","não pensar muito"], a:1 },
+      { q:"A ideia principal quase sempre é:", opts:["a palavra mais bonita","o centro da mensagem","um detalhe sem importância","a menor frase do texto"], a:1 },
+      { q:"Qual frase parece ideia principal?", opts:["As bexigas eram azuis","Foi uma festa muito divertida","Tinha música na festa","O bolo tinha cobertura"], a:1 },
+      { q:"Qual frase parece detalhe?", opts:["A turma trabalhou para conseguir livros","Os alunos fizeram cartazes","O esforço trouxe resultado","Aprender exige prática"], a:1 },
+      { q:"A ideia principal ajuda o leitor a:", opts:["entender o texto todo","decorar só palavras difíceis","pular partes do texto","evitar leitura"], a:0 },
+      { q:"No texto de Beatriz, a ideia principal é:", opts:["ela ficou nervosa","ela melhorou porque treinou e enfrentou o medo","ela olhou no espelho","a professora falou com ela"], a:1 },
+      { q:"No texto de Caio, a ideia principal é:", opts:["a família cuidou do ambiente","as latas estavam na caixa","o quintal era grande","havia vários sacos"], a:0 },
+      { q:"Quando o leitor separa o que é central do que é detalhe, ele está:", opts:["encontrando a ideia principal","esquecendo o texto","copiando o autor","pulando etapas"], a:0 },
+      { q:"A expressão correta é:", opts:["detalhe = centro do texto","ideia principal = mensagem mais importante","assunto = última frase","resumo = qualquer palavra"], a:1 },
+      { q:"Para terminar, qual atitude mostra um bom leitor?", opts:["entender, pensar e justificar","chutar rápido","ler só metade","escolher pela sorte"], a:0 }
+    ];
 
     let quizIndex = 0;
     let quizScore = 0;
@@ -1512,11 +1444,11 @@
 
     function renderQuiz(){
       answered = false;
-      const item = QUIZ_DATA[quizIndex];
+      const item = quizData[quizIndex];
 
       document.getElementById('quizQuestion').textContent = item.q;
-      document.getElementById('quizScore').textContent = `Questão ${quizIndex + 1} de ${QUIZ_DATA.length}`;
-      document.getElementById('quizBar').style.width = `${(quizIndex / QUIZ_DATA.length) * 100}%`;
+      document.getElementById('quizScore').textContent = `Questão ${quizIndex + 1} de ${quizData.length}`;
+      document.getElementById('quizBar').style.width = `${(quizIndex / quizData.length) * 100}%`;
       document.getElementById('quizFeedback').textContent = '';
       document.getElementById('quizFeedback').style.color = '#fff';
       document.getElementById('quizNext').disabled = true;
@@ -1537,7 +1469,7 @@
       if(answered) return;
       answered = true;
 
-      const item = QUIZ_DATA[quizIndex];
+      const item = quizData[quizIndex];
       const buttons = document.querySelectorAll('.quiz-option');
       buttons.forEach(btn => btn.disabled = true);
 
@@ -1558,7 +1490,7 @@
 
     function nextQuiz(){
       quizIndex++;
-      if(quizIndex >= QUIZ_DATA.length){
+      if(quizIndex >= quizData.length){
         finishQuiz();
       }else{
         renderQuiz();
@@ -1566,7 +1498,7 @@
     }
 
     function finishQuiz(){
-      const percent = Math.round((quizScore / QUIZ_DATA.length) * 100);
+      const percent = Math.round((quizScore / quizData.length) * 100);
       const question = document.getElementById('quizQuestion');
       const options = document.getElementById('quizOptions');
       const feedback = document.getElementById('quizFeedback');
@@ -1577,7 +1509,7 @@
 
       question.textContent = '🏆 Quiz concluído!';
       options.innerHTML = '';
-      score.textContent = `Eiji acertou ${quizScore} de ${QUIZ_DATA.length} (${percent}%)`;
+      score.textContent = `Eiji acertou ${quizScore} de ${quizData.length} (${percent}%)`;
 
       let msg = '';
       if(percent >= 85){
@@ -1600,8 +1532,30 @@
       };
     }
 
-    aplicarMetadados();
-    configurarProximaApostila();
+    (function(){
+      const caminho = window.location.pathname;
+      const match = caminho.match(/dia-(\d{3})\.html$/);
+      const btn = document.getElementById('btnProximaApostila');
+
+      if(!btn) return;
+
+      if(!match){
+        btn.href = 'dia-002.html';
+        return;
+      }
+
+      const atual = parseInt(match[1], 10);
+      const prox = atual + 1;
+
+      if(prox <= 255){
+        btn.href = `dia-${String(prox).padStart(3,'0')}.html`;
+      }else{
+        btn.href = '#';
+        btn.textContent = 'Fim das apostilas';
+        btn.classList.add('disabled');
+      }
+    })();
+
     initQuiz();
   </script>
 </body>
