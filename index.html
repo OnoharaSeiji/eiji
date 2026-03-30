@@ -273,7 +273,7 @@
       position:relative;
       overflow:hidden;
       border:1px solid rgba(255,255,255,.08);
-      min-height:148px;
+      min-height:172px;
     }
 
     .realm::before{
@@ -293,7 +293,8 @@
 
     .realm small,
     .realm .realm-meta,
-    .realm .realm-lore{
+    .realm .realm-lore,
+    .realm .realm-goal{
       position:relative;
       color:rgba(255,255,255,.85);
       font-size:12px;
@@ -305,6 +306,16 @@
       margin-top:8px;
       line-height:1.45;
       color:rgba(255,255,255,.78);
+    }
+
+    .realm .realm-goal{
+      margin-top:8px;
+      padding:8px 10px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.08);
+      color:#fef3c7;
+      line-height:1.45;
     }
 
     .realm .realm-icon{
@@ -349,7 +360,7 @@
       border:1px solid rgba(255,255,255,.08);
       cursor:pointer;
       transition:.2s ease;
-      min-height:176px;
+      min-height:240px;
     }
 
     .week-tile:hover{
@@ -384,6 +395,22 @@
       font-size:16px;
       font-weight:800;
       line-height:1.25;
+      margin-bottom:8px;
+    }
+
+    .week-type{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:5px 10px;
+      border-radius:999px;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
+      color:#dbeafe;
+      font-size:10px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.05em;
       margin-bottom:10px;
     }
 
@@ -398,11 +425,23 @@
       font-size:11px;
       color:#dbeafe;
       line-height:1.45;
-      margin-bottom:12px;
+      margin-bottom:10px;
       padding:10px;
       border-radius:12px;
       background:rgba(255,255,255,.04);
       border:1px solid rgba(255,255,255,.06);
+    }
+
+    .week-objective{
+      font-size:11px;
+      color:#fde68a;
+      line-height:1.45;
+      margin-bottom:12px;
+      padding:10px;
+      border-radius:12px;
+      background:rgba(251,191,36,.08);
+      border:1px solid rgba(251,191,36,.18);
+      font-weight:800;
     }
 
     .week-progress{
@@ -487,6 +526,10 @@
       font-weight:700;
     }
 
+    .mission-story strong{
+      color:#fde68a;
+    }
+
     .chest-card{
       min-width:260px;
       background:rgba(255,255,255,.05);
@@ -554,7 +597,7 @@
       flex-direction:column;
       align-items:center;
       text-align:center;
-      gap:10px;
+      gap:8px;
     }
 
     .mission-node{
@@ -635,13 +678,42 @@
       font-weight:800;
       color:#e5efff;
       line-height:1.35;
-      min-height:50px;
+      min-height:48px;
     }
 
     .mission-meta{
       font-size:11px;
       color:#bfdbfe;
       font-weight:800;
+    }
+
+    .mission-extra{
+      font-size:11px;
+      color:#dbeafe;
+      line-height:1.4;
+      min-height:44px;
+      max-width:180px;
+    }
+
+    .mission-chips{
+      display:flex;
+      gap:6px;
+      flex-wrap:wrap;
+      justify-content:center;
+      min-height:26px;
+    }
+
+    .mission-chip{
+      display:inline-flex;
+      align-items:center;
+      gap:4px;
+      padding:5px 8px;
+      border-radius:999px;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.08);
+      font-size:10px;
+      font-weight:800;
+      color:#dbeafe;
     }
 
     .reward{
@@ -761,6 +833,27 @@
       color:#dbeafe;
       font-size:12px;
       font-weight:800;
+    }
+
+    .today-list{
+      display:grid;
+      gap:8px;
+      margin-bottom:14px;
+    }
+
+    .today-line{
+      padding:10px 12px;
+      border-radius:12px;
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.08);
+      color:#dbeafe;
+      font-size:12px;
+      line-height:1.45;
+      font-weight:700;
+    }
+
+    .today-line strong{
+      color:#fde68a;
     }
 
     .today-actions{
@@ -1088,6 +1181,44 @@
       selectedWeek: 1
     };
 
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function humanizeTag(value) {
+      if (!value) return "";
+      return String(value)
+        .replaceAll("_", " ")
+        .replace(/\b\w/g, l => l.toUpperCase());
+    }
+
+    function truncateText(value, max = 92) {
+      const text = String(value || "");
+      if (text.length <= max) return text;
+      return text.slice(0, max - 1).trimEnd() + "…";
+    }
+
+    function blocoCronometradoTexto(bloco) {
+      if (!bloco) return "";
+      const tempo = bloco.tempo ? ` em ${bloco.tempo}` : "";
+      const itens = bloco.itens ? ` • ${bloco.itens}` : "";
+      return `Bloco cronometrado${tempo}${itens}`;
+    }
+
+    function chipsForDay(day) {
+      const chips = [];
+      if (day.funcaoPedagogica) chips.push(humanizeTag(day.funcaoPedagogica));
+      if (day.revisaoSemanal) chips.push("Checkpoint semanal");
+      if (day.blocoCronometrado) chips.push("⏱️ Tempo");
+      if (day.cadernoDeErrosObrigatorio) chips.push("🧠 Erros");
+      return chips.slice(0, 3);
+    }
+
     function getAllDays() {
       return (window.CONFIG && CONFIG.dias) ? CONFIG.dias : [];
     }
@@ -1412,12 +1543,13 @@
         const card = document.createElement("div");
         card.className = `realm ${meta.className}`;
         card.innerHTML = `
-          <div class="realm-icon">${phase.icone || "🗺️"}</div>
-          <h3>${phase.reino || phase.titulo}</h3>
-          <small>Semanas ${phase.inicioSemana} a ${phase.fimSemana}</small>
+          <div class="realm-icon">${escapeHtml(phase.icone || "🗺️")}</div>
+          <h3>${escapeHtml(phase.reino || phase.titulo)}</h3>
+          <small>Semanas ${escapeHtml(phase.inicioSemana)} a ${escapeHtml(phase.fimSemana)}</small>
           <span class="realm-meta">${progress.done}/${progress.total} missões concluídas</span>
           <div class="realm-progress"><span style="width:${progress.percent}%"></span></div>
-          <span class="realm-lore">${phase.lore || ""}</span>
+          <span class="realm-lore">${escapeHtml(phase.lore || "")}</span>
+          ${phase.objetivoAprovacao ? `<span class="realm-goal">🎯 ${escapeHtml(phase.objetivoAprovacao)}</span>` : ``}
         `;
         container.appendChild(card);
       });
@@ -1436,12 +1568,14 @@
         tile.className = `week-tile ${state.selectedWeek === week.semana ? "active" : ""} ${progress === 5 ? "complete" : ""}`;
         tile.innerHTML = `
           <div class="week-kicker">
-            <span>Semana ${week.semana}</span>
-            <span>${phase?.icone || "🗺️"}</span>
+            <span>Semana ${escapeHtml(week.semana)}</span>
+            <span>${escapeHtml(phase?.icone || "🗺️")}</span>
           </div>
-          <div class="week-title">${week.titulo}</div>
-          <div class="week-desc">${week.descricao}</div>
-          <div class="week-story">${week.narrativa || ""}</div>
+          <div class="week-title">${escapeHtml(week.titulo)}</div>
+          ${week.tipoSemana ? `<div class="week-type">🎓 ${escapeHtml(humanizeTag(week.tipoSemana))}</div>` : ``}
+          <div class="week-desc">${escapeHtml(week.descricao || "")}</div>
+          <div class="week-story">${escapeHtml(week.narrativa || "")}</div>
+          ${week.objetivoAprovacao ? `<div class="week-objective">🎯 ${escapeHtml(week.objetivoAprovacao)}</div>` : ``}
           <div class="week-progress">
             ${Array.from({ length:5 }).map((_,i) => `<span class="week-dot ${i < progress ? "on" : ""}"></span>`).join("")}
           </div>
@@ -1449,7 +1583,7 @@
             <span>${progress}/5 missões</span>
             <span>${isChestOpened(week.semana) ? "🧰 baú aberto" : isWeekComplete(week.semana) ? "✨ baú liberado" : "🔒 em progresso"}</span>
           </div>
-          <div class="week-loot-mini">${reward?.icon || "🎁"} ${reward?.nome || "Recompensa semanal"}</div>
+          <div class="week-loot-mini">${escapeHtml(reward?.icon || "🎁")} ${escapeHtml(reward?.nome || "Recompensa semanal")}</div>
         `;
         tile.addEventListener("click", () => {
           state.selectedWeek = week.semana;
@@ -1476,7 +1610,11 @@
 
       document.getElementById("missionWeekTitle").textContent = `${phase?.icone || "🗺️"} Semana ${week.semana} — ${week.titulo}`;
       document.getElementById("missionWeekDesc").textContent = `${week.descricao} • Reino: ${week.reino || phase?.reino || ""}`;
-      document.getElementById("missionWeekStory").textContent = week.narrativa || phase?.lore || "";
+      document.getElementById("missionWeekStory").innerHTML = `
+        ${week.narrativa ? `<div>${escapeHtml(week.narrativa)}</div>` : ``}
+        ${week.tipoSemana ? `<div style="margin-top:8px;"><strong>Tipo de semana:</strong> ${escapeHtml(humanizeTag(week.tipoSemana))}</div>` : ``}
+        ${week.objetivoAprovacao ? `<div style="margin-top:8px;"><strong>Objetivo de aprovação:</strong> ${escapeHtml(week.objetivoAprovacao)}</div>` : ``}
+      `;
 
       const chestOpen = isChestOpened(weekNumber);
       const chestButton = document.getElementById("btnOpenSelectedChest");
@@ -1498,20 +1636,25 @@
       days.forEach((day) => {
         const done = isDayDone(day.numero);
         const current = firstIncomplete && firstIncomplete.numero === day.numero;
+        const chips = chipsForDay(day);
 
         const mission = document.createElement("div");
         mission.className = "mission";
         mission.innerHTML = `
-          <div class="mission-node ${done ? "done" : ""} ${current ? "current" : ""} ${day.raridade || ""}" title="${day.titulo}">
-            <div class="icon">${day.iconeMissao || day.disciplinaIcone || "📘"}</div>
+          <div class="mission-node ${done ? "done" : ""} ${current ? "current" : ""} ${day.raridade || ""}" title="${escapeHtml(day.titulo)}">
+            <div class="icon">${escapeHtml(day.iconeMissao || day.disciplinaIcone || "📘")}</div>
             <div class="num">D${String(day.numero).padStart(3, "0")}</div>
           </div>
-          <div class="mission-rarity ${rarityClass(day.raridade)}">${day.raridade || "comum"}</div>
-          <div class="mission-title">${day.titulo}</div>
-          <div class="mission-meta">${day.disciplinaIcone || ""} ${day.disciplinaNome || day.disciplina} • ${day.expansao || ""}</div>
+          <div class="mission-rarity ${rarityClass(day.raridade)}">${escapeHtml(day.raridade || "comum")}</div>
+          <div class="mission-title">${escapeHtml(day.titulo)}</div>
+          <div class="mission-meta">${escapeHtml(day.disciplinaIcone || "")} ${escapeHtml(day.disciplinaNome || day.disciplina || "")}${day.tempoMeta ? ` • ${escapeHtml(day.tempoMeta)}` : ``}</div>
+          <div class="mission-extra">${escapeHtml(truncateText(day.habilidadePrincipal || day.expansao || ""))}</div>
+          <div class="mission-chips">
+            ${chips.map(chip => `<span class="mission-chip">${escapeHtml(chip)}</span>`).join("")}
+          </div>
           <div class="reward">✨ ${day.xp || 10} XP • 🪙 ${day.moedas || 3}</div>
           <div class="mission-actions">
-            <a class="mini-btn open" href="${day.arquivo}">Abrir</a>
+            <a class="mini-btn open" href="${escapeHtml(day.arquivo)}">Abrir</a>
             <button class="mini-btn ${done ? "undo" : "done"}">${done ? "Desmarcar" : "Concluir"}</button>
           </div>
         `;
@@ -1536,11 +1679,17 @@
         const fallback = firstIncompleteDay();
         container.innerHTML = `
           <div class="today-tag">🗓️ Fora da data do cronograma</div>
-          <h3>${fallback ? `Próxima missão: ${fallback.titulo}` : "Todas as missões concluídas"}</h3>
+          <h3>${fallback ? `Próxima missão: ${escapeHtml(fallback.titulo)}` : "Todas as missões concluídas"}</h3>
           <p>${fallback ? `Dia ${String(fallback.numero).padStart(3, "0")} • Semana ${fallback.semana}` : "Parabéns. O mapa inteiro já foi vencido."}</p>
-          <div class="today-bonus">${fallback ? `${fallback.iconeMissao || "📜"} ${fallback.raridade || "comum"} • ✨ ${fallback.xp || 10} XP • 🪙 ${fallback.moedas || 3}` : "Mapa completo."}</div>
+          <div class="today-bonus">${fallback ? `${escapeHtml(fallback.iconeMissao || "📜")} ${escapeHtml(fallback.raridade || "comum")} • ✨ ${fallback.xp || 10} XP • 🪙 ${fallback.moedas || 3}` : "Mapa completo."}</div>
+          ${fallback ? `
+            <div class="today-list">
+              ${fallback.habilidadePrincipal ? `<div class="today-line"><strong>Habilidade principal:</strong> ${escapeHtml(fallback.habilidadePrincipal)}</div>` : ``}
+              ${fallback.focoDeProva ? `<div class="today-line"><strong>Foco de prova:</strong> ${escapeHtml(fallback.focoDeProva)}</div>` : ``}
+            </div>
+          ` : ``}
           <div class="today-actions">
-            ${fallback ? `<a class="btn btn-primary" href="${fallback.arquivo}">Abrir próxima missão</a>` : `<a class="btn btn-primary" href="#weekBoard">Ver tabuleiro</a>`}
+            ${fallback ? `<a class="btn btn-primary" href="${escapeHtml(fallback.arquivo)}">Abrir próxima missão</a>` : `<a class="btn btn-primary" href="#weekBoard">Ver tabuleiro</a>`}
           </div>
         `;
         return;
@@ -1548,11 +1697,20 @@
 
       container.innerHTML = `
         <div class="today-tag">📅 Hoje no mapa • Dia ${String(today.numero).padStart(3, "0")}</div>
-        <h3>${today.titulo}</h3>
-        <p>${today.reinoIcone || ""} ${today.reino || ""} • ${today.disciplinaIcone || ""} ${today.disciplinaNome || today.disciplina} • ${today.expansao || "Missão principal do dia"}</p>
-        <div class="today-bonus">${today.iconeMissao || "📜"} ${today.raridade || "comum"} • ✨ ${today.xp || 10} XP • 🪙 ${today.moedas || 3}</div>
+        <h3>${escapeHtml(today.titulo)}</h3>
+        <p>${escapeHtml(today.reinoIcone || "")} ${escapeHtml(today.reino || "")} • ${escapeHtml(today.disciplinaIcone || "")} ${escapeHtml(today.disciplinaNome || today.disciplina || "")} • ${escapeHtml(today.expansao || "Missão principal do dia")}</p>
+        <div class="today-bonus">${escapeHtml(today.iconeMissao || "📜")} ${escapeHtml(today.raridade || "comum")} • ✨ ${today.xp || 10} XP • 🪙 ${today.moedas || 3}</div>
+        <div class="today-list">
+          ${today.funcaoPedagogica ? `<div class="today-line"><strong>Função pedagógica:</strong> ${escapeHtml(humanizeTag(today.funcaoPedagogica))}</div>` : ``}
+          ${today.habilidadePrincipal ? `<div class="today-line"><strong>Habilidade principal:</strong> ${escapeHtml(today.habilidadePrincipal)}</div>` : ``}
+          ${today.focoDeProva ? `<div class="today-line"><strong>Foco de prova:</strong> ${escapeHtml(today.focoDeProva)}</div>` : ``}
+          ${today.criterioDominio ? `<div class="today-line"><strong>Critério de domínio:</strong> ${escapeHtml(today.criterioDominio)}</div>` : ``}
+          ${today.revisao24hDe ? `<div class="today-line"><strong>Revisão de 24h:</strong> retoma o Dia ${escapeHtml(today.revisao24hDe)}</div>` : ``}
+          ${today.revisaoCumulativa ? `<div class="today-line"><strong>Revisão cumulativa:</strong> ${escapeHtml(today.revisaoCumulativa)}</div>` : ``}
+          ${today.blocoCronometrado ? `<div class="today-line"><strong>Bloco cronometrado:</strong> ${escapeHtml(blocoCronometradoTexto(today.blocoCronometrado))}</div>` : ``}
+        </div>
         <div class="today-actions">
-          <a class="btn btn-primary" href="${today.arquivo}">Abrir apostila de hoje</a>
+          <a class="btn btn-primary" href="${escapeHtml(today.arquivo)}">Abrir apostila de hoje</a>
           <button class="btn ${isDayDone(today.numero) ? "btn-danger" : "btn-secondary"}" id="todayToggleBtn">
             ${isDayDone(today.numero) ? "Desmarcar concluído" : "Marcar como concluído"}
           </button>
@@ -1574,9 +1732,9 @@
       container.innerHTML = `<div class="loot-grid">
         ${items.map(item => `
           <div class="loot">
-            <div class="loot-icon">${item.icon}</div>
-            <strong>${item.nome}</strong>
-            <small>Semana ${item.week} • ${item.desc}</small>
+            <div class="loot-icon">${escapeHtml(item.icon)}</div>
+            <strong>${escapeHtml(item.nome)}</strong>
+            <small>Semana ${item.week} • ${escapeHtml(item.desc)}</small>
           </div>
         `).join("")}
       </div>`;
@@ -1594,9 +1752,9 @@
       container.innerHTML = `<div class="badge-grid">
         ${list.map(b => `
           <div class="badge">
-            <div class="badge-icon">${b.icon}</div>
-            <strong>${b.nome}</strong>
-            <small>${b.desc}</small>
+            <div class="badge-icon">${escapeHtml(b.icon)}</div>
+            <strong>${escapeHtml(b.nome)}</strong>
+            <small>${escapeHtml(b.desc)}</small>
           </div>
         `).join("")}
       </div>`;
