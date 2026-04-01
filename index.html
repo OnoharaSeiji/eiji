@@ -3,28 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jornada do Eiji | Desafio Objetivo</title>
-  <meta name="description" content="Mapa de aventura de estudos do Eiji para o Desafio Objetivo." />
+  <title>Eiji | Calendário de Estudos</title>
+  <meta name="description" content="Calendário mensal de estudos do Eiji com navegação por mês e links diretos para as apostilas." />
   <script src="config.js"></script>
   <style>
     :root{
       --bg:#09111f;
       --bg2:#101a2e;
       --panel:#13203a;
-      --panel2:#1a2b4d;
       --line:#2b426d;
       --text:#ecf3ff;
       --muted:#9fb4d8;
-      --gold:#fbbf24;
-      --green:#22c55e;
-      --red:#ef4444;
       --blue:#3b82f6;
-      --cyan:#06b6d4;
-      --purple:#8b5cf6;
+      --green:#22c55e;
+      --gold:#fbbf24;
       --orange:#f97316;
       --shadow:0 18px 40px rgba(0,0,0,.35);
       --radius:22px;
-      --radius-sm:14px;
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
@@ -34,10 +29,10 @@
       color:var(--text);
       background:
         radial-gradient(circle at top right, rgba(59,130,246,.18), transparent 28%),
-        radial-gradient(circle at bottom left, rgba(139,92,246,.16), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(139,92,246,.12), transparent 30%),
         linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
       min-height:100vh;
-      line-height:1.5;
+      line-height:1.45;
     }
 
     body::before{
@@ -45,55 +40,52 @@
       position:fixed;
       inset:0;
       pointer-events:none;
-      opacity:.09;
+      opacity:.08;
       background-image:
-        linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+        linear-gradient(rgba(255,255,255,.16) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.16) 1px, transparent 1px);
       background-size:48px 48px;
       mask-image:linear-gradient(180deg, rgba(0,0,0,.9), rgba(0,0,0,.35));
     }
 
     a{color:inherit;text-decoration:none}
-    button,input{font:inherit}
+    button{font:inherit}
 
     .container{
-      width:min(1240px, calc(100% - 28px));
+      width:min(1180px, calc(100% - 24px));
       margin:0 auto;
+      padding:24px 0 34px;
     }
 
     .hero{
-      padding:28px 0 18px;
-    }
-
-    .hero-card{
+      background:linear-gradient(135deg, rgba(17,24,39,.96), rgba(29,78,216,.88));
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:28px;
+      padding:24px;
+      box-shadow:var(--shadow);
+      margin-bottom:18px;
       position:relative;
       overflow:hidden;
-      background:
-        linear-gradient(135deg, rgba(22,34,64,.96), rgba(31,50,90,.92)),
-        linear-gradient(135deg, #111827, #1d4ed8);
-      border:1px solid rgba(255,255,255,.1);
-      border-radius:32px;
-      padding:28px;
-      box-shadow:var(--shadow);
     }
 
-    .hero-card::before{
+    .hero::after{
       content:"";
       position:absolute;
-      width:420px;
-      height:420px;
+      width:320px;
+      height:320px;
       border-radius:50%;
-      right:-140px;
-      top:-140px;
-      background:radial-gradient(circle, rgba(59,130,246,.36), transparent 68%);
+      right:-120px;
+      top:-120px;
+      background:radial-gradient(circle, rgba(59,130,246,.30), transparent 68%);
     }
 
-    .hero-grid{
+    .hero-top{
       position:relative;
-      display:grid;
-      grid-template-columns:1.15fr .85fr;
-      gap:20px;
-      align-items:center;
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:18px;
+      flex-wrap:wrap;
     }
 
     .kicker{
@@ -109,641 +101,351 @@
       font-weight:800;
       text-transform:uppercase;
       letter-spacing:.08em;
-      margin-bottom:14px;
+      margin-bottom:12px;
     }
 
     .hero h1{
-      font-size:clamp(30px, 5vw, 56px);
+      font-size:clamp(28px, 4vw, 48px);
       line-height:1.05;
-      margin-bottom:12px;
+      margin-bottom:10px;
+      position:relative;
+      z-index:1;
     }
 
     .hero p{
       color:var(--muted);
       max-width:720px;
       font-size:15px;
+      position:relative;
+      z-index:1;
     }
 
-    .hero-stats{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:12px;
-    }
-
-    .stat{
-      background:rgba(255,255,255,.07);
-      border:1px solid rgba(255,255,255,.12);
-      border-radius:18px;
-      padding:16px;
-      min-height:94px;
-    }
-
-    .stat-label{
-      color:#bfdbfe;
-      font-size:12px;
-      font-weight:800;
-      text-transform:uppercase;
-      letter-spacing:.06em;
-      margin-bottom:8px;
-    }
-
-    .stat-value{
-      font-size:28px;
-      font-weight:800;
-      line-height:1;
-      margin-bottom:6px;
-    }
-
-    .stat-sub{
-      color:var(--muted);
-      font-size:12px;
-      font-weight:700;
-    }
-
-    .hero-toolbar{
+    .hero-actions{
       display:flex;
-      flex-wrap:wrap;
       gap:10px;
-      margin-top:20px;
+      flex-wrap:wrap;
+      position:relative;
+      z-index:1;
+      margin-top:18px;
     }
 
     .btn{
       border:none;
       border-radius:999px;
-      padding:12px 18px;
+      padding:12px 16px;
       font-weight:800;
       cursor:pointer;
       transition:.2s ease;
     }
 
-    .btn:hover{
-      transform:translateY(-1px) scale(1.01);
-    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:linear-gradient(135deg,#22c55e,#16a34a);color:#fff}
+    .btn-secondary{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);color:#fff}
+    .btn-ghost{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);color:#dbeafe}
 
-    .btn-primary{
-      background:linear-gradient(135deg, #22c55e, #16a34a);
-      color:#fff;
-      box-shadow:0 10px 24px rgba(34,197,94,.2);
-    }
-
-    .btn-secondary{
-      background:rgba(255,255,255,.08);
-      border:1px solid rgba(255,255,255,.14);
-      color:#fff;
-    }
-
-    .btn-warning{
-      background:linear-gradient(135deg, #f59e0b, #f97316);
-      color:#111827;
-    }
-
-    .btn-danger{
-      background:rgba(239,68,68,.12);
-      border:1px solid rgba(239,68,68,.35);
-      color:#fecaca;
-    }
-
-    .progress-wrap{
-      margin-top:18px;
-    }
-
-    .progress-labels{
+    .summary{
       display:flex;
-      justify-content:space-between;
-      gap:16px;
-      color:#cbd5e1;
-      font-size:12px;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:16px;
+      position:relative;
+      z-index:1;
+    }
+
+    .summary-card{
+      min-width:150px;
+      background:rgba(255,255,255,.07);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:18px;
+      padding:14px 16px;
+    }
+
+    .summary-label{
+      color:#bfdbfe;
+      font-size:11px;
       font-weight:800;
-      margin-bottom:8px;
+      text-transform:uppercase;
+      letter-spacing:.06em;
+      margin-bottom:6px;
     }
 
-    .progress-bar{
-      height:16px;
-      border-radius:999px;
-      background:rgba(255,255,255,.08);
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.08);
+    .summary-value{
+      font-size:24px;
+      font-weight:800;
+      line-height:1;
+      margin-bottom:5px;
     }
 
-    .progress-fill{
-      width:0;
-      height:100%;
-      border-radius:999px;
-      background:linear-gradient(90deg, #06b6d4, #3b82f6, #8b5cf6);
-      transition:width .35s ease;
+    .summary-sub{
+      color:var(--muted);
+      font-size:12px;
+      font-weight:700;
     }
 
-    .layout{
-      display:grid;
-      grid-template-columns:1.15fr .85fr;
-      gap:18px;
-      padding:6px 0 34px;
-    }
-
-    .panel{
+    .calendar-shell{
       background:linear-gradient(180deg, rgba(19,32,58,.98), rgba(18,30,56,.98));
       border:1px solid rgba(255,255,255,.08);
       border-radius:26px;
-      padding:20px;
       box-shadow:var(--shadow);
       overflow:hidden;
     }
 
-    .panel h2{
-      font-size:24px;
-      margin-bottom:6px;
-    }
-
-    .panel p.section-sub{
-      color:var(--muted);
-      font-size:14px;
-      margin-bottom:16px;
-    }
-
-    .realm-grid{
-      display:grid;
-      grid-template-columns:repeat(5, minmax(0,1fr));
-      gap:12px;
-      margin-bottom:18px;
-    }
-
-    .realm{
-      border-radius:20px;
-      padding:14px;
-      position:relative;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.08);
-      min-height:172px;
-    }
-
-    .realm::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      opacity:.22;
-      background:radial-gradient(circle at top right, rgba(255,255,255,.55), transparent 42%);
-    }
-
-    .realm h3{
-      position:relative;
-      font-size:15px;
-      line-height:1.25;
-      margin:8px 0 6px;
-    }
-
-    .realm small,
-    .realm .realm-meta,
-    .realm .realm-lore,
-    .realm .realm-goal{
-      position:relative;
-      color:rgba(255,255,255,.85);
-      font-size:12px;
-      font-weight:700;
-      display:block;
-    }
-
-    .realm .realm-lore{
-      margin-top:8px;
-      line-height:1.45;
-      color:rgba(255,255,255,.78);
-    }
-
-    .realm .realm-goal{
-      margin-top:8px;
-      padding:8px 10px;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.08);
-      color:#fef3c7;
-      line-height:1.45;
-    }
-
-    .realm .realm-icon{
-      position:relative;
-      font-size:26px;
-    }
-
-    .realm .realm-progress{
-      position:relative;
-      margin-top:10px;
-      height:8px;
-      border-radius:999px;
-      background:rgba(255,255,255,.22);
-      overflow:hidden;
-    }
-
-    .realm .realm-progress > span{
-      display:block;
-      height:100%;
-      width:0;
-      background:#fff;
-      opacity:.9;
-    }
-
-    .realm-1{background:linear-gradient(135deg, #1d4ed8, #2563eb)}
-    .realm-2{background:linear-gradient(135deg, #047857, #16a34a)}
-    .realm-3{background:linear-gradient(135deg, #b45309, #f59e0b)}
-    .realm-4{background:linear-gradient(135deg, #6d28d9, #8b5cf6)}
-    .realm-5{background:linear-gradient(135deg, #b91c1c, #ef4444)}
-
-    .board-grid{
-      display:grid;
-      grid-template-columns:repeat(3, minmax(0,1fr));
-      gap:14px;
-    }
-
-    .week-tile{
-      position:relative;
-      border-radius:18px;
-      padding:16px;
-      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      border:1px solid rgba(255,255,255,.08);
-      cursor:pointer;
-      transition:.2s ease;
-      min-height:240px;
-    }
-
-    .week-tile:hover{
-      transform:translateY(-2px);
-      border-color:rgba(255,255,255,.16);
-    }
-
-    .week-tile.active{
-      border-color:#60a5fa;
-      box-shadow:0 0 0 2px rgba(96,165,250,.25);
-    }
-
-    .week-tile.complete{
-      background:linear-gradient(180deg, rgba(34,197,94,.12), rgba(255,255,255,.03));
-      border-color:rgba(34,197,94,.3);
-    }
-
-    .week-kicker{
+    .calendar-toolbar{
       display:flex;
       justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      padding:18px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      flex-wrap:wrap;
+    }
+
+    .month-nav{
+      display:flex;
       align-items:center;
       gap:10px;
-      margin-bottom:10px;
+      flex-wrap:wrap;
+    }
+
+    .month-btn{
+      width:44px;
+      height:44px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.06);
+      color:#fff;
+      font-size:18px;
+      font-weight:900;
+      cursor:pointer;
+      transition:.2s ease;
+    }
+
+    .month-btn:hover:not(:disabled){
+      background:rgba(59,130,246,.22);
+      border-color:rgba(96,165,250,.45);
+    }
+
+    .month-btn:disabled{
+      opacity:.35;
+      cursor:not-allowed;
+    }
+
+    .month-title-wrap{
+      min-width:220px;
+    }
+
+    .month-title{
+      font-size:28px;
+      font-weight:800;
+      line-height:1.05;
+      margin-bottom:4px;
+    }
+
+    .month-sub{
+      color:var(--muted);
+      font-size:13px;
+      font-weight:700;
+    }
+
+    .toolbar-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .legend{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      padding:0 18px 16px;
+      color:var(--muted);
       font-size:12px;
-      font-weight:800;
-      color:#bfdbfe;
-      text-transform:uppercase;
-      letter-spacing:.05em;
+      font-weight:700;
     }
 
-    .week-title{
-      font-size:16px;
-      font-weight:800;
-      line-height:1.25;
-      margin-bottom:8px;
-    }
-
-    .week-type{
+    .legend-pill{
       display:inline-flex;
       align-items:center;
-      gap:6px;
-      padding:5px 10px;
+      gap:8px;
+      padding:8px 10px;
       border-radius:999px;
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.10);
-      color:#dbeafe;
-      font-size:10px;
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.08);
+    }
+
+    .legend-dot{
+      width:10px;
+      height:10px;
+      border-radius:999px;
+      display:inline-block;
+    }
+
+    .dot-study{background:#3b82f6}
+    .dot-today{background:#fbbf24}
+    .dot-done{background:#22c55e}
+    .dot-next{background:#f97316}
+
+    .calendar{
+      padding:0 18px 18px;
+    }
+
+    .weekdays{
+      display:grid;
+      grid-template-columns:repeat(7, minmax(0,1fr));
+      gap:10px;
+      margin-bottom:10px;
+    }
+
+    .weekday{
+      padding:10px 8px;
+      text-align:center;
+      color:#bfdbfe;
+      font-size:12px;
       font-weight:800;
       text-transform:uppercase;
-      letter-spacing:.05em;
-      margin-bottom:10px;
+      letter-spacing:.06em;
     }
 
-    .week-desc{
-      font-size:12px;
-      color:var(--muted);
-      line-height:1.4;
-      margin-bottom:10px;
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(7, minmax(0,1fr));
+      gap:10px;
     }
 
-    .week-story{
-      font-size:11px;
-      color:#dbeafe;
-      line-height:1.45;
-      margin-bottom:10px;
-      padding:10px;
-      border-radius:12px;
+    .day{
+      min-height:132px;
+      border-radius:18px;
       background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.06);
-    }
-
-    .week-objective{
-      font-size:11px;
-      color:#fde68a;
-      line-height:1.45;
-      margin-bottom:12px;
-      padding:10px;
-      border-radius:12px;
-      background:rgba(251,191,36,.08);
-      border:1px solid rgba(251,191,36,.18);
-      font-weight:800;
-    }
-
-    .week-progress{
-      display:flex;
-      gap:6px;
-      margin-bottom:10px;
-    }
-
-    .week-dot{
-      flex:1;
-      height:8px;
-      border-radius:999px;
-      background:rgba(255,255,255,.08);
-      border:1px solid rgba(255,255,255,.06);
-    }
-
-    .week-dot.on{
-      background:linear-gradient(90deg, #22c55e, #16a34a);
-      border-color:transparent;
-    }
-
-    .week-foot{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:12px;
-      color:#cbd5e1;
-      font-size:12px;
-      font-weight:800;
-    }
-
-    .week-loot-mini{
-      margin-top:10px;
-      display:flex;
-      align-items:center;
-      gap:8px;
-      background:rgba(251,191,36,.08);
-      border:1px solid rgba(251,191,36,.22);
-      border-radius:12px;
-      padding:8px 10px;
-      font-size:11px;
-      color:#fde68a;
-      font-weight:800;
-    }
-
-    .mission-panel{
-      margin-top:18px;
-      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
       border:1px solid rgba(255,255,255,.08);
-      border-radius:22px;
-      padding:18px;
+      padding:10px;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      position:relative;
     }
 
-    .mission-head{
+    .day.other-month{
+      opacity:.28;
+    }
+
+    .day.has-study{
+      background:linear-gradient(180deg, rgba(59,130,246,.12), rgba(255,255,255,.03));
+      border-color:rgba(96,165,250,.25);
+    }
+
+    .day.today{
+      box-shadow:0 0 0 2px rgba(251,191,36,.35);
+      border-color:rgba(251,191,36,.45);
+    }
+
+    .day.done{
+      background:linear-gradient(180deg, rgba(34,197,94,.16), rgba(255,255,255,.03));
+      border-color:rgba(34,197,94,.28);
+    }
+
+    .day.next-study{
+      box-shadow:0 0 0 2px rgba(249,115,22,.22);
+      border-color:rgba(249,115,22,.40);
+    }
+
+    .day-top{
       display:flex;
       justify-content:space-between;
       align-items:flex-start;
-      gap:16px;
-      margin-bottom:18px;
-    }
-
-    .mission-head h3{
-      font-size:22px;
-      margin-bottom:6px;
-    }
-
-    .mission-head p{
-      color:var(--muted);
-      font-size:14px;
-      max-width:680px;
-    }
-
-    .mission-story{
-      margin-top:12px;
-      padding:14px;
-      border-radius:16px;
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.06);
-      color:#dbeafe;
-      font-size:13px;
-      line-height:1.5;
-      font-weight:700;
-    }
-
-    .mission-story strong{
-      color:#fde68a;
-    }
-
-    .chest-card{
-      min-width:260px;
-      background:rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:18px;
-      padding:14px;
-      text-align:center;
-    }
-
-    .chest-card .chest-icon{
-      font-size:34px;
-      margin-bottom:8px;
-    }
-
-    .chest-card strong{
-      display:block;
-      margin-bottom:4px;
-      font-size:15px;
-    }
-
-    .chest-card small{
-      display:block;
-      color:var(--muted);
-      margin-bottom:10px;
-      font-size:12px;
-      font-weight:700;
-      line-height:1.45;
-    }
-
-    .chest-reward-line{
-      margin-bottom:10px;
-      padding:10px 12px;
-      border-radius:12px;
-      background:rgba(251,191,36,.08);
-      border:1px solid rgba(251,191,36,.2);
-      color:#fde68a;
-      font-size:12px;
-      font-weight:800;
-      line-height:1.45;
-    }
-
-    .path{
-      position:relative;
-      display:grid;
-      grid-template-columns:repeat(5, minmax(0,1fr));
-      gap:12px;
-    }
-
-    .path::before{
-      content:"";
-      position:absolute;
-      left:8%;
-      right:8%;
-      top:42px;
-      height:8px;
-      border-radius:999px;
-      background:linear-gradient(90deg, rgba(255,255,255,.06), rgba(255,255,255,.12), rgba(255,255,255,.06));
-      z-index:0;
-    }
-
-    .mission{
-      position:relative;
-      z-index:1;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      text-align:center;
       gap:8px;
     }
 
-    .mission-node{
-      width:92px;
-      height:92px;
-      border-radius:50%;
-      border:3px solid rgba(255,255,255,.14);
-      background:linear-gradient(180deg, #1e293b, #0f172a);
+    .day-number{
+      width:32px;
+      height:32px;
+      border-radius:999px;
       display:flex;
-      flex-direction:column;
       align-items:center;
       justify-content:center;
-      cursor:pointer;
-      box-shadow:0 10px 24px rgba(0,0,0,.18);
-      transition:.2s ease;
-      position:relative;
-      overflow:hidden;
-    }
-
-    .mission-node:hover{
-      transform:translateY(-2px) scale(1.03);
-      border-color:#60a5fa;
-    }
-
-    .mission-node.done{
-      background:linear-gradient(180deg, #22c55e, #15803d);
-      border-color:#86efac;
-    }
-
-    .mission-node.current{
-      box-shadow:0 0 0 8px rgba(251,191,36,.12), 0 14px 28px rgba(0,0,0,.24);
-      border-color:#fbbf24;
-    }
-
-    .mission-node.raro{
-      box-shadow:0 0 0 3px rgba(251,191,36,.12), 0 10px 24px rgba(0,0,0,.18);
-    }
-
-    .mission-node .icon{
-      font-size:23px;
-      margin-bottom:4px;
-    }
-
-    .mission-node .num{
-      font-size:12px;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.08);
+      font-size:13px;
       font-weight:800;
-      line-height:1;
+      color:#fff;
+      flex-shrink:0;
     }
 
-    .mission-rarity{
-      margin-top:-4px;
-      font-size:10px;
-      font-weight:800;
+    .day.today .day-number{
+      background:rgba(251,191,36,.18);
+      border-color:rgba(251,191,36,.32);
+      color:#fde68a;
+    }
+
+    .day-badges{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-end;
+      gap:6px;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
       padding:4px 8px;
       border-radius:999px;
-      text-transform:uppercase;
-      letter-spacing:.05em;
-      border:1px solid rgba(255,255,255,.1);
-    }
-
-    .raridade-comum{
-      background:rgba(148,163,184,.14);
-      color:#cbd5e1;
-    }
-
-    .raridade-incomum{
-      background:rgba(34,197,94,.14);
-      color:#bbf7d0;
-    }
-
-    .raridade-raro{
-      background:rgba(251,191,36,.14);
-      color:#fde68a;
-    }
-
-    .mission-title{
-      font-size:12px;
-      font-weight:800;
-      color:#e5efff;
-      line-height:1.35;
-      min-height:48px;
-    }
-
-    .mission-meta{
-      font-size:11px;
-      color:#bfdbfe;
-      font-weight:800;
-    }
-
-    .mission-extra{
-      font-size:11px;
-      color:#dbeafe;
-      line-height:1.4;
-      min-height:44px;
-      max-width:180px;
-    }
-
-    .mission-chips{
-      display:flex;
-      gap:6px;
-      flex-wrap:wrap;
-      justify-content:center;
-      min-height:26px;
-    }
-
-    .mission-chip{
-      display:inline-flex;
-      align-items:center;
-      gap:4px;
-      padding:5px 8px;
-      border-radius:999px;
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.08);
       font-size:10px;
       font-weight:800;
+      letter-spacing:.04em;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.06);
       color:#dbeafe;
+      white-space:nowrap;
     }
 
-    .reward{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      border-radius:999px;
-      padding:6px 10px;
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.08);
+    .badge.today{background:rgba(251,191,36,.16); color:#fde68a; border-color:rgba(251,191,36,.28)}
+    .badge.done{background:rgba(34,197,94,.16); color:#bbf7d0; border-color:rgba(34,197,94,.28)}
+    .badge.next{background:rgba(249,115,22,.16); color:#fdba74; border-color:rgba(249,115,22,.28)}
+
+    .study-card{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      min-height:0;
+      flex:1;
+    }
+
+    .study-topline{
+      color:#bfdbfe;
       font-size:11px;
       font-weight:800;
-      color:#bfdbfe;
     }
 
-    .mission-actions{
+    .study-title{
+      font-size:13px;
+      font-weight:800;
+      line-height:1.35;
+      color:#f8fbff;
+    }
+
+    .study-meta{
+      color:var(--muted);
+      font-size:11px;
+      line-height:1.4;
+      font-weight:700;
+    }
+
+    .study-actions{
       display:flex;
       gap:8px;
-      flex-wrap:wrap;
-      justify-content:center;
+      margin-top:auto;
     }
 
     .mini-btn{
+      flex:1;
       border:none;
-      border-radius:999px;
-      padding:8px 12px;
+      border-radius:12px;
+      padding:9px 8px;
       font-size:11px;
       font-weight:800;
       cursor:pointer;
       transition:.2s ease;
+      text-align:center;
     }
 
     .mini-btn.open{
@@ -751,181 +453,37 @@
       color:#fff;
     }
 
-    .mini-btn.done{
-      background:#16a34a;
-      color:#fff;
-    }
-
-    .mini-btn.undo{
-      background:rgba(239,68,68,.12);
-      border:1px solid rgba(239,68,68,.35);
-      color:#fecaca;
-    }
-
-    .side-stack{
-      display:grid;
-      gap:18px;
-    }
-
-    .today-card,
-    .inventory-card,
-    .badges-card,
-    .tools-card{
-      background:linear-gradient(180deg, rgba(19,32,58,.98), rgba(18,30,56,.98));
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:24px;
-      padding:20px;
-      box-shadow:var(--shadow);
-    }
-
-    .today-card h2,
-    .inventory-card h2,
-    .badges-card h2,
-    .tools-card h2{
-      font-size:22px;
-      margin-bottom:6px;
-    }
-
-    .subtle{
-      color:var(--muted);
-      font-size:14px;
-      margin-bottom:14px;
-    }
-
-    .today-main{
-      background:linear-gradient(135deg, rgba(59,130,246,.16), rgba(139,92,246,.14));
-      border:1px solid rgba(96,165,250,.22);
-      border-radius:20px;
-      padding:18px;
-    }
-
-    .today-main .today-tag{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:6px 12px;
-      border-radius:999px;
+    .mini-btn.toggle{
       background:rgba(255,255,255,.08);
       color:#dbeafe;
+      border:1px solid rgba(255,255,255,.10);
+    }
+
+    .mini-btn.toggle.done{
+      background:rgba(34,197,94,.18);
+      border-color:rgba(34,197,94,.24);
+      color:#bbf7d0;
+    }
+
+    .empty-copy{
+      color:rgba(255,255,255,.42);
       font-size:12px;
-      font-weight:800;
-      margin-bottom:10px;
-    }
-
-    .today-main h3{
-      font-size:20px;
-      line-height:1.25;
-      margin-bottom:8px;
-    }
-
-    .today-main p{
-      color:#cbd5e1;
-      font-size:14px;
-      margin-bottom:12px;
-    }
-
-    .today-bonus{
-      margin-bottom:14px;
-      padding:10px 12px;
-      border-radius:12px;
-      background:rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.08);
-      color:#dbeafe;
-      font-size:12px;
-      font-weight:800;
-    }
-
-    .today-list{
-      display:grid;
-      gap:8px;
-      margin-bottom:14px;
-    }
-
-    .today-line{
-      padding:10px 12px;
-      border-radius:12px;
-      background:rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.08);
-      color:#dbeafe;
-      font-size:12px;
-      line-height:1.45;
       font-weight:700;
+      margin-top:auto;
     }
 
-    .today-line strong{
-      color:#fde68a;
-    }
-
-    .today-actions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-
-    .loot-grid,
-    .badge-grid{
-      display:grid;
-      grid-template-columns:repeat(2, minmax(0,1fr));
-      gap:12px;
-    }
-
-    .loot,
-    .badge{
-      background:rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:18px;
-      padding:14px;
-      min-height:110px;
-    }
-
-    .loot .loot-icon,
-    .badge .badge-icon{
-      font-size:28px;
-      margin-bottom:8px;
-    }
-
-    .loot strong,
-    .badge strong{
-      display:block;
-      margin-bottom:6px;
-      font-size:14px;
-      line-height:1.3;
-    }
-
-    .loot small,
-    .badge small{
-      display:block;
+    .footer-note{
+      margin-top:14px;
       color:var(--muted);
       font-size:12px;
-      line-height:1.45;
-      font-weight:700;
-    }
-
-    .empty-state{
-      border:1px dashed rgba(255,255,255,.16);
-      border-radius:18px;
-      padding:20px;
       text-align:center;
-      color:var(--muted);
-      font-size:14px;
       font-weight:700;
-      background:rgba(255,255,255,.02);
-    }
-
-    .tools-actions{
-      display:grid;
-      gap:10px;
-    }
-
-    .tools-actions .btn{
-      width:100%;
-      text-align:center;
     }
 
     .toast{
       position:fixed;
-      right:18px;
-      bottom:18px;
+      right:16px;
+      bottom:16px;
       z-index:999;
       min-width:280px;
       max-width:380px;
@@ -959,203 +517,99 @@
       font-weight:700;
     }
 
-    .toast.gold{border-color:rgba(251,191,36,.35)}
-    .toast.green{border-color:rgba(34,197,94,.35)}
-    .toast.blue{border-color:rgba(59,130,246,.35)}
-
-    @media (max-width: 1100px){
-      .layout,
-      .hero-grid{
-        grid-template-columns:1fr;
-      }
-      .realm-grid{
-        grid-template-columns:repeat(3, minmax(0,1fr));
-      }
+    @media (max-width: 960px){
+      .grid{grid-template-columns:repeat(4, minmax(0,1fr))}
+      .weekdays{display:none}
     }
 
-    @media (max-width: 860px){
-      .board-grid{
-        grid-template-columns:repeat(2, minmax(0,1fr));
-      }
-      .path{
-        grid-template-columns:1fr;
-      }
-      .path::before{
-        left:calc(50% - 4px);
-        right:auto;
-        top:60px;
-        bottom:60px;
-        width:8px;
-        height:auto;
-      }
-      .mission-head{
-        flex-direction:column;
-      }
-      .loot-grid,
-      .badge-grid{
-        grid-template-columns:1fr;
-      }
-      .realm-grid{
-        grid-template-columns:repeat(2, minmax(0,1fr));
-      }
+    @media (max-width: 720px){
+      .grid{grid-template-columns:repeat(2, minmax(0,1fr))}
+      .container{width:min(100% - 16px, 1180px)}
+      .hero,.calendar-shell{border-radius:20px}
+      .hero-actions,.toolbar-actions{flex-direction:column}
+      .btn{width:100%}
+      .month-title{font-size:24px}
     }
 
-    @media (max-width: 560px){
-      .container{
-        width:min(100% - 18px, 1240px);
-      }
-      .hero-card,
-      .panel,
-      .today-card,
-      .inventory-card,
-      .badges-card,
-      .tools-card{
-        padding:16px;
-        border-radius:20px;
-      }
-      .hero-stats{
-        grid-template-columns:1fr 1fr;
-      }
-      .board-grid,
-      .realm-grid{
-        grid-template-columns:1fr;
-      }
-      .hero-toolbar{
-        flex-direction:column;
-      }
-      .btn{
-        width:100%;
-      }
-      .today-actions{
-        flex-direction:column;
-      }
+    @media (max-width: 460px){
+      .grid{grid-template-columns:1fr}
+      .summary{display:grid;grid-template-columns:1fr 1fr}
+      .summary-card{min-width:0}
+      .month-title-wrap{min-width:0}
     }
   </style>
 </head>
 <body>
   <div class="container">
     <section class="hero">
-      <div class="hero-card">
-        <div class="hero-grid">
-          <div>
-            <div class="kicker">⚔️ Jornada do Herói • Desafio Objetivo</div>
-            <h1 id="heroTitle">Jornada do Eiji</h1>
-            <p id="heroSubtitle">
-              Um mapa de aventura em 14 semanas para estudar 60 a 90 minutos por dia e chegar forte no Desafio Objetivo.
-            </p>
-
-            <div class="hero-toolbar">
-              <button class="btn btn-primary" id="btnGoToday">🎯 Ir para a missão de hoje</button>
-              <button class="btn btn-secondary" id="btnFirstIncomplete">🗺️ Ir para a próxima missão disponível</button>
-              <button class="btn btn-warning" id="btnOpenCurrentChest">🧰 Abrir baú da semana atual</button>
-            </div>
-
-            <div class="progress-wrap">
-              <div class="progress-labels">
-                <span id="progressText">0 de 70 dias concluídos</span>
-                <span id="levelText">Nível 1</span>
-              </div>
-              <div class="progress-bar">
-                <div class="progress-fill" id="globalProgressFill"></div>
-              </div>
-            </div>
+      <div class="hero-top">
+        <div>
+          <div class="kicker">📅 Calendário de estudos • Eiji</div>
+          <h1 id="heroTitle">Calendário do Eiji</h1>
+          <p id="heroSubtitle">Um calendário único para abrir as apostilas no dia certo, navegar entre os meses e acompanhar o estudo com mais clareza.</p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" id="btnGoToday">Ir para hoje</button>
+            <button class="btn btn-secondary" id="btnNextStudy">Abrir próxima apostila</button>
+            <button class="btn btn-ghost" id="btnReset">Resetar concluídos</button>
           </div>
-
-          <div class="hero-stats">
-            <div class="stat">
-              <div class="stat-label">✨ XP total</div>
-              <div class="stat-value" id="statXp">0</div>
-              <div class="stat-sub">+10 XP por missão concluída</div>
+          <div class="summary">
+            <div class="summary-card">
+              <div class="summary-label">Dias concluídos</div>
+              <div class="summary-value" id="statDone">0</div>
+              <div class="summary-sub" id="statDoneSub">de 70 apostilas</div>
             </div>
-
-            <div class="stat">
-              <div class="stat-label">🪙 Moedas</div>
-              <div class="stat-value" id="statCoins">0</div>
-              <div class="stat-sub">+3 moedas por missão</div>
+            <div class="summary-card">
+              <div class="summary-label">Próxima apostila</div>
+              <div class="summary-value" id="statNext">—</div>
+              <div class="summary-sub" id="statNextSub">Aguardando leitura do cronograma</div>
             </div>
-
-            <div class="stat">
-              <div class="stat-label">🔥 Sequência</div>
-              <div class="stat-value" id="statStreak">0</div>
-              <div class="stat-sub">dias seguidos no mapa</div>
-            </div>
-
-            <div class="stat">
-              <div class="stat-label">🧰 Baús</div>
-              <div class="stat-value" id="statChests">0</div>
-              <div class="stat-sub">abertos com semanas completas</div>
+            <div class="summary-card">
+              <div class="summary-label">Mês exibido</div>
+              <div class="summary-value" id="statMonth">—</div>
+              <div class="summary-sub">Navegue pelos botões abaixo</div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="layout">
-      <section>
-        <div class="panel">
-          <h2>🌍 Reinos da aventura</h2>
-          <p class="section-sub">Cada fase do cronograma virou um reino. São 14 semanas de treino focado até a reta final.</p>
-          <div class="realm-grid" id="realmGrid"></div>
-        </div>
-
-        <div class="panel" style="margin-top:18px;">
-          <h2>🗺️ Tabuleiro de semanas</h2>
-          <p class="section-sub">Clique em uma semana para ver as 5 missões, abrir apostilas, concluir dias e liberar recompensas.</p>
-          <div class="board-grid" id="weekBoard"></div>
-
-          <div class="mission-panel" id="missionPanel">
-            <div class="mission-head">
-              <div>
-                <h3 id="missionWeekTitle">Semana</h3>
-                <p id="missionWeekDesc">Selecione uma semana no tabuleiro para ver a trilha de missões.</p>
-                <div class="mission-story" id="missionWeekStory">A narrativa da semana aparecerá aqui.</div>
-              </div>
-
-              <div class="chest-card">
-                <div class="chest-icon" id="selectedChestIcon">🧰</div>
-                <strong id="selectedChestTitle">Baú da semana</strong>
-                <div class="chest-reward-line" id="selectedChestRewardLine">Recompensa semanal</div>
-                <small id="selectedChestDesc">Complete as 5 missões para liberar a recompensa.</small>
-                <button class="btn btn-warning" id="btnOpenSelectedChest">Abrir baú</button>
-              </div>
-            </div>
-
-            <div class="path" id="missionPath"></div>
+    <section class="calendar-shell">
+      <div class="calendar-toolbar">
+        <div class="month-nav">
+          <button class="month-btn" id="btnPrevMonth" aria-label="Mês anterior">‹</button>
+          <div class="month-title-wrap">
+            <div class="month-title" id="monthTitle">Mês</div>
+            <div class="month-sub" id="monthSub">Use as setas para trocar o mês</div>
           </div>
+          <button class="month-btn" id="btnNextMonth" aria-label="Próximo mês">›</button>
         </div>
-      </section>
+        <div class="toolbar-actions">
+          <button class="btn btn-secondary" id="btnCurrentMonth">Voltar para o mês atual</button>
+        </div>
+      </div>
 
-      <aside class="side-stack">
-        <div class="today-card">
-          <h2>🎯 Missão de hoje</h2>
-          <p class="subtle">Seu atalho para retomar o estudo do dia sem perder tempo.</p>
-          <div class="today-main" id="todayCardContent"></div>
-        </div>
+      <div class="legend">
+        <span class="legend-pill"><span class="legend-dot dot-study"></span> Dia com apostila</span>
+        <span class="legend-pill"><span class="legend-dot dot-today"></span> Hoje</span>
+        <span class="legend-pill"><span class="legend-dot dot-done"></span> Concluído</span>
+        <span class="legend-pill"><span class="legend-dot dot-next"></span> Próxima apostila</span>
+      </div>
 
-        <div class="inventory-card">
-          <h2>🎒 Inventário</h2>
-          <p class="subtle">Itens conquistados nos baús semanais.</p>
-          <div id="inventoryContent"></div>
+      <div class="calendar">
+        <div class="weekdays">
+          <div class="weekday">Dom</div>
+          <div class="weekday">Seg</div>
+          <div class="weekday">Ter</div>
+          <div class="weekday">Qua</div>
+          <div class="weekday">Qui</div>
+          <div class="weekday">Sex</div>
+          <div class="weekday">Sáb</div>
         </div>
+        <div class="grid" id="calendarGrid"></div>
+      </div>
+    </section>
 
-        <div class="badges-card">
-          <h2>🏅 Medalhas do herói</h2>
-          <p class="subtle">Recompensas por constância e progresso.</p>
-          <div id="badgesContent"></div>
-        </div>
-
-        <div class="tools-card">
-          <h2>🛠️ Ferramentas</h2>
-          <p class="subtle">Salvar, exportar, importar e reiniciar a jornada.</p>
-          <div class="tools-actions">
-            <button class="btn btn-secondary" id="btnExport">📦 Exportar progresso</button>
-            <label class="btn btn-secondary" for="importInput">📥 Importar progresso</label>
-            <input id="importInput" type="file" accept=".json" hidden />
-            <button class="btn btn-danger" id="btnReset">🗑️ Resetar progresso</button>
-          </div>
-        </div>
-      </aside>
-    </div>
+    <div class="footer-note">Calendário mensal único com navegação por mês e links diretos para as apostilas do cronograma.</div>
   </div>
 
   <div class="toast" id="toast">
@@ -1164,22 +618,114 @@
   </div>
 
   <script>
-    const STORAGE_KEY_NEW = "eiji_rpg_progress_v1";
-    const STORAGE_KEY_OLD = "eiji_desafio_objetivo_progresso_v1";
-
-    const REALM_META = {
-      "fase-1-base-5ano": { className: "realm-1" },
-      "fase-2-consolidacao-aceleracao": { className: "realm-2" },
-      "fase-3-ponte-6ano": { className: "realm-3" },
-      "fase-4-dominio-hibrido": { className: "realm-4" },
-      "fase-5-sprint-final": { className: "realm-5" }
-    };
+    const STORAGE_KEY = "eiji_calendar_progress_v1";
+    const MONTHS_PT = [
+      "Janeiro","Fevereiro","Março","Abril","Maio","Junho",
+      "Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"
+    ];
 
     const state = {
       concluidos: [],
-      openedChests: [],
-      selectedWeek: 1
+      currentMonthIndex: 0
     };
+
+    function getAllDays() {
+      return (window.CONFIG && CONFIG.dias) ? CONFIG.dias : [];
+    }
+
+    function parseISO(dateISO) {
+      const [y,m,d] = dateISO.split("-").map(Number);
+      return new Date(y, m - 1, d);
+    }
+
+    function toISO(date) {
+      const y = date.getFullYear();
+      const m = String(date.getMonth() + 1).padStart(2, "0");
+      const d = String(date.getDate()).padStart(2, "0");
+      return `${y}-${m}-${d}`;
+    }
+
+    function getAvailableMonths() {
+      const map = new Map();
+      getAllDays().forEach(day => {
+        const dt = parseISO(day.data);
+        const key = `${dt.getFullYear()}-${String(dt.getMonth()+1).padStart(2,"0")}`;
+        if (!map.has(key)) {
+          map.set(key, { key, year: dt.getFullYear(), month: dt.getMonth() });
+        }
+      });
+      return [...map.values()].sort((a,b) => (a.year - b.year) || (a.month - b.month));
+    }
+
+    function getTodayISO() {
+      const now = new Date();
+      return toISO(new Date(now.getFullYear(), now.getMonth(), now.getDate()));
+    }
+
+    function getDayByISO(iso) {
+      return getAllDays().find(day => day.data === iso) || null;
+    }
+
+    function isDone(num) {
+      return state.concluidos.includes(num);
+    }
+
+    function firstIncomplete() {
+      return getAllDays().find(day => !isDone(day.numero)) || null;
+    }
+
+    function loadState() {
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) {
+          const data = JSON.parse(saved);
+          state.concluidos = Array.isArray(data.concluidos)
+            ? data.concluidos.map(Number).filter(Number.isInteger)
+            : [];
+        }
+      } catch (e) {
+        state.concluidos = [];
+      }
+    }
+
+    function saveState() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    }
+
+    function showToast(title, text) {
+      const toast = document.getElementById("toast");
+      document.getElementById("toastTitle").textContent = title;
+      document.getElementById("toastText").textContent = text;
+      toast.className = "toast show";
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(() => {
+        toast.className = "toast";
+      }, 2600);
+    }
+
+    function toggleDone(dayNumber) {
+      if (isDone(dayNumber)) {
+        state.concluidos = state.concluidos.filter(n => n !== dayNumber);
+        showToast("Apostila desmarcada", "Esse dia voltou a ficar pendente.");
+      } else {
+        state.concluidos.push(dayNumber);
+        state.concluidos.sort((a,b) => a - b);
+        showToast("Apostila concluída", `Dia ${String(dayNumber).padStart(3,"0")} marcado como feito.`);
+      }
+      saveState();
+      renderAll();
+    }
+
+    function monthName(month, year) {
+      return `${MONTHS_PT[month]} de ${year}`;
+    }
+
+    function setMonthFromISO(dateISO) {
+      const months = getAvailableMonths();
+      const dt = parseISO(dateISO);
+      const idx = months.findIndex(m => m.year === dt.getFullYear() && m.month === dt.getMonth());
+      state.currentMonthIndex = idx >= 0 ? idx : 0;
+    }
 
     function escapeHtml(value) {
       return String(value ?? "")
@@ -1190,622 +736,163 @@
         .replaceAll("'", "&#039;");
     }
 
-    function humanizeTag(value) {
-      if (!value) return "";
-      return String(value)
-        .replaceAll("_", " ")
-        .replace(/\b\w/g, l => l.toUpperCase());
+    function renderHeader() {
+      const projeto = CONFIG?.projeto || {};
+      const total = getAllDays().length;
+      const next = firstIncomplete();
+      const months = getAvailableMonths();
+      const currentMonth = months[state.currentMonthIndex];
+
+      document.getElementById("heroTitle").textContent = projeto.titulo || "Calendário do Eiji";
+      document.getElementById("heroSubtitle").textContent = projeto.subtitulo || "Calendário mensal com as apostilas do cronograma.";
+      document.getElementById("statDone").textContent = state.concluidos.length;
+      document.getElementById("statDoneSub").textContent = `de ${total} apostilas`;
+      document.getElementById("statNext").textContent = next ? `D${String(next.numero).padStart(3,"0")}` : "Fim";
+      document.getElementById("statNextSub").textContent = next ? next.titulo : "Todas as apostilas concluídas";
+      document.getElementById("statMonth").textContent = currentMonth ? MONTHS_PT[currentMonth.month].slice(0,3) : "—";
     }
 
-    function truncateText(value, max = 92) {
-      const text = String(value || "");
-      if (text.length <= max) return text;
-      return text.slice(0, max - 1).trimEnd() + "…";
-    }
-
-    function blocoCronometradoTexto(bloco) {
-      if (!bloco) return "";
-      const tempo = bloco.tempo ? ` em ${bloco.tempo}` : "";
-      const itens = bloco.itens ? ` • ${bloco.itens}` : "";
-      return `Bloco cronometrado${tempo}${itens}`;
-    }
-
-    function chipsForDay(day) {
-      const chips = [];
-      if (day.funcaoPedagogica) chips.push(humanizeTag(day.funcaoPedagogica));
-      if (day.revisaoSemanal) chips.push("Checkpoint semanal");
-      if (day.blocoCronometrado) chips.push("⏱️ Tempo");
-      if (day.cadernoDeErrosObrigatorio) chips.push("🧠 Erros");
-      return chips.slice(0, 3);
-    }
-
-    function getAllDays() {
-      return (window.CONFIG && CONFIG.dias) ? CONFIG.dias : [];
-    }
-
-    function getAllWeeks() {
-      return (window.CONFIG && CONFIG.semanas) ? CONFIG.semanas : [];
-    }
-
-    function getAllPhases() {
-      return (window.CONFIG && CONFIG.fases) ? CONFIG.fases : [];
-    }
-
-    function getDayByNumber(num) {
-      return getAllDays().find(d => d.numero === num) || null;
-    }
-
-    function getDaysByWeek(weekNumber) {
-      return getAllDays().filter(d => d.semana === weekNumber);
-    }
-
-    function getPhaseById(id) {
-      return getAllPhases().find(f => f.id === id) || null;
-    }
-
-    function parseDateISO(dateStr) {
-      const [y,m,d] = dateStr.split("-").map(Number);
-      return new Date(y, m - 1, d);
-    }
-
-    function getTodayDay() {
-      if (typeof window.getDiaPorData === "function") {
-        const now = new Date();
-        const iso = [
-          now.getFullYear(),
-          String(now.getMonth() + 1).padStart(2, "0"),
-          String(now.getDate()).padStart(2, "0")
-        ].join("-");
-        return window.getDiaPorData(iso);
+    function buildCells(year, month) {
+      const first = new Date(year, month, 1);
+      const startWeekday = first.getDay();
+      const start = new Date(year, month, 1 - startWeekday);
+      const cells = [];
+      for (let i = 0; i < 42; i++) {
+        const current = new Date(start);
+        current.setDate(start.getDate() + i);
+        cells.push(current);
       }
-
-      if (!window.CONFIG || !CONFIG.projeto || !CONFIG.projeto.dataInicio) return null;
-      const start = parseDateISO(CONFIG.projeto.dataInicio);
-      const now = new Date();
-      start.setHours(0,0,0,0);
-      now.setHours(0,0,0,0);
-      const diff = Math.floor((now - start) / 86400000);
-      if (diff < 0 || diff >= (CONFIG.projeto.totalDias || 70)) return null;
-      return getDayByNumber(diff + 1);
+      return cells;
     }
 
-    function isDayDone(num) {
-      return state.concluidos.includes(num);
-    }
+    function renderCalendar() {
+      const months = getAvailableMonths();
+      const currentMonth = months[state.currentMonthIndex];
+      if (!currentMonth) return;
 
-    function weekProgress(weekNumber) {
-      const days = getDaysByWeek(weekNumber);
-      return days.filter(d => isDayDone(d.numero)).length;
-    }
+      const grid = document.getElementById("calendarGrid");
+      const todayISO = getTodayISO();
+      const next = firstIncomplete();
 
-    function isWeekComplete(weekNumber) {
-      return weekProgress(weekNumber) === 5;
-    }
+      document.getElementById("monthTitle").textContent = monthName(currentMonth.month, currentMonth.year);
+      document.getElementById("monthSub").textContent = `Mês ${state.currentMonthIndex + 1} de ${months.length} do cronograma`;
+      document.getElementById("btnPrevMonth").disabled = state.currentMonthIndex === 0;
+      document.getElementById("btnNextMonth").disabled = state.currentMonthIndex === months.length - 1;
 
-    function getRewardForWeek(weekNumber) {
-      if (typeof window.getRecompensaDaSemana === "function") {
-        return window.getRecompensaDaSemana(weekNumber);
-      }
-      const week = getAllWeeks().find(w => w.semana === weekNumber);
-      return week ? week.recompensaSemana : null;
-    }
+      grid.innerHTML = "";
 
-    function isChestOpened(weekNumber) {
-      return state.openedChests.includes(weekNumber);
-    }
-
-    function firstIncompleteDay() {
-      return getAllDays().find(d => !isDayDone(d.numero)) || null;
-    }
-
-    function recommendedWeek() {
-      const first = firstIncompleteDay();
-      return first ? first.semana : 1;
-    }
-
-    function selectedWeekSafe() {
-      const total = getAllWeeks().length || 14;
-      if (!state.selectedWeek || state.selectedWeek < 1 || state.selectedWeek > total) {
-        state.selectedWeek = recommendedWeek();
-      }
-      return state.selectedWeek;
-    }
-
-    function deriveStats() {
-      const totalDone = state.concluidos.length;
-      const chests = state.openedChests.length;
-      const xp = (totalDone * (CONFIG?.projeto?.recompensas?.xpPorDia || 10)) + (chests * (CONFIG?.projeto?.recompensas?.xpPorBau || 25));
-      const coins = (totalDone * (CONFIG?.projeto?.recompensas?.moedasPorDia || 3)) + (chests * (CONFIG?.projeto?.recompensas?.moedasPorBau || 15));
-      const level = Math.floor(xp / 100) + 1;
-      const streak = longestTailStreak(state.concluidos);
-      const percent = Math.round((totalDone / (CONFIG?.projeto?.totalDias || 70)) * 100);
-
-      return { totalDone, chests, xp, coins, level, streak, percent };
-    }
-
-    function longestTailStreak(nums) {
-      if (!nums.length) return 0;
-      const sorted = [...nums].sort((a,b) => a-b);
-      let streak = 1;
-      for (let i = sorted.length - 1; i > 0; i--) {
-        if (sorted[i] - sorted[i - 1] === 1) {
-          streak++;
-        } else {
-          break;
-        }
-      }
-      return streak;
-    }
-
-    function medals() {
-      const stats = deriveStats();
-      const list = [];
-
-      if (stats.totalDone >= 1) list.push({ icon:"🌱", nome:"Primeiro Passo", desc:"Concluiu a primeira missão." });
-      if (stats.streak >= 3) list.push({ icon:"🔥", nome:"Aprendiz Disciplinado", desc:"Manteve 3 missões seguidas." });
-      if (stats.streak >= 7) list.push({ icon:"⚔️", nome:"Guardião da Rotina", desc:"Manteve 7 missões seguidas." });
-      if (stats.totalDone >= 25) list.push({ icon:"🧠", nome:"Mente em Formação", desc:"Avançou 25 dias na trilha." });
-      if (stats.totalDone >= 50) list.push({ icon:"🏹", nome:"Herói da Constância", desc:"Chegou a 50 missões concluídas." });
-      if (stats.chests >= 5) list.push({ icon:"🧰", nome:"Caçador de Baús", desc:"Abriu 5 baús semanais." });
-      if (stats.level >= 5) list.push({ icon:"👑", nome:"Aventureiro de Elite", desc:"Subiu para o nível 5." });
-
-      return list;
-    }
-
-    function inventory() {
-      return state.openedChests
-        .slice()
-        .sort((a,b) => a-b)
-        .map(week => ({
-          week,
-          ...getRewardForWeek(week)
-        }));
-    }
-
-    function saveState() {
-      localStorage.setItem(STORAGE_KEY_NEW, JSON.stringify(state));
-    }
-
-    function loadState() {
-      try {
-        const saved = localStorage.getItem(STORAGE_KEY_NEW);
-        if (saved) {
-          const data = JSON.parse(saved);
-          state.concluidos = Array.isArray(data.concluidos) ? data.concluidos.map(Number).filter(n => Number.isInteger(n)) : [];
-          state.openedChests = Array.isArray(data.openedChests) ? data.openedChests.map(Number).filter(n => Number.isInteger(n)) : [];
-          state.selectedWeek = Number.isInteger(data.selectedWeek) ? data.selectedWeek : recommendedWeek();
-          return;
-        }
-
-        const legacy = localStorage.getItem(STORAGE_KEY_OLD);
-        if (legacy) {
-          const data = JSON.parse(legacy);
-          state.concluidos = Array.isArray(data.concluidos) ? data.concluidos.map(Number).filter(n => Number.isInteger(n)) : [];
-          state.openedChests = [];
-          state.selectedWeek = recommendedWeek();
-          saveState();
-          return;
-        }
-
-        state.selectedWeek = recommendedWeek();
-      } catch (e) {
-        state.concluidos = [];
-        state.openedChests = [];
-        state.selectedWeek = recommendedWeek();
-      }
-    }
-
-    function showToast(title, text, color = "blue") {
-      const toast = document.getElementById("toast");
-      document.getElementById("toastTitle").textContent = title;
-      document.getElementById("toastText").textContent = text;
-      toast.className = `toast show ${color}`;
-      clearTimeout(window.__toastTimer);
-      window.__toastTimer = setTimeout(() => {
-        toast.className = "toast";
-      }, 2600);
-    }
-
-    function toggleDay(dayNumber) {
-      if (isDayDone(dayNumber)) {
-        state.concluidos = state.concluidos.filter(n => n !== dayNumber);
-        saveState();
-        renderAll();
-        showToast("Missão desmarcada", "O progresso desse dia foi removido.", "blue");
-        return;
-      }
-
-      state.concluidos.push(dayNumber);
-      state.concluidos.sort((a,b) => a-b);
-      saveState();
-      renderAll();
-
-      const day = getDayByNumber(dayNumber);
-      showToast(
-        "Missão concluída",
-        `+${day?.xp || 10} XP • +${day?.moedas || 3} moedas • ${day ? day.titulo : "Dia concluído"}`,
-        "green"
-      );
-    }
-
-    function openChest(weekNumber) {
-      if (!isWeekComplete(weekNumber)) {
-        showToast("Baú bloqueado", "Complete as 5 missões da semana para abrir o baú.", "blue");
-        return;
-      }
-
-      if (isChestOpened(weekNumber)) {
-        showToast("Baú já aberto", "Esse baú já foi coletado.", "blue");
-        return;
-      }
-
-      state.openedChests.push(weekNumber);
-      state.openedChests.sort((a,b) => a-b);
-      saveState();
-      renderAll();
-
-      const reward = getRewardForWeek(weekNumber);
-      showToast(
-        "Baú aberto!",
-        `Você ganhou ${reward?.icon || "🎁"} ${reward?.nome || "recompensa semanal"} • +${CONFIG?.projeto?.recompensas?.xpPorBau || 25} XP • +${CONFIG?.projeto?.recompensas?.moedasPorBau || 15} moedas`,
-        "gold"
-      );
-    }
-
-    function exportState() {
-      const data = {
-        projeto: "desafio-objetivo-eiji-rpg",
-        exportedAt: new Date().toISOString(),
-        ...state
-      };
-
-      const blob = new Blob([JSON.stringify(data, null, 2)], { type:"application/json" });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = "progresso-eiji-rpg.json";
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-    }
-
-    function importState(file) {
-      if (!file) return;
-      const reader = new FileReader();
-
-      reader.onload = (event) => {
-        try {
-          const data = JSON.parse(event.target.result);
-          state.concluidos = Array.isArray(data.concluidos) ? data.concluidos.map(Number).filter(n => Number.isInteger(n)) : [];
-          state.openedChests = Array.isArray(data.openedChests) ? data.openedChests.map(Number).filter(n => Number.isInteger(n)) : [];
-          state.selectedWeek = Number.isInteger(data.selectedWeek) ? data.selectedWeek : recommendedWeek();
-          saveState();
-          renderAll();
-          showToast("Progresso importado", "O mapa foi atualizado com sucesso.", "green");
-        } catch (e) {
-          showToast("Importação falhou", "O arquivo não está em um formato válido.", "blue");
-        }
-      };
-
-      reader.readAsText(file);
-    }
-
-    function resetState() {
-      const ok = window.confirm("Tem certeza que deseja resetar todo o progresso do Eiji?");
-      if (!ok) return;
-
-      state.concluidos = [];
-      state.openedChests = [];
-      state.selectedWeek = 1;
-      saveState();
-      renderAll();
-      showToast("Progresso resetado", "A jornada voltou ao início.", "blue");
-    }
-
-    function phaseProgress(phaseId) {
-      const days = getAllDays().filter(d => d.fase === phaseId);
-      const done = days.filter(d => isDayDone(d.numero)).length;
-      return {
-        done,
-        total: days.length,
-        percent: days.length ? Math.round((done / days.length) * 100) : 0
-      };
-    }
-
-    function rarityClass(raridade) {
-      if (raridade === "raro") return "raridade-raro";
-      if (raridade === "incomum") return "raridade-incomum";
-      return "raridade-comum";
-    }
-
-    function renderHero() {
-      const stats = deriveStats();
-      document.getElementById("statXp").textContent = stats.xp;
-      document.getElementById("statCoins").textContent = stats.coins;
-      document.getElementById("statStreak").textContent = stats.streak;
-      document.getElementById("statChests").textContent = stats.chests;
-      document.getElementById("globalProgressFill").style.width = `${stats.percent}%`;
-      document.getElementById("progressText").textContent = `${stats.totalDone} de ${CONFIG.projeto.totalDias} dias concluídos`;
-      document.getElementById("levelText").textContent = `Nível ${stats.level}`;
-      document.getElementById("heroTitle").textContent = CONFIG.projeto.titulo || `Jornada do ${CONFIG.projeto.aluno || "Eiji"}`;
-      document.getElementById("heroSubtitle").textContent = CONFIG.projeto.subtitulo || "Mapa de aventura em 14 semanas, com estudo diário focado em Português e Matemática.";
-    }
-
-    function renderRealms() {
-      const container = document.getElementById("realmGrid");
-      container.innerHTML = "";
-
-      getAllPhases().forEach((phase) => {
-        const meta = REALM_META[phase.id] || { className: "realm-1" };
-        const progress = phaseProgress(phase.id);
+      buildCells(currentMonth.year, currentMonth.month).forEach(date => {
+        const iso = toISO(date);
+        const mission = getDayByISO(iso);
+        const inMonth = date.getMonth() === currentMonth.month;
+        const today = iso === todayISO;
+        const done = mission && isDone(mission.numero);
+        const isNext = mission && next && mission.numero === next.numero;
 
         const card = document.createElement("div");
-        card.className = `realm ${meta.className}`;
-        card.innerHTML = `
-          <div class="realm-icon">${escapeHtml(phase.icone || "🗺️")}</div>
-          <h3>${escapeHtml(phase.reino || phase.titulo)}</h3>
-          <small>Semanas ${escapeHtml(phase.inicioSemana)} a ${escapeHtml(phase.fimSemana)}</small>
-          <span class="realm-meta">${progress.done}/${progress.total} missões concluídas</span>
-          <div class="realm-progress"><span style="width:${progress.percent}%"></span></div>
-          <span class="realm-lore">${escapeHtml(phase.lore || "")}</span>
-          ${phase.objetivoAprovacao ? `<span class="realm-goal">🎯 ${escapeHtml(phase.objetivoAprovacao)}</span>` : ``}
-        `;
-        container.appendChild(card);
-      });
-    }
+        card.className = [
+          "day",
+          inMonth ? "" : "other-month",
+          mission ? "has-study" : "",
+          today ? "today" : "",
+          done ? "done" : "",
+          isNext ? "next-study" : ""
+        ].filter(Boolean).join(" ");
 
-    function renderWeekBoard() {
-      const board = document.getElementById("weekBoard");
-      board.innerHTML = "";
+        let badges = "";
+        if (today) badges += `<span class="badge today">Hoje</span>`;
+        if (done) badges += `<span class="badge done">Feito</span>`;
+        if (isNext) badges += `<span class="badge next">Próxima</span>`;
 
-      getAllWeeks().forEach((week) => {
-        const phase = getPhaseById(week.fase);
-        const progress = weekProgress(week.semana);
-        const reward = week.recompensaSemana || getRewardForWeek(week.semana);
-
-        const tile = document.createElement("div");
-        tile.className = `week-tile ${state.selectedWeek === week.semana ? "active" : ""} ${progress === 5 ? "complete" : ""}`;
-        tile.innerHTML = `
-          <div class="week-kicker">
-            <span>Semana ${escapeHtml(week.semana)}</span>
-            <span>${escapeHtml(phase?.icone || "🗺️")}</span>
-          </div>
-          <div class="week-title">${escapeHtml(week.titulo)}</div>
-          ${week.tipoSemana ? `<div class="week-type">🎓 ${escapeHtml(humanizeTag(week.tipoSemana))}</div>` : ``}
-          <div class="week-desc">${escapeHtml(week.descricao || "")}</div>
-          <div class="week-story">${escapeHtml(week.narrativa || "")}</div>
-          ${week.objetivoAprovacao ? `<div class="week-objective">🎯 ${escapeHtml(week.objetivoAprovacao)}</div>` : ``}
-          <div class="week-progress">
-            ${Array.from({ length:5 }).map((_,i) => `<span class="week-dot ${i < progress ? "on" : ""}"></span>`).join("")}
-          </div>
-          <div class="week-foot">
-            <span>${progress}/5 missões</span>
-            <span>${isChestOpened(week.semana) ? "🧰 baú aberto" : isWeekComplete(week.semana) ? "✨ baú liberado" : "🔒 em progresso"}</span>
-          </div>
-          <div class="week-loot-mini">${escapeHtml(reward?.icon || "🎁")} ${escapeHtml(reward?.nome || "Recompensa semanal")}</div>
-        `;
-        tile.addEventListener("click", () => {
-          state.selectedWeek = week.semana;
-          saveState();
-          renderWeekBoard();
-          renderSelectedWeek();
-          document.getElementById("missionPanel").scrollIntoView({ behavior:"smooth", block:"start" });
-        });
-        board.appendChild(tile);
-      });
-    }
-
-    function renderSelectedWeek() {
-      const weekNumber = selectedWeekSafe();
-      const week = getAllWeeks().find(w => w.semana === weekNumber);
-      const path = document.getElementById("missionPath");
-
-      if (!week) return;
-
-      const phase = getPhaseById(week.fase);
-      const days = getDaysByWeek(weekNumber);
-      const firstIncomplete = days.find(d => !isDayDone(d.numero));
-      const reward = week.recompensaSemana || getRewardForWeek(weekNumber);
-
-      document.getElementById("missionWeekTitle").textContent = `${phase?.icone || "🗺️"} Semana ${week.semana} — ${week.titulo}`;
-      document.getElementById("missionWeekDesc").textContent = `${week.descricao} • Reino: ${week.reino || phase?.reino || ""}`;
-      document.getElementById("missionWeekStory").innerHTML = `
-        ${week.narrativa ? `<div>${escapeHtml(week.narrativa)}</div>` : ``}
-        ${week.tipoSemana ? `<div style="margin-top:8px;"><strong>Tipo de semana:</strong> ${escapeHtml(humanizeTag(week.tipoSemana))}</div>` : ``}
-        ${week.objetivoAprovacao ? `<div style="margin-top:8px;"><strong>Objetivo de aprovação:</strong> ${escapeHtml(week.objetivoAprovacao)}</div>` : ``}
-      `;
-
-      const chestOpen = isChestOpened(weekNumber);
-      const chestButton = document.getElementById("btnOpenSelectedChest");
-      document.getElementById("selectedChestIcon").textContent = chestOpen ? reward?.icon || "🎁" : "🧰";
-      document.getElementById("selectedChestTitle").textContent = chestOpen ? `${reward?.nome || "Recompensa coletada"}` : "Baú da semana";
-      document.getElementById("selectedChestRewardLine").textContent = `${reward?.icon || "🎁"} ${reward?.nome || "Recompensa semanal"} — ${reward?.desc || ""}`;
-      document.getElementById("selectedChestDesc").textContent = chestOpen
-        ? `Recompensa conquistada na semana ${weekNumber}.`
-        : isWeekComplete(weekNumber)
-          ? `Baú liberado no ${week.reino || "reino atual"}.`
-          : `Complete as 5 missões para liberar a recompensa desta semana.`;
-
-      chestButton.textContent = chestOpen ? "Baú já aberto" : "Abrir baú";
-      chestButton.disabled = chestOpen;
-      chestButton.onclick = () => openChest(weekNumber);
-
-      path.innerHTML = "";
-
-      days.forEach((day) => {
-        const done = isDayDone(day.numero);
-        const current = firstIncomplete && firstIncomplete.numero === day.numero;
-        const chips = chipsForDay(day);
-
-        const mission = document.createElement("div");
-        mission.className = "mission";
-        mission.innerHTML = `
-          <div class="mission-node ${done ? "done" : ""} ${current ? "current" : ""} ${day.raridade || ""}" title="${escapeHtml(day.titulo)}">
-            <div class="icon">${escapeHtml(day.iconeMissao || day.disciplinaIcone || "📘")}</div>
-            <div class="num">D${String(day.numero).padStart(3, "0")}</div>
-          </div>
-          <div class="mission-rarity ${rarityClass(day.raridade)}">${escapeHtml(day.raridade || "comum")}</div>
-          <div class="mission-title">${escapeHtml(day.titulo)}</div>
-          <div class="mission-meta">${escapeHtml(day.disciplinaIcone || "")} ${escapeHtml(day.disciplinaNome || day.disciplina || "")}${day.tempoMeta ? ` • ${escapeHtml(day.tempoMeta)}` : ``}</div>
-          <div class="mission-extra">${escapeHtml(truncateText(day.habilidadePrincipal || day.expansao || ""))}</div>
-          <div class="mission-chips">
-            ${chips.map(chip => `<span class="mission-chip">${escapeHtml(chip)}</span>`).join("")}
-          </div>
-          <div class="reward">✨ ${day.xp || 10} XP • 🪙 ${day.moedas || 3}</div>
-          <div class="mission-actions">
-            <a class="mini-btn open" href="${escapeHtml(day.arquivo)}">Abrir</a>
-            <button class="mini-btn ${done ? "undo" : "done"}">${done ? "Desmarcar" : "Concluir"}</button>
+        let inner = `
+          <div class="day-top">
+            <div class="day-number">${date.getDate()}</div>
+            <div class="day-badges">${badges}</div>
           </div>
         `;
 
-        mission.querySelector(".mission-node").addEventListener("click", () => {
-          window.location.href = day.arquivo;
-        });
-
-        mission.querySelector("button").addEventListener("click", () => {
-          toggleDay(day.numero);
-        });
-
-        path.appendChild(mission);
-      });
-    }
-
-    function renderToday() {
-      const today = getTodayDay();
-      const container = document.getElementById("todayCardContent");
-
-      if (!today) {
-        const fallback = firstIncompleteDay();
-        container.innerHTML = `
-          <div class="today-tag">🗓️ Fora da data do cronograma</div>
-          <h3>${fallback ? `Próxima missão: ${escapeHtml(fallback.titulo)}` : "Todas as missões concluídas"}</h3>
-          <p>${fallback ? `Dia ${String(fallback.numero).padStart(3, "0")} • Semana ${fallback.semana}` : "Parabéns. O mapa inteiro já foi vencido."}</p>
-          <div class="today-bonus">${fallback ? `${escapeHtml(fallback.iconeMissao || "📜")} ${escapeHtml(fallback.raridade || "comum")} • ✨ ${fallback.xp || 10} XP • 🪙 ${fallback.moedas || 3}` : "Mapa completo."}</div>
-          ${fallback ? `
-            <div class="today-list">
-              ${fallback.habilidadePrincipal ? `<div class="today-line"><strong>Habilidade principal:</strong> ${escapeHtml(fallback.habilidadePrincipal)}</div>` : ``}
-              ${fallback.focoDeProva ? `<div class="today-line"><strong>Foco de prova:</strong> ${escapeHtml(fallback.focoDeProva)}</div>` : ``}
+        if (mission) {
+          inner += `
+            <div class="study-card">
+              <div class="study-topline">Semana ${mission.semana} • Dia ${String(mission.numero).padStart(3,"0")}</div>
+              <div class="study-title">${escapeHtml(mission.titulo)}</div>
+              <div class="study-meta">${escapeHtml(mission.disciplinaNome || mission.disciplina || "")}${mission.tempoMeta ? ` • ${escapeHtml(mission.tempoMeta)}` : ""}</div>
+              <div class="study-actions">
+                <a class="mini-btn open" href="${escapeHtml(mission.arquivo)}">Abrir</a>
+                <button class="mini-btn toggle ${done ? "done" : ""}" data-day="${mission.numero}">
+                  ${done ? "Feito" : "Concluir"}
+                </button>
+              </div>
             </div>
-          ` : ``}
-          <div class="today-actions">
-            ${fallback ? `<a class="btn btn-primary" href="${escapeHtml(fallback.arquivo)}">Abrir próxima missão</a>` : `<a class="btn btn-primary" href="#weekBoard">Ver tabuleiro</a>`}
-          </div>
-        `;
-        return;
-      }
-
-      container.innerHTML = `
-        <div class="today-tag">📅 Hoje no mapa • Dia ${String(today.numero).padStart(3, "0")}</div>
-        <h3>${escapeHtml(today.titulo)}</h3>
-        <p>${escapeHtml(today.reinoIcone || "")} ${escapeHtml(today.reino || "")} • ${escapeHtml(today.disciplinaIcone || "")} ${escapeHtml(today.disciplinaNome || today.disciplina || "")} • ${escapeHtml(today.expansao || "Missão principal do dia")}</p>
-        <div class="today-bonus">${escapeHtml(today.iconeMissao || "📜")} ${escapeHtml(today.raridade || "comum")} • ✨ ${today.xp || 10} XP • 🪙 ${today.moedas || 3}</div>
-        <div class="today-list">
-          ${today.funcaoPedagogica ? `<div class="today-line"><strong>Função pedagógica:</strong> ${escapeHtml(humanizeTag(today.funcaoPedagogica))}</div>` : ``}
-          ${today.habilidadePrincipal ? `<div class="today-line"><strong>Habilidade principal:</strong> ${escapeHtml(today.habilidadePrincipal)}</div>` : ``}
-          ${today.focoDeProva ? `<div class="today-line"><strong>Foco de prova:</strong> ${escapeHtml(today.focoDeProva)}</div>` : ``}
-          ${today.criterioDominio ? `<div class="today-line"><strong>Critério de domínio:</strong> ${escapeHtml(today.criterioDominio)}</div>` : ``}
-          ${today.revisao24hDe ? `<div class="today-line"><strong>Revisão de 24h:</strong> retoma o Dia ${escapeHtml(today.revisao24hDe)}</div>` : ``}
-          ${today.revisaoCumulativa ? `<div class="today-line"><strong>Revisão cumulativa:</strong> ${escapeHtml(today.revisaoCumulativa)}</div>` : ``}
-          ${today.blocoCronometrado ? `<div class="today-line"><strong>Bloco cronometrado:</strong> ${escapeHtml(blocoCronometradoTexto(today.blocoCronometrado))}</div>` : ``}
-        </div>
-        <div class="today-actions">
-          <a class="btn btn-primary" href="${escapeHtml(today.arquivo)}">Abrir apostila de hoje</a>
-          <button class="btn ${isDayDone(today.numero) ? "btn-danger" : "btn-secondary"}" id="todayToggleBtn">
-            ${isDayDone(today.numero) ? "Desmarcar concluído" : "Marcar como concluído"}
-          </button>
-        </div>
-      `;
-
-      document.getElementById("todayToggleBtn").addEventListener("click", () => toggleDay(today.numero));
-    }
-
-    function renderInventory() {
-      const container = document.getElementById("inventoryContent");
-      const items = inventory();
-
-      if (!items.length) {
-        container.innerHTML = `<div class="empty-state">Nenhum item ainda.<br>Complete uma semana inteira para abrir o primeiro baú.</div>`;
-        return;
-      }
-
-      container.innerHTML = `<div class="loot-grid">
-        ${items.map(item => `
-          <div class="loot">
-            <div class="loot-icon">${escapeHtml(item.icon)}</div>
-            <strong>${escapeHtml(item.nome)}</strong>
-            <small>Semana ${item.week} • ${escapeHtml(item.desc)}</small>
-          </div>
-        `).join("")}
-      </div>`;
-    }
-
-    function renderBadges() {
-      const container = document.getElementById("badgesContent");
-      const list = medals();
-
-      if (!list.length) {
-        container.innerHTML = `<div class="empty-state">As medalhas aparecem conforme o Eiji avança na jornada.</div>`;
-        return;
-      }
-
-      container.innerHTML = `<div class="badge-grid">
-        ${list.map(b => `
-          <div class="badge">
-            <div class="badge-icon">${escapeHtml(b.icon)}</div>
-            <strong>${escapeHtml(b.nome)}</strong>
-            <small>${escapeHtml(b.desc)}</small>
-          </div>
-        `).join("")}
-      </div>`;
-    }
-
-    function bindToolbar() {
-      document.getElementById("btnGoToday").onclick = () => {
-        const today = getTodayDay();
-        const target = today || firstIncompleteDay();
-        if (target) window.location.href = target.arquivo;
-        else showToast("Mapa completo", "Todas as missões já foram concluídas.", "green");
-      };
-
-      document.getElementById("btnFirstIncomplete").onclick = () => {
-        const target = firstIncompleteDay();
-        if (!target) {
-          showToast("Mapa completo", "Todas as missões já foram concluídas.", "green");
-          return;
+          `;
+        } else {
+          inner += `<div class="empty-copy">${inMonth ? "Sem apostila neste dia" : "Outro mês"}</div>`;
         }
-        state.selectedWeek = target.semana;
+
+        card.innerHTML = inner;
+        grid.appendChild(card);
+      });
+
+      grid.querySelectorAll("button[data-day]").forEach(btn => {
+        btn.addEventListener("click", () => toggleDone(Number(btn.dataset.day)));
+      });
+    }
+
+    function bindActions() {
+      document.getElementById("btnPrevMonth").onclick = () => {
+        state.currentMonthIndex = Math.max(0, state.currentMonthIndex - 1);
+        renderAll();
+      };
+
+      document.getElementById("btnNextMonth").onclick = () => {
+        const months = getAvailableMonths();
+        state.currentMonthIndex = Math.min(months.length - 1, state.currentMonthIndex + 1);
+        renderAll();
+      };
+
+      document.getElementById("btnCurrentMonth").onclick = () => {
+        const today = getDayByISO(getTodayISO()) || firstIncomplete() || getAllDays()[0];
+        if (today) {
+          setMonthFromISO(today.data);
+          renderAll();
+        }
+      };
+
+      document.getElementById("btnGoToday").onclick = () => {
+        const today = getDayByISO(getTodayISO()) || firstIncomplete() || getAllDays()[0];
+        if (!today) return;
+        setMonthFromISO(today.data);
+        renderAll();
+        const target = document.querySelector(".day.today, .day.next-study");
+        if (target) target.scrollIntoView({behavior:"smooth", block:"center"});
+      };
+
+      document.getElementById("btnNextStudy").onclick = () => {
+        const next = firstIncomplete();
+        if (next) {
+          window.location.href = next.arquivo;
+        } else {
+          showToast("Tudo concluído", "Todas as apostilas já foram marcadas como feitas.");
+        }
+      };
+
+      document.getElementById("btnReset").onclick = () => {
+        const ok = window.confirm("Tem certeza que deseja resetar os dias concluídos?");
+        if (!ok) return;
+        state.concluidos = [];
         saveState();
-        renderWeekBoard();
-        renderSelectedWeek();
-        document.getElementById("missionPanel").scrollIntoView({ behavior:"smooth", block:"start" });
+        renderAll();
+        showToast("Progresso resetado", "Todos os dias voltaram a ficar pendentes.");
       };
-
-      document.getElementById("btnOpenCurrentChest").onclick = () => {
-        const week = selectedWeekSafe();
-        openChest(week);
-      };
-
-      document.getElementById("btnExport").onclick = exportState;
-      document.getElementById("importInput").onchange = (e) => {
-        importState(e.target.files[0]);
-        e.target.value = "";
-      };
-      document.getElementById("btnReset").onclick = resetState;
     }
 
     function renderAll() {
-      renderHero();
-      renderRealms();
-      renderWeekBoard();
-      renderSelectedWeek();
-      renderToday();
-      renderInventory();
-      renderBadges();
+      renderHeader();
+      renderCalendar();
     }
 
     function init() {
-      if (!window.CONFIG) {
+      if (!window.CONFIG || !Array.isArray(CONFIG.dias)) {
         document.body.innerHTML = `
           <div style="max-width:760px;margin:40px auto;padding:24px;background:#111827;color:#fff;border-radius:18px;font-family:Arial,sans-serif;">
             <h1 style="margin-bottom:12px;">CONFIG não encontrado</h1>
@@ -1816,7 +903,14 @@
       }
 
       loadState();
-      bindToolbar();
+
+      const todayMission = getDayByISO(getTodayISO());
+      const nextMission = firstIncomplete();
+      const firstDay = getAllDays()[0];
+      const anchor = todayMission || nextMission || firstDay;
+      if (anchor) setMonthFromISO(anchor.data);
+
+      bindActions();
       renderAll();
     }
 
