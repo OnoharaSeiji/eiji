@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EIJI — Calendário 84 dias</title>
+<title>EIJI — Calendário Real</title>
 <script src="config.js"></script>
 <style>
-:root{--bg:#0f172a;--panel:#111827;--card:#1f2937;--muted:#94a3b8;--text:#f8fafc;--line:#334155;--green:#22c55e;--blue:#3b82f6;--amber:#f59e0b;--purple:#8b5cf6}
+:root{--bg:#0f172a;--panel:#111827;--card:#1f2937;--muted:#94a3b8;--text:#f8fafc;--line:#334155;--green:#22c55e;--blue:#3b82f6;--amber:#f59e0b;--purple:#8b5cf6;--rose:#fb7185}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#020617,#0f172a);color:var(--text);min-height:100vh;padding:18px}
 .wrap{max-width:1200px;margin:0 auto}
@@ -26,15 +26,17 @@ button.warning{background:var(--amber);color:#111827}
 .month-head h2{font-size:28px}
 .weekdays,.grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:10px}
 .weekdays div{padding:10px 6px;text-align:center;color:#cbd5e1;font-size:12px;font-weight:800;text-transform:uppercase}
-.cell{min-height:150px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:10px;display:flex;flex-direction:column;gap:8px}
+.cell{min-height:158px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:10px;display:flex;flex-direction:column;gap:8px}
 .cell.blank{background:transparent;border:1px dashed rgba(255,255,255,.04)}
 .cell.today{box-shadow:0 0 0 2px rgba(59,130,246,.45)}
 .cell.done{border-color:rgba(34,197,94,.45);background:rgba(34,197,94,.08)}
 .cell.next{border-color:rgba(245,158,11,.55);background:rgba(245,158,11,.08)}
+.cell.rest{border-color:rgba(251,113,133,.35);background:rgba(251,113,133,.08)}
 .date-line{display:flex;justify-content:space-between;align-items:center;gap:8px}
 .date-line strong{font-size:18px}
 .badge{font-size:10px;font-weight:800;padding:4px 8px;border-radius:999px;background:rgba(255,255,255,.08)}
 .badge.sat{background:rgba(139,92,246,.2);color:#e9d5ff}
+.badge.sun{background:rgba(251,113,133,.2);color:#fecdd3}
 .badge.today{background:rgba(59,130,246,.2);color:#bfdbfe}
 .badge.next{background:rgba(245,158,11,.2);color:#fde68a}
 .daynum{font-size:11px;color:#bfdbfe;font-weight:800}
@@ -54,13 +56,14 @@ button.warning{background:var(--amber);color:#111827}
 <body>
 <div class="wrap">
   <div class="hero">
-    <h1 id="title">Jornada do Eiji — 84 dias</h1>
-    <p id="subtitle">Cronograma refeito desde o início com sábado incluído desde a Semana 1.</p>
+    <h1 id="title">Jornada do Eiji — Calendário Real</h1>
+    <p id="subtitle">97 dias de calendário, 84 encontros de estudo e domingo de folga.</p>
     <div class="meta">
       <span class="pill" id="meta1"></span>
       <span class="pill" id="meta2"></span>
       <span class="pill" id="meta3"></span>
       <span class="pill" id="meta4"></span>
+      <span class="pill" id="meta5"></span>
     </div>
   </div>
 
@@ -81,9 +84,10 @@ button.warning{background:var(--amber);color:#111827}
       <h2 id="monthLabel"></h2>
       <div class="legend">
         <span><i style="background:#3b82f6"></i>Hoje</span>
-        <span><i style="background:#f59e0b"></i>Próxima</span>
+        <span><i style="background:#f59e0b"></i>Próxima apostila</span>
         <span><i style="background:#22c55e"></i>Concluído</span>
         <span><i style="background:#8b5cf6"></i>Sábado</span>
+        <span><i style="background:#fb7185"></i>Domingo / folga</span>
       </div>
     </div>
     <div class="weekdays">
@@ -91,13 +95,14 @@ button.warning{background:var(--amber);color:#111827}
     </div>
     <div class="grid" id="calendarGrid"></div>
     <div class="footer-note">
-      Este calendário foi refeito para 84 encontros reais. Cada sábado agora é parte oficial do projeto e serve para acostumar o aluno com a prova desde o começo.
+      Base corrigida para o calendário real: o número do dia agora segue o calendário corrido. 
+      Por isso, os domingos aparecem na sequência como folga e o <strong>Dia 013</strong> passa a ser o <strong>Simuladinho 2</strong>.
     </div>
   </div>
 </div>
 
 <script>
-const STORAGE_KEY = "eiji84_progress_v1";
+const STORAGE_KEY = "eiji97_progress_v1";
 const monthNames = ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
 const state = { done: [], currentMonth: null, currentYear: null };
 
@@ -121,7 +126,7 @@ function getTodayIso(){
   return `${n.getFullYear()}-${String(n.getMonth()+1).padStart(2,"0")}-${String(n.getDate()).padStart(2,"0")}`;
 }
 function nextIncomplete(){
-  return (CONFIG.dias || []).find(d => !state.done.includes(d.numero)) || CONFIG.dias[0] || null;
+  return (CONFIG.dias || []).find(d => d.arquivo && !state.done.includes(d.numero)) || null;
 }
 function isDone(num){ return state.done.includes(num); }
 function toggleDone(num){
@@ -153,11 +158,6 @@ function gotoToday(){
     render();
     return;
   }
-  const base = CONFIG.dias?.[0] ? parseIso(CONFIG.dias[0].data) : new Date();
-  state.currentMonth = base.getMonth();
-  state.currentYear = base.getFullYear();
-  saveState();
-  render();
 }
 function moveMonth(delta){
   const d = new Date(state.currentYear, state.currentMonth + delta, 1);
@@ -170,13 +170,15 @@ function render(){
   document.getElementById("title").textContent = CONFIG.projeto.titulo;
   document.getElementById("subtitle").textContent = CONFIG.projeto.subtitulo;
   document.getElementById("meta1").textContent = `${CONFIG.projeto.totalSemanas} semanas`;
-  document.getElementById("meta2").textContent = `${CONFIG.projeto.totalDias} encontros`;
-  document.getElementById("meta3").textContent = `Início ${CONFIG.projeto.dataInicio}`;
-  document.getElementById("meta4").textContent = `Fim ${CONFIG.projeto.dataFim}`;
+  document.getElementById("meta2").textContent = `${CONFIG.projeto.totalDias} dias no calendário`;
+  document.getElementById("meta3").textContent = `${CONFIG.projeto.totalEncontros} encontros de estudo`;
+  document.getElementById("meta4").textContent = `${CONFIG.projeto.totalFolgas} domingos de folga`;
+  document.getElementById("meta5").textContent = `Início ${CONFIG.projeto.dataInicio} • Fim ${CONFIG.projeto.dataFim}`;
 
   const next = nextIncomplete();
-  document.getElementById("openNext").href = next ? next.arquivo : "#";
-  document.getElementById("openNext").textContent = next ? `Abrir ${String(next.numero).padStart(3,"0")}` : "Tudo concluído";
+  const openNext = document.getElementById("openNext");
+  openNext.href = next ? next.arquivo : "#";
+  openNext.textContent = next ? `Abrir ${String(next.numero).padStart(3,"0")}` : "Tudo concluído";
 
   const grid = document.getElementById("calendarGrid");
   grid.innerHTML = "";
@@ -193,33 +195,37 @@ function render(){
   const todayIso = getTodayIso();
 
   for(let day=1; day<=lastDay.getDate(); day++){
-    const cellDate = new Date(year, month, day);
     const iso = `${year}-${String(month+1).padStart(2,"0")}-${String(day).padStart(2,"0")}`;
     const info = (CONFIG.dias || []).find(d => d.data === iso);
     const div = document.createElement("div");
     const classes = ["cell"];
     if(iso === todayIso) classes.push("today");
-    if(info && isDone(info.numero)) classes.push("done");
+    if(info && info.arquivo && isDone(info.numero)) classes.push("done");
     if(info && next && info.numero === next.numero) classes.push("next");
+    if(info && !info.arquivo) classes.push("rest");
     div.className = classes.join(" ");
     if(!info){
-      div.innerHTML = `<div class="date-line"><strong>${day}</strong></div><div class="meta-sm">Sem encontro</div>`;
+      div.innerHTML = `<div class="date-line"><strong>${day}</strong></div><div class="meta-sm">Sem item</div>`;
     }else{
-      const saturday = info.diaSemana === "sábado";
+      const isSat = info.diaSemana === "sábado";
+      const isSun = info.diaSemana === "domingo";
+      let actions = "";
+      if(info.arquivo){
+        actions = `<div class="actions"><a href="${info.arquivo}">Abrir</a><button type="button" data-num="${info.numero}">${isDone(info.numero) ? 'Desmarcar' : 'Concluir'}</button></div>`;
+      } else {
+        actions = `<div class="meta-sm">Sem apostila hoje</div>`;
+      }
       div.innerHTML = `
         <div class="date-line">
           <strong>${day}</strong>
-          <span class="badge ${saturday ? 'sat' : ''} ${iso===todayIso ? 'today' : ''} ${next && info.numero===next.numero ? 'next' : ''}">
-            ${saturday ? 'Sábado' : info.diaSemana.replace('-feira','')}
+          <span class="badge ${isSat ? 'sat' : ''} ${isSun ? 'sun' : ''} ${iso===todayIso ? 'today' : ''} ${next && info.numero===next.numero ? 'next' : ''}">
+            ${isSat ? 'Sábado' : isSun ? 'Folga' : info.diaSemana.replace('-feira','')}
           </span>
         </div>
         <div class="daynum">Dia ${String(info.numero).padStart(3,"0")} • Semana ${info.semana}</div>
         <div class="title">${info.titulo}</div>
         <div class="meta-sm">${info.disciplinaNome} • ${info.tempoMeta}</div>
-        <div class="actions">
-          <a href="${info.arquivo}">Abrir</a>
-          <button type="button" data-num="${info.numero}">${isDone(info.numero) ? 'Desmarcar' : 'Concluir'}</button>
-        </div>`;
+        ${actions}`;
     }
     grid.appendChild(div);
   }
