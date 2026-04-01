@@ -6,26 +6,26 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--azul:#2563eb;--roxo:#7c3aed;--laranja:#ea580c;--verde:#16a34a;--fundo:#f8fafc;--tinta:#0f172a;--borda:#e2e8f0;--branco:#fff}
+:root{--azul:#2563eb;--roxo:#7c3aed;--laranja:#ea580c;--verde:#16a34a;--fundo:#f8fafc;--tinta:#0f172a;--borda:#e2e8f0;--branco:#fff;--sombra:0 12px 30px rgba(15,23,42,.10)}
 *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
 body{font-family:Nunito,sans-serif;background:var(--fundo);color:var(--tinta);line-height:1.65}
-.cover{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 20px;color:#fff;position:relative;overflow:hidden}
+.cover{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 20px;color:#fff;position:relative;overflow:hidden;background:linear-gradient(145deg,#0f172a,#7c3aed,#ea580c)}
 .cover::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);background-size:56px 56px;opacity:.8}
 .cover h1{font-family:Fredoka,sans-serif;font-size:clamp(40px,8vw,78px);position:relative;z-index:2}
-.cover p{max-width:860px;font-weight:800;margin-top:16px;position:relative;z-index:2}
+.cover p{max-width:900px;font-weight:800;margin-top:16px;position:relative;z-index:2}
 .pills{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:20px;position:relative;z-index:2}
 .pill{padding:8px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.12);font-size:13px;font-weight:800}
-.cover-note{margin-top:22px;max-width:860px;padding:18px 22px;border-radius:18px;background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.25);font-size:14px;font-weight:800;position:relative;z-index:2}
+.cover-note{margin-top:22px;max-width:900px;padding:18px 22px;border-radius:18px;background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.25);font-size:14px;font-weight:800;position:relative;z-index:2}
 .science-bar{background:#0f172a;padding:12px 18px;display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
 .science-chip{background:rgba(255,255,255,.08);color:rgba(255,255,255,.9);border:1.5px solid rgba(255,255,255,.16);border-radius:999px;padding:6px 12px;font-size:12px;font-weight:800}
-.nav{position:sticky;top:0;background:#0f172a;padding:12px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;z-index:10}
+.nav{position:sticky;top:0;background:#0f172a;padding:12px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;z-index:20}
 .nav button{border:none;border-radius:999px;padding:8px 14px;background:#1e293b;color:#fff;font-weight:800;cursor:pointer}
 .nav button:hover{background:var(--azul)}
-.page{max-width:980px;margin:0 auto;padding:34px 18px}
-.hero{padding:24px;border-radius:22px;color:#fff;margin-bottom:18px}
+.page{max-width:1000px;margin:0 auto;padding:34px 18px}
+.hero{padding:24px;border-radius:22px;color:#fff;margin-bottom:18px;box-shadow:var(--sombra)}
 .hero h2{font-family:Fredoka,sans-serif;font-size:clamp(28px,4vw,46px);line-height:1.1}
 .hero p{margin-top:10px;font-weight:800}
-.card{background:var(--branco);border-radius:18px;padding:22px;box-shadow:0 10px 28px rgba(15,23,42,.08);margin-bottom:16px;border-left:6px solid var(--azul)}
+.card{background:var(--branco);border-radius:18px;padding:22px;box-shadow:var(--sombra);margin-bottom:16px;border-left:6px solid var(--azul)}
 .card h3{font-family:Fredoka,sans-serif;font-size:24px;color:var(--azul);margin-bottom:10px}
 .card.orange{border-left-color:var(--laranja)}.card.orange h3{color:var(--laranja)}
 .card.green{border-left-color:var(--verde)}.card.green h3{color:var(--verde)}
@@ -35,10 +35,11 @@ body{font-family:Nunito,sans-serif;background:var(--fundo);color:var(--tinta);li
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .mini{background:#fff;border:2px solid var(--borda);border-radius:14px;padding:14px;font-weight:800}
 .q{background:#f8fafc;border-left:5px solid var(--azul);padding:14px;border-radius:12px;margin:10px 0;font-weight:800}
+.q strong{color:#0f172a}
 .ans{display:none;margin-top:10px;padding:10px 12px;border-radius:10px;background:#f0fdf4;border:2px solid #86efac;color:#166534}
 .show{display:block}
 .btn{margin-top:8px;border:none;border-radius:999px;padding:6px 12px;background:var(--azul);color:#fff;font-weight:800;cursor:pointer}
-.checklist{padding-left:20px;font-weight:800}.checklist li{margin:8px 0}
+.list{padding-left:20px;font-weight:800}.list li{margin:8px 0}
 .timer-box{background:#0f172a;color:#fff;border-radius:18px;padding:18px;border:2px solid #334155}
 .timer-box strong{color:#fde68a}
 .videos a{display:block;text-decoration:none;color:inherit;background:#fff;border:2px solid var(--borda);border-radius:14px;padding:14px;margin-bottom:10px;font-weight:800}
@@ -59,27 +60,395 @@ body{font-family:Nunito,sans-serif;background:var(--fundo);color:var(--tinta);li
 </style>
 </head>
 <body>
-<section class="cover" id="top" style="background:linear-gradient(145deg,#0f172a,#7c3aed,#ea580c)"><div style="font-size:84px;position:relative;z-index:2">🎯</div><h1>Dia 010</h1><div class="pills"><span class="pill">Semana 2</span><span class="pill">Português + Matemática</span><span class="pill">75 a 90 min</span><span class="pill">Checkpoint semanal forte</span></div><p>Hoje o Eiji fecha a Semana 2 em modo checkpoint: revisão, bloco misto, caderno de erros e decisão do que precisa voltar na próxima semana.</p><div class="cover-note">Esta apostila fecha a Semana 2 como <strong>checkpoint de domínio</strong>. O mais importante hoje não é só a nota. É descobrir <strong>onde ainda erra</strong>.</div></section>
-<div class="science-bar"><div class="science-chip">Revisão de 24h</div><div class="science-chip">Critério de domínio</div><div class="science-chip">Foco de prova</div><div class="science-chip">Caderno de erros</div><div class="science-chip">Prática guiada</div><div class="science-chip">Prática independente</div><div class="science-chip">Checkpoint semanal</div></div>
-<nav class="nav"><button onclick="go('checkpoint')">🎯 Checkpoint</button><button onclick="go('revisao')">🧠 Revisão 24h</button><button onclick="go('semana')">📚 Semana 2</button><button onclick="go('desafio')">🧩 Desafio misto</button><button onclick="go('quiz')">🏆 Quiz</button><button onclick="go('videos')">🎬 Vídeos</button></nav>
-<div class="page" id="checkpoint"><div class="hero" style="background:linear-gradient(135deg,#7c3aed,#ea580c)"><h2>Checkpoint da Semana 2</h2><p>Hoje o objetivo não é aprender algo novo. É medir domínio, identificar erro e decidir o que precisa ser revisado.</p></div><div class="card green"><h3>🎯 Regra do checkpoint</h3><div class="box blue">Semana 2 concluída com domínio quando o Eiji:<br>• acerta <strong>80% ou mais</strong> do quiz final<br>• não erra a <strong>questão-âncora de leitura do comando</strong><br>• identifica corretamente seus <strong>2 erros mais frequentes</strong></div><div class="box yellowbg"><strong>Foco de prova:</strong> ritmo com clareza, sem pressa cega.</div></div><div class="card orange"><h3>⏱️ Bloco misto com tempo</h3><div class="timer-box"><strong>Modo prova:</strong> fazer o bloco misto em <strong>12 minutos</strong>. Depois corrigir com calma. O objetivo é observar <strong>onde o erro aparece</strong>.</div></div></div><div class="page" id="revisao"><div class="hero" style="background:linear-gradient(135deg,#ea580c,#f59e0b)"><h2>Revisão de 24h do Dia 9</h2><p>Antes do checkpoint, o Eiji relembra sequência lógica e divisão.</p></div><div class="card orange"><h3>🔁 Recuperação ativa</h3><div class="grid2"><div class="mini">Sequência lógica = ordem dos fatos</div><div class="mini">Divisão = repartir igualmente</div><div class="mini">12 ÷ 3 = 4</div><div class="mini">3 × 4 = 12 confirma</div></div></div></div><div class="page" id="semana"><div class="hero" style="background:linear-gradient(135deg,#1e3a8a,#2563eb)"><h2>O que a Semana 2 treinou</h2><p>Agora o Eiji fecha a semana olhando para as habilidades que mais ajudam a aprovar.</p></div><div class="card"><h3>📘 Português da semana</h3><div class="box blue">• inferência inicial<br>• sinônimos e antônimos em contexto<br>• leitura do comando da questão<br>• sequência lógica</div></div><div class="card green"><h3>🧮 Matemática da semana</h3><div class="box greenbg">• cálculo mental<br>• multiplicação por padrão<br>• grupos iguais<br>• divisão com significado</div></div><div class="card purple"><h3>🛡️ Regra de ouro</h3><div class="box purplebg">Antes de responder, o Eiji deve pensar: <strong>o que a questão quer?</strong> e <strong>qual estratégia deixa a conta mais clara?</strong></div></div></div><div class="page" id="desafio"><div class="hero" style="background:linear-gradient(135deg,#0f172a,#334155)"><h2>Desafio Misto 2</h2><p>Este bloco vale mais como treino de prova do que como explicação.</p></div><div class="card"><h3>🧩 Bloco misto guiado</h3>
-<div class="q"><strong>1.</strong> Em “o menino abriu o guarda-chuva e a rua ficou molhada”, o que podemos inferir?<br><button class="btn" onclick="toggle('d10g1')">Ver resposta</button><div class="ans" id="d10g1">Que provavelmente estava chovendo.</div></div>
-<div class="q"><strong>2.</strong> Qual é um sinônimo de feliz?<br><button class="btn" onclick="toggle('d10g2')">Ver resposta</button><div class="ans" id="d10g2">Contente.</div></div>
-<div class="q"><strong>3.</strong> “Marque a alternativa correta.” O que a questão quer que você faça?<br><button class="btn" onclick="toggle('d10g3')">Ver resposta</button><div class="ans" id="d10g3">Marcar a resposta certa.</div></div>
-<div class="q"><strong>4.</strong> 4 grupos de 5 objetos formam quantos objetos ao todo?<br><button class="btn" onclick="toggle('d10g4')">Ver resposta</button><div class="ans" id="d10g4">20 objetos.</div></div>
-<div class="q"><strong>5.</strong> 12 balas repartidas entre 4 crianças. Quantas para cada uma?<br><button class="btn" onclick="toggle('d10g5')">Ver resposta</button><div class="ans" id="d10g5">3 balas para cada.</div></div>
-</div><div class="card purple"><h3>🛠️ Caderno de erros da semana</h3><div class="box redbg">Depois do bloco, marcar quais erros apareceram:<br>• leitura sem pista<br>• troca de sentido<br>• ignorou verbo do comando<br>• travou na multiplicação<br>• dividiu sem conferir</div><div class="box purplebg"><strong>Prioridade da próxima semana:</strong> revisar primeiro o erro que mais se repetiu.</div></div></div>
-<div class="page videos" id="videos"><div class="hero" style="background:linear-gradient(135deg,#1e3a8a,#2563eb)"><h2>Vídeos para reforço final da Semana 2</h2><p>Use estes vídeos como apoio opcional para revisar os temas que mais apareceram no checkpoint.</p></div><a href="https://www.youtube.com/watch?v=dEdChBoO8GI" target="_blank" rel="noopener noreferrer">🧮 Cálculo mental</a><a href="https://www.youtube.com/watch?v=QTRs0RoubEQ" target="_blank" rel="noopener noreferrer">✖️ Cálculo mental na multiplicação</a><a href="https://www.youtube.com/watch?v=OSeg2NmuCAA" target="_blank" rel="noopener noreferrer">➗ Divisão — matemática básica</a><a href="https://www.youtube.com/watch?v=fofmRWU3EhU" target="_blank" rel="noopener noreferrer">📘 Interpretação de texto — 5º ano</a><div class="card green"><h3>💡 Como usar</h3><div class="box greenbg">Os vídeos são <strong>apoio opcional</strong>. O ideal é assistir 1 ou 2, voltar para a apostila e então fazer o quiz final.</div></div></div><div class="page" id="quiz"><div class="quiz"><h3>Eiji vs Revisão da Semana 2</h3><div class="barwrap"><div class="bar" id="bar"></div></div><div class="score" id="score">Questão 1 de 20</div><div class="qq" id="qq">Carregando...</div><div class="opts" id="opts"></div><div class="feedback" id="feedback"></div><button class="next" id="next" onclick="nextQ()" disabled>Próxima ➡️</button></div><div class="footnav"><a class="back" href="dia-009.html">← Apostila anterior</a><a class="back" href="../index.html">← Voltar ao cronograma</a><a class="forward" href="dia-011.html">Próxima apostila →</a></div></div>
-<footer class="footer">Dia 010 — Revisão da Semana 2 + Desafio Misto 2 • Retrofit pedagógico v2</footer>
+<section class="cover" id="top">
+<div style="font-size:84px;position:relative;z-index:2">🎯</div>
+<h1>Dia 010</h1>
+<div class="pills">
+<span class="pill">Semana 2</span>
+<span class="pill">Português + Matemática</span>
+<span class="pill">75 a 100 min</span>
+<span class="pill">Checkpoint semanal forte</span>
+</div>
+<p>Hoje o Eiji fecha a Semana 2 em modo checkpoint de verdade: recuperação, síntese das habilidades, treino misto mais robusto, bloco cronometrado e análise de erro.</p>
+<div class="cover-note">Esta apostila fecha a Semana 2 como <strong>checkpoint de domínio</strong>. O objetivo não é só tirar uma nota boa. É descobrir o que ficou forte, o que ainda oscila e qual erro pode atrapalhar a Semana 3.</div>
+</section>
+
+<div class="science-bar">
+<div class="science-chip">Revisão de 24h</div>
+<div class="science-chip">Critério de domínio</div>
+<div class="science-chip">Foco de prova</div>
+<div class="science-chip">Bloco misto</div>
+<div class="science-chip">Tempo controlado</div>
+<div class="science-chip">Caderno de erros</div>
+<div class="science-chip">Checkpoint semanal</div>
+</div>
+
+<nav class="nav">
+<button onclick="go('checkpoint')">🎯 Checkpoint</button>
+<button onclick="go('revisao')">🧠 Revisão 24h</button>
+<button onclick="go('semana')">📚 Semana 2</button>
+<button onclick="go('worked')">🧠 Modelos</button>
+<button onclick="go('desafio')">🧩 Desafio misto</button>
+<button onclick="go('crono')">⏱️ Cronometrado</button>
+<button onclick="go('erros')">🛠️ Erros</button>
+<button onclick="go('quiz')">🏆 Quiz</button>
+<button onclick="go('videos')">🎬 Vídeos</button>
+</nav>
+
+<div class="page" id="checkpoint">
+<div class="hero" style="background:linear-gradient(135deg,#7c3aed,#ea580c)">
+<h2>Checkpoint da Semana 2</h2>
+<p>Hoje não entra conteúdo novo. A missão é medir a força das habilidades da semana e treinar estabilidade sob mistura de temas.</p>
+</div>
+<div class="card green">
+<h3>🎯 Critério de domínio</h3>
+<div class="box blue">A Semana 2 fica bem fechada quando o Eiji:
+<br>• acerta <strong>80% ou mais</strong> do quiz final
+<br>• acerta a <strong>questão-âncora de leitura do comando</strong>
+<br>• acerta pelo menos <strong>4 de 5</strong> no bloco cronometrado
+<br>• identifica com clareza seus <strong>2 erros mais frequentes</strong></div>
+<div class="box yellowbg"><strong>Foco de prova:</strong> manter clareza quando Português e Matemática aparecem misturados.</div>
+</div>
+<div class="card orange">
+<h3>🧭 O que será avaliado hoje</h3>
+<div class="grid2">
+<div class="mini">Inferência inicial</div>
+<div class="mini">Sinônimos e antônimos em contexto</div>
+<div class="mini">Leitura do comando da questão</div>
+<div class="mini">Sequência lógica</div>
+<div class="mini">Cálculo mental</div>
+<div class="mini">Multiplicação por grupos iguais</div>
+<div class="mini">Divisão com significado</div>
+<div class="mini">Conferência por multiplicação</div>
+</div>
+</div>
+</div>
+
+<div class="page" id="revisao">
+<div class="hero" style="background:linear-gradient(135deg,#ea580c,#f59e0b)">
+<h2>Revisão de 24h do Dia 9</h2>
+<p>Antes do checkpoint, o Eiji recupera sequência lógica e divisão com significado.</p>
+</div>
+<div class="card orange">
+<h3>🔁 Recuperação ativa</h3>
+<div class="grid2">
+<div class="mini">Sequência lógica = ordem correta dos fatos</div>
+<div class="mini">Divisão = repartir igualmente ou formar grupos</div>
+<div class="mini">12 ÷ 3 = 4</div>
+<div class="mini">3 × 4 = 12 confirma a divisão</div>
+<div class="mini">Antes = ação que precisa acontecer primeiro</div>
+<div class="mini">Depois = consequência ou continuação</div>
+</div>
+<div class="box orangebg">Regra: tente lembrar essas seis ideias antes de olhar qualquer resposta do resto da apostila.</div>
+</div>
+</div>
+
+<div class="page" id="semana">
+<div class="hero" style="background:linear-gradient(135deg,#1e3a8a,#2563eb)">
+<h2>Painel completo da Semana 2</h2>
+<p>Agora o Eiji fecha a semana olhando para o conjunto, não para temas soltos.</p>
+</div>
+<div class="grid2">
+<div class="card">
+<h3>📘 Português da semana</h3>
+<div class="box blue">• inferência inicial
+<br>• uso de pistas
+<br>• sinônimos e antônimos pelo contexto
+<br>• leitura do verbo do comando
+<br>• sequência lógica de ações e fatos</div>
+</div>
+<div class="card green">
+<h3>🧮 Matemática da semana</h3>
+<div class="box greenbg">• cálculo mental com estratégia
+<br>• multiplicação como grupos iguais
+<br>• divisão como repartição
+<br>• conferência da divisão com multiplicação
+<br>• leitura cuidadosa de situações-problema</div>
+</div>
+</div>
+<div class="card purple">
+<h3>🛡️ Regra de ouro da semana</h3>
+<div class="box purplebg">Antes de responder, o Eiji deve perguntar:
+<br><strong>1.</strong> O que exatamente a questão quer?
+<br><strong>2.</strong> Qual pista ou qual operação prova minha resposta?
+<br><strong>3.</strong> Minha resposta confere com o enunciado inteiro?</div>
+</div>
+</div>
+
+<div class="page" id="worked">
+<div class="hero" style="background:linear-gradient(135deg,#0f172a,#334155)">
+<h2>Modelos resolvidos antes do desafio</h2>
+<p>Antes do bloco misto mais pesado, o Eiji observa caminhos de resposta bem resolvidos.</p>
+</div>
+<div class="card">
+<h3>🧠 Modelo 1 — inferência</h3>
+<div class="box blue"><strong>Frase:</strong> “Lucas correu para dentro, fechou a janela e pegou uma toalha.”
+<br><strong>Conclusão:</strong> provavelmente começou a chover.
+<br><strong>Por quê?</strong> As ações funcionam como pistas.</div>
+</div>
+<div class="card">
+<h3>🧠 Modelo 2 — comando</h3>
+<div class="box blue"><strong>Questão:</strong> “Explique por que essa alternativa está correta.”
+<br><strong>Resposta certa:</strong> não basta marcar; precisa justificar por escrito.</div>
+</div>
+<div class="card green">
+<h3>🧠 Modelo 3 — grupos iguais</h3>
+<div class="box greenbg"><strong>Situação:</strong> 4 caixas com 6 lápis em cada.
+<br><strong>Conta:</strong> 4 × 6 = 24.
+<br><strong>Leitura correta:</strong> 4 grupos, 6 itens em cada grupo.</div>
+</div>
+<div class="card green">
+<h3>🧠 Modelo 4 — divisão conferida</h3>
+<div class="box greenbg"><strong>Situação:</strong> 18 balas divididas entre 6 crianças.
+<br><strong>Conta:</strong> 18 ÷ 6 = 3.
+<br><strong>Conferência:</strong> 6 × 3 = 18.</div>
+</div>
+</div>
+
+<div class="page" id="desafio">
+<div class="hero" style="background:linear-gradient(135deg,#065f46,#16a34a)">
+<h2>Desafio Misto 2 — versão robusta</h2>
+<p>Aqui o treino fica mais próximo de prova, mas ainda com correção liberada para estudo.</p>
+</div>
+<div class="card">
+<h3>🧩 Bloco misto guiado</h3>
+
+<div class="q"><strong>1.</strong> Em “o menino abriu o guarda-chuva e a rua ficou molhada”, o que podemos inferir?
+<br><button class="btn" onclick="toggle('d10g1')">Ver resposta</button>
+<div class="ans" id="d10g1">Que provavelmente estava chovendo.</div></div>
+
+<div class="q"><strong>2.</strong> Qual é um sinônimo de feliz?
+<br><button class="btn" onclick="toggle('d10g2')">Ver resposta</button>
+<div class="ans" id="d10g2">Contente.</div></div>
+
+<div class="q"><strong>3.</strong> “Marque a alternativa correta.” O que a questão quer que você faça?
+<br><button class="btn" onclick="toggle('d10g3')">Ver resposta</button>
+<div class="ans" id="d10g3">Marcar a resposta certa.</div></div>
+
+<div class="q"><strong>4.</strong> 4 grupos de 5 objetos formam quantos objetos ao todo?
+<br><button class="btn" onclick="toggle('d10g4')">Ver resposta</button>
+<div class="ans" id="d10g4">20 objetos.</div></div>
+
+<div class="q"><strong>5.</strong> 12 balas repartidas entre 4 crianças. Quantas para cada uma?
+<br><button class="btn" onclick="toggle('d10g5')">Ver resposta</button>
+<div class="ans" id="d10g5">3 balas para cada.</div></div>
+
+<div class="q"><strong>6.</strong> O que vem primeiro em uma sequência lógica: “servir o suco” ou “pegar os copos”?
+<br><button class="btn" onclick="toggle('d10g6')">Ver resposta</button>
+<div class="ans" id="d10g6">Pegar os copos.</div></div>
+
+<div class="q"><strong>7.</strong> Em “A professora entrou sorrindo e a turma aplaudiu”, o clima parece tenso ou alegre?
+<br><button class="btn" onclick="toggle('d10g7')">Ver resposta</button>
+<div class="ans" id="d10g7">Alegre.</div></div>
+
+<div class="q"><strong>8.</strong> 5 × 8 é igual a quanto?
+<br><button class="btn" onclick="toggle('d10g8')">Ver resposta</button>
+<div class="ans" id="d10g8">40.</div></div>
+
+<div class="q"><strong>9.</strong> 15 ÷ 3 é igual a quanto? Como conferir?
+<br><button class="btn" onclick="toggle('d10g9')">Ver resposta</button>
+<div class="ans" id="d10g9">15 ÷ 3 = 5. Conferência: 3 × 5 = 15.</div></div>
+
+<div class="q"><strong>10.</strong> Questão-âncora: a instrução diz “Complete a frase com um antônimo de claro.” O que o aluno precisa fazer?
+<br><button class="btn" onclick="toggle('d10g10')">Ver resposta</button>
+<div class="ans" id="d10g10">Precisa escrever uma palavra de sentido oposto, como “escuro”, completando a frase.</div></div>
+
+</div>
+
+<div class="card green">
+<h3>✏️ Bloco independente</h3>
+
+<div class="q"><strong>1.</strong> “A menina colocou o casaco e fechou a porta rapidamente.” O que essa cena sugere?
+<br><button class="btn" onclick="toggle('d10i1')">Ver resposta</button>
+<div class="ans" id="d10i1">Que ela ia sair e provavelmente estava com frio ou com pressa.</div></div>
+
+<div class="q"><strong>2.</strong> Escreva um antônimo de alegre.
+<br><button class="btn" onclick="toggle('d10i2')">Ver resposta</button>
+<div class="ans" id="d10i2">Triste.</div></div>
+
+<div class="q"><strong>3.</strong> Se a questão pede “explique”, marcar uma alternativa basta?
+<br><button class="btn" onclick="toggle('d10i3')">Ver resposta</button>
+<div class="ans" id="d10i3">Não. É preciso escrever o motivo.</div></div>
+
+<div class="q"><strong>4.</strong> 6 grupos de 3 copos totalizam quantos copos?
+<br><button class="btn" onclick="toggle('d10i4')">Ver resposta</button>
+<div class="ans" id="d10i4">18 copos.</div></div>
+
+<div class="q"><strong>5.</strong> 20 figurinhas divididas entre 5 amigos. Quantas para cada um?
+<br><button class="btn" onclick="toggle('d10i5')">Ver resposta</button>
+<div class="ans" id="d10i5">4 figurinhas.</div></div>
+
+<div class="q"><strong>6.</strong> Qual vem antes: “abrir o caderno” ou “escrever a resposta”?
+<br><button class="btn" onclick="toggle('d10i6')">Ver resposta</button>
+<div class="ans" id="d10i6">Abrir o caderno.</div></div>
+
+<div class="q"><strong>7.</strong> 7 × 4 é igual a quanto?
+<br><button class="btn" onclick="toggle('d10i7')">Ver resposta</button>
+<div class="ans" id="d10i7">28.</div></div>
+
+<div class="q"><strong>8.</strong> 18 ÷ 6 é igual a quanto? Como conferir?
+<br><button class="btn" onclick="toggle('d10i8')">Ver resposta</button>
+<div class="ans" id="d10i8">18 ÷ 6 = 3. Conferência: 6 × 3 = 18.</div></div>
+
+</div>
+</div>
+
+<div class="page" id="crono">
+<div class="hero" style="background:linear-gradient(135deg,#0f172a,#334155)">
+<h2>Bloco cronometrado</h2>
+<p>Aqui o Eiji sente um pouco de pressão, mas com tempo ainda controlável.</p>
+</div>
+<div class="card purple">
+<h3>⏱️ 5 questões em 12 minutos</h3>
+<div class="timer-box">
+1. Em “A praça ficou molhada e o céu estava escuro”, o que podemos inferir?<br>
+2. Qual é um sinônimo de bonito?<br>
+3. “Marque a alternativa correta” pede o quê?<br>
+4. 3 grupos de 7 objetos totalizam quantos objetos?<br>
+5. 16 balas divididas entre 4 crianças. Quantas para cada?<br><br>
+<strong>Depois:</strong> corrigir e marcar se o erro foi de leitura, contexto, operação ou pressa.
+</div>
+</div>
+</div>
+
+<div class="page" id="erros">
+<div class="hero" style="background:linear-gradient(135deg,#0f172a,#334155)">
+<h2>Caderno de erros da semana</h2>
+<p>Hoje o caderno precisa funcionar como bússola para a próxima semana.</p>
+</div>
+<div class="card purple">
+<h3>🛠️ Categorias de erro</h3>
+<div class="grid2">
+<div class="mini"><strong>Leitura sem pista</strong><br>inferiu além do que o texto permite</div>
+<div class="mini"><strong>Troca de sentido</strong><br>confundiu sinônimo com antônimo</div>
+<div class="mini"><strong>Ignorou o verbo do comando</strong><br>marcou quando precisava explicar</div>
+<div class="mini"><strong>Operação errada</strong><br>misturou multiplicação e divisão</div>
+<div class="mini"><strong>Pressa</strong><br>sabia, mas errou por acelerar demais</div>
+<div class="mini"><strong>Conferência fraca</strong><br>não checou a divisão com multiplicação</div>
+</div>
+<div class="box redbg"><strong>Tarefa obrigatória:</strong> registrar pelo menos 3 erros ou quase-erros de hoje.</div>
+<div class="box purplebg"><strong>Prioridade da próxima semana:</strong> revisar primeiro o tipo de erro que mais se repetiu.</div>
+</div>
+</div>
+
+<div class="page videos" id="videos">
+<div class="hero" style="background:linear-gradient(135deg,#1e3a8a,#2563eb)">
+<h2>Vídeos para reforço final da Semana 2</h2>
+<p>Use como apoio opcional para revisar os temas que mais pesaram no checkpoint.</p>
+</div>
+<a href="https://www.youtube.com/watch?v=dEdChBoO8GI" target="_blank" rel="noopener noreferrer">🧮 Cálculo mental</a>
+<a href="https://www.youtube.com/watch?v=QTRs0RoubEQ" target="_blank" rel="noopener noreferrer">✖️ Cálculo mental na multiplicação</a>
+<a href="https://www.youtube.com/watch?v=OSeg2NmuCAA" target="_blank" rel="noopener noreferrer">➗ Divisão — matemática básica</a>
+<a href="https://www.youtube.com/watch?v=fofmRWU3EhU" target="_blank" rel="noopener noreferrer">📘 Interpretação de texto — 5º ano</a>
+<div class="card green">
+<h3>💡 Como usar</h3>
+<div class="box greenbg">Os vídeos são <strong>apoio opcional</strong>. O ideal é assistir 1 ou 2, voltar para a apostila e então fazer o quiz final.</div>
+</div>
+</div>
+
+<div class="page" id="quiz">
+<div class="quiz">
+<h3>Eiji vs Revisão da Semana 2</h3>
+<div class="barwrap"><div class="bar" id="bar"></div></div>
+<div class="score" id="score">Questão 1 de 24</div>
+<div class="qq" id="qq">Carregando...</div>
+<div class="opts" id="opts"></div>
+<div class="feedback" id="feedback"></div>
+<button class="next" id="next" onclick="nextQ()" disabled>Próxima ➡️</button>
+</div>
+<div class="footnav">
+<a class="back" href="dia-009.html">← Apostila anterior</a>
+<a class="back" href="../index.html">← Voltar ao cronograma</a>
+<a class="forward" href="dia-011.html">Próxima apostila →</a>
+</div>
+</div>
+
+<footer class="footer">Dia 010 — Revisão da Semana 2 + Desafio Misto 2 • versão robusta</footer>
+
 <script>
 function go(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth'})}
 function toggle(id){document.getElementById(id).classList.toggle('show')}
-const data=[["Inferir quer dizer:", ["copiar a frase", "descobrir pelas pistas", "marcar no chute", "falar alto"], 1], ["Qual é um sinônimo de bonito?", ["feio", "belo", "baixo", "fraco"], 1], ["Qual é um antônimo de rápido?", ["ligeiro", "veloz", "lento", "claro"], 2], ["“Explique sua resposta” pede que o aluno:", ["marque só uma opção", "escreva o motivo", "pule a questão", "copie o texto"], 1], ["4 × 5 é igual a:", ["15", "20", "25", "30"], 1], ["12 ÷ 4 é igual a:", ["2", "3", "4", "6"], 1], ["Sequência lógica ajuda a:", ["misturar as etapas", "organizar os fatos", "errar mais rápido", "apagar pistas"], 1], ["5 × 8 é igual a:", ["35", "40", "45", "48"], 1], ["15 ÷ 3 é igual a:", ["3", "4", "5", "6"], 2], ["Na frase “abriu o guarda-chuva”, podemos inferir:", ["que fez sol forte", "que talvez choveu", "que ele dormiu", "que foi nadar"], 1], ["Sinônimo de feliz é:", ["triste", "contente", "lento", "escuro"], 1], ["Antônimo de claro é:", ["azul", "bonito", "escuro", "alto"], 2], ["Qual comando pede escolha de alternativa?", ["calcule", "marque", "explique", "complete"], 1], ["3 grupos de 4 é igual a:", ["7", "10", "12", "14"], 2], ["18 ÷ 6 é igual a:", ["2", "3", "4", "5"], 1], ["Para confirmar 20 ÷ 4 = 5, fazemos:", ["4 × 5", "20 + 4", "20 - 5", "5 + 5"], 0], ["No modo prova, o melhor é:", ["correr de qualquer jeito", "ler com calma e usar estratégia", "marcar sem pensar", "pular a revisão"], 1], ["Qual é a dupla correta?", ["sinônimo = oposto", "antônimo = parecido", "sinônimo = parecido", "divisão = chute"], 2], ["Quando a questão pede “complete”, o aluno deve:", ["preencher o que falta", "apagar a frase", "desenhar", "marcar qualquer uma"], 0], ["Para fechar bem a Semana 2, o Eiji precisa:", ["juntar leitura, contexto e operações com significado", "decorar tudo sem entender", "ignorar o comando", "parar de revisar"], 0]];
+
+const data=[
+["Inferir quer dizer:", ["copiar a frase", "descobrir pelas pistas", "marcar no chute", "falar alto"], 1],
+["Qual é um sinônimo de bonito?", ["feio", "belo", "baixo", "fraco"], 1],
+["Qual é um antônimo de rápido?", ["ligeiro", "veloz", "lento", "claro"], 2],
+["“Explique sua resposta” pede que o aluno:", ["marque só uma opção", "escreva o motivo", "pule a questão", "copie o texto"], 1],
+["4 × 5 é igual a:", ["15", "20", "25", "30"], 1],
+["12 ÷ 4 é igual a:", ["2", "3", "4", "6"], 1],
+["Sequência lógica ajuda a:", ["misturar as etapas", "organizar os fatos", "errar mais rápido", "apagar pistas"], 1],
+["5 × 8 é igual a:", ["35", "40", "45", "48"], 1],
+["15 ÷ 3 é igual a:", ["3", "4", "5", "6"], 2],
+["Na frase “abriu o guarda-chuva”, podemos inferir:", ["que fez sol forte", "que talvez choveu", "que ele dormiu", "que foi nadar"], 1],
+["Sinônimo de feliz é:", ["triste", "contente", "lento", "escuro"], 1],
+["Antônimo de claro é:", ["azul", "bonito", "escuro", "alto"], 2],
+["Qual comando pede escolha de alternativa?", ["calcule", "marque", "explique", "complete"], 1],
+["3 grupos de 4 é igual a:", ["7", "10", "12", "14"], 2],
+["18 ÷ 6 é igual a:", ["2", "3", "4", "5"], 1],
+["Para confirmar 20 ÷ 4 = 5, fazemos:", ["4 × 5", "20 + 4", "20 - 5", "5 + 5"], 0],
+["No modo prova, o melhor é:", ["correr de qualquer jeito", "ler com calma e usar estratégia", "marcar sem pensar", "pular a revisão"], 1],
+["Qual é a dupla correta?", ["sinônimo = oposto", "antônimo = parecido", "sinônimo = parecido", "divisão = chute"], 2],
+["Quando a questão pede “complete”, o aluno deve:", ["preencher o que falta", "apagar a frase", "desenhar", "marcar qualquer uma"], 0],
+["16 ÷ 2 é igual a:", ["8", "9", "7", "6"], 0],
+["Qual vem antes em sequência lógica?", ["servir o bolo antes de abrir a caixa", "abrir a caixa antes de servir o bolo"], 1],
+["6 grupos de 3 copos totalizam:", ["18", "12", "9", "24"], 0],
+["Se o aluno confundiu sinônimo com antônimo, o erro foi de:", ["troca de sentido", "pressa física", "pontuação", "caligrafia"], 0],
+["Para fechar bem a Semana 2, o Eiji precisa:", ["juntar leitura, contexto e operações com significado", "decorar tudo sem entender", "ignorar o comando", "parar de revisar"], 0]
+];
 let i=0,s=0,lock=false;
-function render(){lock=false;document.getElementById('score').textContent=`Questão ${i+1} de ${data.length}`;document.getElementById('bar').style.width=`${(i/data.length)*100}%`;document.getElementById('qq').textContent=data[i][0];document.getElementById('feedback').textContent='';document.getElementById('next').disabled=true;const opts=document.getElementById('opts');opts.innerHTML='';data[i][1].forEach((t,idx)=>{const b=document.createElement('button');b.className='opt';b.textContent=t;b.onclick=()=>answer(idx);opts.appendChild(b)})}
-function answer(idx){if(lock)return;lock=true;const good=data[i][2];[...document.querySelectorAll('.opt')].forEach((b,n)=>{b.disabled=true;if(n===good)b.classList.add('correct');if(n===idx&&n!==good)b.classList.add('wrong')});const fb=document.getElementById('feedback');if(idx===good){s++;fb.textContent='✅ Boa. O Eiji leu, pensou e decidiu com método.';fb.style.color='#86efac'}else{fb.textContent='❌ Ainda não. Volte ao comando, ao contexto ou à operação certa.';fb.style.color='#fca5a5'}document.getElementById('next').disabled=false}
-function nextQ(){i++;if(i<data.length){render()}else{finish()}}
-function finish(){document.getElementById('bar').style.width='100%';document.getElementById('score').textContent=`Pontuação final: ${s} / ${data.length}`;document.getElementById('qq').innerHTML="🏆 Checkpoint concluído. O Eiji fechou a Semana 2 com mais clareza e mais cabeça de prova.";document.getElementById('opts').innerHTML='';document.getElementById('feedback').textContent="Dica final: a Semana 2 fica forte quando leitura, contexto e operações andam juntas.";document.getElementById('feedback').style.color='#fde68a';document.getElementById('next').disabled=true}
+function render(){
+  lock=false;
+  document.getElementById('score').textContent=`Questão ${i+1} de ${data.length}`;
+  document.getElementById('bar').style.width=`${(i/data.length)*100}%`;
+  document.getElementById('qq').textContent=data[i][0];
+  document.getElementById('feedback').textContent='';
+  document.getElementById('next').disabled=true;
+  const opts=document.getElementById('opts');
+  opts.innerHTML='';
+  data[i][1].forEach((t,idx)=>{
+    const b=document.createElement('button');
+    b.className='opt';
+    b.textContent=t;
+    b.onclick=()=>answer(idx);
+    opts.appendChild(b)
+  })
+}
+function answer(idx){
+  if(lock)return;
+  lock=true;
+  const good=data[i][2];
+  [...document.querySelectorAll('.opt')].forEach((b,n)=>{
+    b.disabled=true;
+    if(n===good)b.classList.add('correct');
+    if(n===idx&&n!==good)b.classList.add('wrong')
+  });
+  const fb=document.getElementById('feedback');
+  if(idx===good){
+    s++;
+    fb.textContent='✅ Boa. O Eiji leu, pensou e decidiu com método.';
+    fb.style.color='#86efac'
+  }else{
+    fb.textContent='❌ Ainda não. Volte ao comando, ao contexto ou à operação certa.';
+    fb.style.color='#fca5a5'
+  }
+  document.getElementById('next').disabled=false
+}
+function nextQ(){i++; if(i<data.length){render()} else {finish()}}
+function finish(){
+  document.getElementById('bar').style.width='100%';
+  document.getElementById('score').textContent=`Pontuação final: ${s} / ${data.length}`;
+  document.getElementById('qq').innerHTML="🏆 Checkpoint concluído. O Eiji fechou a Semana 2 com mais clareza, mais resistência e mais cabeça de prova.";
+  document.getElementById('opts').innerHTML='';
+  let msg='';
+  const p=Math.round((s/data.length)*100);
+  if(p>=80) msg='Semana 2 bem consolidada. Agora a base já sustenta avanço com mais segurança.';
+  else if(p>=65) msg='Boa evolução. Ainda há um ou dois tipos de erro que precisam de revisão antes de acelerar.';
+  else msg='A semana ainda não fechou bem. Vale revisar os pontos mais frágeis antes de seguir com confiança total.';
+  document.getElementById('feedback').textContent=msg;
+  document.getElementById('feedback').style.color='#fde68a';
+  document.getElementById('next').disabled=true
+}
 render();
 </script>
-</body></html>
+</body>
+</html>
