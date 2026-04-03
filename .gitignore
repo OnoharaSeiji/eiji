@@ -1,0 +1,7 @@
+# respostas reais
+respostas/privadas/*.json
+
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc
