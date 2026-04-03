@@ -1,0 +1,23 @@
+{
+  "total_dias": 214,
+  "meses": [
+    "abril",
+    "maio",
+    "junho",
+    "julho",
+    "agosto",
+    "setembro",
+    "outubro"
+  ],
+  "simulados_completos": 9,
+  "tags": {
+    "DIAG": 2,
+    "R": 32,
+    "S": 28,
+    "D": 32,
+    "M": 57,
+    "P": 57,
+    "F": 5,
+    "PROVA": 1
+  }
+}
