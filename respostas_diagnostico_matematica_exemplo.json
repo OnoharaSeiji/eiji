@@ -1,0 +1,264 @@
+{
+  "metadata": {
+    "aluno": "Eiji",
+    "atividade": "Apostila Dia 1 — Diagnóstico de Matemática — Fusão",
+    "data_preenchimento_pdf": "2026-04-02 19:54",
+    "observacao": "JSON montado a partir das respostas visíveis no PDF exportado. Alguns campos aparecem truncados visualmente no PDF."
+  },
+  "respostas": {
+    "q1": {
+      "enunciado": "Escreva por extenso",
+      "a": "quatro mil duzentos e cinco",
+      "b": "dezoito mil e noventa",
+      "c": "trezentos e sete mil quatrocentos e doze",
+      "d": "três milhões setecentos e quarenta e dois mil oitocentos e noventa e um"
+    },
+    "q2": {
+      "enunciado": "Escreva em algarismos",
+      "a": "9032",
+      "b": "240105",
+      "c": "2345080"
+    },
+    "q3": {
+      "enunciado": "Qual é o valor posicional de cada algarismo em 3.742.891?",
+      "respostas_preenchidas": {
+        "milhoes": "3",
+        "centenas_de_mil": "7",
+        "dezenas_de_mil": "4",
+        "unidades_de_mil": "2",
+        "centenas": "8",
+        "dezenas": "9",
+        "unidades": "1"
+      }
+    },
+    "q4": {
+      "enunciado": "Decomponha os números",
+      "a": "5000 + 400 + 80 + 2",
+      "b": "70000 + 3000 + 10 + 9"
+    },
+    "q5": {
+      "enunciado": "Ordene do menor para o maior",
+      "a": "8091 - 8109 - 8901 - 8910",
+      "b": "12540 - 125004 - 125400"
+    },
+    "q6": {
+      "enunciado": "Complete",
+      "a": "7000",
+      "b": "300",
+      "c": "9999",
+      "d": "100000"
+    },
+    "q7": {
+      "enunciado": "Calcule",
+      "operacoes": [
+        {
+          "calculo": "2.487 + 1.936",
+          "resposta": "4423"
+        },
+        {
+          "calculo": "13.250 + 8.975",
+          "resposta": "22225"
+        },
+        {
+          "calculo": "7.004 - 2.689",
+          "resposta": "4316"
+        },
+        {
+          "calculo": "20.000 - 13.458",
+          "resposta": "5542"
+        },
+        {
+          "calculo": "364 x 27",
+          "resposta": "9828"
+        },
+        {
+          "calculo": "125 x 48",
+          "resposta": "6000"
+        },
+        {
+          "calculo": "1.848 ÷ 8",
+          "resposta": "231"
+        },
+        {
+          "calculo": "5.670 ÷ 15",
+          "resposta": "378"
+        },
+        {
+          "calculo": "1.200 ÷ 40",
+          "resposta": "30"
+        }
+      ]
+    },
+    "q8": {
+      "enunciado": "Desafio rápido",
+      "a": {
+        "texto_visivel": "A diferença é que um numer",
+        "observacao": "Campo aparece truncado no PDF."
+      },
+      "b": "1725"
+    },
+    "q9": {
+      "enunciado": "Biblioteca: 1.285 livros + 376 novos",
+      "desenvolvimento": "1285 + 376",
+      "resposta": "Ao todo ficaram 1661."
+    },
+    "q10": {
+      "enunciado": "Papelaria: 950 cadernos, vendeu 438",
+      "desenvolvimento": "950 - 438",
+      "resposta": "Restaram 512 cadernos."
+    },
+    "q11": {
+      "enunciado": "Campanha: queria juntar 1.000 itens, já arrecadou 764",
+      "desenvolvimento": "1000 - 764",
+      "resposta": "Faltam 236."
+    },
+    "q12": {
+      "enunciado": "Loja vendeu 840 produtos em 4 semanas iguais. Quantos por semana? E por dia?",
+      "desenvolvimento": [
+        "840 / 4",
+        "28 / 840"
+      ],
+      "por_semana": "21 por semana",
+      "por_dia": "nao soube realizar a conta"
+    },
+    "q13": {
+      "enunciado": "Em uma escola há 1.248 alunos. Destes, 3/8 praticam esporte. Quantos praticam?",
+      "desenvolvimento": "Eiji ainda não aprendeu fração",
+      "resposta": ""
+    },
+    "q14": {
+      "enunciado": "Classifique cada fração em própria, imprópria ou mista",
+      "respostas_visiveis": {
+        "3/8": "Eiji ainda",
+        "11/4": "Eiji ainda",
+        "7/7": "Eiji ainda"
+      },
+      "observacao": "Os campos aparecem truncados no PDF."
+    },
+    "q15": {
+      "enunciado": "Simplifique",
+      "respostas_visiveis": {
+        "6/12": "Eiji ainda",
+        "15/20": "Eiji ainda",
+        "8/24": "Eiji ainda"
+      },
+      "observacao": "Os campos aparecem truncados no PDF."
+    },
+    "q16": {
+      "enunciado": "Calcule (frações)",
+      "respostas_visiveis": {
+        "1/4 + 2/4": "Eiji ainda não apr",
+        "5/6 - 1/6": "Eiji ainda não apr",
+        "1/2 + 1/3": "Eiji ainda não apr"
+      },
+      "observacao": "Os campos aparecem truncados no PDF."
+    },
+    "q17": {
+      "enunciado": "Calcule (decimais)",
+      "respostas_visiveis": {
+        "3,75 + 1,8": "Eiji ainda não",
+        "10,0 - 4,35": "Eiji ainda não",
+        "3/4 = 0,?": "Eiji ainda não"
+      },
+      "observacao": "Os campos aparecem truncados no PDF."
+    },
+    "q18": {
+      "enunciado": "Calcule as porcentagens",
+      "respostas_visiveis": {
+        "10% de 200": "Eiji ainda não",
+        "50% de 80": "Eiji ainda não",
+        "25% de 120": "Eiji ainda não"
+      },
+      "observacao": "Os campos aparecem truncados no PDF."
+    },
+    "q19": {
+      "enunciado": "Uma camiseta custa R$ 60,00 com 20% de desconto. Quanto você paga?",
+      "desenvolvimento": "Eiji ainda não aprendeu decimais e porcentagem",
+      "resposta": ""
+    },
+    "q20": {
+      "enunciado": "Qual é a melhor estratégia para resolver um problema?",
+      "resposta": "B"
+    },
+    "q21": {
+      "enunciado": "Quando você erra uma conta, a melhor atitude é:",
+      "resposta": "B"
+    }
+  },
+  "autoavaliacao": {
+    "numeracao_e_valor_posicional": "Domino!",
+    "adicao_e_subtracao": "Fui bem",
+    "multiplicacao_e_divisao": "Fui bem",
+    "situacoes_problema": "Fui bem",
+    "fracoes_ampliacao": "Nao soube",
+    "decimais_e_porcentagem_ampliacao": "Nao soube"
+  },
+  "ficha_observacao_responsavel": [
+    {
+      "item": "Leitura e escrita de números",
+      "avaliacao": "Foi bem",
+      "observacao": ""
+    },
+    {
+      "item": "Valor posicional / decomposição",
+      "avaliacao": "Foi bem",
+      "observacao": ""
+    },
+    {
+      "item": "Adição e subtração",
+      "avaliacao": "Foi bem",
+      "observacao_visivel": "Precisa de mais organizaç",
+      "observacao": "Campo aparece truncado no PDF."
+    },
+    {
+      "item": "Multiplicação e divisão",
+      "avaliacao": "Foi bem",
+      "observacao_visivel": "Ficou confuso quando o n",
+      "observacao": "Campo aparece truncado no PDF."
+    },
+    {
+      "item": "Interpretação de problemas",
+      "avaliacao": "Foi bem",
+      "observacao": ""
+    },
+    {
+      "item": "Frações (ampliação)",
+      "avaliacao": "Dificuldade",
+      "observacao_visivel": "Ainda não aprendeu essa",
+      "observacao": "Campo aparece truncado no PDF."
+    },
+    {
+      "item": "Decimais / Porcentagem (ampliação)",
+      "avaliacao": "Dificuldade",
+      "observacao_visivel": "Ainda não aprendeu essa",
+      "observacao": "Campo aparece truncado no PDF."
+    },
+    {
+      "item": "Calma / atenção / estratégia",
+      "avaliacao": "Foi bem",
+      "observacao": ""
+    }
+  ],
+  "caderno_de_erros": [
+    {
+      "questao": "7",
+      "assunto": "subtração",
+      "o_que_aconteceu_visivel": "faltou organização para mon",
+      "como_fazer_certo_visivel": "montar direito, com mais orgar",
+      "observacao": "Campos aparecem truncados no PDF."
+    },
+    {
+      "questao": "8",
+      "assunto": "a",
+      "o_que_aconteceu": "interpretou mal a pergunta",
+      "como_fazer_certo": "confundiu o sentido da palavra"
+    },
+    {
+      "questao": "12",
+      "assunto_visivel": "divisão de produtos por sem",
+      "o_que_aconteceu_visivel": "não soube dividir quando o c",
+      "como_fazer_certo": "reforço neste tema",
+      "observacao": "Campos aparecem truncados no PDF."
+    }
+  ]
+}
