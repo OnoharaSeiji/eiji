@@ -1,0 +1,7 @@
+.month-card h3{margin:8px 0 4px}.month-card p{margin:0;color:var(--muted);font-size:14px}.table-wrap{overflow:auto}
+.schedule{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+.schedule th,.schedule td{padding:12px 14px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top;font-size:14px}
+.schedule th{background:#f8fafc;font-size:12px;text-transform:uppercase;color:var(--muted);letter-spacing:.04em}.schedule tr:hover td{background:#fbfefd}
+.tag{display:inline-block;padding:4px 8px;border-radius:999px;font-size:11px;font-weight:700;border:1px solid var(--border);background:#fff}
+.tag-m,.tag-p{background:#eefcf9;color:#0f766e;border-color:#c9f2eb}.tag-r{background:#eef2ff;color:#4338ca;border-color:#dbe1ff}.tag-s{background:#fff7ed;color:#c2410c;border-color:#fed7aa}.tag-d{background:#f3f4f6;color:#4b5563;border-color:#e5e7eb}
+.month-nav{display:flex;gap:10px;flex-wrap:wrap}.month-nav a{padding:8px 12px;background:#fff;border:1px solid var(--border);border-radius:999px;font-weight:700}

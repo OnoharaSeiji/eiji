@@ -1,0 +1,13 @@
+:root{--bg:#f6f7fb;--card:#fff;--text:#1f2937;--muted:#6b7280;--border:#dbe2ea;--primary:#0f766e;--primary2:#14b8a6;--accent:#eefcf9;--warn:#fff7ed;--shadow:0 10px 30px rgba(0,0,0,.06)}
+*{box-sizing:border-box}html,body{margin:0;padding:0}body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
+a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}.container{max-width:1100px;margin:0 auto;padding:24px}
+.header{background:linear-gradient(135deg,#0f766e,#115e59);color:#fff;padding:32px 0}.header h1{margin:0;font-size:32px}.header p{margin:8px 0 0;color:rgba(255,255,255,.85)}
+.grid{display:grid;gap:16px}.grid-3{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}.card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:20px;box-shadow:var(--shadow)}
+.badge{display:inline-block;padding:6px 10px;border-radius:999px;background:var(--accent);color:var(--primary);font-size:12px;font-weight:700;border:1px solid #c9f2eb}
+.badge.dark{background:#e8eefc;color:#243b6b;border-color:#d4def9}.badge.warn{background:var(--warn);color:#9a3412;border-color:#fed7aa}.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:16px}
+.stat{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:12px 14px}.stat strong{display:block;font-size:24px;color:#fff}.stat span{font-size:12px;color:rgba(255,255,255,.82)}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 16px;border-radius:12px;border:1px solid var(--border);background:#fff;color:var(--text);font-weight:700}
+.btn.primary{background:var(--primary);color:#fff;border-color:var(--primary)}.btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.28)}
+.section-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:26px 0 14px}.section-title h2{margin:0;font-size:24px}.small{font-size:13px;color:var(--muted)}
+.footer{padding:30px 0;color:var(--muted);font-size:13px}
+@media (max-width:700px){.header h1{font-size:26px}.container{padding:16px}}
