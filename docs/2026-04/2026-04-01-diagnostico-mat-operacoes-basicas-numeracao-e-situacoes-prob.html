@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apostila Dia 1 — Diagnóstico de Matemática · Eiji · Fusão</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --verde:#1D9E75;--verde-esc:#085041;--verde-cl:#E1F5EE;--verde-md:#5DCAA5;
+  --amarelo:#F5C842;--laranja:#F07B3A;
+  --azul-nota:#EEF6FF;--azul-borda:#C5DCFA;
+  --cinza-txt:#2a2a28;--cinza-bg:#f7f6f2;--cinza-bd:#dddbd3;
+  --roxo-cl:#EEEDFE;--roxo:#7F77DD;--branco:#ffffff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito Sans',sans-serif;background:var(--cinza-bg);color:var(--cinza-txt)}
+.capa{background:var(--verde-esc);padding:44px 40px 36px;position:relative;overflow:hidden}
+.capa::before{content:'';position:absolute;top:-70px;right:-70px;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,0.04)}
+.capa::after{content:'';position:absolute;bottom:-50px;left:30px;width:200px;height:200px;border-radius:50%;background:rgba(93,202,165,0.1)}
+.capa-in{position:relative;z-index:1;max-width:760px;margin:0 auto}
+.dia-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:40px;padding:4px 14px;font-family:'Space Mono',monospace;font-size:11px;color:rgba(255,255,255,0.65);margin-bottom:18px}
+.dia-badge strong{color:var(--verde-md)}
+.capa h1{font-family:'Nunito',sans-serif;font-size:30px;font-weight:900;color:#fff;line-height:1.15;margin-bottom:8px}
+.capa h1 span{color:var(--verde-md)}
+.capa-sub{font-size:14px;color:rgba(255,255,255,0.55);margin-bottom:26px}
+.capa-meta{display:flex;flex-wrap:wrap;gap:8px}
+.meta-chip{background:rgba(255,255,255,0.08);border-radius:8px;padding:7px 13px;font-size:11px;color:rgba(255,255,255,0.7);font-family:'Space Mono',monospace}
+.meta-chip strong{display:block;color:#fff;font-size:13px;margin-bottom:1px}
+.prog-wrap{max-width:760px;margin:20px auto 0;padding:0 22px}
+.prog-lbl{font-size:10px;font-family:'Space Mono',monospace;color:#999;margin-bottom:4px}
+.prog-bg{background:#e0ddd5;border-radius:99px;height:5px;overflow:hidden}
+.prog-fill{background:linear-gradient(90deg,var(--verde-md),var(--verde));width:0.47%;height:100%;border-radius:99px;transition:width 1.2s ease}
+.alert-diag{max-width:760px;margin:20px auto 0;padding:0 22px}
+.alert-box{background:#FFF8E7;border:1.5px solid var(--amarelo);border-radius:14px;padding:16px 18px;display:flex;gap:12px}
+.alert-icon{font-size:26px;flex-shrink:0;margin-top:1px}
+.alert-box h3{font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;color:#7a5500;margin-bottom:4px}
+.alert-box p{font-size:13px;color:#6b4a00;line-height:1.55}
+.instrucoes{max-width:760px;margin:16px auto 0;padding:0 22px}
+.instr-box{background:var(--azul-nota);border:1.5px solid var(--azul-borda);border-radius:14px;padding:18px 20px}
+.instr-box h3{font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;color:#0d3a6b;margin-bottom:10px}
+.instr-list{list-style:none;display:flex;flex-direction:column;gap:6px}
+.instr-list li{font-size:13px;color:#1a3a5c;line-height:1.5;display:flex;gap:8px}
+.instr-list li::before{content:'→';color:var(--verde);font-weight:700;flex-shrink:0}
+.instr-dica{background:rgba(255,255,255,0.6);border-left:3px solid var(--verde);border-radius:0 8px 8px 0;padding:9px 12px;margin-top:12px;font-size:12.5px;color:#1a3a5c;font-style:italic;line-height:1.5}
+.conteudo{max-width:760px;margin:0 auto;padding:22px 22px 60px}
+.bloco-sep{display:flex;align-items:center;gap:10px;margin:20px 0 14px}
+.bloco-sep-line{flex:1;height:1px;background:var(--cinza-bd)}
+.bloco-sep-txt{font-size:10px;font-family:'Space Mono',monospace;color:#aaa;text-transform:uppercase;letter-spacing:1px;white-space:nowrap}
+.secao{background:var(--branco);border-radius:14px;margin-bottom:18px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.05)}
+.sec-hdr{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid var(--cinza-bd)}
+.sec-num{width:30px;height:30px;border-radius:50%;background:var(--verde-esc);color:#fff;font-family:'Space Mono',monospace;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sec-titulo{font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;color:var(--verde-esc)}
+.sec-tag{margin-left:auto;font-size:10px;font-family:'Space Mono',monospace;background:var(--verde-cl);color:var(--verde-esc);padding:2px 8px;border-radius:5px;font-weight:700}
+.sec-body{padding:18px}
+.q{margin-bottom:20px;padding-bottom:20px;border-bottom:1px dashed var(--cinza-bd)}
+.q:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
+.q-enunc{font-size:14px;font-weight:600;color:#1a1a18;margin-bottom:10px;line-height:1.55}
+.q-num{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:var(--verde-cl);border-radius:50%;font-family:'Space Mono',monospace;font-size:10px;font-weight:700;color:var(--verde-esc);margin-right:5px;flex-shrink:0}
+.sublista{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:6px}
+.sublista li{font-size:14px;color:#2a2a28;display:flex;align-items:flex-start;gap:8px}
+.sublista li span.letra{font-weight:700;color:var(--verde-esc);font-family:'Space Mono',monospace;font-size:12px;flex-shrink:0;margin-top:2px}
+.sublista li .campo{flex:1}
+.linha{display:block;width:100%;border:none;border-bottom:1.5px solid var(--cinza-bd);background:transparent;font-family:'Nunito Sans',sans-serif;font-size:14px;color:var(--verde-esc);padding:2px 0 3px;outline:none;margin-top:4px}
+.linha:focus{border-bottom-color:var(--verde)}
+.linha-sm{width:180px}
+.op-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(125px,1fr));gap:12px;margin-top:8px}
+.op-box{background:var(--cinza-bg);border:1.5px solid var(--cinza-bd);border-radius:10px;padding:11px 13px 9px;font-family:'Space Mono',monospace}
+.op-lbl{font-size:9px;color:#aaa;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:3px}
+.op-calc{font-size:16px;font-weight:700;color:#2a2a28;margin-bottom:9px}
+.op-r{border:none;border-bottom:1.5px solid var(--cinza-bd);background:transparent;font-family:'Space Mono',monospace;font-size:15px;color:var(--verde-esc);width:100%;padding:2px 0;outline:none}
+.op-r:focus{border-bottom-color:var(--verde)}
+.vp-box{background:var(--cinza-bg);border:1.5px solid var(--cinza-bd);border-radius:12px;padding:14px;margin-top:8px}
+.vp-num{font-family:'Space Mono',monospace;font-size:24px;font-weight:700;color:var(--verde-esc);text-align:center;margin-bottom:12px;letter-spacing:3px}
+.vp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(85px,1fr));gap:7px}
+.vp-item{text-align:center}
+.vp-lbl{font-size:8px;color:#aaa;text-transform:uppercase;letter-spacing:0.3px;margin-bottom:3px;font-family:'Space Mono',monospace;line-height:1.3}
+.vp-in{border:1.5px solid var(--cinza-bd);border-radius:7px;background:#fff;font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:var(--verde-esc);width:100%;padding:5px 4px;text-align:center;outline:none}
+.vp-in:focus{border-color:var(--verde)}
+.decomp-row{display:flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:14px;color:#2a2a28;margin-top:6px;flex-wrap:wrap}
+.decomp-eq{font-weight:700;color:var(--verde-esc)}
+.decomp-in{border:none;border-bottom:1.5px solid var(--cinza-bd);background:transparent;font-family:'Space Mono',monospace;font-size:13px;color:var(--verde-esc);width:220px;outline:none;padding:1px 0}
+.decomp-in:focus{border-bottom-color:var(--verde)}
+.frac-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(95px,1fr));gap:10px;margin-top:8px}
+.frac-item{background:var(--cinza-bg);border:1.5px solid var(--cinza-bd);border-radius:10px;padding:11px 10px;text-align:center;font-family:'Space Mono',monospace}
+.frac-disp{display:flex;flex-direction:column;align-items:center;gap:1px;margin-bottom:7px}
+.frac-num{border-bottom:2px solid #2a2a28;padding-bottom:2px;font-size:17px;font-weight:700}
+.frac-den{padding-top:2px;font-size:17px;font-weight:700}
+.frac-p{font-size:9px;color:#aaa;margin-bottom:3px}
+.frac-r{border:none;border-bottom:1.5px solid #ddd;background:transparent;font-family:'Space Mono',monospace;font-size:12px;color:var(--verde-esc);width:100%;text-align:center;outline:none;padding:2px 0}
+.frac-r:focus{border-bottom-color:var(--verde)}
+.prob-box{background:#F8F9FF;border:1.5px solid #C9CFFF;border-radius:10px;padding:13px 15px;margin-bottom:10px}
+.prob-box p{font-size:14px;line-height:1.6;color:#2a2a28}
+.rasc{margin-top:8px}
+.rasc-lbl{font-size:10px;color:#bbb;font-family:'Space Mono',monospace;margin-bottom:5px}
+.rasc-linhas{display:flex;flex-direction:column;gap:7px}
+.rasc-l{border:none;border-bottom:1.5px solid #e8e5de;background:transparent;font-size:14px;color:#2a2a28;font-family:'Nunito Sans',sans-serif;padding:1px 0 3px;outline:none;width:100%}
+.rasc-l:focus{border-bottom-color:var(--verde)}
+.opcoes{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.opcao{display:flex;align-items:center;gap:9px;padding:8px 12px;border:1.5px solid var(--cinza-bd);border-radius:8px;cursor:pointer;font-size:13.5px;background:var(--cinza-bg);transition:all 0.14s}
+.opcao:hover{background:var(--verde-cl);border-color:var(--verde-md)}
+.opcao.sel{background:var(--verde-cl);border-color:var(--verde);color:var(--verde-esc);font-weight:600}
+.opc-l{width:22px;height:22px;border-radius:50%;background:#dddbd3;font-size:10px;font-weight:700;font-family:'Space Mono',monospace;display:flex;align-items:center;justify-content:center;color:#666;flex-shrink:0;transition:all 0.14s}
+.opcao.sel .opc-l{background:var(--verde);color:#fff}
+.autoaval{background:var(--verde-cl);border:1.5px solid var(--verde-md);border-radius:14px;padding:18px;margin-top:24px}
+.autoaval h3{font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;color:var(--verde-esc);margin-bottom:14px}
+.av-bloco{margin-bottom:13px}
+.av-bloco:last-child{margin-bottom:0}
+.av-lbl{font-size:12.5px;font-weight:600;color:var(--verde-esc);margin-bottom:6px}
+.av-row{display:flex;gap:6px;flex-wrap:wrap}
+.av-btn{background:#fff;border:2px solid transparent;border-radius:9px;padding:7px 11px;cursor:pointer;font-size:12px;font-family:'Nunito',sans-serif;font-weight:600;color:var(--verde-esc);display:flex;align-items:center;gap:5px;transition:all 0.13s}
+.av-btn:hover{border-color:var(--verde-md)}
+.av-btn.ativo{border-color:var(--verde);background:var(--verde);color:#fff}
+.ficha-resp{background:#fff;border:1.5px solid var(--cinza-bd);border-radius:14px;padding:18px;margin-top:20px}
+.ficha-resp h3{font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;color:#18344a;margin-bottom:12px}
+table.obs-table{width:100%;border-collapse:collapse;font-size:13px}
+table.obs-table th,table.obs-table td{border:1px solid var(--cinza-bd);padding:8px 10px;vertical-align:middle}
+table.obs-table th{background:#f2f7fc;color:#18344a;font-weight:700;text-align:left;font-size:12px}
+table.obs-table td:nth-child(2),table.obs-table td:nth-child(3),table.obs-table td:nth-child(4){text-align:center;width:70px}
+.obs-check{width:18px;height:18px;cursor:pointer;accent-color:var(--verde)}
+.ce-section{background:#fff;border:1.5px solid var(--roxo);border-radius:14px;padding:18px;margin-top:20px}
+.ce-section h3{font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;color:#3C3489;margin-bottom:12px}
+table.ce-table{width:100%;border-collapse:collapse;font-size:13px}
+table.ce-table th,table.ce-table td{border:1px solid #D8D6F5;padding:8px 10px;vertical-align:top;min-height:36px}
+table.ce-table th{background:var(--roxo-cl);color:#3C3489;font-weight:700;font-size:12px;text-align:left}
+table.ce-table td input{border:none;background:transparent;font-family:'Nunito Sans',sans-serif;font-size:13px;width:100%;outline:none;color:#2a2a28;padding:2px 0}
+.gabarito{background:#fcfcff;border:1.5px dashed #9eb4cc;border-radius:12px;padding:18px;margin-top:20px}
+.gabarito h3{font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;color:#18344a;margin-bottom:14px}
+.gab-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gab-item{background:#fff;border:1px solid #e3e7f0;border-radius:8px;padding:10px 12px}
+.gab-q{font-family:'Space Mono',monospace;font-size:10px;color:#999;text-transform:uppercase;margin-bottom:4px;letter-spacing:0.3px}
+.gab-r{font-size:13px;color:#18344a;line-height:1.5}
+.acoes{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}
+.btn{padding:10px 20px;border-radius:9px;font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;cursor:pointer;border:none;transition:all 0.14s}
+.btn-p{background:var(--verde-esc);color:#fff}
+.btn-p:hover{background:#064535;transform:translateY(-1px)}
+.btn-s{background:#fff;color:var(--verde-esc);border:1.5px solid var(--verde-md)}
+.btn-s:hover{background:var(--verde-cl)}
+.rodape{margin-top:22px;padding:12px;background:#fff;border-radius:10px;border:1px solid var(--cinza-bd);font-size:11px;color:#aaa;font-family:'Space Mono',monospace;text-align:center}
+
+.save-status{margin-top:14px;padding:12px 14px;border-radius:10px;background:#fff;border:1px solid var(--cinza-bd);font-size:12.5px;color:#555;display:none}
+.save-status.show{display:block}
+.save-status.ok{border-color:var(--verde-md);background:var(--verde-cl);color:var(--verde-esc)}
+.save-status.warn{border-color:var(--amarelo);background:#FFF8E7;color:#7a5500}
+.save-status.info{border-color:var(--azul-borda);background:var(--azul-nota);color:#1a3a5c}
+.btn-a{background:#fff;color:#3C3489;border:1.5px solid var(--roxo)}
+.btn-a:hover{background:var(--roxo-cl)}
+.config-box{margin-top:14px;padding:12px 14px;border-radius:10px;background:#fff;border:1px dashed var(--cinza-bd);font-size:12px;color:#666;line-height:1.5}
+.hidden-file{display:none}
+
+@media print{
+  body{background:#fff}
+  .capa{background:var(--verde-esc)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .acoes{display:none}
+  .linha,.op-r,.rasc-l,.frac-r,.vp-in,.decomp-in{border-bottom-color:#ccc!important}
+  .break{page-break-before:always}
+}
+</style>
+</head>
+<body>
+
+<div class="capa">
+  <div class="capa-in">
+    <div class="dia-badge">DESAFIO OBJETIVO 2026 <strong>·</strong> <strong>DIA 1 DE 214</strong></div>
+    <h1>Diagnóstico de <span>Matemática</span></h1>
+    <p class="capa-sub">Quarta-feira, 01 de abril de 2026 &nbsp;·&nbsp; Fase 1 — Aquecimento &nbsp;·&nbsp; Versão Fusão</p>
+    <div class="capa-meta">
+      <div class="meta-chip"><strong>Eiji</strong>Aluno</div>
+      <div class="meta-chip"><strong>Diagnóstico</strong>Tipo</div>
+      <div class="meta-chip"><strong>50–70 min</strong>Estimado</div>
+      <div class="meta-chip"><strong>5º Ano</strong>Base</div>
+      <div class="meta-chip"><strong>Gabarito incluso</strong>✓</div>
+    </div>
+  </div>
+</div>
+
+<div class="prog-wrap">
+  <div class="prog-lbl">JORNADA — DIA 1 / 214 (0,47%)</div>
+  <div class="prog-bg"><div class="prog-fill" id="barra"></div></div>
+</div>
+
+<div class="alert-diag">
+  <div class="alert-box">
+    <div class="alert-icon">🎯</div>
+    <div>
+      <h3>Isto não é uma prova — é um raio-X!</h3>
+      <p>Não tem nota. O objetivo é descobrir o que você já sabe muito bem, o que sabe mais ou menos, e o que ainda não aprendeu. Quanto mais honesto você for (mesmo deixando em branco!), melhor o cronograma vai funcionar. Respira fundo e vai!</p>
+    </div>
+  </div>
+</div>
+
+<div class="instrucoes">
+  <div class="instr-box">
+    <h3>📋 Instruções para o responsável — como aplicar</h3>
+    <ul class="instr-list">
+      <li>Deixe o Eiji resolver <strong>sozinho</strong> o máximo possível — não ajude durante a atividade.</li>
+      <li>Hoje é dia de <strong>descobrir</strong>, não de corrigir no meio. Anote onde ele travou, mas não interfira.</li>
+      <li>Se ele errar, pergunte apenas: <em>"Como você pensou?"</em> — isso mostra se o problema foi de conteúdo, leitura ou atenção.</li>
+      <li>Use a <strong>Ficha de Observação</strong> no final para registrar o que você viu.</li>
+      <li>Os erros do Dia 1 vão para o Caderno de Erros e orientam o reforço das próximas semanas.</li>
+    </ul>
+    <div class="instr-dica">⏱ Sugestão: faça em dois momentos se necessário — Partes 1 a 3 primeiro (base obrigatória), depois Partes 4 e 5 (ampliação). Não force se o cansaço aparecer.</div>
+  </div>
+</div>
+
+<div class="conteudo">
+
+<div class="bloco-sep"><div class="bloco-sep-line"></div><div class="bloco-sep-txt">Parte 1 — Base obrigatória</div><div class="bloco-sep-line"></div></div>
+
+<div class="secao">
+  <div class="sec-hdr"><div class="sec-num">1</div><div class="sec-titulo">Numeração e Valor Posicional</div><div class="sec-tag">6 questões</div></div>
+  <div class="sec-body">
+
+    <div class="q">
+      <div class="q-enunc"><span class="q-num">1</span> Escreva por extenso:</div>
+      <ul class="sublista">
+        <li><span class="letra">a)</span><div class="campo">4.205<input class="linha" type="text" placeholder="quatro mil..."></div></li>
+        <li><span class="letra">b)</span><div class="campo">18.090<input class="linha" type="text" placeholder="dezoito mil..."></div></li>
+        <li><span class="letra">c)</span><div class="campo">307.412<input class="linha" type="text" placeholder="trezentos e sete mil..."></div></li>
+        <li><span class="letra">d)</span><div class="campo">3.742.891<input class="linha" type="text" placeholder="três milhões..."></div></li>
+      </ul>
+    </div>
+
+    <div class="q">
+      <div class="q-enunc"><span class="q-num">2</span> Escreva em algarismos:</div>
+      <ul class="sublista">
+        <li><span class="letra">a)</span><div class="campo">nove mil e trinta e dois<input class="linha linha-sm" type="text" placeholder=""></div></li>
+        <li><span class="letra">b)</span><div class="campo">duzentos e quarenta mil, cento e cinco<input class="linha linha-sm" type="text" placeholder=""></div></li>
+        <li><span class="letra">c)</span><div class="campo">dois milhões, trezentos e quarenta e cinco mil e oitenta<input class="linha linha-sm" type="text" placeholder=""></div></li>
+      </ul>
+    </div>
+
+    <div class="q">
+      <div class="q-enunc"><span class="q-num">3</span> Qual é o valor posicional de cada algarismo em <strong>3.742.891</strong>?</div>
+      <div class="vp-box">
+        <div class="vp-num">3 . 7 4 2 . 8 9 1</div>
+        <div class="vp-grid">
+          <div class="vp-item"><div class="vp-lbl">Milhões</div><input class="vp-in" type="text" placeholder="?"></div>
+          <div class="vp-item"><div class="vp-lbl">Cent. de mil</div><input class="vp-in" type="text" placeholder="?"></div>
+          <div class="vp-item"><div class="vp-lbl">Dez. de mil</div><input class="vp-in" type="text" placeholder="?"></div>
+          <div class="vp-item"><div class="vp-lbl">Unid. de mil</div><input class="vp-in" type="text" placeholder="?"></div>
+          <div class="vp-item"><div class="vp-lbl">Centenas</div><input class="vp-in" type="text" placeholder="?"></div>
+          <div class="vp-item"><div class="vp-lbl">Dezenas</div><input class="vp-in" type="text" placeholder="?"></div>
+          <div class="vp-item"><div class="vp-lbl">Unidades</div><input class="vp-in" type="text" placeholder="?"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="q-enunc"><span class="q-num">4</span> Decomponha os números:</div>
+      <ul class="sublista">
+        <li><span class="letra">a)</span><div class="campo"><div class="decomp-row"><span class="decomp-eq">5.482 =</span><input class="decomp-in" type="text" placeholder="5.000 + ..."></div></div></li>
+        <li><span class="letra">b)</span><div class="campo"><div class="decomp-row"><span class="decomp-eq">73.019 =</span><input class="decomp-in" type="text" placeholder="70.000 + ..."></div></div></li>
+      </ul>
+    </div>
+
+    <div class="q">
+      <div class="q-enunc"><span class="q-num">5</span> Ordene do menor para o maior:</div>
+      <ul class="sublista">
+        <li><span class="letra">a)</span><div class="campo" style="font-family:'Space Mono',monospace;font-size:13px">8.901 — 8.091 — 8.910 — 8.109<input class="linha" type="text" placeholder="ordem:"></div></li>
+        <li><span class="letra">b)</span><div class="campo" style="font-family:'Space Mono',monospace;font-size:13px">125.400 — 12.540 — 125.004<input class="linha" type="text" placeholder="ordem:"></div></li>
+      </ul>
+    </div>
+
+    <div class="q">
+      <div class="q-enunc"><span class="q-num">6</span> Complete:</div>
+      <ul class="sublista">
+        <li><span class="letra">a)</span><div class="campo">O algarismo <strong>7</strong> em 47.213 vale<input class="linha linha-sm" type="text" placeholder=""></div></li>
+        <li><span class="letra">b)</span><div class="campo">O algarismo <strong>3</strong> em 8.304 vale<input class="linha linha-sm" type="text" placeholder=""></div></li>
+        <li><span class="letra">c)</span><div class="campo">O antecessor de 10.000 é<input class="linha linha-sm" type="text" placeholder=""></div></li>
+        <li><span class="letra">d)</span><div class="campo">O sucessor de 99.999 é<input class="linha linha-sm" type="text" placeholder=""></div></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="secao">
+  <div class="sec-hdr"><div class="sec-num">2</div><div class="sec-titulo">As 4 Operações</div><div class="sec-tag">9 cálculos</div></div>
+  <div class="sec-body">
+
+    <div class="q">
+      <div class="q-enunc"><span class="q-num">7</span> Calcule:</div>
+      <div class="op-grid">
+        <div class="op-box"><div class="op-lbl">Adição</div><div class="op-calc">2.487<br>+ 1.936</div><input class="op-r" type="text" placeholder="= ?"></div>
+        <div class="op-box"><div class="op-lbl">Adição</div><div class="op-calc">13.250<br>+ 8.975</div><input class="op-r" type="text" placeholder="= ?"></div>
+        <div class="op-box"><div class="op-lbl">Subtração</div><div class="op-calc">7.004<br>− 2.689</div><input class="op-r" type="text" placeholder="= ?"></div>
+        <div class="op-box"><div class="op-lbl">Subtração</div><div class="op-calc">20.000<br>− 13.458</div><input class="op-r" type="text" placeholder="= ?"></div>
+        <div class="op-box"><div class="op-lbl">Multiplic.</div><div class="op-calc">364<br>× 27</div><input class="op-r" type="text" placeholder="= ?"></div>
+        <div class="op-box"><div class="op-lbl">Multiplic.</div><div class="op-calc">125<br>× 48</div><input class="op-r" type="text" placeholder="= ?"></div>
+        <div class="op-box"><div class="op-lbl">Divisão</div><div class="op-calc">1.848<br>÷ 8</div><input class="op-r" type="text" placeholder="= ?"></div>
+        <div class="op-box"><div class="op-lbl">Divisão</div><div class="op-calc">5.670<br>÷ 15</div><input class="op-r" type="text" placeholder="= ?"></div>
+        <div class="op-box"><div class="op-lbl">Mental</div><div class="op-calc">1.200 ÷ 40</div><input class="op-r" type="text" placeholder="= ?"></div>
+      </div>
+      <div class="rasc" style="margin-top:14px"><div class="rasc-lbl">RASCUNHO</div><div class="rasc-linhas"><input class="rasc-l" type="text" placeholder=""><input class="rasc-l" type="text" placeholder=""><input class="rasc-l" type="text" placeholder=""></div></div>
+    </div>
+
+    <div class="q">
+      <div class="q-enunc"><span class="q-num">8</span> Desafio rápido:</div>
+      <ul class="sublista">
+        <li><span class="letra">a)</span><div class="campo">Qual é a diferença entre 9.000 e 8.457?<input class="linha linha-sm" type="text" placeholder=""></div></li>
+        <li><span class="letra">b)</span><div class="campo">Quanto falta para 3.275 chegar a 5.000?<input class="linha linha-sm" type="text" placeholder=""></div></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="secao">
+  <div class="sec-hdr"><div class="sec-num">3</div><div class="sec-titulo">Situações-Problema</div><div class="sec-tag">5 problemas</div></div>
+  <div class="sec-body">
+
+    <div class="q">
+      <div class="prob-box"><p><strong>Prob. 9 —</strong> Em uma biblioteca havia 1.285 livros. Chegaram mais 376 novos. Quantos a biblioteca ficou ao todo?</p></div>
+      <div class="rasc"><div class="rasc-lbl">DESENVOLVIMENTO</div><div class="rasc-linhas"><input class="rasc-l" type="text" placeholder=""><input class="rasc-l" type="text" placeholder=""></div></div>
+      <div style="display:flex;align-items:center;gap:6px;margin-top:8px"><span style="font-size:12px;color:#888">R:</span><input class="linha" type="text" placeholder=""></div>
+    </div>
+
+    <div class="q">
+      <div class="prob-box"><p><strong>Prob. 10 —</strong> Uma papelaria tinha 950 cadernos. Vendeu 438 em uma semana. Quantos restaram?</p></div>
+      <div class="rasc"><div class="rasc-lbl">DESENVOLVIMENTO</div><div class="rasc-linhas"><input class="rasc-l" type="text" placeholder=""><input class="rasc-l" type="text" placeholder=""></div></div>
+      <div style="display:flex;align-items:center;gap:6px;margin-top:8px"><span style="font-size:12px;color:#888">R:</span><input class="linha" type="text" placeholder=""></div>
+    </div>
+
+    <div class="q">
+      <div class="prob-box"><p><strong>Prob. 11 —</strong> Em uma campanha, a turma queria juntar 1.000 itens. Já arrecadou 764. Quantos ainda faltam?</p></div>
+      <div class="rasc"><div class="rasc-lbl">DESENVOLVIMENTO</div><div class="rasc-linhas"><input class="rasc-l" type="text" placeholder=""><input class="rasc-l" type="text" placeholder=""></div></div>
+      <div style="display:flex;align-items:center;gap:6px;margin-top:8px"><span style="font-size:12px;color:#888">R:</span><input class="linha" type="text" placeholder=""></div>
+    </div>
+
+    <div class="q">
+      <div class="prob-box"><p><strong>Prob. 12 —</strong> Uma loja vendeu 840 produtos em 4 semanas iguais. Quantos por semana? E por dia?</p></div>
+      <div class="rasc"><div class="rasc-lbl">DESENVOLVIMENTO</div><div class="rasc-linhas"><input class="rasc-l" type="text" placeholder=""><input class="rasc-l" type="text" placeholder=""><input class="rasc-l" type="text" placeholder=""></div></div>
+      <div style="display:flex;align-items:center;gap:6px;margin-top:8px;margin-bottom:6px"><span style="font-size:12px;color:#888">Por semana:</span><input class="linha" type="text" placeholder=""></div>
+      <div style="display:flex;align-items:center;gap:6px"><span style="font-size:12px;color:#888">Por dia:</span><input class="linha" type="text" placeholder=""></div>
+    </div>
+
+    <div class="q">
+      <div class="prob-box"><p><strong>Prob. 13 —</strong> Em uma escola há 1.248 alunos. Destes, 3/8 praticam esporte. Quantos praticam? <em>(Se não souber fazer com frações, escreva como pensou.)</em></p></div>
+      <div class="rasc"><div class="rasc-lbl">DESENVOLVIMENTO</div><div class="rasc-linhas"><input class="rasc-l" type="text" placeholder=""><input class="rasc-l" type="text" placeholder=""></div></div>
+      <div style="display:flex;align-items:center;gap:6px;margin-top:8px"><span style="font-size:12px;color:#888">R:</span><input class="linha" type="text" placeholder=""></div>
+    </div>
+
+  </div>
+</div>
+
+<div class="bloco-sep"><div class="bloco-sep-line"></div><div class="bloco-sep-txt">Parte 2 — Ampliação (se tiver tempo e energia!)</div><div class="bloco-sep-line"></div></div>
+
+<div class="secao">
+  <div class="sec-hdr"><div class="sec-num">4</div><div class="sec-titulo">Frações</div><div class="sec-tag">3 questões</div></div>
+  <div class="sec-body">
+
+    <div class="q">
+      <div class="q-enunc"><span class="q-num">14</span> Classifique cada fração em <strong>própria</strong>, <strong>imprópria</strong> ou <strong>mista</strong>:</div>
+      <div class="frac-grid">
+        <div class="frac-item"><div class="frac-disp"><span class="frac-num">3</span><span class="frac-den">8</span></div><div class="frac-p">Tipo?</div><input class="frac-r" type="text" placeholder="..."></div>
+        <div class="frac-item"><div class="frac-disp"><span class="frac-num">11</span><span class="frac-den">4</span></div><div class="frac-p">Tipo?</div><input class="frac-r" type="text" placeholder="..."></div>
+        <div class="frac-item"><div class="frac-disp"><span class="frac-num">7</span><span class="frac-den">7</span></div><div class="frac-p">Tipo?</div><input class="frac-r" type="text" placeholder="..."></div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="q-enunc"><span class="q-num">15</span> Simplifique:</div>
+      <div class="frac-grid">
+        <div class="frac-item"><div class="frac-disp"><span class="frac-num">6</span><span class="frac-den">12</span></div><div class="frac-p">= ?</div><input class="frac-r" type="text" placeholder=" / "></div>
+        <div class="frac-item"><div class="frac-disp"><span class="frac-num">15</span><span class="frac-den">20</span></div><div class="frac-p">= ?</div><input class="frac-r" type="text" placeholder=" / "></div>
+        <div class="frac-item"><div class="frac-disp"><span class="frac-num">8</span><span class="frac-den">24</span></div><div class="frac-p">= ?</div><input class="frac-r" type="text" placeholder=" / "></div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="q-enunc"><span class="q-num">16</span> Calcule (se souber):</div>
+      <div class="frac-grid" style="grid-template-columns:repeat(auto-fill,minmax(140px,1fr))">
+        <div class="frac-item"><div style="font-family:'Space Mono',monospace;font-size:15px;font-weight:700;margin-bottom:8px">1/4 + 2/4</div><input class="frac-r" type="text" placeholder="= ?"></div>
+        <div class="frac-item"><div style="font-family:'Space Mono',monospace;font-size:15px;font-weight:700;margin-bottom:8px">5/6 − 1/6</div><input class="frac-r" type="text" placeholder="= ?"></div>
+        <div class="frac-item"><div style="font-family:'Space Mono',monospace;font-size:15px;font-weight:700;margin-bottom:8px">1/2 + 1/3</div><input class="frac-r" type="text" placeholder="= ?"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="secao">
+  <div class="sec-hdr"><div class="sec-num">5</div><div class="sec-titulo">Decimais e Porcentagem</div><div class="sec-tag">3 questões</div></div>
+  <div class="sec-body">
+
+    <div class="q">
+      <div class="q-enunc"><span class="q-num">17</span> Calcule:</div>
+      <div class="op-grid">
+        <div class="op-box"><div class="op-lbl">Adição decimal</div><div class="op-calc">3,75 + 1,8</div><input class="op-r" type="text" placeholder="= ?"></div>
+        <div class="op-box"><div class="op-lbl">Subtração decimal</div><div class="op-calc">10,0 − 4,35</div><input class="op-r" type="text" placeholder="= ?"></div>
+        <div class="op-box"><div class="op-lbl">Conversão</div><div class="op-calc">3/4 = 0,?</div><input class="op-r" type="text" placeholder="0,__"></div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="q-enunc"><span class="q-num">18</span> Calcule as porcentagens:</div>
+      <div class="op-grid">
+        <div class="op-box"><div class="op-lbl">%</div><div class="op-calc">10% de 200</div><input class="op-r" type="text" placeholder="= ?"></div>
+        <div class="op-box"><div class="op-lbl">%</div><div class="op-calc">50% de 80</div><input class="op-r" type="text" placeholder="= ?"></div>
+        <div class="op-box"><div class="op-lbl">%</div><div class="op-calc">25% de 120</div><input class="op-r" type="text" placeholder="= ?"></div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="q-enunc"><span class="q-num">19</span> Uma camiseta custa R$ 60,00 com 20% de desconto. Quanto você paga?</div>
+      <div class="rasc"><div class="rasc-lbl">DESENVOLVIMENTO</div><div class="rasc-linhas"><input class="rasc-l" type="text" placeholder=""><input class="rasc-l" type="text" placeholder=""></div></div>
+      <div style="display:flex;align-items:center;gap:6px;margin-top:8px"><span style="font-size:12px;color:#888">R$</span><input class="linha" type="text" placeholder=""></div>
+    </div>
+
+  </div>
+</div>
+
+<div class="bloco-sep"><div class="bloco-sep-line"></div><div class="bloco-sep-txt">Parte 3 — Estratégia</div><div class="bloco-sep-line"></div></div>
+
+<div class="secao">
+  <div class="sec-hdr"><div class="sec-num">6</div><div class="sec-titulo">Como você pensa numa prova?</div><div class="sec-tag">2 questões</div></div>
+  <div class="sec-body">
+    <div class="q">
+      <div class="q-enunc"><span class="q-num">20</span> Qual é a melhor estratégia para resolver um problema?</div>
+      <div class="opcoes" id="op20">
+        <div class="opcao" onclick="sel('op20',this)"><div class="opc-l">A</div>Ler rápido e responder sem conferir</div>
+        <div class="opcao" onclick="sel('op20',this)"><div class="opc-l">B</div>Ler, marcar o que a pergunta quer, escolher a operação e conferir</div>
+        <div class="opcao" onclick="sel('op20',this)"><div class="opc-l">C</div>Escolher sempre a operação maior</div>
+      </div>
+    </div>
+    <div class="q">
+      <div class="q-enunc"><span class="q-num">21</span> Quando você erra uma conta, a melhor atitude é:</div>
+      <div class="opcoes" id="op21">
+        <div class="opcao" onclick="sel('op21',this)"><div class="opc-l">A</div>Ficar nervoso e apagar tudo</div>
+        <div class="opcao" onclick="sel('op21',this)"><div class="opc-l">B</div>Olhar de novo com calma e descobrir onde errou</div>
+        <div class="opcao" onclick="sel('op21',this)"><div class="opc-l">C</div>Chutar outra resposta</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="autoaval">
+  <h3>📊 Como você se saiu? (seja honesto — isso só te ajuda!)</h3>
+  <div class="av-bloco"><div class="av-lbl">Numeração e valor posicional</div><div class="av-row" id="av1"><button class="av-btn" onclick="av('av1',this)">😅 Não soube</button><button class="av-btn" onclick="av('av1',this)">🤔 Mais ou menos</button><button class="av-btn" onclick="av('av1',this)">😊 Fui bem</button><button class="av-btn" onclick="av('av1',this)">🔥 Domino!</button></div></div>
+  <div class="av-bloco"><div class="av-lbl">Adição e subtração</div><div class="av-row" id="av2"><button class="av-btn" onclick="av('av2',this)">😅 Não soube</button><button class="av-btn" onclick="av('av2',this)">🤔 Mais ou menos</button><button class="av-btn" onclick="av('av2',this)">😊 Fui bem</button><button class="av-btn" onclick="av('av2',this)">🔥 Domino!</button></div></div>
+  <div class="av-bloco"><div class="av-lbl">Multiplicação e divisão</div><div class="av-row" id="av3"><button class="av-btn" onclick="av('av3',this)">😅 Não soube</button><button class="av-btn" onclick="av('av3',this)">🤔 Mais ou menos</button><button class="av-btn" onclick="av('av3',this)">😊 Fui bem</button><button class="av-btn" onclick="av('av3',this)">🔥 Domino!</button></div></div>
+  <div class="av-bloco"><div class="av-lbl">Situações-problema</div><div class="av-row" id="av4"><button class="av-btn" onclick="av('av4',this)">😅 Não soube</button><button class="av-btn" onclick="av('av4',this)">🤔 Mais ou menos</button><button class="av-btn" onclick="av('av4',this)">😊 Fui bem</button><button class="av-btn" onclick="av('av4',this)">🔥 Domino!</button></div></div>
+  <div class="av-bloco"><div class="av-lbl">Frações (ampliação)</div><div class="av-row" id="av5"><button class="av-btn" onclick="av('av5',this)">😅 Não soube</button><button class="av-btn" onclick="av('av5',this)">🤔 Mais ou menos</button><button class="av-btn" onclick="av('av5',this)">😊 Fui bem</button><button class="av-btn" onclick="av('av5',this)">🔥 Domino!</button></div></div>
+  <div class="av-bloco"><div class="av-lbl">Decimais e porcentagem (ampliação)</div><div class="av-row" id="av6"><button class="av-btn" onclick="av('av6',this)">😅 Não soube</button><button class="av-btn" onclick="av('av6',this)">🤔 Mais ou menos</button><button class="av-btn" onclick="av('av6',this)">😊 Fui bem</button><button class="av-btn" onclick="av('av6',this)">🔥 Domino!</button></div></div>
+</div>
+
+<div class="ficha-resp break">
+  <h3>📝 Ficha de observação do responsável</h3>
+  <table class="obs-table">
+    <tr><th>O que foi observado</th><th>Foi bem</th><th>Médio</th><th>Dificuldade</th><th>Observação livre</th></tr>
+    <tr><td>Leitura e escrita de números</td><td><input type="checkbox" class="obs-check"></td><td><input type="checkbox" class="obs-check"></td><td><input type="checkbox" class="obs-check"></td><td><input class="linha" type="text" placeholder=""></td></tr>
+    <tr><td>Valor posicional / decomposição</td><td><input type="checkbox" class="obs-check"></td><td><input type="checkbox" class="obs-check"></td><td><input type="checkbox" class="obs-check"></td><td><input class="linha" type="text" placeholder=""></td></tr>
+    <tr><td>Adição e subtração</td><td><input type="checkbox" class="obs-check"></td><td><input type="checkbox" class="obs-check"></td><td><input type="checkbox" class="obs-check"></td><td><input class="linha" type="text" placeholder=""></td></tr>
+    <tr><td>Multiplicação e divisão</td><td><input type="checkbox" class="obs-check"></td><td><input type="checkbox" class="obs-check"></td><td><input type="checkbox" class="obs-check"></td><td><input class="linha" type="text" placeholder=""></td></tr>
+    <tr><td>Interpretação de problemas</td><td><input type="checkbox" class="obs-check"></td><td><input type="checkbox" class="obs-check"></td><td><input type="checkbox" class="obs-check"></td><td><input class="linha" type="text" placeholder=""></td></tr>
+    <tr><td>Frações (ampliação)</td><td><input type="checkbox" class="obs-check"></td><td><input type="checkbox" class="obs-check"></td><td><input type="checkbox" class="obs-check"></td><td><input class="linha" type="text" placeholder=""></td></tr>
+    <tr><td>Decimais / Porcentagem (ampliação)</td><td><input type="checkbox" class="obs-check"></td><td><input type="checkbox" class="obs-check"></td><td><input type="checkbox" class="obs-check"></td><td><input class="linha" type="text" placeholder=""></td></tr>
+    <tr><td>Calma / atenção / estratégia</td><td><input type="checkbox" class="obs-check"></td><td><input type="checkbox" class="obs-check"></td><td><input type="checkbox" class="obs-check"></td><td><input class="linha" type="text" placeholder=""></td></tr>
+  </table>
+  <div style="margin-top:12px;font-size:12.5px;color:#555;background:var(--azul-nota);border-radius:8px;padding:10px 12px;border:1px solid var(--azul-borda)"><strong>Regra prática:</strong> Os erros marcados aqui vão para o Caderno de Erros e orientam o reforço das próximas semanas.</div>
+</div>
+
+<div class="ce-section">
+  <h3>📓 Caderno de Erros — Modelo do Dia 1</h3>
+  <table class="ce-table">
+    <tr><th style="width:55px">Questão</th><th>Assunto</th><th>O que aconteceu?</th><th>Como fazer certo na próxima?</th></tr>
+    <tr><td><input type="text" style="border:none;background:transparent;width:100%;font-size:13px;outline:none"></td><td><input type="text" style="border:none;background:transparent;width:100%;font-size:13px;outline:none"></td><td><input type="text" style="border:none;background:transparent;width:100%;font-size:13px;outline:none"></td><td><input type="text" style="border:none;background:transparent;width:100%;font-size:13px;outline:none"></td></tr>
+    <tr><td><input type="text" style="border:none;background:transparent;width:100%;font-size:13px;outline:none"></td><td><input type="text" style="border:none;background:transparent;width:100%;font-size:13px;outline:none"></td><td><input type="text" style="border:none;background:transparent;width:100%;font-size:13px;outline:none"></td><td><input type="text" style="border:none;background:transparent;width:100%;font-size:13px;outline:none"></td></tr>
+    <tr><td><input type="text" style="border:none;background:transparent;width:100%;font-size:13px;outline:none"></td><td><input type="text" style="border:none;background:transparent;width:100%;font-size:13px;outline:none"></td><td><input type="text" style="border:none;background:transparent;width:100%;font-size:13px;outline:none"></td><td><input type="text" style="border:none;background:transparent;width:100%;font-size:13px;outline:none"></td></tr>
+    <tr><td><input type="text" style="border:none;background:transparent;width:100%;font-size:13px;outline:none"></td><td><input type="text" style="border:none;background:transparent;width:100%;font-size:13px;outline:none"></td><td><input type="text" style="border:none;background:transparent;width:100%;font-size:13px;outline:none"></td><td><input type="text" style="border:none;background:transparent;width:100%;font-size:13px;outline:none"></td></tr>
+  </table>
+</div>
+
+<div class="gabarito break">
+  <h3>🔑 Gabarito</h3>
+  <div class="gab-grid">
+    <div class="gab-item"><div class="gab-q">Q1 — por extenso</div><div class="gab-r">a) quatro mil duzentos e cinco · b) dezoito mil e noventa · c) trezentos e sete mil, quatrocentos e doze · d) três milhões, setecentos e quarenta e dois mil, oitocentos e noventa e um</div></div>
+    <div class="gab-item"><div class="gab-q">Q2 — em algarismos</div><div class="gab-r">a) 9.032 · b) 240.105 · c) 2.345.080</div></div>
+    <div class="gab-item"><div class="gab-q">Q3 — valor posicional</div><div class="gab-r">3→3.000.000 · 7→700.000 · 4→40.000 · 2→2.000 · 8→800 · 9→90 · 1→1</div></div>
+    <div class="gab-item"><div class="gab-q">Q4 — decomposição</div><div class="gab-r">a) 5.000+400+80+2 · b) 70.000+3.000+10+9</div></div>
+    <div class="gab-item"><div class="gab-q">Q5 — ordenação</div><div class="gab-r">a) 8.091—8.109—8.901—8.910 · b) 12.540—125.004—125.400</div></div>
+    <div class="gab-item"><div class="gab-q">Q6 — completar</div><div class="gab-r">a) 7.000 · b) 300 · c) 9.999 · d) 100.000</div></div>
+    <div class="gab-item"><div class="gab-q">Q7 — 9 operações</div><div class="gab-r">4.423 · 22.225 · 4.315 · 6.542 · 9.828 · 6.000 · 231 · 378 · 30</div></div>
+    <div class="gab-item"><div class="gab-q">Q8 — desafio rápido</div><div class="gab-r">a) 543 · b) 1.725</div></div>
+    <div class="gab-item"><div class="gab-q">Q9–13 — problemas</div><div class="gab-r">9) 1.661 livros · 10) 512 cadernos · 11) 236 itens · 12) 210/semana e 30/dia · 13) 468 alunos</div></div>
+    <div class="gab-item"><div class="gab-q">Q14 — frações</div><div class="gab-r">3/8 = própria · 11/4 = imprópria · 7/7 = própria (equivale a 1)</div></div>
+    <div class="gab-item"><div class="gab-q">Q15 — simplificação</div><div class="gab-r">6/12 = 1/2 · 15/20 = 3/4 · 8/24 = 1/3</div></div>
+    <div class="gab-item"><div class="gab-q">Q16 — operações com frações</div><div class="gab-r">1/4+2/4 = 3/4 · 5/6−1/6 = 2/3 · 1/2+1/3 = 5/6</div></div>
+    <div class="gab-item"><div class="gab-q">Q17 — decimais</div><div class="gab-r">3,75+1,8 = 5,55 · 10,0−4,35 = 5,65 · 3/4 = 0,75</div></div>
+    <div class="gab-item"><div class="gab-q">Q18 — porcentagem</div><div class="gab-r">10% de 200 = 20 · 50% de 80 = 40 · 25% de 120 = 30</div></div>
+    <div class="gab-item"><div class="gab-q">Q19 — desconto</div><div class="gab-r">20% de 60 = R$12 → paga R$48,00</div></div>
+    <div class="gab-item"><div class="gab-q">Q20 e Q21 — estratégia</div><div class="gab-r">20) Opção B · 21) Opção B</div></div>
+  </div>
+</div>
+
+<div class="acoes">
+  <button class="btn btn-p" onclick="saveState()">💾 Gravar respostas</button>
+  <button class="btn btn-s" onclick="loadState()">📂 Carregar respostas</button>
+  <button class="btn btn-a" onclick="exportState()">⬇ Exportar JSON</button>
+  <button class="btn btn-a" onclick="document.getElementById('importFile').click()">⬆ Importar JSON</button>
+  <button class="btn btn-s" onclick="window.print()">🖨 Imprimir / Salvar PDF</button>
+  <button class="btn btn-s" onclick="limpar()">↺ Limpar respostas</button>
+  <button class="btn btn-s" onclick="voltarAoCronograma()">← Voltar ao cronograma</button>
+  <input id="importFile" class="hidden-file" type="file" accept="application/json" onchange="importState(event)">
+</div>
+
+<div id="saveStatus" class="save-status info">Você pode gravar as respostas neste navegador, editar depois, exportar em JSON e voltar para continuar mais tarde.</div>
+<div class="config-box"><strong>Configuração rápida:</strong> o botão <strong>Voltar ao cronograma</strong> usa primeiro a constante <code>CRONOGRAMA_URL</code> no script. Se ela estiver vazia, ele tenta voltar para a página anterior do navegador.</div>
+
+<div class="rodape">APOSTILA DIA 1/214 · DIAGNÓSTICO MATEMÁTICA · DESAFIO OBJETIVO 2026 · EIJI · VERSÃO FUSÃO · COM SALVAMENTO LOCAL</div>
+
+</div>
+
+<script>
+const STORAGE_KEY = 'eiji_apostila_dia1_mat_v1';
+const CRONOGRAMA_URL = '../../cronograma/index.html'; // troque aqui quando o cronograma tiver um arquivo/link definitivo
+
+setTimeout(()=>{document.getElementById('barra').style.width='0.47%'},400);
+
+function sel(g,el){
+  document.querySelectorAll('#'+g+' .opcao').forEach(o=>o.classList.remove('sel'));
+  el.classList.add('sel');
+}
+
+function av(id,btn){
+  document.querySelectorAll('#'+id+' .av-btn').forEach(b=>b.classList.remove('ativo'));
+  btn.classList.add('ativo');
+}
+
+function setStatus(message, type='info'){
+  const box = document.getElementById('saveStatus');
+  box.textContent = message;
+  box.className = 'save-status show ' + type;
+}
+
+function getState(){
+  const state = {
+    textInputs: Array.from(document.querySelectorAll('input[type=text]')).map(el => el.value),
+    checkboxes: Array.from(document.querySelectorAll('input[type=checkbox]')).map(el => el.checked),
+    selectedOptions: {},
+    autoAval: {}
+  };
+
+  document.querySelectorAll('.opcoes[id]').forEach(group => {
+    const selectedIndex = Array.from(group.querySelectorAll('.opcao')).findIndex(el => el.classList.contains('sel'));
+    state.selectedOptions[group.id] = selectedIndex;
+  });
+
+  document.querySelectorAll('.av-row[id]').forEach(group => {
+    const selectedIndex = Array.from(group.querySelectorAll('.av-btn')).findIndex(el => el.classList.contains('ativo'));
+    state.autoAval[group.id] = selectedIndex;
+  });
+
+  return state;
+}
+
+function applyState(state){
+  if(!state) return;
+
+  const textInputs = Array.from(document.querySelectorAll('input[type=text]'));
+  (state.textInputs || []).forEach((value, index) => {
+    if(textInputs[index]) textInputs[index].value = value || '';
+  });
+
+  const checkboxes = Array.from(document.querySelectorAll('input[type=checkbox]'));
+  (state.checkboxes || []).forEach((checked, index) => {
+    if(checkboxes[index]) checkboxes[index].checked = !!checked;
+  });
+
+  Object.entries(state.selectedOptions || {}).forEach(([groupId, selectedIndex]) => {
+    const group = document.getElementById(groupId);
+    if(!group) return;
+    const items = Array.from(group.querySelectorAll('.opcao'));
+    items.forEach(item => item.classList.remove('sel'));
+    if(selectedIndex >= 0 && items[selectedIndex]) items[selectedIndex].classList.add('sel');
+  });
+
+  Object.entries(state.autoAval || {}).forEach(([groupId, selectedIndex]) => {
+    const group = document.getElementById(groupId);
+    if(!group) return;
+    const items = Array.from(group.querySelectorAll('.av-btn'));
+    items.forEach(item => item.classList.remove('ativo'));
+    if(selectedIndex >= 0 && items[selectedIndex]) items[selectedIndex].classList.add('ativo');
+  });
+}
+
+function saveState(){
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(getState()));
+    setStatus('Respostas gravadas neste navegador. Você pode fechar, voltar depois e continuar editando normalmente.', 'ok');
+  } catch (error) {
+    console.error(error);
+    setStatus('Não foi possível gravar no navegador. Use Exportar JSON para salvar um arquivo com as respostas.', 'warn');
+  }
+}
+
+function loadState(silent=false){
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if(!raw){
+      if(!silent) setStatus('Nenhuma resposta gravada foi encontrada neste navegador ainda.', 'warn');
+      return;
+    }
+    applyState(JSON.parse(raw));
+    if(!silent) setStatus('Respostas carregadas com sucesso. Pode continuar editando e gravar novamente quando quiser.', 'ok');
+  } catch (error) {
+    console.error(error);
+    setStatus('As respostas salvas parecem estar corrompidas. Use Exportar/Importar JSON ou regrave.', 'warn');
+  }
+}
+
+function exportState(){
+  const blob = new Blob([JSON.stringify(getState(), null, 2)], {type: 'application/json;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'eiji-dia1-respostas.json';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+  setStatus('Arquivo JSON exportado. Isso é útil para guardar backup ou levar as respostas para outro computador.', 'ok');
+}
+
+function importState(event){
+  const file = event.target.files && event.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e){
+    try {
+      const state = JSON.parse(e.target.result);
+      applyState(state);
+      setStatus('Arquivo JSON importado com sucesso. Agora você pode revisar, editar e gravar novamente.', 'ok');
+    } catch (error) {
+      console.error(error);
+      setStatus('O arquivo selecionado não é um JSON válido de respostas.', 'warn');
+    }
+  };
+  reader.readAsText(file, 'utf-8');
+  event.target.value = '';
+}
+
+function limpar(){
+  if(!confirm('Limpar todas as respostas da página?')) return;
+  document.querySelectorAll('input[type=text]').forEach(i=>i.value='');
+  document.querySelectorAll('input[type=checkbox]').forEach(c=>c.checked=false);
+  document.querySelectorAll('.opcao').forEach(o=>o.classList.remove('sel'));
+  document.querySelectorAll('.av-btn').forEach(b=>b.classList.remove('ativo'));
+  setStatus('Campos limpos. As respostas gravadas no navegador continuam lá até você gravar de novo ou apagar manualmente o armazenamento do navegador.', 'info');
+}
+
+function voltarAoCronograma(){
+  if (CRONOGRAMA_URL && CRONOGRAMA_URL !== './cronograma.html') {
+    window.location.href = CRONOGRAMA_URL;
+    return;
+  }
+  if (document.referrer) {
+    history.back();
+    return;
+  }
+  setStatus('Defina a URL do cronograma na constante CRONOGRAMA_URL do script para o botão abrir o destino certo.', 'warn');
+}
+
+window.addEventListener('load', () => {
+  loadState(true);
+  const hasSaved = !!localStorage.getItem(STORAGE_KEY);
+  if(hasSaved){
+    setStatus('Respostas salvas detectadas e carregadas automaticamente. Você pode seguir editando e gravar novamente depois.', 'ok');
+  } else {
+    setStatus('Você pode gravar as respostas neste navegador, editar depois, exportar em JSON e voltar para continuar mais tarde.', 'info');
+  }
+});
+</script>
+</body>
+</html>
