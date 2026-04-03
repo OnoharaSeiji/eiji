@@ -1,0 +1,572 @@
+[
+  {
+    "date": "2026-04-06",
+    "month_name": "ABRIL",
+    "month": "04",
+    "weekday": "Seg",
+    "tag": "M",
+    "description": "Números naturais: valor posicional, leitura e escrita até bilhões",
+    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "week": "Semana 2 (6–12/04)"
+  },
+  {
+    "date": "2026-04-08",
+    "month_name": "ABRIL",
+    "month": "04",
+    "weekday": "Qua",
+    "tag": "M",
+    "description": "Adição e subtração com números grandes + situações-problema de uma e duas etapas",
+    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "week": "Semana 2 (6–12/04)"
+  },
+  {
+    "date": "2026-04-13",
+    "month_name": "ABRIL",
+    "month": "04",
+    "weekday": "Seg",
+    "tag": "M",
+    "description": "Multiplicação e divisão: revisão, estratégias de cálculo mental e truques práticos",
+    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "week": "Semana 3 (13–19/04)"
+  },
+  {
+    "date": "2026-04-15",
+    "month_name": "ABRIL",
+    "month": "04",
+    "weekday": "Qua",
+    "tag": "M",
+    "description": "Frações: conceito, tipos (própria, imprópria, mista) e representação visual",
+    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "week": "Semana 3 (13–19/04)"
+  },
+  {
+    "date": "2026-04-20",
+    "month_name": "ABRIL",
+    "month": "04",
+    "weekday": "Seg",
+    "tag": "M",
+    "description": "Frações: simplificação, comparação e equivalência",
+    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "week": "Semana 4 (20–26/04)"
+  },
+  {
+    "date": "2026-04-22",
+    "month_name": "ABRIL",
+    "month": "04",
+    "weekday": "Qua",
+    "tag": "M",
+    "description": "Frações: adição e subtração (mesmo e diferente denominador)",
+    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "week": "Semana 4 (20–26/04)"
+  },
+  {
+    "date": "2026-04-27",
+    "month_name": "ABRIL",
+    "month": "04",
+    "weekday": "Seg",
+    "tag": "M",
+    "description": "Frações: multiplicação e divisão — método e aplicações",
+    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "week": "Semana 5 (27–30/04)"
+  },
+  {
+    "date": "2026-04-29",
+    "month_name": "ABRIL",
+    "month": "04",
+    "weekday": "Qua",
+    "tag": "M",
+    "description": "Números decimais: conceito, leitura, escrita e posição na reta numérica",
+    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "week": "Semana 5 (27–30/04)"
+  },
+  {
+    "date": "2026-05-04",
+    "month_name": "MAIO",
+    "month": "05",
+    "weekday": "Seg",
+    "tag": "M",
+    "description": "Números decimais: adição e subtração + problemas com dinheiro e troco",
+    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
+    "week": "Semana 6 (4–10/05)"
+  },
+  {
+    "date": "2026-05-06",
+    "month_name": "MAIO",
+    "month": "05",
+    "weekday": "Qua",
+    "tag": "M",
+    "description": "Números decimais: multiplicação e divisão; conversão fração↔decimal",
+    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
+    "week": "Semana 6 (4–10/05)"
+  },
+  {
+    "date": "2026-05-11",
+    "month_name": "MAIO",
+    "month": "05",
+    "weekday": "Seg",
+    "tag": "M",
+    "description": "Porcentagem: conceito, 10%, 25%, 50%, 75% — cálculo mental e problemas",
+    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
+    "week": "Semana 7 — Pré-prova (11–16/05)"
+  },
+  {
+    "date": "2026-05-13",
+    "month_name": "MAIO",
+    "month": "05",
+    "weekday": "Qua",
+    "tag": "M",
+    "description": "Porcentagem: cálculo de % variados e situações-problema contextualizadas",
+    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
+    "week": "Semana 7 — Pré-prova (11–16/05)"
+  },
+  {
+    "date": "2026-05-18",
+    "month_name": "MAIO",
+    "month": "05",
+    "weekday": "Seg",
+    "tag": "M",
+    "description": "Análise dos erros Mat da Prova 1 + atualizar Caderno de Erros pós-prova",
+    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
+    "week": "Semana 8 — Pós-prova + início Fase 2 (18–24/05)"
+  },
+  {
+    "date": "2026-05-20",
+    "month_name": "MAIO",
+    "month": "05",
+    "weekday": "Qua",
+    "tag": "M",
+    "description": "MMC: mínimo múltiplo comum — método da decomposição em fatores primos",
+    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
+    "week": "Semana 8 — Pós-prova + início Fase 2 (18–24/05)"
+  },
+  {
+    "date": "2026-05-25",
+    "month_name": "MAIO",
+    "month": "05",
+    "weekday": "Seg",
+    "tag": "M",
+    "description": "MDC: máximo divisor comum — método e aplicações práticas",
+    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
+    "week": "Semana 9 (25–31/05)"
+  },
+  {
+    "date": "2026-05-27",
+    "month_name": "MAIO",
+    "month": "05",
+    "weekday": "Qua",
+    "tag": "M",
+    "description": "MMC e MDC: exercícios integrados, problemas contextualizados e revisão",
+    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
+    "week": "Semana 9 (25–31/05)"
+  },
+  {
+    "date": "2026-06-01",
+    "month_name": "JUNHO",
+    "month": "06",
+    "weekday": "Seg",
+    "tag": "M",
+    "description": "6ºANO · Números inteiros: conceito, reta numérica, opostos e módulo",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 10 (1–7/06)"
+  },
+  {
+    "date": "2026-06-03",
+    "month_name": "JUNHO",
+    "month": "06",
+    "weekday": "Qua",
+    "tag": "M",
+    "description": "6ºANO · Inteiros: adição e subtração com números negativos",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 10 (1–7/06)"
+  },
+  {
+    "date": "2026-06-08",
+    "month_name": "JUNHO",
+    "month": "06",
+    "weekday": "Seg",
+    "tag": "M",
+    "description": "6ºANO · Inteiros: multiplicação e divisão com números negativos — regra de sinais",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 11 (8–14/06)"
+  },
+  {
+    "date": "2026-06-10",
+    "month_name": "JUNHO",
+    "month": "06",
+    "weekday": "Qua",
+    "tag": "M",
+    "description": "6ºANO · Inteiros: módulo, comparação e problemas aplicados",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 11 (8–14/06)"
+  },
+  {
+    "date": "2026-06-15",
+    "month_name": "JUNHO",
+    "month": "06",
+    "weekday": "Seg",
+    "tag": "M",
+    "description": "6ºANO · Potenciação: base, expoente e casos especiais (a⁰=1, a¹=a)",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 12 (15–21/06)"
+  },
+  {
+    "date": "2026-06-17",
+    "month_name": "JUNHO",
+    "month": "06",
+    "weekday": "Qua",
+    "tag": "M",
+    "description": "6ºANO · Potenciação: propriedades principais e potências de 10",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 12 (15–21/06)"
+  },
+  {
+    "date": "2026-06-22",
+    "month_name": "JUNHO",
+    "month": "06",
+    "weekday": "Seg",
+    "tag": "M",
+    "description": "6ºANO · Radiciação: conceito, raiz quadrada de quadrados perfeitos (√1 a √225)",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 13 (22–28/06)"
+  },
+  {
+    "date": "2026-06-24",
+    "month_name": "JUNHO",
+    "month": "06",
+    "weekday": "Qua",
+    "tag": "M",
+    "description": "6ºANO · Radiciação: estimativa de raízes e aplicações práticas em problemas",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 13 (22–28/06)"
+  },
+  {
+    "date": "2026-06-29",
+    "month_name": "JUNHO",
+    "month": "06",
+    "weekday": "Seg",
+    "tag": "M",
+    "description": "6ºANO · Razão e proporção: conceito, representação e propriedade fundamental",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 14 (29–30/06)"
+  },
+  {
+    "date": "2026-07-01",
+    "month_name": "JULHO",
+    "month": "07",
+    "weekday": "Qua",
+    "tag": "M",
+    "description": "6ºANO · Grandezas diretamente proporcionais: tabelas e identificação",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 14 cont. (1–5/07)"
+  },
+  {
+    "date": "2026-07-06",
+    "month_name": "JULHO",
+    "month": "07",
+    "weekday": "Seg",
+    "tag": "M",
+    "description": "6ºANO · Grandezas inversamente proporcionais: diferença em relação às diretas + exemplos",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 15 (6–12/07)"
+  },
+  {
+    "date": "2026-07-08",
+    "month_name": "JULHO",
+    "month": "07",
+    "weekday": "Qua",
+    "tag": "M",
+    "description": "6ºANO · Regra de três simples direta: método prático e problemas variados",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 15 (6–12/07)"
+  },
+  {
+    "date": "2026-07-13",
+    "month_name": "JULHO",
+    "month": "07",
+    "weekday": "Seg",
+    "tag": "M",
+    "description": "6ºANO · Regra de três simples inversa: identificação e resolução",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 16 (13–19/07)"
+  },
+  {
+    "date": "2026-07-15",
+    "month_name": "JULHO",
+    "month": "07",
+    "weekday": "Qua",
+    "tag": "M",
+    "description": "6ºANO · Equações do 1º grau: conceito, resolução básica e verificação da resposta",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 16 (13–19/07)"
+  },
+  {
+    "date": "2026-07-20",
+    "month_name": "JULHO",
+    "month": "07",
+    "weekday": "Seg",
+    "tag": "M",
+    "description": "6ºANO · Equações: resolução com parênteses, frações e termos em ambos os lados",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 17 (20–26/07)"
+  },
+  {
+    "date": "2026-07-22",
+    "month_name": "JULHO",
+    "month": "07",
+    "weekday": "Qua",
+    "tag": "M",
+    "description": "6ºANO · Equações: problemas contextualizados (idades, quantidades, preços e misturas)",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 17 (20–26/07)"
+  },
+  {
+    "date": "2026-07-27",
+    "month_name": "JULHO",
+    "month": "07",
+    "weekday": "Seg",
+    "tag": "M",
+    "description": "6ºANO · Equações: problemas avançados — dois desconhecidos em texto e verificação",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 18 (27–31/07)"
+  },
+  {
+    "date": "2026-07-29",
+    "month_name": "JULHO",
+    "month": "07",
+    "weekday": "Qua",
+    "tag": "M",
+    "description": "Revisão integrada Mat: frações, decimais, porcentagem e equações juntos",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 18 (27–31/07)"
+  },
+  {
+    "date": "2026-08-03",
+    "month_name": "AGOSTO",
+    "month": "08",
+    "weekday": "Seg",
+    "tag": "M",
+    "description": "6ºANO · Geometria: ponto, reta, plano, segmento, semirreta e ângulos",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 19 (3–9/08)"
+  },
+  {
+    "date": "2026-08-05",
+    "month_name": "AGOSTO",
+    "month": "08",
+    "weekday": "Qua",
+    "tag": "M",
+    "description": "6ºANO · Geometria: triângulos — classificação pelos lados e pelos ângulos",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 19 (3–9/08)"
+  },
+  {
+    "date": "2026-08-10",
+    "month_name": "AGOSTO",
+    "month": "08",
+    "weekday": "Seg",
+    "tag": "M",
+    "description": "6ºANO · Geometria: quadriláteros — tipos, propriedades e cálculo de perímetro",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 20 (10–16/08)"
+  },
+  {
+    "date": "2026-08-12",
+    "month_name": "AGOSTO",
+    "month": "08",
+    "weekday": "Qua",
+    "tag": "M",
+    "description": "6ºANO · Geometria: área de retângulo, quadrado e triângulo",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 20 (10–16/08)"
+  },
+  {
+    "date": "2026-08-17",
+    "month_name": "AGOSTO",
+    "month": "08",
+    "weekday": "Seg",
+    "tag": "M",
+    "description": "6ºANO · Geometria: área de paralelogramo e trapézio",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 21 (17–23/08)"
+  },
+  {
+    "date": "2026-08-19",
+    "month_name": "AGOSTO",
+    "month": "08",
+    "weekday": "Qua",
+    "tag": "M",
+    "description": "6ºANO · Geometria: volume do cubo e do paralelepípedo retângulo",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 21 (17–23/08)"
+  },
+  {
+    "date": "2026-08-24",
+    "month_name": "AGOSTO",
+    "month": "08",
+    "weekday": "Seg",
+    "tag": "M",
+    "description": "6ºANO · Estatística: coleta, organização e tabela de frequência simples",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 22 (24–30/08)"
+  },
+  {
+    "date": "2026-08-26",
+    "month_name": "AGOSTO",
+    "month": "08",
+    "weekday": "Qua",
+    "tag": "M",
+    "description": "6ºANO · Estatística: média aritmética simples e interpretação",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 22 (24–30/08)"
+  },
+  {
+    "date": "2026-08-31",
+    "month_name": "AGOSTO",
+    "month": "08",
+    "weekday": "Seg",
+    "tag": "M",
+    "description": "6ºANO · Estatística: moda, mediana e gráficos de barras, setores e linhas",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 22 (24–30/08)"
+  },
+  {
+    "date": "2026-09-02",
+    "month_name": "SETEMBRO",
+    "month": "09",
+    "weekday": "Qua",
+    "tag": "M",
+    "description": "6ºANO · Estatística: leitura e interpretação de gráficos em problemas contextualizados",
+    "phase": "Revisão Intensiva",
+    "week": ""
+  },
+  {
+    "date": "2026-09-08",
+    "month_name": "SETEMBRO",
+    "month": "09",
+    "weekday": "Ter",
+    "tag": "M",
+    "description": "RI · Integração Mat: números inteiros + equações do 1º grau em conjunto",
+    "phase": "Revisão Intensiva",
+    "week": "RI — Bloco 1 (8–13/09)"
+  },
+  {
+    "date": "2026-09-10",
+    "month_name": "SETEMBRO",
+    "month": "09",
+    "weekday": "Qui",
+    "tag": "M",
+    "description": "RI · Integração Mat: frações, decimais, porcentagem e proporção em exercícios mistos",
+    "phase": "Revisão Intensiva",
+    "week": "RI — Bloco 1 (8–13/09)"
+  },
+  {
+    "date": "2026-09-15",
+    "month_name": "SETEMBRO",
+    "month": "09",
+    "weekday": "Ter",
+    "tag": "M",
+    "description": "RI · Reforço Mat: temas com mais erros nos simulados + exercícios dirigidos",
+    "phase": "Revisão Intensiva",
+    "week": "RI — Bloco 2 (15–20/09)"
+  },
+  {
+    "date": "2026-09-17",
+    "month_name": "SETEMBRO",
+    "month": "09",
+    "weekday": "Qui",
+    "tag": "M",
+    "description": "RI · Exercícios avançados Mat: porcentagem e proporção — questões com pegadinha",
+    "phase": "Revisão Intensiva",
+    "week": "RI — Bloco 2 (15–20/09)"
+  },
+  {
+    "date": "2026-09-22",
+    "month_name": "SETEMBRO",
+    "month": "09",
+    "weekday": "Ter",
+    "tag": "M",
+    "description": "RI · Integração Mat: potenciação, radiciação e expressões numéricas juntos",
+    "phase": "Revisão Intensiva",
+    "week": "RI — Bloco 3 (22–27/09)"
+  },
+  {
+    "date": "2026-09-24",
+    "month_name": "SETEMBRO",
+    "month": "09",
+    "weekday": "Qui",
+    "tag": "M",
+    "description": "RI · Revisão geometria completa: perímetro, área (todas as figuras) e volume",
+    "phase": "Revisão Intensiva",
+    "week": "RI — Bloco 3 (22–27/09)"
+  },
+  {
+    "date": "2026-09-29",
+    "month_name": "SETEMBRO",
+    "month": "09",
+    "weekday": "Ter",
+    "tag": "M",
+    "description": "RI · Revisão Mat: estatística + equações + geometria integrados",
+    "phase": "Revisão Intensiva",
+    "week": "RI — Bloco 4 (29–30/09)"
+  },
+  {
+    "date": "2026-10-01",
+    "month_name": "OUTUBRO",
+    "month": "10",
+    "weekday": "Qui",
+    "tag": "M",
+    "description": "RI · Simulado Mat desafiador: 10 questões de nível acima do esperado",
+    "phase": "Reta Final",
+    "week": "RI — fechamento (1–5/10)"
+  },
+  {
+    "date": "2026-10-06",
+    "month_name": "OUTUBRO",
+    "month": "10",
+    "weekday": "Ter",
+    "tag": "M",
+    "description": "RF · Revisão Mat: problemas complexos e variados de todos os temas",
+    "phase": "Reta Final",
+    "week": "RF — Semana 1 (6–11/10)"
+  },
+  {
+    "date": "2026-10-08",
+    "month_name": "OUTUBRO",
+    "month": "10",
+    "weekday": "Qui",
+    "tag": "M",
+    "description": "RF · Mapa mental Mat: todos os temas em uma página",
+    "phase": "Reta Final",
+    "week": "RF — Semana 1 (6–11/10)"
+  },
+  {
+    "date": "2026-10-15",
+    "month_name": "OUTUBRO",
+    "month": "10",
+    "weekday": "Qui",
+    "tag": "M",
+    "description": "RF · Revisão leve Mat — apenas os pontos críticos restantes (30 min)",
+    "phase": "Reta Final",
+    "week": "RF — Desaceleração (14–19/10)"
+  },
+  {
+    "date": "2026-10-20",
+    "month_name": "OUTUBRO",
+    "month": "10",
+    "weekday": "Ter",
+    "tag": "M",
+    "description": "RF · Revisão tranquila Mat: releitura dos mapas mentais e anotações favoritas",
+    "phase": "Reta Final",
+    "week": "RF — Últimas revisões (20–25/10)"
+  },
+  {
+    "date": "2026-10-22",
+    "month_name": "OUTUBRO",
+    "month": "10",
+    "weekday": "Qui",
+    "tag": "M",
+    "description": "RF · Revisão muito leve Mat: apenas os pontos preferidos (30 min)",
+    "phase": "Reta Final",
+    "week": "RF — Últimas revisões (20–25/10)"
+  }
+]

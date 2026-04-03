@@ -1,0 +1,572 @@
+[
+  {
+    "date": "2026-04-07",
+    "month_name": "ABRIL",
+    "month": "04",
+    "weekday": "Ter",
+    "tag": "P",
+    "description": "Interpretação de texto: localizar informações, ideia principal e inferências simples",
+    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "week": "Semana 2 (6–12/04)"
+  },
+  {
+    "date": "2026-04-09",
+    "month_name": "ABRIL",
+    "month": "04",
+    "weekday": "Qui",
+    "tag": "P",
+    "description": "Sinônimos, antônimos e sentido figurado de palavras no contexto",
+    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "week": "Semana 2 (6–12/04)"
+  },
+  {
+    "date": "2026-04-14",
+    "month_name": "ABRIL",
+    "month": "04",
+    "weekday": "Ter",
+    "tag": "P",
+    "description": "Ortografia: X e CH — regras práticas, palavras mais cobradas e exemplos",
+    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "week": "Semana 3 (13–19/04)"
+  },
+  {
+    "date": "2026-04-16",
+    "month_name": "ABRIL",
+    "month": "04",
+    "weekday": "Qui",
+    "tag": "P",
+    "description": "Ortografia: S, SS, Ç e Z — regras, exceções e lista das palavras que mais caem",
+    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "week": "Semana 3 (13–19/04)"
+  },
+  {
+    "date": "2026-04-23",
+    "month_name": "ABRIL",
+    "month": "04",
+    "weekday": "Qui",
+    "tag": "P",
+    "description": "Acentuação gráfica: oxítonas, paroxítonas e proparoxítonas — regras e exercícios",
+    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "week": "Semana 4 (20–26/04)"
+  },
+  {
+    "date": "2026-04-28",
+    "month_name": "ABRIL",
+    "month": "04",
+    "weekday": "Ter",
+    "tag": "P",
+    "description": "Classes gramaticais: substantivo (tipos e flexão) e adjetivo (concordância básica)",
+    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "week": "Semana 5 (27–30/04)"
+  },
+  {
+    "date": "2026-04-30",
+    "month_name": "ABRIL",
+    "month": "04",
+    "weekday": "Qui",
+    "tag": "P",
+    "description": "Classes gramaticais: artigo, numeral e preposição — reconhecimento em textos",
+    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "week": "Semana 5 (27–30/04)"
+  },
+  {
+    "date": "2026-05-05",
+    "month_name": "MAIO",
+    "month": "05",
+    "weekday": "Ter",
+    "tag": "P",
+    "description": "Classes gramaticais: verbo — tempo (passado, presente, futuro), pessoa e número",
+    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
+    "week": "Semana 6 (4–10/05)"
+  },
+  {
+    "date": "2026-05-07",
+    "month_name": "MAIO",
+    "month": "05",
+    "weekday": "Qui",
+    "tag": "P",
+    "description": "Medidas: comprimento (km, m, cm, mm) e massa (kg, g) — leitura e conversões",
+    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
+    "week": "Semana 6 (4–10/05)"
+  },
+  {
+    "date": "2026-05-12",
+    "month_name": "MAIO",
+    "month": "05",
+    "weekday": "Ter",
+    "tag": "P",
+    "description": "Medidas: capacidade (l, ml) e tempo (calendário, relógio, horas e minutos)",
+    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
+    "week": "Semana 7 — Pré-prova (11–16/05)"
+  },
+  {
+    "date": "2026-05-14",
+    "month_name": "MAIO",
+    "month": "05",
+    "weekday": "Qui",
+    "tag": "P",
+    "description": "Tipos textuais: narrativo, descritivo, informativo e instrucional — diferenças práticas",
+    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
+    "week": "Semana 7 — Pré-prova (11–16/05)"
+  },
+  {
+    "date": "2026-05-19",
+    "month_name": "MAIO",
+    "month": "05",
+    "weekday": "Ter",
+    "tag": "P",
+    "description": "Análise dos erros Port da Prova 1 + registro detalhado no Caderno de Erros",
+    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
+    "week": "Semana 8 — Pós-prova + início Fase 2 (18–24/05)"
+  },
+  {
+    "date": "2026-05-21",
+    "month_name": "MAIO",
+    "month": "05",
+    "weekday": "Qui",
+    "tag": "P",
+    "description": "Figuras de linguagem: metáfora e comparação (símile) — identificação e exemplos",
+    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
+    "week": "Semana 8 — Pós-prova + início Fase 2 (18–24/05)"
+  },
+  {
+    "date": "2026-05-26",
+    "month_name": "MAIO",
+    "month": "05",
+    "weekday": "Ter",
+    "tag": "P",
+    "description": "Figuras de linguagem: personificação e hipérbole — como identificar em texto",
+    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
+    "week": "Semana 9 (25–31/05)"
+  },
+  {
+    "date": "2026-05-28",
+    "month_name": "MAIO",
+    "month": "05",
+    "weekday": "Qui",
+    "tag": "P",
+    "description": "Figuras de linguagem: ironia, antítese e eufemismo — exemplos do dia a dia",
+    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
+    "week": "Semana 9 (25–31/05)"
+  },
+  {
+    "date": "2026-06-02",
+    "month_name": "JUNHO",
+    "month": "06",
+    "weekday": "Ter",
+    "tag": "P",
+    "description": "Revisão completa: todas as figuras de linguagem — exercícios com textos novos",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 10 (1–7/06)"
+  },
+  {
+    "date": "2026-06-04",
+    "month_name": "JUNHO",
+    "month": "06",
+    "weekday": "Qui",
+    "tag": "P",
+    "description": "6ºANO · Análise sintática: sujeito simples, composto e oculto (sujeito desinencial)",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 10 (1–7/06)"
+  },
+  {
+    "date": "2026-06-09",
+    "month_name": "JUNHO",
+    "month": "06",
+    "weekday": "Ter",
+    "tag": "P",
+    "description": "6ºANO · Análise sintática: predicado verbal, nominal e verbo-nominal",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 11 (8–14/06)"
+  },
+  {
+    "date": "2026-06-11",
+    "month_name": "JUNHO",
+    "month": "06",
+    "weekday": "Qui",
+    "tag": "P",
+    "description": "6ºANO · Análise sintática: objeto direto e objeto indireto — como diferenciar",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 11 (8–14/06)"
+  },
+  {
+    "date": "2026-06-16",
+    "month_name": "JUNHO",
+    "month": "06",
+    "weekday": "Ter",
+    "tag": "P",
+    "description": "6ºANO · Pronomes pessoais: retos (eu, tu, ele, ela, nós, vós, eles) e oblíquos (me, te, se, nos)",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 12 (15–21/06)"
+  },
+  {
+    "date": "2026-06-18",
+    "month_name": "JUNHO",
+    "month": "06",
+    "weekday": "Qui",
+    "tag": "P",
+    "description": "6ºANO · Pronomes possessivos (meu, teu, seu) e demonstrativos (este, esse, aquele)",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 12 (15–21/06)"
+  },
+  {
+    "date": "2026-06-23",
+    "month_name": "JUNHO",
+    "month": "06",
+    "weekday": "Ter",
+    "tag": "P",
+    "description": "6ºANO · Pronomes relativos (que, cujo, onde) e indefinidos (alguém, ninguém, nada, tudo)",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 13 (22–28/06)"
+  },
+  {
+    "date": "2026-06-25",
+    "month_name": "JUNHO",
+    "month": "06",
+    "weekday": "Qui",
+    "tag": "P",
+    "description": "6ºANO · Concordância verbal: sujeito simples — regra geral e casos básicos",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 13 (22–28/06)"
+  },
+  {
+    "date": "2026-06-30",
+    "month_name": "JUNHO",
+    "month": "06",
+    "weekday": "Ter",
+    "tag": "P",
+    "description": "6ºANO · Concordância verbal: sujeito composto e casos especiais cobrados em prova",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 14 (29–30/06)"
+  },
+  {
+    "date": "2026-07-02",
+    "month_name": "JULHO",
+    "month": "07",
+    "weekday": "Qui",
+    "tag": "P",
+    "description": "6ºANO · Concordância nominal: adjetivo concorda com substantivo — regras e exercícios",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 14 cont. (1–5/07)"
+  },
+  {
+    "date": "2026-07-07",
+    "month_name": "JULHO",
+    "month": "07",
+    "weekday": "Ter",
+    "tag": "P",
+    "description": "6ºANO · Produção textual: estrutura do parágrafo — tópico frasal e desenvolvimento",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 15 (6–12/07)"
+  },
+  {
+    "date": "2026-07-09",
+    "month_name": "JULHO",
+    "month": "07",
+    "weekday": "Qui",
+    "tag": "P",
+    "description": "6ºANO · Produção textual: coesão — uso de conectivos (adição, oposição, causa, conclusão)",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 15 (6–12/07)"
+  },
+  {
+    "date": "2026-07-14",
+    "month_name": "JULHO",
+    "month": "07",
+    "weekday": "Ter",
+    "tag": "P",
+    "description": "6ºANO · Produção textual: coerência, progressão temática e revisão do próprio texto",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 16 (13–19/07)"
+  },
+  {
+    "date": "2026-07-16",
+    "month_name": "JULHO",
+    "month": "07",
+    "weekday": "Qui",
+    "tag": "P",
+    "description": "6ºANO · Variação linguística: formal, informal, regional e histórica — respeito à diversidade",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 16 (13–19/07)"
+  },
+  {
+    "date": "2026-07-21",
+    "month_name": "JULHO",
+    "month": "07",
+    "weekday": "Ter",
+    "tag": "P",
+    "description": "6ºANO · Coesão referencial: pronomes, substituição lexical e elipse",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 17 (20–26/07)"
+  },
+  {
+    "date": "2026-07-23",
+    "month_name": "JULHO",
+    "month": "07",
+    "weekday": "Qui",
+    "tag": "P",
+    "description": "Gêneros textuais: crônica, conto e fábula — estrutura e características",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 17 (20–26/07)"
+  },
+  {
+    "date": "2026-07-28",
+    "month_name": "JULHO",
+    "month": "07",
+    "weekday": "Ter",
+    "tag": "P",
+    "description": "Gêneros textuais: poema, charge, tirinha e HQ — linguagem verbal e não-verbal",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 18 (27–31/07)"
+  },
+  {
+    "date": "2026-07-30",
+    "month_name": "JULHO",
+    "month": "07",
+    "weekday": "Qui",
+    "tag": "P",
+    "description": "Interpretação avançada: textos longos, inferências difíceis e vocabulário por contexto",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 18 (27–31/07)"
+  },
+  {
+    "date": "2026-08-04",
+    "month_name": "AGOSTO",
+    "month": "08",
+    "weekday": "Ter",
+    "tag": "P",
+    "description": "Interpretação: texto de opinião, identificação de tese e argumentos",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 19 (3–9/08)"
+  },
+  {
+    "date": "2026-08-06",
+    "month_name": "AGOSTO",
+    "month": "08",
+    "weekday": "Qui",
+    "tag": "P",
+    "description": "6ºANO · Probabilidade intuitiva: possibilidades, evento provável/improvável e linguagem do acaso",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 19 (3–9/08)"
+  },
+  {
+    "date": "2026-08-11",
+    "month_name": "AGOSTO",
+    "month": "08",
+    "weekday": "Ter",
+    "tag": "P",
+    "description": "Revisão avançada de classes gramaticais: casos difíceis e pegadinhas em prova",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 20 (10–16/08)"
+  },
+  {
+    "date": "2026-08-13",
+    "month_name": "AGOSTO",
+    "month": "08",
+    "weekday": "Qui",
+    "tag": "P",
+    "description": "Ortografia e acentuação avançadas: palavras que mais caem em provas — lista dirigida",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 20 (10–16/08)"
+  },
+  {
+    "date": "2026-08-18",
+    "month_name": "AGOSTO",
+    "month": "08",
+    "weekday": "Ter",
+    "tag": "P",
+    "description": "Revisão avançada: análise sintática com textos novos e exercícios inéditos",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 21 (17–23/08)"
+  },
+  {
+    "date": "2026-08-20",
+    "month_name": "AGOSTO",
+    "month": "08",
+    "weekday": "Qui",
+    "tag": "P",
+    "description": "Revisão avançada: figuras de linguagem em textos literários e jornalísticos",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 21 (17–23/08)"
+  },
+  {
+    "date": "2026-08-25",
+    "month_name": "AGOSTO",
+    "month": "08",
+    "weekday": "Ter",
+    "tag": "P",
+    "description": "Revisão: pronomes + concordância verbal e nominal integrados",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 22 (24–30/08)"
+  },
+  {
+    "date": "2026-08-27",
+    "month_name": "AGOSTO",
+    "month": "08",
+    "weekday": "Qui",
+    "tag": "P",
+    "description": "Revisão: produção textual — coesão, coerência e estrutura do parágrafo",
+    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "week": "Semana 22 (24–30/08)"
+  },
+  {
+    "date": "2026-09-01",
+    "month_name": "SETEMBRO",
+    "month": "09",
+    "weekday": "Ter",
+    "tag": "P",
+    "description": "6ºANO · Probabilidade: experimentos simples, espaço amostral e cálculo básico",
+    "phase": "Revisão Intensiva",
+    "week": ""
+  },
+  {
+    "date": "2026-09-03",
+    "month_name": "SETEMBRO",
+    "month": "09",
+    "weekday": "Qui",
+    "tag": "P",
+    "description": "Interpretação comparativa: dois textos sobre o mesmo tema + síntese de argumentos",
+    "phase": "Revisão Intensiva",
+    "week": ""
+  },
+  {
+    "date": "2026-09-09",
+    "month_name": "SETEMBRO",
+    "month": "09",
+    "weekday": "Qua",
+    "tag": "P",
+    "description": "RI · Integração Port: figuras de linguagem + análise sintática em texto real",
+    "phase": "Revisão Intensiva",
+    "week": "RI — Bloco 1 (8–13/09)"
+  },
+  {
+    "date": "2026-09-11",
+    "month_name": "SETEMBRO",
+    "month": "09",
+    "weekday": "Sex",
+    "tag": "P",
+    "description": "RI · Integração Port: pronomes + concordância + coesão em texto corrido",
+    "phase": "Revisão Intensiva",
+    "week": "RI — Bloco 1 (8–13/09)"
+  },
+  {
+    "date": "2026-09-16",
+    "month_name": "SETEMBRO",
+    "month": "09",
+    "weekday": "Qua",
+    "tag": "P",
+    "description": "RI · Reforço Port: temas com mais erros nos simulados + exercícios dirigidos",
+    "phase": "Revisão Intensiva",
+    "week": "RI — Bloco 2 (15–20/09)"
+  },
+  {
+    "date": "2026-09-18",
+    "month_name": "SETEMBRO",
+    "month": "09",
+    "weekday": "Sex",
+    "tag": "P",
+    "description": "RI · Exercícios avançados Port: interpretação difícil, inferências e vocabulário",
+    "phase": "Revisão Intensiva",
+    "week": "RI — Bloco 2 (15–20/09)"
+  },
+  {
+    "date": "2026-09-23",
+    "month_name": "SETEMBRO",
+    "month": "09",
+    "weekday": "Qua",
+    "tag": "P",
+    "description": "RI · Integração Port: gêneros textuais variados — reconhecer em qualquer texto",
+    "phase": "Revisão Intensiva",
+    "week": "RI — Bloco 3 (22–27/09)"
+  },
+  {
+    "date": "2026-09-25",
+    "month_name": "SETEMBRO",
+    "month": "09",
+    "weekday": "Sex",
+    "tag": "P",
+    "description": "RI · Revisão gramática completa: do substantivo ao conectivo — mapa mental oral",
+    "phase": "Revisão Intensiva",
+    "week": "RI — Bloco 3 (22–27/09)"
+  },
+  {
+    "date": "2026-09-30",
+    "month_name": "SETEMBRO",
+    "month": "09",
+    "weekday": "Qua",
+    "tag": "P",
+    "description": "RI · Revisão Port: análise sintática + figuras de linguagem + interpretação integrados",
+    "phase": "Revisão Intensiva",
+    "week": "RI — Bloco 4 (29–30/09)"
+  },
+  {
+    "date": "2026-10-02",
+    "month_name": "OUTUBRO",
+    "month": "10",
+    "weekday": "Sex",
+    "tag": "P",
+    "description": "RI · Simulado Port desafiador: 10 questões de nível acima do esperado",
+    "phase": "Reta Final",
+    "week": "RI — fechamento (1–5/10)"
+  },
+  {
+    "date": "2026-10-07",
+    "month_name": "OUTUBRO",
+    "month": "10",
+    "weekday": "Qua",
+    "tag": "P",
+    "description": "RF · Textos desafiadores: interpretação profunda e inferências de alto nível",
+    "phase": "Reta Final",
+    "week": "RF — Semana 1 (6–11/10)"
+  },
+  {
+    "date": "2026-10-09",
+    "month_name": "OUTUBRO",
+    "month": "10",
+    "weekday": "Sex",
+    "tag": "P",
+    "description": "RF · Mapa mental Port: todos os temas em uma página",
+    "phase": "Reta Final",
+    "week": "RF — Semana 1 (6–11/10)"
+  },
+  {
+    "date": "2026-10-14",
+    "month_name": "OUTUBRO",
+    "month": "10",
+    "weekday": "Qua",
+    "tag": "P",
+    "description": "RF · Revisão leve Port — apenas os pontos críticos restantes (30 min)",
+    "phase": "Reta Final",
+    "week": "RF — Desaceleração (14–19/10)"
+  },
+  {
+    "date": "2026-10-16",
+    "month_name": "OUTUBRO",
+    "month": "10",
+    "weekday": "Sex",
+    "tag": "P",
+    "description": "RF · Exercícios leves Port — apenas o que domina e gosta",
+    "phase": "Reta Final",
+    "week": "RF — Desaceleração (14–19/10)"
+  },
+  {
+    "date": "2026-10-21",
+    "month_name": "OUTUBRO",
+    "month": "10",
+    "weekday": "Qua",
+    "tag": "P",
+    "description": "RF · Revisão tranquila Port: releitura dos mapas mentais e anotações favoritas",
+    "phase": "Reta Final",
+    "week": "RF — Últimas revisões (20–25/10)"
+  },
+  {
+    "date": "2026-10-23",
+    "month_name": "OUTUBRO",
+    "month": "10",
+    "weekday": "Sex",
+    "tag": "P",
+    "description": "RF · Revisão muito leve Port: apenas os pontos preferidos (30 min)",
+    "phase": "Reta Final",
+    "week": "RF — Últimas revisões (20–25/10)"
+  }
+]
