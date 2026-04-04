@@ -1,1 +1,481 @@
-<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>2026-04-02 | Diagnóstico Port — interpretação de texto, ortografia e produção escrita</title><link rel="stylesheet" href="../../assets/css/base.css"><link rel="stylesheet" href="../../assets/css/apostila.css"></head><body><header class="hero-day"><div class="container"><span class="badge" style="background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.22)">DIAG</span><h1 style="margin:10px 0 6px">Diagnóstico Port — interpretação de texto, ortografia e produção escrita</h1><p style="margin:0;color:rgba(255,255,255,.86)">Página diária gerada a partir do cronograma</p><div class="meta"><span>2026-04-02</span><span>Qui</span><span>Semana diagnóstica (1–5/04)</span><span>Fase 1 · Aquecimento · 5º ano</span></div></div></header><main class="container"><div class="day-nav"><a class="btn" href="../../cronograma/index.html">← Voltar ao cronograma</a><a class="btn" href="../../cronograma/abril.html">Ver mês</a><a class="btn" href="2026-04-01-diagnostico-mat-operacoes-basicas-numeracao-e-situacoes-prob.html">← Dia anterior</a><a class="btn primary" href="2026-04-03-analise-dos-diagnosticos-montar-o-caderno-de-erros-separar-p.html">Próximo dia →</a></div><div class="card" style="margin-top:18px"><span class="badge dark">Resumo do dia</span><h2 style="margin:12px 0 6px">Diagnóstico Port — interpretação de texto, ortografia e produção escrita</h2><p class="small">Esta página funciona como placeholder organizado até a apostila completa desse dia ser criada.</p><div class="placeholder-note" style="margin-top:16px"><strong>O que fazer neste dia</strong><p style="margin:8px 0 0">Diagnóstico Port — interpretação de texto, ortografia e produção escrita</p></div></div><div class="grid grid-3" style="margin-top:18px"><div class="card"><h3>Tipo</h3><p>Diagnóstico</p></div><div class="card"><h3>Semana / bloco</h3><p>Semana diagnóstica (1–5/04)</p></div><div class="card"><h3>Próxima etapa</h3><p>Abrir o próximo dia do cronograma</p></div></div><div class="card" style="margin-top:18px"><h3>Arquivo de dados deste dia</h3><p><code>data/dias/2026-04-02.json</code></p><p class="small">Use esse arquivo como fonte quando for transformar este dia em uma apostila real.</p></div></main></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apostila Dia 2 — Diagnóstico de Português · Eiji · Fusão</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --verde:#1D9E75;--verde-esc:#085041;--verde-cl:#E1F5EE;--verde-md:#5DCAA5;
+  --amarelo:#F5C842;--laranja:#F07B3A;
+  --azul-nota:#EEF6FF;--azul-borda:#C5DCFA;
+  --cinza-txt:#2a2a28;--cinza-bg:#f7f6f2;--cinza-bd:#dddbd3;
+  --roxo-cl:#EEEDFE;--roxo:#7F77DD;--branco:#ffffff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito Sans',sans-serif;background:var(--cinza-bg);color:var(--cinza-txt)}
+.capa{background:var(--verde-esc);padding:44px 40px 36px;position:relative;overflow:hidden}
+.capa::before{content:'';position:absolute;top:-70px;right:-70px;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,0.04)}
+.capa::after{content:'';position:absolute;bottom:-50px;left:30px;width:200px;height:200px;border-radius:50%;background:rgba(93,202,165,0.1)}
+.capa-in{position:relative;z-index:1;max-width:760px;margin:0 auto}
+.dia-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:40px;padding:4px 14px;font-family:'Space Mono',monospace;font-size:11px;color:rgba(255,255,255,0.65);margin-bottom:18px}
+.dia-badge strong{color:var(--verde-md)}
+.capa h1{font-family:'Nunito',sans-serif;font-size:30px;font-weight:900;color:#fff;line-height:1.15;margin-bottom:8px}
+.capa h1 span{color:var(--verde-md)}
+.capa-sub{font-size:14px;color:rgba(255,255,255,0.55);margin-bottom:26px}
+.capa-meta{display:flex;flex-wrap:wrap;gap:8px}
+.meta-chip{background:rgba(255,255,255,0.08);border-radius:8px;padding:7px 13px;font-size:11px;color:rgba(255,255,255,0.7);font-family:'Space Mono',monospace}
+.meta-chip strong{display:block;color:#fff;font-size:13px;margin-bottom:1px}
+.prog-wrap{max-width:760px;margin:20px auto 0;padding:0 22px}
+.prog-lbl{font-size:10px;font-family:'Space Mono',monospace;color:#999;margin-bottom:4px}
+.prog-bg{background:#e0ddd5;border-radius:99px;height:5px;overflow:hidden}
+.prog-fill{background:linear-gradient(90deg,var(--verde-md),var(--verde));width:0.93%;height:100%;border-radius:99px;transition:width 1.2s ease}
+.alert-diag{max-width:760px;margin:20px auto 0;padding:0 22px}
+.alert-box{background:#FFF8E7;border:1.5px solid var(--amarelo);border-radius:14px;padding:16px 18px;display:flex;gap:12px}
+.alert-icon{font-size:26px;flex-shrink:0;margin-top:1px}
+.alert-box h3{font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;color:#7a5500;margin-bottom:4px}
+.alert-box p{font-size:13px;color:#6b4a00;line-height:1.55}
+.instrucoes{max-width:760px;margin:16px auto 0;padding:0 22px}
+.instr-box{background:var(--azul-nota);border:1.5px solid var(--azul-borda);border-radius:14px;padding:18px 20px}
+.instr-box h3{font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;color:#0d3a6b;margin-bottom:10px}
+.instr-list{list-style:none;display:flex;flex-direction:column;gap:6px}
+.instr-list li{font-size:13px;color:#1a3a5c;line-height:1.5;display:flex;gap:8px}
+.instr-list li::before{content:'→';color:var(--verde);font-weight:700;flex-shrink:0}
+.instr-dica{background:rgba(255,255,255,0.6);border-left:3px solid var(--verde);border-radius:0 8px 8px 0;padding:9px 12px;margin-top:12px;font-size:12.5px;color:#1a3a5c;font-style:italic;line-height:1.5}
+.conteudo{max-width:760px;margin:0 auto;padding:22px 22px 60px}
+.bloco-sep{display:flex;align-items:center;gap:10px;margin:20px 0 14px}
+.bloco-sep-line{flex:1;height:1px;background:var(--cinza-bd)}
+.bloco-sep-txt{font-size:10px;font-family:'Space Mono',monospace;color:#aaa;text-transform:uppercase;letter-spacing:1px;white-space:nowrap}
+.secao{background:var(--branco);border-radius:14px;margin-bottom:18px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.05)}
+.sec-hdr{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid var(--cinza-bd)}
+.sec-num{width:30px;height:30px;border-radius:50%;background:var(--verde-esc);color:#fff;font-family:'Space Mono',monospace;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sec-titulo{font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;color:var(--verde-esc)}
+.sec-tag{margin-left:auto;font-size:10px;font-family:'Space Mono',monospace;background:var(--verde-cl);color:var(--verde-esc);padding:2px 8px;border-radius:5px;font-weight:700}
+.sec-body{padding:18px}
+.q{margin-bottom:20px;padding-bottom:20px;border-bottom:1px dashed var(--cinza-bd)}
+.q:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
+.q-enunc{font-size:14px;font-weight:600;color:#1a1a18;margin-bottom:10px;line-height:1.6}
+.q-num{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:var(--verde-cl);border-radius:50%;font-family:'Space Mono',monospace;font-size:10px;font-weight:700;color:var(--verde-esc);margin-right:5px;flex-shrink:0}
+.sublista{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:6px}
+.sublista li{font-size:14px;color:#2a2a28;display:flex;align-items:flex-start;gap:8px}
+.sublista li span.letra{font-weight:700;color:var(--verde-esc);font-family:'Space Mono',monospace;font-size:12px;flex-shrink:0;margin-top:2px}
+.sublista li .campo{flex:1}
+.linha{display:block;width:100%;border:none;border-bottom:1.5px solid var(--cinza-bd);background:transparent;font-family:'Nunito Sans',sans-serif;font-size:14px;color:var(--verde-esc);padding:2px 0 3px;outline:none;margin-top:4px}
+.linha:focus{border-bottom-color:var(--verde)}
+.linha-sm{width:220px}
+.texto-base{background:#F8F9FF;border:1.5px solid #C9CFFF;border-radius:12px;padding:15px 16px;margin-bottom:12px}
+.texto-base h4{font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;color:#3C3489;margin-bottom:8px}
+.texto-base p{font-size:14px;line-height:1.7;color:#2a2a28;margin-bottom:8px}
+.texto-base p:last-child{margin-bottom:0}
+.opcoes{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.opcao{display:flex;align-items:center;gap:9px;padding:8px 12px;border:1.5px solid var(--cinza-bd);border-radius:8px;cursor:pointer;font-size:13.5px;background:var(--cinza-bg);transition:all 0.14s}
+.opcao:hover{background:var(--verde-cl);border-color:var(--verde-md)}
+.opcao.sel{background:var(--verde-cl);border-color:var(--verde);color:var(--verde-esc);font-weight:600}
+.opc-l{width:22px;height:22px;border-radius:50%;background:#dddbd3;font-size:10px;font-weight:700;font-family:'Space Mono',monospace;display:flex;align-items:center;justify-content:center;color:#666;flex-shrink:0;transition:all 0.14s}
+.opcao.sel .opc-l{background:var(--verde);color:#fff}
+.grade-palavras{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-top:8px}
+.palavra-box{background:var(--cinza-bg);border:1.5px solid var(--cinza-bd);border-radius:10px;padding:12px}
+.palavra-box .rot{font-size:9px;color:#aaa;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;font-family:'Space Mono',monospace}
+.palavra-box .pal{font-size:15px;font-weight:700;margin-bottom:8px;color:#2a2a28}
+.area-escrita{background:#fff;border:1.5px solid var(--cinza-bd);border-radius:12px;padding:14px}
+.area-escrita h4{font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;color:#18344a;margin-bottom:8px}
+.rasc{margin-top:8px}
+.rasc-lbl{font-size:10px;color:#bbb;font-family:'Space Mono',monospace;margin-bottom:5px}
+.rasc-linhas{display:flex;flex-direction:column;gap:7px}
+.rasc-l{border:none;border-bottom:1.5px solid #e8e5de;background:transparent;font-size:14px;color:#2a2a28;font-family:'Nunito Sans',sans-serif;padding:1px 0 3px;outline:none;width:100%}
+.rasc-l:focus{border-bottom-color:var(--verde)}
+.textarea-sim{width:100%;min-height:170px;border:1.5px solid var(--cinza-bd);border-radius:10px;padding:12px;font-family:'Nunito Sans',sans-serif;font-size:14px;line-height:1.6;color:#2a2a28;outline:none;resize:vertical;background:#fff}
+.textarea-sim:focus{border-color:var(--verde)}
+.autoaval{background:var(--verde-cl);border:1.5px solid var(--verde-md);border-radius:14px;padding:18px;margin-top:24px}
+.autoaval h3{font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;color:var(--verde-esc);margin-bottom:14px}
+.av-bloco{margin-bottom:13px}
+.av-bloco:last-child{margin-bottom:0}
+.av-lbl{font-size:12.5px;font-weight:600;color:var(--verde-esc);margin-bottom:6px}
+.av-row{display:flex;gap:6px;flex-wrap:wrap}
+.av-btn{background:#fff;border:2px solid transparent;border-radius:9px;padding:7px 11px;cursor:pointer;font-size:12px;font-family:'Nunito',sans-serif;font-weight:600;color:var(--verde-esc);display:flex;align-items:center;gap:5px;transition:all 0.13s}
+.av-btn:hover{border-color:var(--verde-md)}
+.av-btn.ativo{border-color:var(--verde);background:var(--verde);color:#fff}
+.ficha-resp{background:#fff;border:1.5px solid var(--cinza-bd);border-radius:14px;padding:18px;margin-top:20px}
+.ficha-resp h3{font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;color:#18344a;margin-bottom:12px}
+table.obs-table{width:100%;border-collapse:collapse;font-size:13px}
+table.obs-table th,table.obs-table td{border:1px solid var(--cinza-bd);padding:8px 10px;vertical-align:middle}
+table.obs-table th{background:#f2f7fc;color:#18344a;font-weight:700;text-align:left;font-size:12px}
+table.obs-table td:nth-child(2),table.obs-table td:nth-child(3),table.obs-table td:nth-child(4){text-align:center;width:70px}
+.obs-check{width:18px;height:18px;cursor:pointer;accent-color:var(--verde)}
+.ce-section{background:#fff;border:1.5px solid var(--roxo);border-radius:14px;padding:18px;margin-top:20px}
+.ce-section h3{font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;color:#3C3489;margin-bottom:12px}
+table.ce-table{width:100%;border-collapse:collapse;font-size:13px}
+table.ce-table th,table.ce-table td{border:1px solid #D8D6F5;padding:8px 10px;vertical-align:top;min-height:36px}
+table.ce-table th{background:var(--roxo-cl);color:#3C3489;font-weight:700;font-size:12px;text-align:left}
+table.ce-table td input{border:none;background:transparent;font-family:'Nunito Sans',sans-serif;font-size:13px;width:100%;outline:none;color:#2a2a28;padding:2px 0}
+.gabarito{background:#fcfcff;border:1.5px dashed #9eb4cc;border-radius:12px;padding:18px;margin-top:20px}
+.gabarito h3{font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;color:#18344a;margin-bottom:14px}
+.gab-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gab-item{background:#fff;border:1px solid #e3e7f0;border-radius:8px;padding:10px 12px}
+.gab-q{font-family:'Space Mono',monospace;font-size:10px;color:#999;text-transform:uppercase;margin-bottom:4px;letter-spacing:0.3px}
+.gab-r{font-size:13px;color:#18344a;line-height:1.5}
+.acoes{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}
+.btn{padding:10px 20px;border-radius:9px;font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;cursor:pointer;border:none;transition:all 0.14s}
+.btn-p{background:var(--verde-esc);color:#fff}.btn-p:hover{background:#064535;transform:translateY(-1px)}
+.btn-s{background:#fff;color:var(--verde-esc);border:1.5px solid var(--verde-md)}.btn-s:hover{background:var(--verde-cl)}
+.btn-a{background:#fff;color:#3C3489;border:1.5px solid var(--roxo)}.btn-a:hover{background:var(--roxo-cl)}
+.rodape{margin-top:22px;padding:12px;background:#fff;border-radius:10px;border:1px solid var(--cinza-bd);font-size:11px;color:#aaa;font-family:'Space Mono',monospace;text-align:center}
+.save-status{margin-top:14px;padding:12px 14px;border-radius:10px;background:#fff;border:1px solid var(--cinza-bd);font-size:12.5px;color:#555;display:none}
+.save-status.show{display:block}.save-status.ok{border-color:var(--verde-md);background:var(--verde-cl);color:var(--verde-esc)}.save-status.warn{border-color:var(--amarelo);background:#FFF8E7;color:#7a5500}.save-status.info{border-color:var(--azul-borda);background:var(--azul-nota);color:#1a3a5c}
+.config-box{margin-top:14px;padding:12px 14px;border-radius:10px;background:#fff;border:1px dashed var(--cinza-bd);font-size:12px;color:#666;line-height:1.5}
+.hidden-file{display:none}
+@media print{
+  body{background:#fff}
+  .capa{background:var(--verde-esc)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .acoes{display:none}
+  .linha,.rasc-l,.textarea-sim{border-color:#ccc!important}
+  .break{page-break-before:always}
+}
+</style>
+</head>
+<body>
+
+<div class="capa">
+  <div class="capa-in">
+    <div class="dia-badge">DESAFIO OBJETIVO 2026 <strong>·</strong> <strong>DIA 2 DE 214</strong></div>
+    <h1>Diagnóstico de <span>Português</span></h1>
+    <p class="capa-sub">Quinta-feira, 02 de abril de 2026 &nbsp;·&nbsp; Fase 1 — Aquecimento &nbsp;·&nbsp; Versão Fusão</p>
+    <div class="capa-meta">
+      <div class="meta-chip"><strong>Eiji</strong>Aluno</div>
+      <div class="meta-chip"><strong>Diagnóstico</strong>Tipo</div>
+      <div class="meta-chip"><strong>50–70 min</strong>Estimado</div>
+      <div class="meta-chip"><strong>5º Ano</strong>Base</div>
+      <div class="meta-chip"><strong>Gabarito incluso</strong>✓</div>
+    </div>
+  </div>
+</div>
+
+<div class="prog-wrap">
+  <div class="prog-lbl">JORNADA — DIA 2 / 214 (0,93%)</div>
+  <div class="prog-bg"><div class="prog-fill" id="barra"></div></div>
+</div>
+
+<div class="alert-diag">
+  <div class="alert-box">
+    <div class="alert-icon">🎯</div>
+    <div>
+      <h3>Isto também é um raio-X!</h3>
+      <p>Hoje queremos descobrir como o Eiji lê, entende, escreve e revisa um texto. Não corrija no meio. Observe se ele entende a pergunta, se escreve com clareza e quais erros aparecem com mais frequência.</p>
+    </div>
+  </div>
+</div>
+
+<div class="instrucoes">
+  <div class="instr-box">
+    <h3>📋 Instruções para o responsável — como aplicar</h3>
+    <ul class="instr-list">
+      <li>Deixe o Eiji ler os textos e responder <strong>sozinho</strong> o máximo possível.</li>
+      <li>Se ele pedir ajuda, leia a pergunta em voz alta, mas não entregue a resposta.</li>
+      <li>Observe se a dificuldade está em <strong>entender o texto</strong>, <strong>escrever a resposta</strong> ou <strong>revisar a própria escrita</strong>.</li>
+      <li>Use a <strong>Ficha de Observação</strong> no final para registrar o que você viu.</li>
+      <li>Os erros do Dia 2 vão para o Caderno de Erros e orientam o reforço das próximas semanas.</li>
+    </ul>
+    <div class="instr-dica">⏱ Sugestão: faça em dois momentos se necessário — primeiro interpretação e ortografia, depois produção escrita. Não transforme a atividade em cópia longa ou castigo.</div>
+  </div>
+</div>
+
+<div class="conteudo">
+
+<div class="bloco-sep"><div class="bloco-sep-line"></div><div class="bloco-sep-txt">Parte 1 — Base obrigatória</div><div class="bloco-sep-line"></div></div>
+
+<div class="secao">
+  <div class="sec-hdr"><div class="sec-num">1</div><div class="sec-titulo">Interpretação de texto</div><div class="sec-tag">8 questões</div></div>
+  <div class="sec-body">
+
+    <div class="texto-base">
+      <h4>Texto 1</h4>
+      <p>Na saída da escola, Pedro percebeu que o céu estava muito escuro. Ele se lembrou de que sua mãe havia dito para pegar o guarda-chuva que estava ao lado da porta, mas saiu com pressa e esqueceu. Quando a chuva começou, Pedro e sua irmã correram até a banca do seu Arnaldo para se proteger. Eles esperaram a chuva diminuir e voltaram para casa. Ao chegar, Pedro viu o guarda-chuva no mesmo lugar e riu de si mesmo. Depois disso, prometeu prestar mais atenção antes de sair.</p>
+    </div>
+
+    <div class="q">
+      <div class="q-enunc"><span class="q-num">1</span> Por que Pedro e a irmã correram?</div>
+      <input class="linha" type="text" placeholder="Escreva a resposta com suas palavras.">
+    </div>
+
+    <div class="q">
+      <div class="q-enunc"><span class="q-num">2</span> Onde estava o guarda-chuva?</div>
+      <input class="linha" type="text" placeholder="Escreva a resposta.">
+    </div>
+
+    <div class="q">
+      <div class="q-enunc"><span class="q-num">3</span> O que mostra que Pedro aprendeu algo com essa situação?</div>
+      <input class="linha" type="text" placeholder="Escreva a resposta.">
+    </div>
+
+    <div class="texto-base">
+      <h4>Texto 2 — Aviso</h4>
+      <p><strong>Biblioteca Escolar</strong><br>
+      Nesta quinta-feira, a biblioteca funcionará <strong>até as 17 horas</strong>.<br>
+      Os alunos poderão <strong>devolver livros atrasados</strong> e <strong>retirar um novo livro</strong>.<br>
+      Aproveite para colocar a leitura em dia.</p>
+    </div>
+
+    <div class="q">
+      <div class="q-enunc"><span class="q-num">4</span> Até que horas a biblioteca funcionará?</div>
+      <input class="linha linha-sm" type="text" placeholder="Ex.: até as ...">
+    </div>
+
+    <div class="q">
+      <div class="q-enunc"><span class="q-num">5</span> O que os alunos podem fazer na biblioteca nesse dia?</div>
+      <input class="linha" type="text" placeholder="Escreva com suas palavras.">
+    </div>
+
+    <div class="q">
+      <div class="q-enunc"><span class="q-num">6</span> No aviso, a expressão <strong>“colocar a leitura em dia”</strong> quer dizer:</div>
+      <div class="opcoes" id="op6">
+        <div class="opcao" onclick="sel('op6',this)"><div class="opc-l">A</div>Parar de ler por alguns dias</div>
+        <div class="opcao" onclick="sel('op6',this)"><div class="opc-l">B</div>Organizar a leitura e voltar a ler normalmente</div>
+        <div class="opcao" onclick="sel('op6',this)"><div class="opc-l">C</div>Ler todos os livros da escola no mesmo dia</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="q-enunc"><span class="q-num">7</span> No Texto 1, a palavra <strong>“escuro”</strong> ajuda o leitor a entender que:</div>
+      <div class="opcoes" id="op7">
+        <div class="opcao" onclick="sel('op7',this)"><div class="opc-l">A</div>Era noite e Pedro estava dormindo</div>
+        <div class="opcao" onclick="sel('op7',this)"><div class="opc-l">B</div>O tempo estava fechando e podia chover</div>
+        <div class="opcao" onclick="sel('op7',this)"><div class="opc-l">C</div>Pedro não conseguia enxergar a porta</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="q-enunc"><span class="q-num">8</span> Escreva um título adequado para o Texto 1.</div>
+      <input class="linha" type="text" placeholder="Ex.: O dia em que Pedro esqueceu...">
+    </div>
+
+  </div>
+</div>
+
+<div class="secao">
+  <div class="sec-hdr"><div class="sec-num">2</div><div class="sec-titulo">Ortografia e atenção à escrita</div><div class="sec-tag">8 questões</div></div>
+  <div class="sec-body">
+
+    <div class="q">
+      <div class="q-enunc"><span class="q-num">9</span> Complete as palavras corretamente.</div>
+      <div class="grade-palavras">
+        <div class="palavra-box"><div class="rot">Complete</div><div class="pal">en__ergar</div><input class="linha" type="text" placeholder="x ou ch?"></div>
+        <div class="palavra-box"><div class="rot">Complete</div><div class="pal">__uva</div><input class="linha" type="text" placeholder="ch ou x?"></div>
+        <div class="palavra-box"><div class="rot">Complete</div><div class="pal">fei__e</div><input class="linha" type="text" placeholder="x ou ch?"></div>
+        <div class="palavra-box"><div class="rot">Complete</div><div class="pal">__ícara</div><input class="linha" type="text" placeholder="x ou ch?"></div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="q-enunc"><span class="q-num">10</span> Escreva corretamente as palavras abaixo.</div>
+      <div class="grade-palavras">
+        <div class="palavra-box"><div class="rot">Corrija</div><div class="pal">paçeio</div><input class="linha" type="text" placeholder="Forma correta"></div>
+        <div class="palavra-box"><div class="rot">Corrija</div><div class="pal">acucar</div><input class="linha" type="text" placeholder="Forma correta"></div>
+        <div class="palavra-box"><div class="rot">Corrija</div><div class="pal">passaro</div><input class="linha" type="text" placeholder="Forma correta"></div>
+        <div class="palavra-box"><div class="rot">Corrija</div><div class="pal">prezente</div><input class="linha" type="text" placeholder="Forma correta"></div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="q-enunc"><span class="q-num">11</span> Reescreva a frase corretamente, com letra maiúscula e pontuação:</div>
+      <div class="texto-base"><p>a gente foi a biblioteca e pegou um livro muito interessante</p></div>
+      <input class="linha" type="text" placeholder="Reescreva a frase corretamente.">
+    </div>
+
+    <div class="q">
+      <div class="q-enunc"><span class="q-num">12</span> Marque a palavra escrita corretamente.</div>
+      <div class="opcoes" id="op12">
+        <div class="opcao" onclick="sel('op12',this)"><div class="opc-l">A</div>alegria</div>
+        <div class="opcao" onclick="sel('op12',this)"><div class="opc-l">B</div>alegría</div>
+        <div class="opcao" onclick="sel('op12',this)"><div class="opc-l">C</div>alegrya</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="q-enunc"><span class="q-num">13</span> Marque a forma correta.</div>
+      <div class="opcoes" id="op13">
+        <div class="opcao" onclick="sel('op13',this)"><div class="opc-l">A</div>saiu</div>
+        <div class="opcao" onclick="sel('op13',this)"><div class="opc-l">B</div>sahiu</div>
+        <div class="opcao" onclick="sel('op13',this)"><div class="opc-l">C</div>sayo</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="q-enunc"><span class="q-num">14</span> Marque a frase que está pontuada corretamente.</div>
+      <div class="opcoes" id="op14">
+        <div class="opcao" onclick="sel('op14',this)"><div class="opc-l">A</div>Pedro esqueceu o guarda chuva e correu.</div>
+        <div class="opcao" onclick="sel('op14',this)"><div class="opc-l">B</div>Pedro esqueceu o guarda-chuva e correu.</div>
+        <div class="opcao" onclick="sel('op14',this)"><div class="opc-l">C</div>pedro esqueceu o guarda chuva e correu</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="q-enunc"><span class="q-num">15</span> Escreva uma palavra com <strong>ç</strong>.</div>
+      <input class="linha linha-sm" type="text" placeholder="Ex.: ...">
+    </div>
+
+    <div class="q">
+      <div class="q-enunc"><span class="q-num">16</span> Escreva uma palavra com <strong>ch</strong>.</div>
+      <input class="linha linha-sm" type="text" placeholder="Ex.: ...">
+    </div>
+
+  </div>
+</div>
+
+<div class="bloco-sep"><div class="bloco-sep-line"></div><div class="bloco-sep-txt">Parte 2 — Produção escrita</div><div class="bloco-sep-line"></div></div>
+
+<div class="secao">
+  <div class="sec-hdr"><div class="sec-num">3</div><div class="sec-titulo">Produção escrita e reescrita</div><div class="sec-tag">4 questões</div></div>
+  <div class="sec-body">
+
+    <div class="q">
+      <div class="q-enunc"><span class="q-num">17</span> Reescreva, com suas palavras, o que aconteceu no Texto 1. Tente usar ponto final, letra maiúscula e separar as ideias.</div>
+      <textarea class="textarea-sim" placeholder="Escreva aqui seu pequeno resumo."></textarea>
+    </div>
+
+    <div class="q">
+      <div class="q-enunc"><span class="q-num">18</span> Escreva um pequeno texto contando uma situação em que você esqueceu alguma coisa e depois percebeu o erro. Pode ser real ou inventado.</div>
+      <textarea class="textarea-sim" placeholder="Escreva aqui seu texto."></textarea>
+    </div>
+
+    <div class="q">
+      <div class="q-enunc"><span class="q-num">19</span> Complete o bilhete abaixo para a professora, com clareza e organização:</div>
+      <div class="area-escrita">
+        <h4>Bilhete</h4>
+        <p>Professora,</p>
+        <textarea class="textarea-sim" style="min-height:120px" placeholder="Continue o bilhete aqui."></textarea>
+        <p style="margin-top:8px">Assinado: ____________________</p>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="q-enunc"><span class="q-num">20</span> Quando você termina um texto, o melhor é:</div>
+      <div class="opcoes" id="op20">
+        <div class="opcao" onclick="sel('op20',this)"><div class="opc-l">A</div>Entregar sem reler</div>
+        <div class="opcao" onclick="sel('op20',this)"><div class="opc-l">B</div>Reler, corrigir e melhorar o texto</div>
+        <div class="opcao" onclick="sel('op20',this)"><div class="opc-l">C</div>Apagar tudo e começar de novo</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="bloco-sep"><div class="bloco-sep-line"></div><div class="bloco-sep-txt">Parte 3 — Estratégia</div><div class="bloco-sep-line"></div></div>
+
+<div class="secao">
+  <div class="sec-hdr"><div class="sec-num">4</div><div class="sec-titulo">Como você lê e revisa?</div><div class="sec-tag">2 questões</div></div>
+  <div class="sec-body">
+    <div class="q">
+      <div class="q-enunc"><span class="q-num">21</span> Quando você não entende uma pergunta de interpretação, a melhor atitude é:</div>
+      <div class="opcoes" id="op21">
+        <div class="opcao" onclick="sel('op21',this)"><div class="opc-l">A</div>Ler de novo com calma e procurar a resposta no texto</div>
+        <div class="opcao" onclick="sel('op21',this)"><div class="opc-l">B</div>Inventar qualquer resposta</div>
+        <div class="opcao" onclick="sel('op21',this)"><div class="opc-l">C</div>Pular tudo sem tentar</div>
+      </div>
+    </div>
+    <div class="q">
+      <div class="q-enunc"><span class="q-num">22</span> Um bom texto costuma ter:</div>
+      <div class="opcoes" id="op22">
+        <div class="opcao" onclick="sel('op22',this)"><div class="opc-l">A</div>Frases soltas sem pontuação</div>
+        <div class="opcao" onclick="sel('op22',this)"><div class="opc-l">B</div>Ideias organizadas, pontuação e palavras bem escritas</div>
+        <div class="opcao" onclick="sel('op22',this)"><div class="opc-l">C</div>Muitas palavras difíceis sem sentido</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="autoaval">
+  <h3>📊 Como você se saiu? (seja honesto — isso só te ajuda!)</h3>
+  <div class="av-bloco"><div class="av-lbl">Interpretação de texto</div><div class="av-row" id="av1"><button class="av-btn" onclick="av('av1',this)">😅 Não soube</button><button class="av-btn" onclick="av('av1',this)">🤔 Mais ou menos</button><button class="av-btn" onclick="av('av1',this)">😊 Fui bem</button><button class="av-btn" onclick="av('av1',this)">🔥 Domino!</button></div></div>
+  <div class="av-bloco"><div class="av-lbl">Ortografia</div><div class="av-row" id="av2"><button class="av-btn" onclick="av('av2',this)">😅 Não soube</button><button class="av-btn" onclick="av('av2',this)">🤔 Mais ou menos</button><button class="av-btn" onclick="av('av2',this)">😊 Fui bem</button><button class="av-btn" onclick="av('av2',this)">🔥 Domino!</button></div></div>
+  <div class="av-bloco"><div class="av-lbl">Pontuação e revisão</div><div class="av-row" id="av3"><button class="av-btn" onclick="av('av3',this)">😅 Não soube</button><button class="av-btn" onclick="av('av3',this)">🤔 Mais ou menos</button><button class="av-btn" onclick="av('av3',this)">😊 Fui bem</button><button class="av-btn" onclick="av('av3',this)">🔥 Domino!</button></div></div>
+  <div class="av-bloco"><div class="av-lbl">Produção escrita</div><div class="av-row" id="av4"><button class="av-btn" onclick="av('av4',this)">😅 Não soube</button><button class="av-btn" onclick="av('av4',this)">🤔 Mais ou menos</button><button class="av-btn" onclick="av('av4',this)">😊 Fui bem</button><button class="av-btn" onclick="av('av4',this)">🔥 Domino!</button></div></div>
+  <div class="av-bloco"><div class="av-lbl">Leitura e estratégia</div><div class="av-row" id="av5"><button class="av-btn" onclick="av('av5',this)">😅 Não soube</button><button class="av-btn" onclick="av('av5',this)">🤔 Mais ou menos</button><button class="av-btn" onclick="av('av5',this)">😊 Fui bem</button><button class="av-btn" onclick="av('av5',this)">🔥 Domino!</button></div></div>
+</div>
+
+<div class="ficha-resp break">
+  <h3>📝 Ficha de observação do responsável</h3>
+  <table class="obs-table">
+    <tr><th>O que foi observado</th><th>Foi bem</th><th>Médio</th><th>Dificuldade</th><th>Observação livre</th></tr>
+    <tr><td>Leitura e compreensão do texto</td><td><input type="checkbox" class="obs-check"></td><td><input type="checkbox" class="obs-check"></td><td><input type="checkbox" class="obs-check"></td><td><input class="linha" type="text" placeholder=""></td></tr>
+    <tr><td>Respostas de interpretação</td><td><input type="checkbox" class="obs-check"></td><td><input type="checkbox" class="obs-check"></td><td><input type="checkbox" class="obs-check"></td><td><input class="linha" type="text" placeholder=""></td></tr>
+    <tr><td>Ortografia</td><td><input type="checkbox" class="obs-check"></td><td><input type="checkbox" class="obs-check"></td><td><input type="checkbox" class="obs-check"></td><td><input class="linha" type="text" placeholder=""></td></tr>
+    <tr><td>Acentuação e pontuação</td><td><input type="checkbox" class="obs-check"></td><td><input type="checkbox" class="obs-check"></td><td><input type="checkbox" class="obs-check"></td><td><input class="linha" type="text" placeholder=""></td></tr>
+    <tr><td>Produção escrita</td><td><input type="checkbox" class="obs-check"></td><td><input type="checkbox" class="obs-check"></td><td><input type="checkbox" class="obs-check"></td><td><input class="linha" type="text" placeholder=""></td></tr>
+    <tr><td>Organização do texto</td><td><input type="checkbox" class="obs-check"></td><td><input type="checkbox" class="obs-check"></td><td><input type="checkbox" class="obs-check"></td><td><input class="linha" type="text" placeholder=""></td></tr>
+    <tr><td>Revisão do próprio texto</td><td><input type="checkbox" class="obs-check"></td><td><input type="checkbox" class="obs-check"></td><td><input type="checkbox" class="obs-check"></td><td><input class="linha" type="text" placeholder=""></td></tr>
+  </table>
+  <div style="margin-top:12px;font-size:12.5px;color:#555;background:var(--azul-nota);border-radius:8px;padding:10px 12px;border:1px solid var(--azul-borda)"><strong>Regra prática:</strong> Os erros marcados aqui vão para o Caderno de Erros e orientam o reforço das próximas semanas.</div>
+</div>
+
+<div class="ce-section">
+  <h3>📓 Caderno de Erros — Modelo do Dia 2</h3>
+  <table class="ce-table">
+    <tr><th style="width:55px">Questão</th><th>Assunto</th><th>O que aconteceu?</th><th>Como fazer certo na próxima?</th></tr>
+    <tr><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+    <tr><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+    <tr><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+    <tr><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+  </table>
+</div>
+
+<div class="gabarito break">
+  <h3>🔑 Gabarito</h3>
+  <div class="gab-grid">
+    <div class="gab-item"><div class="gab-q">Q1–Q3 — Texto 1</div><div class="gab-r">1) Porque começou a chover e eles queriam se proteger. 2) Ao lado da porta. 3) Ele prometeu prestar mais atenção antes de sair.</div></div>
+    <div class="gab-item"><div class="gab-q">Q4–Q5 — Aviso</div><div class="gab-r">4) Até as 17 horas. 5) Devolver livros atrasados e retirar um novo livro.</div></div>
+    <div class="gab-item"><div class="gab-q">Q6 — sentido da expressão</div><div class="gab-r">Opção B.</div></div>
+    <div class="gab-item"><div class="gab-q">Q7 — inferência</div><div class="gab-r">Opção B.</div></div>
+    <div class="gab-item"><div class="gab-q">Q8 — título</div><div class="gab-r">Resposta pessoal, desde que faça sentido. Exemplos: “O guarda-chuva esquecido”, “Pedro e a chuva”, “A pressa de Pedro”.</div></div>
+    <div class="gab-item"><div class="gab-q">Q9 — completar palavras</div><div class="gab-r">enxergar · chuva · feixe · xícara</div></div>
+    <div class="gab-item"><div class="gab-q">Q10 — correção</div><div class="gab-r">passeio · açúcar · pássaro · presente</div></div>
+    <div class="gab-item"><div class="gab-q">Q11 — frase corrigida</div><div class="gab-r">Exemplo: “A gente foi à biblioteca e pegou um livro muito interessante.”</div></div>
+    <div class="gab-item"><div class="gab-q">Q12–Q14 — múltipla escolha</div><div class="gab-r">12) A · 13) A · 14) B</div></div>
+    <div class="gab-item"><div class="gab-q">Q15–Q16 — palavra livre</div><div class="gab-r">Resposta pessoal. Exemplos com ç: coração, açúcar, lição. Exemplos com ch: chuva, chave, mochila.</div></div>
+    <div class="gab-item"><div class="gab-q">Q17–Q19 — escrita</div><div class="gab-r">Respostas pessoais. Avaliar se o texto tem sentido, começo/meio/fim, ortografia básica, pontuação e organização.</div></div>
+    <div class="gab-item"><div class="gab-q">Q20–Q22 — estratégia</div><div class="gab-r">20) B · 21) A · 22) B</div></div>
+  </div>
+</div>
+
+<div class="acoes">
+  <button class="btn btn-p" onclick="saveState()">💾 Gravar respostas</button>
+  <button class="btn btn-s" onclick="loadState()">📂 Carregar respostas</button>
+  <button class="btn btn-a" onclick="exportState()">⬇ Exportar JSON</button>
+  <button class="btn btn-a" onclick="document.getElementById('importFile').click()">⬆ Importar JSON</button>
+  <button class="btn btn-s" onclick="window.print()">🖨 Imprimir / Salvar PDF</button>
+  <button class="btn btn-s" onclick="limpar()">↺ Limpar respostas</button>
+  <button class="btn btn-s" onclick="voltarAoCronograma()">← Voltar ao cronograma</button>
+  <input id="importFile" class="hidden-file" type="file" accept="application/json" onchange="importState(event)">
+</div>
+
+<div id="saveStatus" class="save-status info">Você pode gravar as respostas neste navegador, editar depois, exportar em JSON e voltar para continuar mais tarde.</div>
+<div class="config-box"><strong>Configuração rápida:</strong> o botão <strong>Voltar ao cronograma</strong> usa primeiro a constante <code>CRONOGRAMA_URL</code> no script. Se ela estiver vazia, ele tenta voltar para a página anterior do navegador.</div>
+
+<div class="rodape">APOSTILA DIA 2/214 · DIAGNÓSTICO PORTUGUÊS · DESAFIO OBJETIVO 2026 · EIJI · VERSÃO FUSÃO · COM SALVAMENTO LOCAL</div>
+
+</div>
+
+<script>
+const STORAGE_KEY = 'eiji_apostila_dia2_port_v1';
+const CRONOGRAMA_URL = '../../cronograma/index.html';
+setTimeout(()=>{document.getElementById('barra').style.width='0.93%'},400);
+function sel(g,el){document.querySelectorAll('#'+g+' .opcao').forEach(o=>o.classList.remove('sel'));el.classList.add('sel')}
+function av(id,btn){document.querySelectorAll('#'+id+' .av-btn').forEach(b=>b.classList.remove('ativo'));btn.classList.add('ativo')}
+function setStatus(message, type='info'){const box=document.getElementById('saveStatus');box.textContent=message;box.className='save-status show '+type}
+function getState(){
+  const state={textInputs:Array.from(document.querySelectorAll('input[type=text], textarea')).map(el=>el.value),checkboxes:Array.from(document.querySelectorAll('input[type=checkbox]')).map(el=>el.checked),selectedOptions:{},autoAval:{}};
+  document.querySelectorAll('.opcoes[id]').forEach(group=>{const selectedIndex=Array.from(group.querySelectorAll('.opcao')).findIndex(el=>el.classList.contains('sel'));state.selectedOptions[group.id]=selectedIndex});
+  document.querySelectorAll('.av-row[id]').forEach(group=>{const selectedIndex=Array.from(group.querySelectorAll('.av-btn')).findIndex(el=>el.classList.contains('ativo'));state.autoAval[group.id]=selectedIndex});
+  return state;
+}
+function applyState(state){if(!state) return;const fields=Array.from(document.querySelectorAll('input[type=text], textarea'));(state.textInputs||[]).forEach((value,index)=>{if(fields[index]) fields[index].value=value||''});const checkboxes=Array.from(document.querySelectorAll('input[type=checkbox]'));(state.checkboxes||[]).forEach((checked,index)=>{if(checkboxes[index]) checkboxes[index].checked=!!checked});Object.entries(state.selectedOptions||{}).forEach(([groupId,selectedIndex])=>{const group=document.getElementById(groupId);if(!group) return;const items=Array.from(group.querySelectorAll('.opcao'));items.forEach(item=>item.classList.remove('sel'));if(selectedIndex>=0&&items[selectedIndex]) items[selectedIndex].classList.add('sel')});Object.entries(state.autoAval||{}).forEach(([groupId,selectedIndex])=>{const group=document.getElementById(groupId);if(!group) return;const items=Array.from(group.querySelectorAll('.av-btn'));items.forEach(item=>item.classList.remove('ativo'));if(selectedIndex>=0&&items[selectedIndex]) items[selectedIndex].classList.add('ativo')})}
+function saveState(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(getState()));setStatus('Respostas gravadas neste navegador. Você pode fechar, voltar depois e continuar editando normalmente.','ok')}catch(error){console.error(error);setStatus('Não foi possível gravar no navegador. Use Exportar JSON para salvar um arquivo com as respostas.','warn')}}
+function loadState(silent=false){try{const raw=localStorage.getItem(STORAGE_KEY);if(!raw){if(!silent) setStatus('Nenhuma resposta gravada foi encontrada neste navegador ainda.','warn');return;}applyState(JSON.parse(raw));if(!silent) setStatus('Respostas carregadas com sucesso. Pode continuar editando e gravar novamente quando quiser.','ok')}catch(error){console.error(error);setStatus('As respostas salvas parecem estar corrompidas. Use Exportar/Importar JSON ou regrave.','warn')}}
+function exportState(){const blob=new Blob([JSON.stringify(getState(),null,2)],{type:'application/json;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='eiji-dia2-respostas-portugues.json';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);setStatus('Arquivo JSON exportado. Isso é útil para guardar backup ou levar as respostas para outro computador.','ok')}
+function importState(event){const file=event.target.files&&event.target.files[0];if(!file) return;const reader=new FileReader();reader.onload=function(e){try{const imported=JSON.parse(e.target.result);applyState(imported);setStatus('Arquivo JSON importado com sucesso. Agora você pode revisar, editar e gravar novamente.','ok')}catch(error){console.error(error);setStatus('O arquivo selecionado não é um JSON válido de respostas.','warn')}};reader.readAsText(file,'utf-8');event.target.value=''}
+function limpar(){if(!confirm('Limpar todas as respostas da página?')) return;document.querySelectorAll('input[type=text], textarea').forEach(i=>i.value='');document.querySelectorAll('input[type=checkbox]').forEach(c=>c.checked=false);document.querySelectorAll('.opcao').forEach(o=>o.classList.remove('sel'));document.querySelectorAll('.av-btn').forEach(b=>b.classList.remove('ativo'));setStatus('Campos limpos. As respostas gravadas no navegador continuam lá até você gravar de novo ou apagar manualmente o armazenamento do navegador.','info')}
+function voltarAoCronograma(){if(CRONOGRAMA_URL){window.location.href=CRONOGRAMA_URL;return;}if(document.referrer){history.back();return;}setStatus('Defina a URL do cronograma na constante CRONOGRAMA_URL do script para o botão abrir o destino certo.','warn')}
+window.addEventListener('load',()=>{loadState(true);const hasSaved=!!localStorage.getItem(STORAGE_KEY);if(hasSaved){setStatus('Respostas salvas detectadas e carregadas automaticamente. Você pode seguir editando e gravar novamente depois.','ok')}else{setStatus('Você pode gravar as respostas neste navegador, editar depois, exportar em JSON e voltar para continuar mais tarde.','info')}})
+</script>
+</body>
+</html>

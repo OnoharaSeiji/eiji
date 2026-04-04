@@ -6,7 +6,7 @@
     "weekday": "Qua",
     "tag": "DIAG",
     "description": "Diagnóstico Mat — operações básicas, numeração e situações-problema",
-    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "phase": "Fase 1 · Base forte de 5º ano",
     "week": "Semana diagnóstica (1–5/04)"
   },
   {
@@ -16,7 +16,7 @@
     "weekday": "Qui",
     "tag": "DIAG",
     "description": "Diagnóstico Port — interpretação de texto, ortografia e produção escrita",
-    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "phase": "Fase 1 · Base forte de 5º ano",
     "week": "Semana diagnóstica (1–5/04)"
   },
   {
@@ -25,8 +25,8 @@
     "month": "04",
     "weekday": "Sex",
     "tag": "R",
-    "description": "Análise dos diagnósticos + montar o Caderno de Erros (separar por tema: Mat e Port)",
-    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "description": "Análise dos diagnósticos + montar o Caderno de Erros (Mat e Port)",
+    "phase": "Fase 1 · Base forte de 5º ano",
     "week": "Semana diagnóstica (1–5/04)"
   },
   {
@@ -35,8 +35,8 @@
     "month": "04",
     "weekday": "Sáb",
     "tag": "S",
-    "description": "Mini simulado diagnóstico: 10 Mat + 10 Port — sem pressão, apenas para mapear o nível",
-    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "description": "Mini simulado diagnóstico: 10 Mat + 10 Port — sem pressão",
+    "phase": "Fase 1 · Base forte de 5º ano",
     "week": "Semana diagnóstica (1–5/04)"
   },
   {
@@ -46,7 +46,7 @@
     "weekday": "Dom",
     "tag": "D",
     "description": "Descanso",
-    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "phase": "Fase 1 · Base forte de 5º ano",
     "week": "Semana diagnóstica (1–5/04)"
   },
   {
@@ -55,8 +55,8 @@
     "month": "04",
     "weekday": "Seg",
     "tag": "M",
-    "description": "Números naturais: valor posicional, leitura e escrita até bilhões",
-    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "description": "Números naturais: valor posicional, leitura e escrita até milhões",
+    "phase": "Fase 1 · Base forte de 5º ano",
     "week": "Semana 2 (6–12/04)"
   },
   {
@@ -66,7 +66,7 @@
     "weekday": "Ter",
     "tag": "P",
     "description": "Interpretação de texto: localizar informações, ideia principal e inferências simples",
-    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "phase": "Fase 1 · Base forte de 5º ano",
     "week": "Semana 2 (6–12/04)"
   },
   {
@@ -75,8 +75,8 @@
     "month": "04",
     "weekday": "Qua",
     "tag": "M",
-    "description": "Adição e subtração com números grandes + situações-problema de uma e duas etapas",
-    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "description": "Adição e subtração com números grandes + problemas de uma e duas etapas",
+    "phase": "Fase 1 · Base forte de 5º ano",
     "week": "Semana 2 (6–12/04)"
   },
   {
@@ -85,8 +85,8 @@
     "month": "04",
     "weekday": "Qui",
     "tag": "P",
-    "description": "Sinônimos, antônimos e sentido figurado de palavras no contexto",
-    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "description": "Sinônimos, antônimos e vocabulário no contexto",
+    "phase": "Fase 1 · Base forte de 5º ano",
     "week": "Semana 2 (6–12/04)"
   },
   {
@@ -95,8 +95,8 @@
     "month": "04",
     "weekday": "Sex",
     "tag": "R",
-    "description": "Revisão Sem.2 + Caderno de Erros: numeração, operações e interpretação de texto",
-    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "description": "Revisão Sem.2 + Caderno de Erros: numeração, operações e interpretação",
+    "phase": "Fase 1 · Base forte de 5º ano",
     "week": "Semana 2 (6–12/04)"
   },
   {
@@ -106,7 +106,7 @@
     "weekday": "Sáb",
     "tag": "S",
     "description": "Simulado: 10 Mat (numeração e operações) + 10 Port (interpretação)",
-    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "phase": "Fase 1 · Base forte de 5º ano",
     "week": "Semana 2 (6–12/04)"
   },
   {
@@ -116,7 +116,7 @@
     "weekday": "Dom",
     "tag": "D",
     "description": "Descanso",
-    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "phase": "Fase 1 · Base forte de 5º ano",
     "week": "Semana 2 (6–12/04)"
   },
   {
@@ -125,8 +125,8 @@
     "month": "04",
     "weekday": "Seg",
     "tag": "M",
-    "description": "Multiplicação e divisão: revisão, estratégias de cálculo mental e truques práticos",
-    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "description": "Multiplicação e divisão: revisão, cálculo mental e organização da conta",
+    "phase": "Fase 1 · Base forte de 5º ano",
     "week": "Semana 3 (13–19/04)"
   },
   {
@@ -135,8 +135,8 @@
     "month": "04",
     "weekday": "Ter",
     "tag": "P",
-    "description": "Ortografia: X e CH — regras práticas, palavras mais cobradas e exemplos",
-    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "description": "Ortografia: X e CH — regras práticas + palavras frequentes",
+    "phase": "Fase 1 · Base forte de 5º ano",
     "week": "Semana 3 (13–19/04)"
   },
   {
@@ -145,8 +145,8 @@
     "month": "04",
     "weekday": "Qua",
     "tag": "M",
-    "description": "Frações: conceito, tipos (própria, imprópria, mista) e representação visual",
-    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "description": "Frações: parte do todo, leitura visual e fração de quantidade simples",
+    "phase": "Fase 1 · Base forte de 5º ano",
     "week": "Semana 3 (13–19/04)"
   },
   {
@@ -155,8 +155,8 @@
     "month": "04",
     "weekday": "Qui",
     "tag": "P",
-    "description": "Ortografia: S, SS, Ç e Z — regras, exceções e lista das palavras que mais caem",
-    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "description": "Ortografia: S, SS, Ç e Z — regras práticas + ditado curto",
+    "phase": "Fase 1 · Base forte de 5º ano",
     "week": "Semana 3 (13–19/04)"
   },
   {
@@ -165,8 +165,8 @@
     "month": "04",
     "weekday": "Sex",
     "tag": "R",
-    "description": "Revisão Sem.3 + Caderno de Erros: multiplicação/divisão, frações e ortografia S/X",
-    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "description": "Revisão Sem.3 + Caderno de Erros: multiplicação/divisão, frações básicas e ortografia",
+    "phase": "Fase 1 · Base forte de 5º ano",
     "week": "Semana 3 (13–19/04)"
   },
   {
@@ -175,8 +175,8 @@
     "month": "04",
     "weekday": "Sáb",
     "tag": "S",
-    "description": "Simulado: 5 Mat (operações e frações básicas) + 5 Port (ortografia X/CH/S/SS/Ç)",
-    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "description": "Simulado: 5 Mat (operações e frações visuais) + 5 Port (ortografia X/CH/S/SS/Ç)",
+    "phase": "Fase 1 · Base forte de 5º ano",
     "week": "Semana 3 (13–19/04)"
   },
   {
@@ -186,7 +186,7 @@
     "weekday": "Dom",
     "tag": "D",
     "description": "Descanso",
-    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "phase": "Fase 1 · Base forte de 5º ano",
     "week": "Semana 3 (13–19/04)"
   },
   {
@@ -196,7 +196,7 @@
     "weekday": "Seg",
     "tag": "M",
     "description": "Frações: simplificação, comparação e equivalência",
-    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "phase": "Fase 1 · Base forte de 5º ano",
     "week": "Semana 4 (20–26/04)"
   },
   {
@@ -206,7 +206,7 @@
     "weekday": "Ter",
     "tag": "F",
     "description": "Feriado — Tiradentes",
-    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "phase": "Fase 1 · Base forte de 5º ano",
     "week": "Semana 4 (20–26/04)"
   },
   {
@@ -215,8 +215,8 @@
     "month": "04",
     "weekday": "Qua",
     "tag": "M",
-    "description": "Frações: adição e subtração (mesmo e diferente denominador)",
-    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "description": "Frações: adição e subtração com mesmo denominador",
+    "phase": "Fase 1 · Base forte de 5º ano",
     "week": "Semana 4 (20–26/04)"
   },
   {
@@ -225,8 +225,8 @@
     "month": "04",
     "weekday": "Qui",
     "tag": "P",
-    "description": "Acentuação gráfica: oxítonas, paroxítonas e proparoxítonas — regras e exercícios",
-    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "description": "Acentuação gráfica: oxítonas, paroxítonas e proparoxítonas — foco em palavras usuais",
+    "phase": "Fase 1 · Base forte de 5º ano",
     "week": "Semana 4 (20–26/04)"
   },
   {
@@ -235,8 +235,8 @@
     "month": "04",
     "weekday": "Sex",
     "tag": "R",
-    "description": "Revisão Sem.4 + Caderno de Erros: frações (simplif./operações) e acentuação",
-    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "description": "Revisão Sem.4 + Caderno de Erros: frações básicas e acentuação",
+    "phase": "Fase 1 · Base forte de 5º ano",
     "week": "Semana 4 (20–26/04)"
   },
   {
@@ -245,8 +245,8 @@
     "month": "04",
     "weekday": "Sáb",
     "tag": "S",
-    "description": "Simulado: 5 Mat (frações) + 5 Port (acentuação gráfica)",
-    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "description": "Simulado: 5 Mat (frações) + 5 Port (acentuação)",
+    "phase": "Fase 1 · Base forte de 5º ano",
     "week": "Semana 4 (20–26/04)"
   },
   {
@@ -256,7 +256,7 @@
     "weekday": "Dom",
     "tag": "D",
     "description": "Descanso",
-    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "phase": "Fase 1 · Base forte de 5º ano",
     "week": "Semana 4 (20–26/04)"
   },
   {
@@ -265,8 +265,8 @@
     "month": "04",
     "weekday": "Seg",
     "tag": "M",
-    "description": "Frações: multiplicação e divisão — método e aplicações",
-    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "description": "Frações: fração de quantidade + revisão geral de frações",
+    "phase": "Fase 1 · Base forte de 5º ano",
     "week": "Semana 5 (27–30/04)"
   },
   {
@@ -275,8 +275,8 @@
     "month": "04",
     "weekday": "Ter",
     "tag": "P",
-    "description": "Classes gramaticais: substantivo (tipos e flexão) e adjetivo (concordância básica)",
-    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "description": "Oficina de escrita: letra maiúscula, ponto final, vírgula e reescrita",
+    "phase": "Fase 1 · Base forte de 5º ano",
     "week": "Semana 5 (27–30/04)"
   },
   {
@@ -285,8 +285,8 @@
     "month": "04",
     "weekday": "Qua",
     "tag": "M",
-    "description": "Números decimais: conceito, leitura, escrita e posição na reta numérica",
-    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "description": "Números decimais: conceito, leitura, escrita e comparação",
+    "phase": "Fase 1 · Base forte de 5º ano",
     "week": "Semana 5 (27–30/04)"
   },
   {
@@ -295,8 +295,8 @@
     "month": "04",
     "weekday": "Qui",
     "tag": "P",
-    "description": "Classes gramaticais: artigo, numeral e preposição — reconhecimento em textos",
-    "phase": "Fase 1 · Aquecimento · 5º ano",
+    "description": "Oficina de escrita: ortografia em frases + revisão guiada",
+    "phase": "Fase 1 · Base forte de 5º ano",
     "week": "Semana 5 (27–30/04)"
   },
   {
@@ -306,8 +306,8 @@
     "weekday": "Sex",
     "tag": "F",
     "description": "Feriado — Dia do Trabalhador",
-    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
-    "week": ""
+    "phase": "Fase 1 até a prova + consolidação pós-prova",
+    "week": "Semana 5 (27–30/04)"
   },
   {
     "date": "2026-05-02",
@@ -315,9 +315,9 @@
     "month": "05",
     "weekday": "Sáb",
     "tag": "S",
-    "description": "Simulado: 5 Mat (decimais e frações) + 5 Port (classes gramaticais)",
-    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
-    "week": ""
+    "description": "Simulado: 5 Mat (frações e decimais iniciais) + 5 Port (interpretação e escrita)",
+    "phase": "Fase 1 até a prova + consolidação pós-prova",
+    "week": "Semana 5 (27–30/04)"
   },
   {
     "date": "2026-05-03",
@@ -326,8 +326,8 @@
     "weekday": "Dom",
     "tag": "D",
     "description": "Descanso",
-    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
-    "week": ""
+    "phase": "Fase 1 até a prova + consolidação pós-prova",
+    "week": "Semana 5 (27–30/04)"
   },
   {
     "date": "2026-05-04",
@@ -335,8 +335,8 @@
     "month": "05",
     "weekday": "Seg",
     "tag": "M",
-    "description": "Números decimais: adição e subtração + problemas com dinheiro e troco",
-    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
+    "description": "Números decimais: adição e subtração + dinheiro e troco",
+    "phase": "Fase 1 até a prova + consolidação pós-prova",
     "week": "Semana 6 (4–10/05)"
   },
   {
@@ -345,8 +345,8 @@
     "month": "05",
     "weekday": "Ter",
     "tag": "P",
-    "description": "Classes gramaticais: verbo — tempo (passado, presente, futuro), pessoa e número",
-    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
+    "description": "Verbos: passado, presente e futuro em frases e textos",
+    "phase": "Fase 1 até a prova + consolidação pós-prova",
     "week": "Semana 6 (4–10/05)"
   },
   {
@@ -355,8 +355,8 @@
     "month": "05",
     "weekday": "Qua",
     "tag": "M",
-    "description": "Números decimais: multiplicação e divisão; conversão fração↔decimal",
-    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
+    "description": "Números decimais: multiplicação e divisão simples + conversão fração ↔ decimal",
+    "phase": "Fase 1 até a prova + consolidação pós-prova",
     "week": "Semana 6 (4–10/05)"
   },
   {
@@ -365,8 +365,8 @@
     "month": "05",
     "weekday": "Qui",
     "tag": "P",
-    "description": "Medidas: comprimento (km, m, cm, mm) e massa (kg, g) — leitura e conversões",
-    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
+    "description": "Medidas: comprimento e massa — leitura e conversões práticas",
+    "phase": "Fase 1 até a prova + consolidação pós-prova",
     "week": "Semana 6 (4–10/05)"
   },
   {
@@ -375,8 +375,8 @@
     "month": "05",
     "weekday": "Sex",
     "tag": "R",
-    "description": "Revisão Sem.6 + Caderno de Erros: decimais, verbos e medidas (comprimento/massa)",
-    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
+    "description": "Revisão Sem.6 + Caderno de Erros: decimais, verbos e medidas",
+    "phase": "Fase 1 até a prova + consolidação pós-prova",
     "week": "Semana 6 (4–10/05)"
   },
   {
@@ -385,8 +385,8 @@
     "month": "05",
     "weekday": "Sáb",
     "tag": "S",
-    "description": "Simulado completo: 10 Mat (decimais) + 10 Port (classes gramaticais)",
-    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
+    "description": "Simulado completo: 10 Mat (frações e decimais) + 10 Port (interpretação, ortografia e verbos)",
+    "phase": "Fase 1 até a prova + consolidação pós-prova",
     "week": "Semana 6 (4–10/05)"
   },
   {
@@ -396,7 +396,7 @@
     "weekday": "Dom",
     "tag": "D",
     "description": "Descanso",
-    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
+    "phase": "Fase 1 até a prova + consolidação pós-prova",
     "week": "Semana 6 (4–10/05)"
   },
   {
@@ -405,8 +405,8 @@
     "month": "05",
     "weekday": "Seg",
     "tag": "M",
-    "description": "Porcentagem: conceito, 10%, 25%, 50%, 75% — cálculo mental e problemas",
-    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
+    "description": "Porcentagem: 10%, 25%, 50%, 75% — cálculo mental e problemas simples",
+    "phase": "Fase 1 até a prova + consolidação pós-prova",
     "week": "Semana 7 — Pré-prova (11–16/05)"
   },
   {
@@ -415,8 +415,8 @@
     "month": "05",
     "weekday": "Ter",
     "tag": "P",
-    "description": "Medidas: capacidade (l, ml) e tempo (calendário, relógio, horas e minutos)",
-    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
+    "description": "Medidas: capacidade, tempo, calendário e relógio",
+    "phase": "Fase 1 até a prova + consolidação pós-prova",
     "week": "Semana 7 — Pré-prova (11–16/05)"
   },
   {
@@ -425,8 +425,8 @@
     "month": "05",
     "weekday": "Qua",
     "tag": "M",
-    "description": "Porcentagem: cálculo de % variados e situações-problema contextualizadas",
-    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
+    "description": "Problemas com porcentagem básica, dinheiro e descontos simples",
+    "phase": "Fase 1 até a prova + consolidação pós-prova",
     "week": "Semana 7 — Pré-prova (11–16/05)"
   },
   {
@@ -435,8 +435,8 @@
     "month": "05",
     "weekday": "Qui",
     "tag": "P",
-    "description": "Tipos textuais: narrativo, descritivo, informativo e instrucional — diferenças práticas",
-    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
+    "description": "Tipos textuais: narrativo, descritivo, informativo e instrucional",
+    "phase": "Fase 1 até a prova + consolidação pós-prova",
     "week": "Semana 7 — Pré-prova (11–16/05)"
   },
   {
@@ -445,8 +445,8 @@
     "month": "05",
     "weekday": "Sex",
     "tag": "R",
-    "description": "REVISÃO FINAL leve — sem conteúdo novo. Releitura do Caderno de Erros + organizar material",
-    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
+    "description": "Revisão final leve — releitura do Caderno de Erros + organização emocional",
+    "phase": "Fase 1 até a prova + consolidação pós-prova",
     "week": "Semana 7 — Pré-prova (11–16/05)"
   },
   {
@@ -455,8 +455,8 @@
     "month": "05",
     "weekday": "Sáb",
     "tag": "PROVA",
-    "description": "PROVA 1 — Desafio Objetivo (9h, presencial) · 10 Mat + 10 Port · 3 horas",
-    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
+    "description": "PROVA 1 — Desafio Objetivo",
+    "phase": "Fase 1 até a prova + consolidação pós-prova",
     "week": "Semana 7 — Pré-prova (11–16/05)"
   },
   {
@@ -465,8 +465,8 @@
     "month": "05",
     "weekday": "Dom",
     "tag": "D",
-    "description": "Descanso pós-prova — Eiji merece descansar!",
-    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
+    "description": "Descanso pós-prova",
+    "phase": "Fase 1 até a prova + consolidação pós-prova",
     "week": "Semana 7 — Pré-prova (11–16/05)"
   },
   {
@@ -475,9 +475,9 @@
     "month": "05",
     "weekday": "Seg",
     "tag": "M",
-    "description": "Análise dos erros Mat da Prova 1 + atualizar Caderno de Erros pós-prova",
-    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
-    "week": "Semana 8 — Pós-prova + início Fase 2 (18–24/05)"
+    "description": "Análise dos erros Mat da Prova 1 + atualizar Caderno de Erros",
+    "phase": "Fase 1 até a prova + consolidação pós-prova",
+    "week": "Semana 8 — Pós-prova (18–24/05)"
   },
   {
     "date": "2026-05-19",
@@ -485,9 +485,9 @@
     "month": "05",
     "weekday": "Ter",
     "tag": "P",
-    "description": "Análise dos erros Port da Prova 1 + registro detalhado no Caderno de Erros",
-    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
-    "week": "Semana 8 — Pós-prova + início Fase 2 (18–24/05)"
+    "description": "Análise dos erros Port da Prova 1 + atualizar Caderno de Erros",
+    "phase": "Fase 1 até a prova + consolidação pós-prova",
+    "week": "Semana 8 — Pós-prova (18–24/05)"
   },
   {
     "date": "2026-05-20",
@@ -495,9 +495,9 @@
     "month": "05",
     "weekday": "Qua",
     "tag": "M",
-    "description": "MMC: mínimo múltiplo comum — método da decomposição em fatores primos",
-    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
-    "week": "Semana 8 — Pós-prova + início Fase 2 (18–24/05)"
+    "description": "Divisão aplicada em problemas: por semana, por dia, por grupos",
+    "phase": "Fase 1 até a prova + consolidação pós-prova",
+    "week": "Semana 8 — Pós-prova (18–24/05)"
   },
   {
     "date": "2026-05-21",
@@ -505,9 +505,9 @@
     "month": "05",
     "weekday": "Qui",
     "tag": "P",
-    "description": "Figuras de linguagem: metáfora e comparação (símile) — identificação e exemplos",
-    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
-    "week": "Semana 8 — Pós-prova + início Fase 2 (18–24/05)"
+    "description": "Interpretação de texto: inferência, intenção e leitura cuidadosa do enunciado",
+    "phase": "Fase 1 até a prova + consolidação pós-prova",
+    "week": "Semana 8 — Pós-prova (18–24/05)"
   },
   {
     "date": "2026-05-22",
@@ -515,9 +515,9 @@
     "month": "05",
     "weekday": "Sex",
     "tag": "R",
-    "description": "Revisão Sem.8 + Caderno de Erros: MMC e figuras de linguagem + erros da prova 1",
-    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
-    "week": "Semana 8 — Pós-prova + início Fase 2 (18–24/05)"
+    "description": "Revisão Sem.8 + Caderno de Erros: erros reais da prova + divisão aplicada + interpretação",
+    "phase": "Fase 1 até a prova + consolidação pós-prova",
+    "week": "Semana 8 — Pós-prova (18–24/05)"
   },
   {
     "date": "2026-05-23",
@@ -525,9 +525,9 @@
     "month": "05",
     "weekday": "Sáb",
     "tag": "S",
-    "description": "Simulado: 5 Mat (MMC) + 5 Port (figuras de linguagem) — foco nos erros da Prova 1",
-    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
-    "week": "Semana 8 — Pós-prova + início Fase 2 (18–24/05)"
+    "description": "Simulado: 5 Mat (divisão e problemas) + 5 Port (interpretação)",
+    "phase": "Fase 1 até a prova + consolidação pós-prova",
+    "week": "Semana 8 — Pós-prova (18–24/05)"
   },
   {
     "date": "2026-05-24",
@@ -536,8 +536,8 @@
     "weekday": "Dom",
     "tag": "D",
     "description": "Descanso",
-    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
-    "week": "Semana 8 — Pós-prova + início Fase 2 (18–24/05)"
+    "phase": "Fase 1 até a prova + consolidação pós-prova",
+    "week": "Semana 8 — Pós-prova (18–24/05)"
   },
   {
     "date": "2026-05-25",
@@ -545,8 +545,8 @@
     "month": "05",
     "weekday": "Seg",
     "tag": "M",
-    "description": "MDC: máximo divisor comum — método e aplicações práticas",
-    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
+    "description": "Frações: retomada forte — parte do todo, quantidade, comparação e equivalência",
+    "phase": "Fase 1 até a prova + consolidação pós-prova",
     "week": "Semana 9 (25–31/05)"
   },
   {
@@ -555,8 +555,8 @@
     "month": "05",
     "weekday": "Ter",
     "tag": "P",
-    "description": "Figuras de linguagem: personificação e hipérbole — como identificar em texto",
-    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
+    "description": "Ortografia pesada: palavras de erro recorrente + ditado + correção",
+    "phase": "Fase 1 até a prova + consolidação pós-prova",
     "week": "Semana 9 (25–31/05)"
   },
   {
@@ -565,8 +565,8 @@
     "month": "05",
     "weekday": "Qua",
     "tag": "M",
-    "description": "MMC e MDC: exercícios integrados, problemas contextualizados e revisão",
-    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
+    "description": "Decimais: comparação, reta numérica, dinheiro e situações do dia a dia",
+    "phase": "Fase 1 até a prova + consolidação pós-prova",
     "week": "Semana 9 (25–31/05)"
   },
   {
@@ -575,8 +575,8 @@
     "month": "05",
     "weekday": "Qui",
     "tag": "P",
-    "description": "Figuras de linguagem: ironia, antítese e eufemismo — exemplos do dia a dia",
-    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
+    "description": "Produção escrita curta: recontar texto com pontuação, maiúsculas e ortografia revisada",
+    "phase": "Fase 1 até a prova + consolidação pós-prova",
     "week": "Semana 9 (25–31/05)"
   },
   {
@@ -585,8 +585,8 @@
     "month": "05",
     "weekday": "Sex",
     "tag": "R",
-    "description": "Revisão Sem.9 + Caderno de Erros: MMC/MDC e figuras de linguagem (todas)",
-    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
+    "description": "Revisão Sem.9 + Caderno de Erros: frações, decimais, ortografia e escrita",
+    "phase": "Fase 1 até a prova + consolidação pós-prova",
     "week": "Semana 9 (25–31/05)"
   },
   {
@@ -595,8 +595,8 @@
     "month": "05",
     "weekday": "Sáb",
     "tag": "S",
-    "description": "Simulado: 5 Mat (MMC/MDC) + 5 Port (figuras de linguagem — todos os tipos)",
-    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
+    "description": "Simulado: 5 Mat (frações e decimais) + 5 Port (ortografia e escrita)",
+    "phase": "Fase 1 até a prova + consolidação pós-prova",
     "week": "Semana 9 (25–31/05)"
   },
   {
@@ -606,7 +606,7 @@
     "weekday": "Dom",
     "tag": "D",
     "description": "Descanso",
-    "phase": "Fase 1 (até 16/05) → Fase 2 (a partir de 18/05)",
+    "phase": "Fase 1 até a prova + consolidação pós-prova",
     "week": "Semana 9 (25–31/05)"
   },
   {
@@ -615,8 +615,8 @@
     "month": "06",
     "weekday": "Seg",
     "tag": "M",
-    "description": "6ºANO · Números inteiros: conceito, reta numérica, opostos e módulo",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Frações: adição e subtração com mesmo denominador + muito desenho",
+    "phase": "Fase 2 · Consolidação da base antes do salto",
     "week": "Semana 10 (1–7/06)"
   },
   {
@@ -625,8 +625,8 @@
     "month": "06",
     "weekday": "Ter",
     "tag": "P",
-    "description": "Revisão completa: todas as figuras de linguagem — exercícios com textos novos",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Acentuação: revisão geral com foco nas palavras erradas do diagnóstico",
+    "phase": "Fase 2 · Consolidação da base antes do salto",
     "week": "Semana 10 (1–7/06)"
   },
   {
@@ -635,8 +635,8 @@
     "month": "06",
     "weekday": "Qua",
     "tag": "M",
-    "description": "6ºANO · Inteiros: adição e subtração com números negativos",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Frações: adição e subtração com denominadores diferentes — introdução bem guiada",
+    "phase": "Fase 2 · Consolidação da base antes do salto",
     "week": "Semana 10 (1–7/06)"
   },
   {
@@ -645,8 +645,8 @@
     "month": "06",
     "weekday": "Qui",
     "tag": "P",
-    "description": "6ºANO · Análise sintática: sujeito simples, composto e oculto (sujeito desinencial)",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Classes gramaticais úteis: substantivo, adjetivo e artigo dentro de textos",
+    "phase": "Fase 2 · Consolidação da base antes do salto",
     "week": "Semana 10 (1–7/06)"
   },
   {
@@ -655,8 +655,8 @@
     "month": "06",
     "weekday": "Sex",
     "tag": "R",
-    "description": "Revisão Sem.10 + Caderno de Erros: inteiros (adição/subtração) e sujeito",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Revisão Sem.10 + Caderno de Erros: frações e acentuação",
+    "phase": "Fase 2 · Consolidação da base antes do salto",
     "week": "Semana 10 (1–7/06)"
   },
   {
@@ -665,8 +665,8 @@
     "month": "06",
     "weekday": "Sáb",
     "tag": "S",
-    "description": "Simulado: 5 Mat (inteiros) + 5 Port (análise sintática — sujeito)",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Simulado: 5 Mat (frações) + 5 Port (acentuação e classes gramaticais)",
+    "phase": "Fase 2 · Consolidação da base antes do salto",
     "week": "Semana 10 (1–7/06)"
   },
   {
@@ -676,7 +676,7 @@
     "weekday": "Dom",
     "tag": "D",
     "description": "Descanso",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "phase": "Fase 2 · Consolidação da base antes do salto",
     "week": "Semana 10 (1–7/06)"
   },
   {
@@ -685,8 +685,8 @@
     "month": "06",
     "weekday": "Seg",
     "tag": "M",
-    "description": "6ºANO · Inteiros: multiplicação e divisão com números negativos — regra de sinais",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Problemas com frações e divisão aplicada",
+    "phase": "Fase 2 · Consolidação da base antes do salto",
     "week": "Semana 11 (8–14/06)"
   },
   {
@@ -695,8 +695,8 @@
     "month": "06",
     "weekday": "Ter",
     "tag": "P",
-    "description": "6ºANO · Análise sintática: predicado verbal, nominal e verbo-nominal",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Pontuação: ponto final, vírgula, interrogação, exclamação e travessão",
+    "phase": "Fase 2 · Consolidação da base antes do salto",
     "week": "Semana 11 (8–14/06)"
   },
   {
@@ -705,8 +705,8 @@
     "month": "06",
     "weekday": "Qua",
     "tag": "M",
-    "description": "6ºANO · Inteiros: módulo, comparação e problemas aplicados",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Medidas: comprimento, massa, capacidade e tempo em situações-problema",
+    "phase": "Fase 2 · Consolidação da base antes do salto",
     "week": "Semana 11 (8–14/06)"
   },
   {
@@ -715,8 +715,8 @@
     "month": "06",
     "weekday": "Qui",
     "tag": "P",
-    "description": "6ºANO · Análise sintática: objeto direto e objeto indireto — como diferenciar",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Reescrita: revisar um texto ruim e deixá-lo claro",
+    "phase": "Fase 2 · Consolidação da base antes do salto",
     "week": "Semana 11 (8–14/06)"
   },
   {
@@ -725,8 +725,8 @@
     "month": "06",
     "weekday": "Sex",
     "tag": "R",
-    "description": "Revisão Sem.11 + Caderno de Erros: inteiros completo + análise sintática (OD/OI)",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Revisão Sem.11 + Caderno de Erros: problemas, medidas, pontuação e reescrita",
+    "phase": "Fase 2 · Consolidação da base antes do salto",
     "week": "Semana 11 (8–14/06)"
   },
   {
@@ -735,8 +735,8 @@
     "month": "06",
     "weekday": "Sáb",
     "tag": "S",
-    "description": "Simulado: 5 Mat (inteiros completo) + 5 Port (análise sintática completa)",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Simulado: 5 Mat (medidas e problemas) + 5 Port (pontuação e reescrita)",
+    "phase": "Fase 2 · Consolidação da base antes do salto",
     "week": "Semana 11 (8–14/06)"
   },
   {
@@ -746,7 +746,7 @@
     "weekday": "Dom",
     "tag": "D",
     "description": "Descanso",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "phase": "Fase 2 · Consolidação da base antes do salto",
     "week": "Semana 11 (8–14/06)"
   },
   {
@@ -755,8 +755,8 @@
     "month": "06",
     "weekday": "Seg",
     "tag": "M",
-    "description": "6ºANO · Potenciação: base, expoente e casos especiais (a⁰=1, a¹=a)",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Porcentagem: revisão forte + relação com fração e decimal",
+    "phase": "Fase 2 · Consolidação da base antes do salto",
     "week": "Semana 12 (15–21/06)"
   },
   {
@@ -765,8 +765,8 @@
     "month": "06",
     "weekday": "Ter",
     "tag": "P",
-    "description": "6ºANO · Pronomes pessoais: retos (eu, tu, ele, ela, nós, vós, eles) e oblíquos (me, te, se, nos)",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Pronomes pessoais, possessivos e demonstrativos em textos simples",
+    "phase": "Fase 2 · Consolidação da base antes do salto",
     "week": "Semana 12 (15–21/06)"
   },
   {
@@ -775,8 +775,8 @@
     "month": "06",
     "weekday": "Qua",
     "tag": "M",
-    "description": "6ºANO · Potenciação: propriedades principais e potências de 10",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Tabelas e gráficos: leitura, comparação e resposta a perguntas",
+    "phase": "Fase 2 · Consolidação da base antes do salto",
     "week": "Semana 12 (15–21/06)"
   },
   {
@@ -785,8 +785,8 @@
     "month": "06",
     "weekday": "Qui",
     "tag": "P",
-    "description": "6ºANO · Pronomes possessivos (meu, teu, seu) e demonstrativos (este, esse, aquele)",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Coesão básica: evitar repetição, usar conectivos simples",
+    "phase": "Fase 2 · Consolidação da base antes do salto",
     "week": "Semana 12 (15–21/06)"
   },
   {
@@ -795,8 +795,8 @@
     "month": "06",
     "weekday": "Sex",
     "tag": "R",
-    "description": "Revisão Sem.12 + Caderno de Erros: potenciação e pronomes pessoais/possessivos/demonstrativos",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Revisão Sem.12 + Caderno de Erros: porcentagem, gráficos, pronomes e coesão",
+    "phase": "Fase 2 · Consolidação da base antes do salto",
     "week": "Semana 12 (15–21/06)"
   },
   {
@@ -805,8 +805,8 @@
     "month": "06",
     "weekday": "Sáb",
     "tag": "S",
-    "description": "Simulado: 5 Mat (potenciação) + 5 Port (pronomes)",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Simulado: 5 Mat (porcentagem e gráficos) + 5 Port (pronomes e coesão)",
+    "phase": "Fase 2 · Consolidação da base antes do salto",
     "week": "Semana 12 (15–21/06)"
   },
   {
@@ -816,7 +816,7 @@
     "weekday": "Dom",
     "tag": "D",
     "description": "Descanso",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "phase": "Fase 2 · Consolidação da base antes do salto",
     "week": "Semana 12 (15–21/06)"
   },
   {
@@ -825,8 +825,8 @@
     "month": "06",
     "weekday": "Seg",
     "tag": "M",
-    "description": "6ºANO · Radiciação: conceito, raiz quadrada de quadrados perfeitos (√1 a √225)",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Múltiplos e divisores — introdução prática",
+    "phase": "Fase 2 · Consolidação da base antes do salto",
     "week": "Semana 13 (22–28/06)"
   },
   {
@@ -835,8 +835,8 @@
     "month": "06",
     "weekday": "Ter",
     "tag": "P",
-    "description": "6ºANO · Pronomes relativos (que, cujo, onde) e indefinidos (alguém, ninguém, nada, tudo)",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Gêneros textuais: bilhete, aviso, notícia, tirinha e propaganda",
+    "phase": "Fase 2 · Consolidação da base antes do salto",
     "week": "Semana 13 (22–28/06)"
   },
   {
@@ -845,8 +845,8 @@
     "month": "06",
     "weekday": "Qua",
     "tag": "M",
-    "description": "6ºANO · Radiciação: estimativa de raízes e aplicações práticas em problemas",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "MMC e MDC — só introdução e problemas simples",
+    "phase": "Fase 2 · Consolidação da base antes do salto",
     "week": "Semana 13 (22–28/06)"
   },
   {
@@ -855,8 +855,8 @@
     "month": "06",
     "weekday": "Qui",
     "tag": "P",
-    "description": "6ºANO · Concordância verbal: sujeito simples — regra geral e casos básicos",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Produção escrita: bilhete, recado e pequeno parágrafo",
+    "phase": "Fase 2 · Consolidação da base antes do salto",
     "week": "Semana 13 (22–28/06)"
   },
   {
@@ -865,8 +865,8 @@
     "month": "06",
     "weekday": "Sex",
     "tag": "R",
-    "description": "Revisão Sem.13 + Caderno de Erros: radiciação e pronomes relativos + concordância",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Revisão Sem.13 + Caderno de Erros: múltiplos/divisores e gêneros textuais",
+    "phase": "Fase 2 · Consolidação da base antes do salto",
     "week": "Semana 13 (22–28/06)"
   },
   {
@@ -875,8 +875,8 @@
     "month": "06",
     "weekday": "Sáb",
     "tag": "S",
-    "description": "Simulado: 5 Mat (radiciação) + 5 Port (pronomes e concordância verbal)",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Simulado: 5 Mat (múltiplos/divisores) + 5 Port (gêneros)",
+    "phase": "Fase 2 · Consolidação da base antes do salto",
     "week": "Semana 13 (22–28/06)"
   },
   {
@@ -886,7 +886,7 @@
     "weekday": "Dom",
     "tag": "D",
     "description": "Descanso",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "phase": "Fase 2 · Consolidação da base antes do salto",
     "week": "Semana 13 (22–28/06)"
   },
   {
@@ -895,8 +895,8 @@
     "month": "06",
     "weekday": "Seg",
     "tag": "M",
-    "description": "6ºANO · Razão e proporção: conceito, representação e propriedade fundamental",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Geometria básica: reta, segmento, ângulos e figuras planas",
+    "phase": "Fase 2 · Consolidação da base antes do salto",
     "week": "Semana 14 (29–30/06)"
   },
   {
@@ -905,8 +905,8 @@
     "month": "06",
     "weekday": "Ter",
     "tag": "P",
-    "description": "6ºANO · Concordância verbal: sujeito composto e casos especiais cobrados em prova",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Revisão de escrita: pontuação + ortografia + reescrita curta",
+    "phase": "Fase 2 · Consolidação da base antes do salto",
     "week": "Semana 14 (29–30/06)"
   },
   {
@@ -915,8 +915,8 @@
     "month": "07",
     "weekday": "Qua",
     "tag": "M",
-    "description": "6ºANO · Grandezas diretamente proporcionais: tabelas e identificação",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Perímetro de figuras planas",
+    "phase": "Fase 3 · Transição controlada para 6º ano útil",
     "week": "Semana 14 cont. (1–5/07)"
   },
   {
@@ -925,8 +925,8 @@
     "month": "07",
     "weekday": "Qui",
     "tag": "P",
-    "description": "6ºANO · Concordância nominal: adjetivo concorda com substantivo — regras e exercícios",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Concordância básica: substantivo e adjetivo; verbo e sujeito simples",
+    "phase": "Fase 3 · Transição controlada para 6º ano útil",
     "week": "Semana 14 cont. (1–5/07)"
   },
   {
@@ -935,8 +935,8 @@
     "month": "07",
     "weekday": "Sex",
     "tag": "R",
-    "description": "Revisão Sem.14 + Caderno de Erros: razão/proporção, grandezas e concordância",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Revisão Sem.14 + Caderno de Erros: geometria e concordância",
+    "phase": "Fase 3 · Transição controlada para 6º ano útil",
     "week": "Semana 14 cont. (1–5/07)"
   },
   {
@@ -945,8 +945,8 @@
     "month": "07",
     "weekday": "Sáb",
     "tag": "S",
-    "description": "Simulado: 5 Mat (razão e proporção) + 5 Port (concordância verbal e nominal)",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Simulado: 5 Mat (geometria) + 5 Port (concordância)",
+    "phase": "Fase 3 · Transição controlada para 6º ano útil",
     "week": "Semana 14 cont. (1–5/07)"
   },
   {
@@ -956,7 +956,7 @@
     "weekday": "Dom",
     "tag": "D",
     "description": "Descanso",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "phase": "Fase 3 · Transição controlada para 6º ano útil",
     "week": "Semana 14 cont. (1–5/07)"
   },
   {
@@ -965,8 +965,8 @@
     "month": "07",
     "weekday": "Seg",
     "tag": "M",
-    "description": "6ºANO · Grandezas inversamente proporcionais: diferença em relação às diretas + exemplos",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Área de retângulo, quadrado e triângulo",
+    "phase": "Fase 3 · Transição controlada para 6º ano útil",
     "week": "Semana 15 (6–12/07)"
   },
   {
@@ -975,8 +975,8 @@
     "month": "07",
     "weekday": "Ter",
     "tag": "P",
-    "description": "6ºANO · Produção textual: estrutura do parágrafo — tópico frasal e desenvolvimento",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Produção textual: estrutura do parágrafo",
+    "phase": "Fase 3 · Transição controlada para 6º ano útil",
     "week": "Semana 15 (6–12/07)"
   },
   {
@@ -985,8 +985,8 @@
     "month": "07",
     "weekday": "Qua",
     "tag": "M",
-    "description": "6ºANO · Regra de três simples direta: método prático e problemas variados",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Expressões numéricas simples",
+    "phase": "Fase 3 · Transição controlada para 6º ano útil",
     "week": "Semana 15 (6–12/07)"
   },
   {
@@ -995,8 +995,8 @@
     "month": "07",
     "weekday": "Qui",
     "tag": "P",
-    "description": "6ºANO · Produção textual: coesão — uso de conectivos (adição, oposição, causa, conclusão)",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Produção textual: conectivos de adição, oposição, causa e conclusão",
+    "phase": "Fase 3 · Transição controlada para 6º ano útil",
     "week": "Semana 15 (6–12/07)"
   },
   {
@@ -1005,8 +1005,8 @@
     "month": "07",
     "weekday": "Sex",
     "tag": "R",
-    "description": "Revisão Sem.15 + Caderno de Erros: regra de três e produção textual",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Revisão Sem.15 + Caderno de Erros: área, expressões e produção textual",
+    "phase": "Fase 3 · Transição controlada para 6º ano útil",
     "week": "Semana 15 (6–12/07)"
   },
   {
@@ -1015,8 +1015,8 @@
     "month": "07",
     "weekday": "Sáb",
     "tag": "S",
-    "description": "Simulado: 5 Mat (regra de três) + 5 Port (produção textual)",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Simulado: 5 Mat (área e expressões) + 5 Port (parágrafo e conectivos)",
+    "phase": "Fase 3 · Transição controlada para 6º ano útil",
     "week": "Semana 15 (6–12/07)"
   },
   {
@@ -1026,7 +1026,7 @@
     "weekday": "Dom",
     "tag": "D",
     "description": "Descanso",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "phase": "Fase 3 · Transição controlada para 6º ano útil",
     "week": "Semana 15 (6–12/07)"
   },
   {
@@ -1035,8 +1035,8 @@
     "month": "07",
     "weekday": "Seg",
     "tag": "M",
-    "description": "6ºANO · Regra de três simples inversa: identificação e resolução",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Problemas mistos com frações, decimais e porcentagem",
+    "phase": "Fase 3 · Transição controlada para 6º ano útil",
     "week": "Semana 16 (13–19/07)"
   },
   {
@@ -1045,8 +1045,8 @@
     "month": "07",
     "weekday": "Ter",
     "tag": "P",
-    "description": "6ºANO · Produção textual: coerência, progressão temática e revisão do próprio texto",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Produção textual: coerência, sequência e revisão do próprio texto",
+    "phase": "Fase 3 · Transição controlada para 6º ano útil",
     "week": "Semana 16 (13–19/07)"
   },
   {
@@ -1055,8 +1055,8 @@
     "month": "07",
     "weekday": "Qua",
     "tag": "M",
-    "description": "6ºANO · Equações do 1º grau: conceito, resolução básica e verificação da resposta",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Lógica e padrões numéricos",
+    "phase": "Fase 3 · Transição controlada para 6º ano útil",
     "week": "Semana 16 (13–19/07)"
   },
   {
@@ -1065,8 +1065,8 @@
     "month": "07",
     "weekday": "Qui",
     "tag": "P",
-    "description": "6ºANO · Variação linguística: formal, informal, regional e histórica — respeito à diversidade",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Variação linguística: formal e informal",
+    "phase": "Fase 3 · Transição controlada para 6º ano útil",
     "week": "Semana 16 (13–19/07)"
   },
   {
@@ -1075,8 +1075,8 @@
     "month": "07",
     "weekday": "Sex",
     "tag": "R",
-    "description": "Revisão Sem.16 + Caderno de Erros: equações (1ª parte) e variação linguística",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Revisão Sem.16 + Caderno de Erros: problemas mistos e produção textual",
+    "phase": "Fase 3 · Transição controlada para 6º ano útil",
     "week": "Semana 16 (13–19/07)"
   },
   {
@@ -1085,8 +1085,8 @@
     "month": "07",
     "weekday": "Sáb",
     "tag": "S",
-    "description": "SIMULADO COMPLETO: 10 Mat + 10 Port — cronometrado, formato real (3h simuladas)",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "SIMULADO COMPLETO: 10 Mat + 10 Port — cronometrado",
+    "phase": "Fase 3 · Transição controlada para 6º ano útil",
     "week": "Semana 16 (13–19/07)"
   },
   {
@@ -1096,7 +1096,7 @@
     "weekday": "Dom",
     "tag": "D",
     "description": "Descanso",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "phase": "Fase 3 · Transição controlada para 6º ano útil",
     "week": "Semana 16 (13–19/07)"
   },
   {
@@ -1105,8 +1105,8 @@
     "month": "07",
     "weekday": "Seg",
     "tag": "M",
-    "description": "6ºANO · Equações: resolução com parênteses, frações e termos em ambos os lados",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "MMC e MDC em problemas simples",
+    "phase": "Fase 3 · Transição controlada para 6º ano útil",
     "week": "Semana 17 (20–26/07)"
   },
   {
@@ -1115,8 +1115,8 @@
     "month": "07",
     "weekday": "Ter",
     "tag": "P",
-    "description": "6ºANO · Coesão referencial: pronomes, substituição lexical e elipse",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Coesão referencial: pronomes e substituição de palavras",
+    "phase": "Fase 3 · Transição controlada para 6º ano útil",
     "week": "Semana 17 (20–26/07)"
   },
   {
@@ -1125,8 +1125,8 @@
     "month": "07",
     "weekday": "Qua",
     "tag": "M",
-    "description": "6ºANO · Equações: problemas contextualizados (idades, quantidades, preços e misturas)",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Geometria: triângulos e quadriláteros",
+    "phase": "Fase 3 · Transição controlada para 6º ano útil",
     "week": "Semana 17 (20–26/07)"
   },
   {
@@ -1135,8 +1135,8 @@
     "month": "07",
     "weekday": "Qui",
     "tag": "P",
-    "description": "Gêneros textuais: crônica, conto e fábula — estrutura e características",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Gêneros textuais: conto, fábula, tirinha e HQ",
+    "phase": "Fase 3 · Transição controlada para 6º ano útil",
     "week": "Semana 17 (20–26/07)"
   },
   {
@@ -1145,8 +1145,8 @@
     "month": "07",
     "weekday": "Sex",
     "tag": "R",
-    "description": "Revisão Sem.17 + Caderno de Erros: equações contextualizadas + gêneros textuais",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Revisão Sem.17 + Caderno de Erros: MMC/MDC, geometria e gêneros textuais",
+    "phase": "Fase 3 · Transição controlada para 6º ano útil",
     "week": "Semana 17 (20–26/07)"
   },
   {
@@ -1155,8 +1155,8 @@
     "month": "07",
     "weekday": "Sáb",
     "tag": "S",
-    "description": "Simulado: 5 Mat (equações) + 5 Port (coesão e gêneros textuais)",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Simulado: 5 Mat (MMC/MDC e geometria) + 5 Port (coesão e gêneros)",
+    "phase": "Fase 3 · Transição controlada para 6º ano útil",
     "week": "Semana 17 (20–26/07)"
   },
   {
@@ -1166,7 +1166,7 @@
     "weekday": "Dom",
     "tag": "D",
     "description": "Descanso",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "phase": "Fase 3 · Transição controlada para 6º ano útil",
     "week": "Semana 17 (20–26/07)"
   },
   {
@@ -1175,8 +1175,8 @@
     "month": "07",
     "weekday": "Seg",
     "tag": "M",
-    "description": "6ºANO · Equações: problemas avançados — dois desconhecidos em texto e verificação",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Revisão integrada Mat: frações, decimais, porcentagem, medidas e geometria",
+    "phase": "Fase 3 · Transição controlada para 6º ano útil",
     "week": "Semana 18 (27–31/07)"
   },
   {
@@ -1185,8 +1185,8 @@
     "month": "07",
     "weekday": "Ter",
     "tag": "P",
-    "description": "Gêneros textuais: poema, charge, tirinha e HQ — linguagem verbal e não-verbal",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Gêneros textuais: poema, charge, cartaz e propaganda",
+    "phase": "Fase 3 · Transição controlada para 6º ano útil",
     "week": "Semana 18 (27–31/07)"
   },
   {
@@ -1195,8 +1195,8 @@
     "month": "07",
     "weekday": "Qua",
     "tag": "M",
-    "description": "Revisão integrada Mat: frações, decimais, porcentagem e equações juntos",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Tabelas, gráficos e média simples",
+    "phase": "Fase 3 · Transição controlada para 6º ano útil",
     "week": "Semana 18 (27–31/07)"
   },
   {
@@ -1205,8 +1205,8 @@
     "month": "07",
     "weekday": "Qui",
     "tag": "P",
-    "description": "Interpretação avançada: textos longos, inferências difíceis e vocabulário por contexto",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Interpretação avançada: textos mais longos e vocabulário por contexto",
+    "phase": "Fase 3 · Transição controlada para 6º ano útil",
     "week": "Semana 18 (27–31/07)"
   },
   {
@@ -1215,8 +1215,8 @@
     "month": "07",
     "weekday": "Sex",
     "tag": "R",
-    "description": "Revisão Sem.18 + Caderno de Erros: equações avançadas + gêneros e interpretação",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Revisão Sem.18 + Caderno de Erros: revisão integrada e interpretação",
+    "phase": "Fase 3 · Transição controlada para 6º ano útil",
     "week": "Semana 18 (27–31/07)"
   },
   {
@@ -1225,9 +1225,9 @@
     "month": "08",
     "weekday": "Sáb",
     "tag": "S",
-    "description": "Simulado: 5 Mat (equações + revisão geral) + 5 Port (gêneros + interpretação)",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
-    "week": ""
+    "description": "Simulado: 5 Mat (revisão geral) + 5 Port (gêneros + interpretação)",
+    "phase": "Fase 3 · Expansão seletiva",
+    "week": "Semana 18 (27–31/07)"
   },
   {
     "date": "2026-08-02",
@@ -1236,8 +1236,8 @@
     "weekday": "Dom",
     "tag": "D",
     "description": "Descanso",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
-    "week": ""
+    "phase": "Fase 3 · Expansão seletiva",
+    "week": "Semana 18 (27–31/07)"
   },
   {
     "date": "2026-08-03",
@@ -1245,8 +1245,8 @@
     "month": "08",
     "weekday": "Seg",
     "tag": "M",
-    "description": "6ºANO · Geometria: ponto, reta, plano, segmento, semirreta e ângulos",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Geometria: ponto, reta, plano, segmento, semirreta e ângulos",
+    "phase": "Fase 3 · Expansão seletiva",
     "week": "Semana 19 (3–9/08)"
   },
   {
@@ -1255,8 +1255,8 @@
     "month": "08",
     "weekday": "Ter",
     "tag": "P",
-    "description": "Interpretação: texto de opinião, identificação de tese e argumentos",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Texto de opinião: ideia principal e argumento",
+    "phase": "Fase 3 · Expansão seletiva",
     "week": "Semana 19 (3–9/08)"
   },
   {
@@ -1265,8 +1265,8 @@
     "month": "08",
     "weekday": "Qua",
     "tag": "M",
-    "description": "6ºANO · Geometria: triângulos — classificação pelos lados e pelos ângulos",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Geometria: triângulos — classificação pelos lados e ângulos",
+    "phase": "Fase 3 · Expansão seletiva",
     "week": "Semana 19 (3–9/08)"
   },
   {
@@ -1275,8 +1275,8 @@
     "month": "08",
     "weekday": "Qui",
     "tag": "P",
-    "description": "6ºANO · Probabilidade intuitiva: possibilidades, evento provável/improvável e linguagem do acaso",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Probabilidade intuitiva: possível, impossível, provável",
+    "phase": "Fase 3 · Expansão seletiva",
     "week": "Semana 19 (3–9/08)"
   },
   {
@@ -1285,8 +1285,8 @@
     "month": "08",
     "weekday": "Sex",
     "tag": "R",
-    "description": "Revisão Sem.19 + Caderno de Erros: geometria (ângulos/triângulos) + probabilidade",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Revisão Sem.19 + Caderno de Erros: geometria e probabilidade",
+    "phase": "Fase 3 · Expansão seletiva",
     "week": "Semana 19 (3–9/08)"
   },
   {
@@ -1295,8 +1295,8 @@
     "month": "08",
     "weekday": "Sáb",
     "tag": "S",
-    "description": "Simulado: 5 Mat (geometria básica) + 5 Port (interpretação avançada)",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Simulado: 5 Mat (geometria) + 5 Port (opinião e probabilidade)",
+    "phase": "Fase 3 · Expansão seletiva",
     "week": "Semana 19 (3–9/08)"
   },
   {
@@ -1306,7 +1306,7 @@
     "weekday": "Dom",
     "tag": "D",
     "description": "Descanso",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "phase": "Fase 3 · Expansão seletiva",
     "week": "Semana 19 (3–9/08)"
   },
   {
@@ -1315,8 +1315,8 @@
     "month": "08",
     "weekday": "Seg",
     "tag": "M",
-    "description": "6ºANO · Geometria: quadriláteros — tipos, propriedades e cálculo de perímetro",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Quadriláteros + perímetro",
+    "phase": "Fase 3 · Expansão seletiva",
     "week": "Semana 20 (10–16/08)"
   },
   {
@@ -1325,8 +1325,8 @@
     "month": "08",
     "weekday": "Ter",
     "tag": "P",
-    "description": "Revisão avançada de classes gramaticais: casos difíceis e pegadinhas em prova",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Revisão avançada de ortografia e acentuação",
+    "phase": "Fase 3 · Expansão seletiva",
     "week": "Semana 20 (10–16/08)"
   },
   {
@@ -1335,8 +1335,8 @@
     "month": "08",
     "weekday": "Qua",
     "tag": "M",
-    "description": "6ºANO · Geometria: área de retângulo, quadrado e triângulo",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Área de figuras planas — revisão e aplicação",
+    "phase": "Fase 3 · Expansão seletiva",
     "week": "Semana 20 (10–16/08)"
   },
   {
@@ -1345,8 +1345,8 @@
     "month": "08",
     "weekday": "Qui",
     "tag": "P",
-    "description": "Ortografia e acentuação avançadas: palavras que mais caem em provas — lista dirigida",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Revisão de classes gramaticais em contexto",
+    "phase": "Fase 3 · Expansão seletiva",
     "week": "Semana 20 (10–16/08)"
   },
   {
@@ -1355,8 +1355,8 @@
     "month": "08",
     "weekday": "Sex",
     "tag": "R",
-    "description": "Revisão Sem.20 + Caderno de Erros: perímetro e área + ortografia avançada",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Revisão Sem.20 + Caderno de Erros: área, ortografia e classes gramaticais",
+    "phase": "Fase 3 · Expansão seletiva",
     "week": "Semana 20 (10–16/08)"
   },
   {
@@ -1366,7 +1366,7 @@
     "weekday": "Sáb",
     "tag": "F",
     "description": "Feriado — Assunção de Nossa Senhora",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "phase": "Fase 3 · Expansão seletiva",
     "week": "Semana 20 (10–16/08)"
   },
   {
@@ -1376,7 +1376,7 @@
     "weekday": "Dom",
     "tag": "D",
     "description": "Descanso",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "phase": "Fase 3 · Expansão seletiva",
     "week": "Semana 20 (10–16/08)"
   },
   {
@@ -1385,8 +1385,8 @@
     "month": "08",
     "weekday": "Seg",
     "tag": "M",
-    "description": "6ºANO · Geometria: área de paralelogramo e trapézio",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Estatística básica: coleta, organização e tabela simples",
+    "phase": "Fase 3 · Expansão seletiva",
     "week": "Semana 21 (17–23/08)"
   },
   {
@@ -1395,8 +1395,8 @@
     "month": "08",
     "weekday": "Ter",
     "tag": "P",
-    "description": "Revisão avançada: análise sintática com textos novos e exercícios inéditos",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Revisão de coesão, pontuação e reescrita",
+    "phase": "Fase 3 · Expansão seletiva",
     "week": "Semana 21 (17–23/08)"
   },
   {
@@ -1405,8 +1405,8 @@
     "month": "08",
     "weekday": "Qua",
     "tag": "M",
-    "description": "6ºANO · Geometria: volume do cubo e do paralelepípedo retângulo",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Média aritmética simples e leitura de dados",
+    "phase": "Fase 3 · Expansão seletiva",
     "week": "Semana 21 (17–23/08)"
   },
   {
@@ -1415,8 +1415,8 @@
     "month": "08",
     "weekday": "Qui",
     "tag": "P",
-    "description": "Revisão avançada: figuras de linguagem em textos literários e jornalísticos",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Revisão de interpretação com textos novos",
+    "phase": "Fase 3 · Expansão seletiva",
     "week": "Semana 21 (17–23/08)"
   },
   {
@@ -1425,8 +1425,8 @@
     "month": "08",
     "weekday": "Sex",
     "tag": "R",
-    "description": "Revisão Sem.21 + Caderno de Erros: volume de sólidos + Port avançado (sint./figuras)",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Revisão Sem.21 + Caderno de Erros: estatística, reescrita e interpretação",
+    "phase": "Fase 3 · Expansão seletiva",
     "week": "Semana 21 (17–23/08)"
   },
   {
@@ -1435,8 +1435,8 @@
     "month": "08",
     "weekday": "Sáb",
     "tag": "S",
-    "description": "SIMULADO COMPLETO: 10 Mat + 10 Port — cronometrado (simulação real)",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "SIMULADO COMPLETO: 10 Mat + 10 Port — cronometrado",
+    "phase": "Fase 3 · Expansão seletiva",
     "week": "Semana 21 (17–23/08)"
   },
   {
@@ -1446,7 +1446,7 @@
     "weekday": "Dom",
     "tag": "D",
     "description": "Descanso",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "phase": "Fase 3 · Expansão seletiva",
     "week": "Semana 21 (17–23/08)"
   },
   {
@@ -1455,8 +1455,8 @@
     "month": "08",
     "weekday": "Seg",
     "tag": "M",
-    "description": "6ºANO · Estatística: coleta, organização e tabela de frequência simples",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Gráficos de barras, setores e linhas — leitura e comparação",
+    "phase": "Fase 3 · Expansão seletiva",
     "week": "Semana 22 (24–30/08)"
   },
   {
@@ -1465,8 +1465,8 @@
     "month": "08",
     "weekday": "Ter",
     "tag": "P",
-    "description": "Revisão: pronomes + concordância verbal e nominal integrados",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Revisão: pronomes + concordância básica",
+    "phase": "Fase 3 · Expansão seletiva",
     "week": "Semana 22 (24–30/08)"
   },
   {
@@ -1475,8 +1475,8 @@
     "month": "08",
     "weekday": "Qua",
     "tag": "M",
-    "description": "6ºANO · Estatística: média aritmética simples e interpretação",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Revisão integrada de problemas",
+    "phase": "Fase 3 · Expansão seletiva",
     "week": "Semana 22 (24–30/08)"
   },
   {
@@ -1485,8 +1485,8 @@
     "month": "08",
     "weekday": "Qui",
     "tag": "P",
-    "description": "Revisão: produção textual — coesão, coerência e estrutura do parágrafo",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Revisão: produção textual — coesão, coerência e parágrafo",
+    "phase": "Fase 3 · Expansão seletiva",
     "week": "Semana 22 (24–30/08)"
   },
   {
@@ -1495,8 +1495,8 @@
     "month": "08",
     "weekday": "Sex",
     "tag": "R",
-    "description": "Revisão Sem.22 + Caderno de Erros: estatística + Port (produção + pronomes)",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Revisão Sem.22 + Caderno de Erros: gráficos, problemas e produção textual",
+    "phase": "Fase 3 · Expansão seletiva",
     "week": "Semana 22 (24–30/08)"
   },
   {
@@ -1505,8 +1505,8 @@
     "month": "08",
     "weekday": "Sáb",
     "tag": "S",
-    "description": "Simulado: 5 Mat (estatística) + 5 Port (gramática e produção avançadas)",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Simulado: 5 Mat (gráficos e problemas) + 5 Port (gramática e produção)",
+    "phase": "Fase 3 · Expansão seletiva",
     "week": "Semana 22 (24–30/08)"
   },
   {
@@ -1516,7 +1516,7 @@
     "weekday": "Dom",
     "tag": "D",
     "description": "Descanso",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "phase": "Fase 3 · Expansão seletiva",
     "week": "Semana 22 (24–30/08)"
   },
   {
@@ -1525,8 +1525,8 @@
     "month": "08",
     "weekday": "Seg",
     "tag": "M",
-    "description": "6ºANO · Estatística: moda, mediana e gráficos de barras, setores e linhas",
-    "phase": "Fase 2 · Aprofundamento · 5º+6º ano",
+    "description": "Probabilidade básica + leitura de gráficos",
+    "phase": "Fase 3 · Expansão seletiva",
     "week": "Semana 22 (24–30/08)"
   },
   {
@@ -1535,9 +1535,9 @@
     "month": "09",
     "weekday": "Ter",
     "tag": "P",
-    "description": "6ºANO · Probabilidade: experimentos simples, espaço amostral e cálculo básico",
+    "description": "Interpretação comparativa: dois textos sobre o mesmo tema",
     "phase": "Revisão Intensiva",
-    "week": ""
+    "week": "Semana 22 (24–30/08)"
   },
   {
     "date": "2026-09-02",
@@ -1545,9 +1545,9 @@
     "month": "09",
     "weekday": "Qua",
     "tag": "M",
-    "description": "6ºANO · Estatística: leitura e interpretação de gráficos em problemas contextualizados",
+    "description": "Leitura e interpretação de gráficos em problemas",
     "phase": "Revisão Intensiva",
-    "week": ""
+    "week": "Semana 22 (24–30/08)"
   },
   {
     "date": "2026-09-03",
@@ -1555,9 +1555,9 @@
     "month": "09",
     "weekday": "Qui",
     "tag": "P",
-    "description": "Interpretação comparativa: dois textos sobre o mesmo tema + síntese de argumentos",
+    "description": "Reescrita e síntese de ideias",
     "phase": "Revisão Intensiva",
-    "week": ""
+    "week": "Semana 22 (24–30/08)"
   },
   {
     "date": "2026-09-04",
@@ -1565,9 +1565,9 @@
     "month": "09",
     "weekday": "Sex",
     "tag": "R",
-    "description": "Revisão Sem.23 + Caderno de Erros: estatística completa + probabilidade + interpretação",
+    "description": "Revisão Sem.23 + Caderno de Erros: gráficos, interpretação e escrita",
     "phase": "Revisão Intensiva",
-    "week": ""
+    "week": "Semana 22 (24–30/08)"
   },
   {
     "date": "2026-09-05",
@@ -1575,9 +1575,9 @@
     "month": "09",
     "weekday": "Sáb",
     "tag": "S",
-    "description": "Simulado: 5 Mat (estatística+gráficos) + 5 Port (interpretação avançada)",
+    "description": "Simulado: 5 Mat (gráficos e problemas) + 5 Port (interpretação e escrita)",
     "phase": "Revisão Intensiva",
-    "week": ""
+    "week": "Semana 22 (24–30/08)"
   },
   {
     "date": "2026-09-06",
@@ -1587,7 +1587,7 @@
     "tag": "D",
     "description": "Descanso",
     "phase": "Revisão Intensiva",
-    "week": ""
+    "week": "Semana 22 (24–30/08)"
   },
   {
     "date": "2026-09-07",
@@ -1597,7 +1597,7 @@
     "tag": "F",
     "description": "Feriado — Independência do Brasil",
     "phase": "Revisão Intensiva",
-    "week": ""
+    "week": "Semana 22 (24–30/08)"
   },
   {
     "date": "2026-09-08",
@@ -1605,7 +1605,7 @@
     "month": "09",
     "weekday": "Ter",
     "tag": "M",
-    "description": "RI · Integração Mat: números inteiros + equações do 1º grau em conjunto",
+    "description": "RI · Integração Mat: frações, decimais, porcentagem e medidas",
     "phase": "Revisão Intensiva",
     "week": "RI — Bloco 1 (8–13/09)"
   },
@@ -1615,7 +1615,7 @@
     "month": "09",
     "weekday": "Qua",
     "tag": "P",
-    "description": "RI · Integração Port: figuras de linguagem + análise sintática em texto real",
+    "description": "RI · Integração Port: ortografia, acentuação, pontuação e interpretação",
     "phase": "Revisão Intensiva",
     "week": "RI — Bloco 1 (8–13/09)"
   },
@@ -1625,7 +1625,7 @@
     "month": "09",
     "weekday": "Qui",
     "tag": "M",
-    "description": "RI · Integração Mat: frações, decimais, porcentagem e proporção em exercícios mistos",
+    "description": "RI · Integração Mat: divisores, MMC/MDC, geometria e gráficos",
     "phase": "Revisão Intensiva",
     "week": "RI — Bloco 1 (8–13/09)"
   },
@@ -1635,7 +1635,7 @@
     "month": "09",
     "weekday": "Sex",
     "tag": "P",
-    "description": "RI · Integração Port: pronomes + concordância + coesão em texto corrido",
+    "description": "RI · Integração Port: pronomes, concordância, coesão e gêneros",
     "phase": "Revisão Intensiva",
     "week": "RI — Bloco 1 (8–13/09)"
   },
@@ -1645,7 +1645,7 @@
     "month": "09",
     "weekday": "Sáb",
     "tag": "R",
-    "description": "RI · Revisão + Caderno de Erros: identificar os 3 temas mais fracos de cada matéria",
+    "description": "RI · Revisão + Caderno de Erros: 3 temas mais fracos de cada matéria",
     "phase": "Revisão Intensiva",
     "week": "RI — Bloco 1 (8–13/09)"
   },
@@ -1655,7 +1655,7 @@
     "month": "09",
     "weekday": "Dom",
     "tag": "S",
-    "description": "SIMULADO COMPLETO RI#1: 10 Mat + 10 Port — cronometrado, como prova real",
+    "description": "SIMULADO COMPLETO RI#1: 10 Mat + 10 Port",
     "phase": "Revisão Intensiva",
     "week": "RI — Bloco 1 (8–13/09)"
   },
@@ -1675,7 +1675,7 @@
     "month": "09",
     "weekday": "Ter",
     "tag": "M",
-    "description": "RI · Reforço Mat: temas com mais erros nos simulados + exercícios dirigidos",
+    "description": "RI · Reforço Mat: temas com mais erros nos simulados",
     "phase": "Revisão Intensiva",
     "week": "RI — Bloco 2 (15–20/09)"
   },
@@ -1685,7 +1685,7 @@
     "month": "09",
     "weekday": "Qua",
     "tag": "P",
-    "description": "RI · Reforço Port: temas com mais erros nos simulados + exercícios dirigidos",
+    "description": "RI · Reforço Port: temas com mais erros nos simulados",
     "phase": "Revisão Intensiva",
     "week": "RI — Bloco 2 (15–20/09)"
   },
@@ -1695,7 +1695,7 @@
     "month": "09",
     "weekday": "Qui",
     "tag": "M",
-    "description": "RI · Exercícios avançados Mat: porcentagem e proporção — questões com pegadinha",
+    "description": "RI · Exercícios avançados Mat: problemas com pegadinhas",
     "phase": "Revisão Intensiva",
     "week": "RI — Bloco 2 (15–20/09)"
   },
@@ -1705,7 +1705,7 @@
     "month": "09",
     "weekday": "Sex",
     "tag": "P",
-    "description": "RI · Exercícios avançados Port: interpretação difícil, inferências e vocabulário",
+    "description": "RI · Exercícios avançados Port: interpretação difícil e vocabulário",
     "phase": "Revisão Intensiva",
     "week": "RI — Bloco 2 (15–20/09)"
   },
@@ -1725,7 +1725,7 @@
     "month": "09",
     "weekday": "Dom",
     "tag": "S",
-    "description": "SIMULADO COMPLETO RI#2: 10 Mat + 10 Port — cronometrado",
+    "description": "SIMULADO COMPLETO RI#2: 10 Mat + 10 Port",
     "phase": "Revisão Intensiva",
     "week": "RI — Bloco 2 (15–20/09)"
   },
@@ -1745,7 +1745,7 @@
     "month": "09",
     "weekday": "Ter",
     "tag": "M",
-    "description": "RI · Integração Mat: potenciação, radiciação e expressões numéricas juntos",
+    "description": "RI · Integração Mat: expressões, geometria, gráficos e porcentagem",
     "phase": "Revisão Intensiva",
     "week": "RI — Bloco 3 (22–27/09)"
   },
@@ -1755,7 +1755,7 @@
     "month": "09",
     "weekday": "Qua",
     "tag": "P",
-    "description": "RI · Integração Port: gêneros textuais variados — reconhecer em qualquer texto",
+    "description": "RI · Integração Port: gêneros textuais variados + interpretação",
     "phase": "Revisão Intensiva",
     "week": "RI — Bloco 3 (22–27/09)"
   },
@@ -1765,7 +1765,7 @@
     "month": "09",
     "weekday": "Qui",
     "tag": "M",
-    "description": "RI · Revisão geometria completa: perímetro, área (todas as figuras) e volume",
+    "description": "RI · Revisão geometria completa: perímetro, área e leitura de figuras",
     "phase": "Revisão Intensiva",
     "week": "RI — Bloco 3 (22–27/09)"
   },
@@ -1775,7 +1775,7 @@
     "month": "09",
     "weekday": "Sex",
     "tag": "P",
-    "description": "RI · Revisão gramática completa: do substantivo ao conectivo — mapa mental oral",
+    "description": "RI · Revisão gramática completa: ortografia, acentuação, pronomes, concordância e pontuação",
     "phase": "Revisão Intensiva",
     "week": "RI — Bloco 3 (22–27/09)"
   },
@@ -1795,7 +1795,7 @@
     "month": "09",
     "weekday": "Dom",
     "tag": "S",
-    "description": "SIMULADO COMPLETO RI#3: 10 Mat + 10 Port — cronometrado",
+    "description": "SIMULADO COMPLETO RI#3: 10 Mat + 10 Port",
     "phase": "Revisão Intensiva",
     "week": "RI — Bloco 3 (22–27/09)"
   },
@@ -1815,7 +1815,7 @@
     "month": "09",
     "weekday": "Ter",
     "tag": "M",
-    "description": "RI · Revisão Mat: estatística + equações + geometria integrados",
+    "description": "RI · Revisão Mat: gráficos + problemas + porcentagem + geometria integrados",
     "phase": "Revisão Intensiva",
     "week": "RI — Bloco 4 (29–30/09)"
   },
@@ -1825,7 +1825,7 @@
     "month": "09",
     "weekday": "Qua",
     "tag": "P",
-    "description": "RI · Revisão Port: análise sintática + figuras de linguagem + interpretação integrados",
+    "description": "RI · Revisão Port: interpretação + reescrita + gramática integrada",
     "phase": "Revisão Intensiva",
     "week": "RI — Bloco 4 (29–30/09)"
   },
@@ -1835,7 +1835,7 @@
     "month": "10",
     "weekday": "Qui",
     "tag": "M",
-    "description": "RI · Simulado Mat desafiador: 10 questões de nível acima do esperado",
+    "description": "RI · Simulado Mat desafiador: 10 questões acima do esperado",
     "phase": "Reta Final",
     "week": "RI — fechamento (1–5/10)"
   },
@@ -1845,7 +1845,7 @@
     "month": "10",
     "weekday": "Sex",
     "tag": "P",
-    "description": "RI · Simulado Port desafiador: 10 questões de nível acima do esperado",
+    "description": "RI · Simulado Port desafiador: 10 questões acima do esperado",
     "phase": "Reta Final",
     "week": "RI — fechamento (1–5/10)"
   },
@@ -1865,7 +1865,7 @@
     "month": "10",
     "weekday": "Dom",
     "tag": "S",
-    "description": "SIMULADO COMPLETO RI#4: 10 Mat + 10 Port — cronometrado",
+    "description": "SIMULADO COMPLETO RI#4: 10 Mat + 10 Port",
     "phase": "Reta Final",
     "week": "RI — fechamento (1–5/10)"
   },
@@ -1885,7 +1885,7 @@
     "month": "10",
     "weekday": "Ter",
     "tag": "M",
-    "description": "RF · Revisão Mat: problemas complexos e variados de todos os temas",
+    "description": "RF · Revisão Mat: problemas variados de todos os temas",
     "phase": "Reta Final",
     "week": "RF — Semana 1 (6–11/10)"
   },
@@ -1895,7 +1895,7 @@
     "month": "10",
     "weekday": "Qua",
     "tag": "P",
-    "description": "RF · Textos desafiadores: interpretação profunda e inferências de alto nível",
+    "description": "RF · Textos desafiadores: interpretação profunda e inferências",
     "phase": "Reta Final",
     "week": "RF — Semana 1 (6–11/10)"
   },
@@ -1925,7 +1925,7 @@
     "month": "10",
     "weekday": "Sáb",
     "tag": "R",
-    "description": "RF · Mapa mental geral + Caderno de Erros — fechar o ciclo com clareza",
+    "description": "RF · Mapa mental geral + Caderno de Erros",
     "phase": "Reta Final",
     "week": "RF — Semana 1 (6–11/10)"
   },
@@ -1935,7 +1935,7 @@
     "month": "10",
     "weekday": "Dom",
     "tag": "S",
-    "description": "SIMULADO COMPLETO RF#5: 10 Mat + 10 Port — simulação final completa",
+    "description": "SIMULADO COMPLETO RF#5: 10 Mat + 10 Port",
     "phase": "Reta Final",
     "week": "RF — Semana 1 (6–11/10)"
   },
@@ -1965,7 +1965,7 @@
     "month": "10",
     "weekday": "Qua",
     "tag": "P",
-    "description": "RF · Revisão leve Port — apenas os pontos críticos restantes (30 min)",
+    "description": "RF · Revisão leve Port — pontos críticos restantes",
     "phase": "Reta Final",
     "week": "RF — Desaceleração (14–19/10)"
   },
@@ -1975,7 +1975,7 @@
     "month": "10",
     "weekday": "Qui",
     "tag": "M",
-    "description": "RF · Revisão leve Mat — apenas os pontos críticos restantes (30 min)",
+    "description": "RF · Revisão leve Mat — pontos críticos restantes",
     "phase": "Reta Final",
     "week": "RF — Desaceleração (14–19/10)"
   },
@@ -1985,7 +1985,7 @@
     "month": "10",
     "weekday": "Sex",
     "tag": "P",
-    "description": "RF · Exercícios leves Port — apenas o que domina e gosta",
+    "description": "RF · Exercícios leves Port — só o que domina e gosta",
     "phase": "Reta Final",
     "week": "RF — Desaceleração (14–19/10)"
   },
@@ -1995,7 +1995,7 @@
     "month": "10",
     "weekday": "Sáb",
     "tag": "R",
-    "description": "RF · Revisão tranquila + controle emocional: respiração, confiança e o que já aprendeu",
+    "description": "RF · Revisão tranquila + controle emocional",
     "phase": "Reta Final",
     "week": "RF — Desaceleração (14–19/10)"
   },
@@ -2005,7 +2005,7 @@
     "month": "10",
     "weekday": "Dom",
     "tag": "S",
-    "description": "Simulado leve: 5 Mat + 5 Port — reforçar confiança, sem pressão",
+    "description": "Simulado leve: 5 Mat + 5 Port",
     "phase": "Reta Final",
     "week": "RF — Desaceleração (14–19/10)"
   },
@@ -2045,7 +2045,7 @@
     "month": "10",
     "weekday": "Qui",
     "tag": "M",
-    "description": "RF · Revisão muito leve Mat: apenas os pontos preferidos (30 min)",
+    "description": "RF · Revisão muito leve Mat: só os pontos preferidos",
     "phase": "Reta Final",
     "week": "RF — Últimas revisões (20–25/10)"
   },
@@ -2055,7 +2055,7 @@
     "month": "10",
     "weekday": "Sex",
     "tag": "P",
-    "description": "RF · Revisão muito leve Port: apenas os pontos preferidos (30 min)",
+    "description": "RF · Revisão muito leve Port: só os pontos preferidos",
     "phase": "Reta Final",
     "week": "RF — Últimas revisões (20–25/10)"
   },
@@ -2065,7 +2065,7 @@
     "month": "10",
     "weekday": "Sáb",
     "tag": "R",
-    "description": "RF · Reforço emocional: conversar sobre confiança, o que aprendeu e estratégias de prova",
+    "description": "RF · Reforço emocional: confiança, estratégia e serenidade",
     "phase": "Reta Final",
     "week": "RF — Últimas revisões (20–25/10)"
   },
@@ -2075,7 +2075,7 @@
     "month": "10",
     "weekday": "Dom",
     "tag": "S",
-    "description": "SIMULADO FINAL: 10 Mat + 10 Port — última calibração antes da prova",
+    "description": "SIMULADO FINAL: 10 Mat + 10 Port",
     "phase": "Reta Final",
     "week": "RF — Últimas revisões (20–25/10)"
   },
@@ -2095,7 +2095,7 @@
     "month": "10",
     "weekday": "Ter",
     "tag": "R",
-    "description": "RF · Revisão levíssima: releitura dos mapas mentais favoritos (30 min)",
+    "description": "RF · Revisão levíssima: mapas mentais favoritos",
     "phase": "Reta Final",
     "week": "RF — Semana final (27–31/10)"
   },
@@ -2105,7 +2105,7 @@
     "month": "10",
     "weekday": "Qua",
     "tag": "R",
-    "description": "RF · Revisão levíssima: caderno de erros — apenas os que já foram resolvidos (30 min)",
+    "description": "RF · Revisão levíssima: caderno de erros já resolvidos",
     "phase": "Reta Final",
     "week": "RF — Semana final (27–31/10)"
   },
@@ -2115,7 +2115,7 @@
     "month": "10",
     "weekday": "Qui",
     "tag": "D",
-    "description": "Descanso ativo — jogar, brincar, recarregar energia total",
+    "description": "Descanso ativo",
     "phase": "Reta Final",
     "week": "RF — Semana final (27–31/10)"
   },
@@ -2125,7 +2125,7 @@
     "month": "10",
     "weekday": "Sex",
     "tag": "R",
-    "description": "RF · Revisão final: os 5 pontos mais importantes de cada matéria (30 min)",
+    "description": "RF · Revisão final: 5 pontos mais importantes de cada matéria",
     "phase": "Reta Final",
     "week": "RF — Semana final (27–31/10)"
   },
@@ -2135,7 +2135,7 @@
     "month": "10",
     "weekday": "Sáb",
     "tag": "D",
-    "description": "Descanso total — organize tudo para amanhã e durma cedo. Você está pronto!",
+    "description": "Descanso total",
     "phase": "Reta Final",
     "week": "RF — Semana final (27–31/10)"
   }

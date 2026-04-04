@@ -514,7 +514,7 @@ table.ce-table td input{border:none;background:transparent;font-family:'Nunito S
 
 <script>
 const STORAGE_KEY = 'eiji_apostila_dia1_mat_v1';
-const CRONOGRAMA_URL = '../../cronograma/index.html'; // troque aqui quando o cronograma tiver um arquivo/link definitivo
+const CRONOGRAMA_URL = '../../cronograma/index.html';
 
 setTimeout(()=>{document.getElementById('barra').style.width='0.47%'},400);
 
@@ -623,13 +623,79 @@ function exportState(){
   setStatus('Arquivo JSON exportado. Isso é útil para guardar backup ou levar as respostas para outro computador.', 'ok');
 }
 
+function normalizeImportedState(data){
+  if(data && Array.isArray(data.textInputs) && Array.isArray(data.checkboxes)) return data;
+
+  if(data && data.respostas){
+    const state = {
+      textInputs: Array.from(document.querySelectorAll('input[type=text]')).map(() => ''),
+      checkboxes: Array.from(document.querySelectorAll('input[type=checkbox]')).map(() => false),
+      selectedOptions: {},
+      autoAval: {}
+    };
+
+    const set = (index, value) => {
+      if(index >= 0 && index < state.textInputs.length) state.textInputs[index] = value ?? '';
+    };
+
+    const r = data.respostas || {};
+    set(0, r.q1?.a); set(1, r.q1?.b); set(2, r.q1?.c); set(3, r.q1?.d);
+    set(4, r.q2?.a); set(5, r.q2?.b); set(6, r.q2?.c);
+    set(7, r.q3?.respostas_preenchidas?.milhoes);
+    set(8, r.q3?.respostas_preenchidas?.centenas_de_mil);
+    set(9, r.q3?.respostas_preenchidas?.dezenas_de_mil);
+    set(10, r.q3?.respostas_preenchidas?.unidades_de_mil);
+    set(11, r.q3?.respostas_preenchidas?.centenas);
+    set(12, r.q3?.respostas_preenchidas?.dezenas);
+    set(13, r.q3?.respostas_preenchidas?.unidades);
+    set(14, r.q4?.a); set(15, r.q4?.b);
+    set(16, r.q5?.a); set(17, r.q5?.b);
+    set(18, r.q6?.a); set(19, r.q6?.b); set(20, r.q6?.c); set(21, r.q6?.d);
+
+    const ops = r.q7?.operacoes || [];
+    ops.forEach((op, i) => set(22 + i, op?.resposta));
+    set(34, r.q8?.a?.texto_visivel || r.q8?.a);
+    set(35, r.q8?.b);
+    set(36, r.q9?.desenvolvimento); set(38, r.q9?.resposta);
+    set(39, r.q10?.desenvolvimento); set(41, r.q10?.resposta);
+    set(42, r.q11?.desenvolvimento); set(44, r.q11?.resposta);
+    if(Array.isArray(r.q12?.desenvolvimento)){ set(45, r.q12.desenvolvimento[0]); set(46, r.q12.desenvolvimento[1]); set(47, r.q12.desenvolvimento[2]); }
+    set(48, r.q12?.por_semana); set(49, r.q12?.por_dia);
+    set(50, r.q13?.desenvolvimento); set(52, r.q13?.resposta);
+
+    if(r.q14?.respostas_visiveis){ const vals=Object.values(r.q14.respostas_visiveis); vals.forEach((v,i)=>set(53+i,v)); }
+    if(r.q15?.respostas_visiveis){ const vals=Object.values(r.q15.respostas_visiveis); vals.forEach((v,i)=>set(56+i,v)); }
+    if(r.q16){
+      const vals = Array.isArray(r.q16) ? r.q16 : Object.values(r.q16?.respostas_visiveis || {});
+      vals.forEach((v,i)=>set(59+i,v));
+    }
+    if(r.q17){
+      const vals = Array.isArray(r.q17) ? r.q17 : Object.values(r.q17?.respostas_visiveis || {});
+      vals.forEach((v,i)=>set(62+i,v));
+    }
+    if(r.q18){
+      const vals = Array.isArray(r.q18) ? r.q18 : Object.values(r.q18?.respostas_visiveis || {});
+      vals.forEach((v,i)=>set(65+i,v));
+    }
+    set(68, r.q19?.desenvolvimento); set(70, r.q19?.resposta);
+
+    if(r.q20?.resposta){ state.selectedOptions.op20 = ['A','B','C'].indexOf(String(r.q20.resposta).toUpperCase()); }
+    if(r.q21?.resposta){ state.selectedOptions.op21 = ['A','B','C'].indexOf(String(r.q21.resposta).toUpperCase()); }
+
+    return state;
+  }
+
+  return data;
+}
+
 function importState(event){
   const file = event.target.files && event.target.files[0];
   if(!file) return;
   const reader = new FileReader();
   reader.onload = function(e){
     try {
-      const state = JSON.parse(e.target.result);
+      const imported = JSON.parse(e.target.result);
+      const state = normalizeImportedState(imported);
       applyState(state);
       setStatus('Arquivo JSON importado com sucesso. Agora você pode revisar, editar e gravar novamente.', 'ok');
     } catch (error) {

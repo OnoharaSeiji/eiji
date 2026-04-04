@@ -9,7 +9,7 @@
     "setembro",
     "outubro"
   ],
-  "simulados_completos": 9,
+  "simulados_completos": 7,
   "tags": {
     "DIAG": 2,
     "R": 32,
@@ -19,5 +19,6 @@
     "P": 57,
     "F": 5,
     "PROVA": 1
-  }
+  },
+  "observacao": "Versão revisada e corrigida com base nos diagnósticos iniciais."
 }
